@@ -12,6 +12,10 @@
   text-align:left;
 }
 
+/* Seven-tool index after removing the duplicated rapid-response checklist. */
+.ttj-resources-v2 .rv-tool-index{grid-template-columns:repeat(4,1fr)}
+.ttj-resources-v2 .rv-tool-index button:nth-child(n+5){min-height:96px}
+
 /* TOOL 1 — Jane-style mix-and-match formula, adapted into elegant dropdowns. */
 .ttj-resources-v2 .rv-message .rv-tool-head{margin-bottom:34px}
 .ttj-resources-v2 .rv-formula-intro{
@@ -40,7 +44,7 @@
 .ttj-resources-v2 .rv-formula-intro b{font-weight:800;color:var(--rv-ink)}
 .ttj-resources-v2 .rv-formula-grid{
   display:grid;
-  grid-template-columns:repeat(4,minmax(0,1fr));
+  grid-template-columns:.95fr .95fr 1.2fr 1fr;
   gap:14px;
   border:0;
   background:transparent;
@@ -68,31 +72,49 @@
   letter-spacing:.13em;
   text-transform:uppercase;
 }
-.ttj-resources-v2 .rv-select-wrap{position:relative}
-.ttj-resources-v2 .rv-select-wrap::after{
-  content:"↓";
+.ttj-resources-v2 .rv-select-wrap{
+  position:relative;
+  background:#080b10;
+  border:1px solid #4b535e;
+}
+.ttj-resources-v2 .rv-select-wrap::before{
+  content:"";
   position:absolute;
-  right:13px;
-  top:50%;
-  transform:translateY(-50%);
+  top:10px;
+  bottom:10px;
+  right:48px;
+  width:1px;
+  background:#343a43;
   pointer-events:none;
-  color:var(--accent);
-  font:800 15px/1 "Noto Sans",Arial,sans-serif;
+}
+.ttj-resources-v2 .rv-select-wrap::after{
+  content:"";
+  position:absolute;
+  right:19px;
+  top:50%;
+  width:9px;
+  height:9px;
+  border-right:2px solid var(--accent);
+  border-bottom:2px solid var(--accent);
+  transform:translateY(-68%) rotate(45deg);
+  pointer-events:none;
 }
 .ttj-resources-v2 .rv-formula-grid select{
   width:100%;
-  min-height:66px;
+  min-height:70px;
   appearance:none;
   -webkit-appearance:none;
-  border:1px solid #4b535e;
-  background:#080b10;
+  border:0;
+  background:transparent;
   color:#fff;
-  padding:13px 42px 13px 14px;
+  padding:13px 62px 13px 15px;
   font:700 15px/1.35 "Noto Sans",Arial,sans-serif;
   white-space:normal;
+  cursor:pointer;
 }
-.ttj-resources-v2 .rv-formula-grid select:hover{border-color:var(--accent)}
-.ttj-resources-v2 .rv-formula-grid select:focus{outline:2px solid var(--accent);outline-offset:2px}
+.ttj-resources-v2 .rv-select-wrap:hover{border-color:var(--accent)}
+.ttj-resources-v2 .rv-select-wrap:focus-within{outline:2px solid var(--accent);outline-offset:2px;border-color:var(--accent)}
+.ttj-resources-v2 .rv-formula-grid select:focus{outline:0}
 .ttj-resources-v2 .rv-message .rv-draft-output{
   margin-top:18px;
   background:#101215;
@@ -107,7 +129,12 @@
   line-height:1.42;
 }
 
-/* TOOL 7 — interactive drafting checklist. */
+/* TOOL 3 — with the redundant intermediate headline removed, tighten the header rhythm. */
+.ttj-resources-v2 #tool-3 .rv-tool-head{align-items:start}
+.ttj-resources-v2 #tool-3 .rv-tool-head>div{min-height:42px}
+.ttj-resources-v2 #tool-3 .rv-tool-head>p{padding-top:1px}
+
+/* TOOL 6 — interactive drafting checklist. */
 .ttj-resources-v2 .rv-draft-check{background:#07090d;color:#fff;position:relative}
 .ttj-resources-v2 .rv-draft-check::before{
   content:"";
@@ -202,6 +229,7 @@
 .ttj-resources-v2 .rv-drafting-reset:hover{background:#fff;color:#080a0e}
 
 @media(max-width:1000px){
+  .ttj-resources-v2 .rv-tool-index{grid-template-columns:repeat(2,1fr)}
   .ttj-resources-v2 .rv-formula-grid{grid-template-columns:repeat(2,minmax(0,1fr))}
   .ttj-resources-v2 .rv-formula-grid .rv-formula-select{min-height:170px}
 }
