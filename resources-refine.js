@@ -4,11 +4,43 @@
 
   const waitForToolkit = () => {
     if (!root.classList.contains('ttj-resources-v2') || !document.getElementById('tool-1') || !document.getElementById('tool-7')) return false;
-    if (root.dataset.resourcesRefined === '1') return true;
-    root.dataset.resourcesRefined = '1';
+    if (root.dataset.resourcesRefined === '2') return true;
+    root.dataset.resourcesRefined = '2';
 
     /* Keep section numbers fully inside the content column. */
     root.classList.add('rv-numbers-fixed');
+
+    /* Remove the now-duplicative rapid response checklist. */
+    document.getElementById('tool-5')?.remove();
+
+    /* Rebuild the toolkit index as seven tools and renumber the remaining sections. */
+    const index = root.querySelector('.rv-tool-index');
+    const indexItems = [
+      ['tool-1','Message formula'],
+      ['tool-2','Say this, not that'],
+      ['tool-3','Cross-partisan talking points'],
+      ['tool-4','Sector snapshot'],
+      ['tool-6','Strong / weak words'],
+      ['tool-7','Drafting checklist'],
+      ['tool-8','Lead with the decision']
+    ];
+    if (index) {
+      index.innerHTML = indexItems.map(([target,label], i) => `<button type="button" data-tool-jump="${target}"><b>0${i+1}</b><span>${label}</span></button>`).join('');
+      index.querySelectorAll('[data-tool-jump]').forEach(btn => btn.addEventListener('click', () => {
+        document.getElementById(btn.dataset.toolJump)?.scrollIntoView({behavior:'smooth',block:'start'});
+      }));
+    }
+    const heroDek = root.querySelector('.rv-hero-inner>p');
+    if (heroDek) heroDek.textContent = 'Seven practical tools for turning the findings into clearer explanations, questions and drafts — without losing the evidence underneath them.';
+
+    const renumber = [
+      ['tool-1','01'],['tool-2','02'],['tool-3','03'],['tool-4','04'],
+      ['tool-6','05'],['tool-7','06'],['tool-8','07']
+    ];
+    renumber.forEach(([id,n]) => {
+      const number = document.querySelector(`#${id} .rv-number`);
+      if (number) number.textContent = n;
+    });
 
     /* TOOL 1 — Message formula, rebuilt as a Jane-style mix-and-match selector. */
     const tool1 = document.getElementById('tool-1');
@@ -31,7 +63,6 @@
 
     const scenarioChips = tool1.querySelector('.rv-scenario-chips');
     const formulaGrid = tool1.querySelector('.rv-formula-grid');
-    const draftOutput = tool1.querySelector('.rv-draft-output');
     const note = tool1.querySelector('.rv-note');
 
     if (scenarioChips) {
@@ -96,7 +127,22 @@
       });
     }
 
-    /* TOOL 7 — replace the textarea heuristic with the drafting checklist shown in Jane's design. */
+    /* TOOL 3 — remove the extra headline and start with The basic issue expanded. */
+    const tool3 = document.getElementById('tool-3');
+    const tool3Head = tool3?.querySelector('.rv-tool-head');
+    if (tool3Head) {
+      const heading = tool3Head.querySelector('h2');
+      if (heading) heading.remove();
+    }
+    const pointCards = [...(tool3?.querySelectorAll('.rv-point-card') || [])];
+    pointCards.forEach((card, i) => {
+      const toggle = card.querySelector('.rv-point-toggle');
+      const open = i === 0;
+      card.classList.toggle('open', open);
+      toggle?.setAttribute('aria-expanded', String(open));
+    });
+
+    /* TOOL 6 — replace the textarea heuristic with the drafting checklist shown in Jane's design. */
     const tool7 = document.getElementById('tool-7');
     const tool7Head = tool7.querySelector('.rv-tool-head');
     if (tool7Head) {
@@ -156,10 +202,6 @@
       updateDrafting();
     });
     updateDrafting();
-
-    /* Keep the top index wording aligned with the revised tool. */
-    const toolIndex = root.querySelector('[data-tool-jump="tool-7"] span');
-    if (toolIndex) toolIndex.textContent = 'Drafting checklist';
 
     return true;
   };
