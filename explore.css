@@ -76,3 +76,30 @@
   #data-view .theme-links{display:block}
   #data-view .theme-links button{width:100%;padding:10px 0;font-size:15px}
 }
+
+/* Compact evidence reader on phones: results begin near the top. */
+@media(max-width:600px){
+  #data-view{padding:13px 18px 0}
+  #data-view .section-heading{margin-bottom:7px}
+  #data-view .section-heading .eyebrow{font-size:9px;margin-bottom:4px}
+  #data-view .section-heading h1{font-size:clamp(29px,8vw,38px);line-height:1;margin:0}
+  #data-view .section-heading p{display:none}
+  #data-view .round-tabs{gap:5px;padding:9px 0;margin:0 0 6px;justify-content:space-between}
+  #data-view .round-tabs button{width:36px;height:36px;font-size:13px}
+  #data-view .round{padding:0 0 24px}
+  #data-view .round-top{display:none}
+  #data-view .round-meta{margin:0 0 10px;padding:7px 0;gap:2px 9px;border-top:0}
+  #data-view .round-meta span,#data-view .round-meta span:first-child,#data-view .round-meta span:last-child{font:600 10px/1.25 "Noto Sans",Arial,sans-serif}
+  #data-view .round h2{font-size:clamp(23px,6.6vw,30px);line-height:1.08;margin-bottom:8px}
+  #data-view .evidence-row{padding:6px 0;gap:3px 8px}
+  #data-view .evidence-label span{font-size:12px;line-height:1.25}
+  #data-view .evidence-label b{font-size:17px}
+  #data-view .evidence-track{height:6px}
+  #data-view .interpretation{font-size:14px;line-height:1.35;margin-top:14px}
+  #data-view .method-note{font-size:11px;line-height:1.35}
+  #data-view .source-note{font-size:10px;line-height:1.35;padding:11px 0 16px}
+  #data-view .cross-theme{margin:0 -18px;padding:18px 18px 22px}
+  #data-view .cross-theme>.eyebrow{margin-bottom:9px}
+  #data-view .theme-links{display:grid;grid-template-columns:1fr 1fr;gap:0 13px}
+  #data-view .theme-links button{font-size:13px;line-height:1.25;min-height:38px;padding:6px 0}
+}
