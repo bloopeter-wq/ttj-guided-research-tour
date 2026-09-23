@@ -103,3 +103,13 @@
   #data-view .theme-links{display:grid;grid-template-columns:1fr 1fr;gap:0 13px}
   #data-view .theme-links button{font-size:13px;line-height:1.25;min-height:38px;padding:6px 0}
 }
+
+/* On phones, keep the approved black theme navigation visible. */
+@media(max-width:600px){
+  body.section-open:has(#data-view:not([hidden])) .footer{display:none}
+  #data-view{padding-bottom:132px}
+  #data-view .cross-theme{position:fixed;z-index:50;left:0;right:0;bottom:0;margin:0;padding:9px 18px max(10px,env(safe-area-inset-bottom));box-shadow:0 -8px 22px rgba(0,0,0,.2)}
+  #data-view .cross-theme>.eyebrow{margin:0 0 5px;font-size:9px;letter-spacing:.17em}
+  #data-view .theme-links{display:grid;grid-template-columns:1fr 1fr;gap:0 14px}
+  #data-view .theme-links button{width:100%;min-height:27px;padding:4px 0;font:500 12px/1.2 "Noto Sans",Arial,sans-serif}
+}
