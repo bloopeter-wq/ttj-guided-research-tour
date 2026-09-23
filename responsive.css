@@ -105,63 +105,111 @@
   #data-view .cross-theme{padding-top:24px;padding-bottom:28px}
 }
 
-@media (min-width:851px) and (max-width:1100px){
+@media (min-width:851px) and (max-width:1280px){
   #data-view .round{grid-template-columns:1fr;grid-template-areas:"top" "meta" "title" "bars" "interpretation" "method";column-gap:0;padding-bottom:34px}
   #data-view .round-top{display:flex;justify-content:space-between;align-items:center}
   #data-view .round-top .eyebrow{margin:0}
   #data-view .round-nav{display:flex;margin:0;gap:10px}
   #data-view .round-meta{border:0;border-top:1px solid #b8bdc2;border-bottom:1px solid #b8bdc2;display:flex;flex-direction:row;flex-wrap:wrap;gap:8px 20px;padding:10px 0;margin:14px 0 20px}
   #data-view .round-meta span,#data-view .round-meta span:first-child{border:0;padding:0;font-size:12px}
-  #data-view .round h2{margin-bottom:16px}
+  #data-view .round h2{margin-bottom:16px;max-width:900px}
   #data-view .evidence-row{grid-template-columns:minmax(190px,1fr) minmax(180px,1.2fr) 60px}
   #data-view .theme-links button{flex:1 1 42%}
 }
 
 /* Use the Research: prevent card and form crowding on tablets and smaller laptops. */
-@media (min-width:651px) and (max-width:1180px){
-  #resources-view .use-heading{padding-top:clamp(45px,6vw,65px);padding-bottom:clamp(58px,7vw,75px)}
-  #resources-view .use-heading h1{font-size:clamp(50px,7vw,82px)}
-  #resources-view .use-heading p{font-size:clamp(17px,2vw,22px);max-width:780px}
-  #resources-view .use-resources{padding-top:32px;margin-bottom:34px}
+@media (min-width:651px) and (max-width:1366px){
+  #resources-view .use-heading{padding-top:clamp(42px,5vw,62px);padding-bottom:clamp(54px,6vw,72px)}
+  #resources-view .use-heading h1{font-size:clamp(48px,6.6vw,84px)}
+  #resources-view .use-heading p{font-size:clamp(17px,1.8vw,22px);max-width:780px}
+  #resources-view .use-resources{padding-top:30px;margin-bottom:32px}
   #resources-view .use-paths{grid-template-columns:repeat(2,minmax(0,1fr));gap:14px}
-  #resources-view .use-path,#resources-view .use-path:first-child{min-height:260px;padding:24px}
+  #resources-view .use-path,#resources-view .use-path:first-child{min-height:248px;padding:23px}
   #resources-view .use-path:last-child{grid-column:1/-1;min-height:0}
-  #resources-view .use-path:before{font-size:28px;margin-bottom:20px}
-  #resources-view .use-path h2{font-size:22px}
+  #resources-view .use-path:before{font-size:27px;margin-bottom:18px}
+  #resources-view .use-path h2{font-size:21px}
   #resources-view .use-path p{font-size:14px}
   #resources-view .formula-fields{grid-template-columns:repeat(2,minmax(0,1fr));gap:12px}
-  #resources-view .message-builder{padding-top:44px;padding-bottom:48px}
-  #resources-view .message-builder h2{font-size:clamp(38px,5vw,56px)}
+  #resources-view .message-builder{padding-top:42px;padding-bottom:46px}
+  #resources-view .message-builder h2{font-size:clamp(37px,4.6vw,56px)}
+  #resources-view .message-builder>p:not(.builder-note){font-size:18px}
   #resources-view .message-output p{font-size:19px}
-  #resources-view .language-tool{padding-top:46px}
-  #resources-view .language-tool h2{font-size:clamp(38px,5vw,54px)}
-  #resources-view .language-pair>div{padding:22px;min-height:170px}
-  #resources-view .language-pair p{font-size:20px}
-}
-
-@media (min-width:851px) and (max-width:1180px){
+  #resources-view .language-tool{padding-top:44px}
+  #resources-view .language-tool h2{font-size:clamp(37px,4.6vw,54px)}
+  #resources-view .language-pair>div{padding:21px;min-height:165px}
+  #resources-view .language-pair p{font-size:19px}
   #resources-view .use-more-links{grid-template-columns:repeat(2,minmax(0,1fr));gap:14px}
   #resources-view .use-more-links a:last-child{grid-column:1/-1}
 }
 
-@media (min-width:651px) and (max-width:760px){
+/* Portrait tablets: prioritize legibility over maintaining card grids. */
+@media (min-width:651px) and (max-width:900px){
+  #data-view .section-heading h1{font-size:clamp(46px,8vw,66px)}
+  #data-view .section-heading p{font-size:17px;max-width:700px}
+  #data-view .round-tabs{gap:8px}
+  #data-view .round-tabs button{width:46px;height:46px;font-size:16px}
+  #data-view .evidence-row{grid-template-columns:minmax(0,1fr) 54px;gap:6px 12px;padding:10px 0;border-bottom:1px solid #eceeed}
+  #data-view .evidence-label span{grid-column:1;grid-row:1;font-size:14px}
+  #data-view .evidence-label b{grid-column:2;grid-row:1;font-size:19px}
+  #data-view .evidence-track{grid-column:1/-1;grid-row:2;height:10px}
+  #data-view .theme-links{display:grid;grid-template-columns:1fr 1fr;gap:0 16px}
+  #data-view .theme-links button{width:100%;min-height:42px}
+
+  #resources-view .use-paths{grid-template-columns:1fr}
+  #resources-view .use-path,#resources-view .use-path:first-child,#resources-view .use-path:last-child{grid-column:auto;min-height:0;padding:22px}
+  #resources-view .use-path:before{margin-bottom:14px}
+  #resources-view .use-path a:first-of-type{margin-top:10px}
   #resources-view .language-pair{grid-template-columns:1fr}
   #resources-view .language-pair>div{min-height:0}
+  #resources-view .use-more-links{grid-template-columns:1fr}
+  #resources-view .use-more-links a:last-child{grid-column:auto}
+}
+
+@media (min-width:651px) and (max-width:760px){
+  #resources-view .formula-fields{grid-template-columns:1fr}
+  #resources-view .message-output{align-items:flex-start;flex-direction:column}
+  #resources-view .message-output button{align-self:flex-start}
 }
 
 /* Short laptop screens: reduce dead space without changing the approved structure. */
 @media (min-width:651px) and (max-width:1440px) and (max-height:820px){
-  body.section-open #data-view{padding-top:24px}
-  #data-view .section-heading{margin-bottom:12px}
-  #data-view .section-heading h1{font-size:clamp(46px,6vw,78px);margin-bottom:8px}
-  #data-view .section-heading p{font-size:17px}
-  #data-view .round-tabs{padding-top:11px;padding-bottom:14px;margin-bottom:16px}
-  #data-view .round-tabs button{width:48px;height:48px;font-size:16px}
-  #data-view .round h2{margin-bottom:14px}
-  #resources-view .use-heading{padding-top:40px;padding-bottom:54px}
-  #resources-view .use-heading h1{font-size:clamp(46px,6.5vw,78px);margin-top:14px;margin-bottom:12px}
-  #resources-view .use-heading p{font-size:18px}
-  #resources-view .use-resources{padding-top:28px;margin-bottom:30px}
-  #resources-view .message-builder{padding-top:38px;padding-bottom:42px}
-  #resources-view .language-tool{padding-top:40px;padding-bottom:38px}
+  body.section-open #data-view{padding-top:20px}
+  #data-view .section-heading{margin-bottom:10px}
+  #data-view .section-heading h1{font-size:clamp(44px,5.7vw,74px);margin-bottom:7px}
+  #data-view .section-heading p{font-size:16px}
+  #data-view .round-tabs{padding-top:9px;padding-bottom:12px;margin-bottom:13px}
+  #data-view .round-tabs button{width:44px;height:44px;font-size:15px}
+  #data-view .round h2{margin-bottom:12px}
+  #data-view .evidence-row{padding-top:6px;padding-bottom:6px}
+  #data-view .interpretation{margin-top:16px}
+
+  #resources-view .use-heading{padding-top:36px;padding-bottom:49px}
+  #resources-view .use-heading h1{font-size:clamp(44px,6vw,74px);margin-top:12px;margin-bottom:10px}
+  #resources-view .use-heading p{font-size:17px}
+  #resources-view .use-resources{padding-top:24px;margin-bottom:26px}
+  #resources-view .use-path,#resources-view .use-path:first-child{min-height:220px;padding-top:19px;padding-bottom:19px}
+  #resources-view .use-path:before{margin-bottom:12px}
+  #resources-view .message-builder{padding-top:34px;padding-bottom:38px}
+  #resources-view .language-tool{padding-top:34px;padding-bottom:32px}
+  #resources-view .language-pair>div{min-height:150px}
+}
+
+/* Extra-short 13-inch laptop windows: keep primary content dense and readable. */
+@media (min-width:901px) and (max-width:1366px) and (max-height:720px){
+  #data-view .section-heading .eyebrow,#resources-view .use-heading .eyebrow{margin-bottom:6px}
+  #data-view .section-heading h1{font-size:clamp(40px,5vw,62px)}
+  #data-view .round-tabs{padding:7px 0 9px;margin-bottom:10px}
+  #data-view .round-tabs button{width:40px;height:40px;font-size:14px}
+  #data-view .round h2{font-size:clamp(28px,2.7vw,37px)}
+  #data-view .round-meta{margin-top:8px;margin-bottom:12px}
+  #data-view .evidence-track{height:10px}
+  #data-view .interpretation{font-size:15px}
+
+  #resources-view .use-heading{padding-top:30px;padding-bottom:44px}
+  #resources-view .use-heading h1{font-size:clamp(40px,5.5vw,66px)}
+  #resources-view .use-heading p{font-size:16px}
+  #resources-view .use-resources{padding-top:20px}
+  #resources-view .use-path,#resources-view .use-path:first-child{min-height:205px;padding:18px 20px}
+  #resources-view .message-builder{padding-top:30px;padding-bottom:34px}
+  #resources-view .language-tool{padding-top:30px}
 }
