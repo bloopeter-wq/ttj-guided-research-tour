@@ -79,3 +79,83 @@
   #resources-view .language-pair p{font-size:16px;min-height:0}
   #resources-view .use-more{padding-bottom:35px}
 }
+
+/* Editorial finish */
+#resources-view{padding-top:0;background:#f7f8f6}
+#resources-view .use-heading{position:relative;isolation:isolate;max-width:none;margin:0 calc(-1 * max(5vw,24px));padding:75px max(5vw,24px) 83px;overflow:hidden;background:#131c2c;color:#fff}
+#resources-view .use-heading:before{content:"";position:absolute;z-index:-1;width:min(65vw,850px);aspect-ratio:1;right:-9%;top:-68%;border:2px solid rgba(116,204,189,.22);border-radius:33% 67% 41% 59% / 58% 35% 65% 42%;box-shadow:0 0 0 75px rgba(116,204,189,.045),0 0 0 155px rgba(116,204,189,.035);transform:rotate(-24deg)}
+#resources-view .use-heading:after{content:"";position:absolute;left:max(5vw,24px);right:max(5vw,24px);bottom:35px;height:1px;background:linear-gradient(90deg,#35b8a6,rgba(255,255,255,.16))}
+#resources-view .use-heading .eyebrow{color:#81d2c5}
+#resources-view .use-heading h1{position:relative;max-width:1200px;margin:22px auto 19px;font-size:clamp(58px,8vw,116px);line-height:.96}
+#resources-view .use-heading p{position:relative;max-width:1200px;margin:0 auto;font:clamp(19px,2vw,27px)/1.32 Georgia,serif;color:#d9e2e1}
+#resources-view .use-heading>.eyebrow{position:relative;max-width:1200px;margin:auto}
+#resources-view .use-resources{border:0;padding-top:41px;margin-bottom:43px}
+#resources-view .use-resources>.eyebrow{color:#1b7471}
+#resources-view .use-paths{gap:15px;margin-top:17px}
+#resources-view .use-path,#resources-view .use-path:first-child{position:relative;display:flex;flex-direction:column;min-height:300px;padding:31px 27px 25px;border:1px solid #dae2e0;background:#fff;box-shadow:0 16px 38px rgba(13,35,38,.055)}
+#resources-view .use-path:before{content:attr(data-number);display:block;margin-bottom:34px;font:800 32px/.9 "Noto Sans",Arial,sans-serif;letter-spacing:-.06em;color:#127f78}
+#resources-view .use-path h2{font-size:24px}
+#resources-view .use-path p{min-height:0;color:#4a555b}
+#resources-view .use-path a:first-of-type{margin-top:auto}
+#resources-view .use-path a{font-size:14px}
+#resources-view .message-builder{position:relative;isolation:isolate;overflow:hidden;padding-top:57px;padding-bottom:61px;background:#101d21}
+#resources-view .message-builder:before{content:"";position:absolute;z-index:-1;right:-110px;top:-130px;width:580px;height:580px;border:1px solid rgba(96,214,192,.15);transform:rotate(32deg);border-radius:32% 68% 63% 37% / 57% 36% 64% 43%;box-shadow:0 0 0 85px rgba(63,184,160,.035),0 0 0 175px rgba(63,184,160,.025)}
+#resources-view .message-builder h2{font-size:clamp(42px,5vw,68px);max-width:1200px}
+#resources-view .message-builder>p:not(.builder-note){font:19px/1.4 Georgia,serif;color:#d8e5e2}
+#resources-view .formula-fields{gap:12px}
+#resources-view .formula-fields label{position:relative;padding:21px 18px 18px;background:#213237;color:#8edacf;border-top:3px solid #268f83}
+#resources-view .formula-fields label:before{content:"0" counter(formula);counter-increment:formula;display:block;margin-bottom:21px;color:#fff;font:800 27px/1 "Noto Sans",Arial,sans-serif}
+#resources-view .formula-fields{counter-reset:formula}
+#resources-view .formula-fields input{border-color:#526c70;margin-top:12px}
+#resources-view .message-output{border-left:5px solid #4cbba9;background:#eaf4f0;color:#172c2d;padding:25px 26px}
+#resources-view .message-output .eyebrow{color:#006f65}
+#resources-view .message-output p{font:22px/1.35 Georgia,serif}
+#resources-view .message-output button{border:0;background:#087d73;color:#fff}
+#resources-view .message-output button:hover:not(:disabled){background:#075c55}
+#resources-view .language-tool{padding:62px 0 48px}
+#resources-view .language-tool h2{font-size:clamp(42px,5vw,64px)}
+#resources-view .language-top p{font:19px Georgia,serif;color:#435051}
+#resources-view .language-pair{gap:15px;margin-top:25px}
+#resources-view .language-pair>div{min-height:190px;padding:26px 28px;border:1px solid #d5e1df;border-top:5px solid #087d73;background:#fff;box-shadow:0 10px 30px rgba(20,45,44,.05)}
+#resources-view .language-pair .avoid{border-top-color:#9c4851;background:#f7f5f4}
+#resources-view .language-pair h3{margin-bottom:25px;color:#087d73}
+#resources-view .language-pair .avoid h3{color:#9c4851}
+#resources-view .language-pair p{font:23px/1.38 Georgia,serif}
+#resources-view .use-more{border-color:#b4c4c0;padding-top:30px;padding-bottom:63px}
+#resources-view .use-more-links a{padding:19px 17px;background:#fff;border:1px solid #dae2e0}
+#resources-view select:focus-visible,#resources-view input:focus-visible,#resources-view button:focus-visible,#resources-view a:focus-visible{outline:3px solid #49a99d;outline-offset:3px}
+@media(max-width:850px){
+ #resources-view .use-paths{grid-template-columns:repeat(2,minmax(0,1fr))}
+ #resources-view .use-path,#resources-view .use-path:first-child{min-height:275px;padding:25px}
+ #resources-view .use-path:before{margin-bottom:24px}
+ #resources-view .use-heading{margin:0 -24px;padding:54px 24px 67px}
+ #resources-view .formula-fields{grid-template-columns:repeat(2,minmax(0,1fr))}
+}
+@media(max-width:600px){
+ #resources-view .use-heading{margin:0 -20px;padding:35px 20px 47px}
+ #resources-view .use-heading:after{bottom:19px;left:20px;right:20px}
+ #resources-view .use-heading:before{width:115vw;right:-70%;top:-22%}
+ #resources-view .use-heading h1{font-size:clamp(44px,11vw,61px);margin:14px 0 10px}
+ #resources-view .use-heading p{font-size:17px}
+ #resources-view .use-resources{padding-top:26px;margin-bottom:28px}
+ #resources-view .use-paths{grid-template-columns:1fr;gap:9px;margin-top:12px}
+ #resources-view .use-path,#resources-view .use-path:first-child{min-height:0;padding:18px 19px!important;border:1px solid #dae2e0}
+ #resources-view .use-path:before{float:left;margin:0 0 12px;font-size:22px}
+ #resources-view .use-path h2{font-size:20px;margin-bottom:4px}
+ #resources-view .use-path p{font-size:14px;line-height:1.3;margin-bottom:7px}
+ #resources-view .use-path a{font-size:13px;padding:9px 0}
+ #resources-view .message-builder{padding-top:34px;padding-bottom:36px}
+ #resources-view .message-builder h2,#resources-view .language-tool h2{font-size:clamp(35px,9vw,44px)}
+ #resources-view .message-builder>p:not(.builder-note){font-size:16px}
+ #resources-view .formula-fields{grid-template-columns:1fr}
+ #resources-view .formula-fields label{padding:15px 16px 17px}
+ #resources-view .formula-fields label:before{margin-bottom:14px;font-size:21px}
+ #resources-view .message-output{padding:19px}
+ #resources-view .message-output p{font-size:18px}
+ #resources-view .language-tool{padding:37px 0 30px}
+ #resources-view .language-top p{font-size:16px}
+ #resources-view .language-pair>div{min-height:0;padding:19px}
+ #resources-view .language-pair h3{margin-bottom:13px}
+ #resources-view .language-pair p{font-size:18px}
+ #resources-view .use-more{padding-bottom:36px}
+}
