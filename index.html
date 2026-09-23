@@ -129,7 +129,30 @@ a,button{font:inherit}
   .practice{margin-top:55px}.practice p{font-size:17px}
 }
 @media (max-width:370px){.nav{font-size:10px;gap:5px}.nav a{white-space:normal;line-height:1.2;max-width:33%}}
+@media (max-width:650px){
+  .story{padding:27px 22px 24px}
+  .eyebrow{font-size:10px;margin-bottom:12px;letter-spacing:.2em}
+  .scene-index{font-size:11px;margin-bottom:18px}
+  .title,.stage.intro .title{font-size:clamp(33px,9vw,43px);line-height:1.04;margin-bottom:20px}
+  .stage.intro .title .just{font-size:clamp(42px,11vw,56px)}
+  .lede{font-size:16px;line-height:1.43;margin-bottom:22px}
+  .headline-block{gap:8px;padding-top:16px}
+  .headline-label{font-size:10px}.headline-copy{font-size:15px;line-height:1.45}
+  .scene{padding-bottom:90px}
+  .controls{position:fixed;inset:auto 0 0;z-index:30;padding:10px 20px max(12px,env(safe-area-inset-bottom));gap:3px 8px;box-shadow:0 -8px 22px rgba(0,0,0,.17)}
+  .progress{height:4px;gap:5px;margin-bottom:3px}
+  .segment.active span{animation-duration:10s}
+  .control{font-size:13px;min-height:38px}
+  .visual{padding:30px 22px 35px;min-height:0}
+  .visual-kicker{font-size:10px;margin-bottom:12px}
+  .visual h2{font-size:24px}.visual p{font-size:15px;margin-bottom:20px}
+  .big-number{font-size:clamp(68px,18vw,90px);margin-bottom:15px}
+  .bar-row{grid-template-columns:minmax(0,1fr) 52px;gap:8px}
+  .bar-label{font-size:12px}.bar-value{font-size:15px}
+  .stage:has(.completion.show) .scene{padding-bottom:0}
+}
 @media (prefers-reduced-motion:reduce){.segment.active span{animation:none;width:100%}.scene,.stage{transition:none}}
+.stage.paused .segment.active span{animation-play-state:paused}
 
 </style></head>
 <body>
@@ -226,7 +249,7 @@ const scenes=[
     bars:[['Prevent, Protect, Repair',24.7],['Stop, Protect, Repair',7.1],['Prevent, Stop, Fix',2.7]], method:'MaxDiff NET scores are relative-preference scores, not percentages.', maxdiff:true
   }
 ];
-let current=0,paused=false,timer=null;
+let current=0,paused=window.matchMedia('(max-width:650px)').matches,timer=null;
 const $=id=>document.getElementById(id);
 function esc(s){return String(s)}
 function progress(){
@@ -244,6 +267,7 @@ function render(immediate=false){
   const s=scenes[current];
   document.documentElement.style.setProperty('--accent',s.accent);
   $('tour').classList.toggle('dark',!!s.dark);
+  $('tour').classList.toggle('paused',paused);
   $('tour').classList.toggle('intro',!!s.intro);
   $('tour').style.setProperty('--scene-bg',s.dark?'#050505':'#ffffff');
   $('tour').style.setProperty('--scene-text',s.dark?'#ffffff':'#111426');
@@ -262,10 +286,10 @@ function transitionTo(n){
   clearTimeout(timer);$('tour').classList.add('changing');
   setTimeout(()=>{current=n;render();$('tour').classList.remove('changing')},340);
 }
-function schedule(){clearTimeout(timer);if(paused)return;timer=setTimeout(()=>{if(current<scenes.length-1)transitionTo(current+1);else showCompletion()},3000)}
+function schedule(){clearTimeout(timer);if(paused)return;timer=setTimeout(()=>{if(current<scenes.length-1)transitionTo(current+1);else showCompletion()},window.matchMedia('(max-width:650px)').matches?10000:3000)}
 function showCompletion(){clearTimeout(timer);$('completion').classList.add('show')}
-function restart(){$('completion').classList.remove('show');current=0;paused=false;$('pauseBtn').textContent='Pause';render()}
-$('pauseBtn').onclick=()=>{paused=!paused;$('pauseBtn').textContent=paused?'Resume':'Pause';if(paused)clearTimeout(timer);else schedule()};
+function restart(){$('completion').classList.remove('show');current=0;paused=window.matchMedia('(max-width:650px)').matches;$('pauseBtn').textContent=paused?'Play tour':'Pause';render()}
+$('pauseBtn').onclick=()=>{paused=!paused;$('tour').classList.toggle('paused',paused);$('pauseBtn').textContent=paused?'Resume':'Pause';if(paused)clearTimeout(timer);else schedule()};
 $('prevBtn').onclick=()=>transitionTo(current-1);$('nextBtn').onclick=()=>current<scenes.length-1?transitionTo(current+1):showCompletion();$('restartBtn').onclick=restart;
 
 let activeSection='tour';
@@ -283,6 +307,7 @@ function navigate(section){
 function roundTo(n){if(n<1||n>6)return;document.querySelectorAll('.round').forEach(el=>el.classList.toggle('active',Number(el.dataset.round)===n));document.querySelectorAll('.round-tabs button').forEach(el=>el.classList.toggle('active',Number(el.dataset.go)===n));}
 document.querySelectorAll('[data-go]').forEach(button=>button.addEventListener('click',()=>roundTo(Number(button.dataset.go))));
 window.addEventListener('hashchange',()=>navigate(location.hash.slice(1)));
+if(paused)$('pauseBtn').textContent='Play tour';
 roundTo(1);render(true);navigate(location.hash.slice(1)||'tour');
 </script>
 </body></html>
