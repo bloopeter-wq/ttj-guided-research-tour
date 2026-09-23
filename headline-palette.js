@@ -65,3 +65,14 @@
     }, 10000);
   }
 })();
+
+/* Load the isolated Explore the Data V3 enhancement. */
+(function(){
+  'use strict';
+  if(document.querySelector('script[data-explore-v3-loader]')) return;
+  var script=document.createElement('script');
+  script.src='explore-v3.js?v=20260923-2';
+  script.defer=true;
+  script.dataset.exploreV3Loader='1';
+  document.head.appendChild(script);
+})();
