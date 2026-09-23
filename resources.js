@@ -128,6 +128,13 @@ showStep();
     css.href = 'explore-v2.css?v=1';
     document.head.appendChild(css);
   }
+  if (!document.getElementById('explore-polish-css')) {
+    const polish = document.createElement('link');
+    polish.id = 'explore-polish-css';
+    polish.rel = 'stylesheet';
+    polish.href = 'explore-polish.css?v=1';
+    document.head.appendChild(polish);
+  }
   if (!document.getElementById('explore-v2-js')) {
     const script = document.createElement('script');
     script.id = 'explore-v2-js';
