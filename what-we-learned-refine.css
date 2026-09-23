@@ -1,0 +1,219 @@
+/* Refinement pass: TTJ logo geometry, stronger headline reveals, and broader laptop/tablet responsiveness. */
+
+/* --------------------------------------------------------------------------
+   TTJ LOGO-DERIVED GEOMETRY
+   One irregular faceted mark, enlarged/abstracted. No circles, rings or generic
+   diagonal bands. The facets use the established TTJ palette.
+   -------------------------------------------------------------------------- */
+.learn-geo{position:absolute;inset:0;pointer-events:none;overflow:hidden;z-index:0}
+.learn-geo::before{
+  content:"";
+  position:absolute;
+  width:min(62vw,880px);
+  aspect-ratio:1/1;
+  right:clamp(-260px,-12vw,-80px);
+  top:50%;
+  transform:translateY(-50%) rotate(-5deg);
+  background-repeat:no-repeat;
+  background-size:contain;
+  background-position:center;
+  opacity:.56;
+  filter:saturate(.92);
+  background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 900 900'%3E%3Cg stroke='%2308090b' stroke-width='8' stroke-linejoin='round'%3E%3Cpolygon fill='%23047E72' points='122,268 292,94 492,130 438,332 250,382'/%3E%3Cpolygon fill='%23395399' points='492,130 708,204 770,390 545,432 438,332'/%3E%3Cpolygon fill='%23E4B82F' points='250,382 438,332 545,432 468,612 250,596'/%3E%3Cpolygon fill='%23C42C34' points='545,432 770,390 742,620 562,760 468,612'/%3E%3Cpolygon fill='%2392B93E' points='122,268 250,382 250,596 112,708 54,494'/%3E%3Cpolygon fill='%23AB604D' points='250,596 468,612 562,760 342,824 112,708'/%3E%3C/g%3E%3C/svg%3E");
+}
+.learn-geo::after{
+  content:"";
+  position:absolute;
+  width:min(26vw,360px);
+  aspect-ratio:1/1;
+  left:clamp(-120px,-5vw,-35px);
+  bottom:clamp(-150px,-8vw,-55px);
+  background-repeat:no-repeat;
+  background-size:contain;
+  opacity:.12;
+  transform:rotate(17deg);
+  background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 900 900'%3E%3Cg stroke='%2308090b' stroke-width='8' stroke-linejoin='round'%3E%3Cpolygon fill='%23047E72' points='122,268 292,94 492,130 438,332 250,382'/%3E%3Cpolygon fill='%23395399' points='492,130 708,204 770,390 545,432 438,332'/%3E%3Cpolygon fill='%23E4B82F' points='250,382 438,332 545,432 468,612 250,596'/%3E%3Cpolygon fill='%23C42C34' points='545,432 770,390 742,620 562,760 468,612'/%3E%3Cpolygon fill='%2392B93E' points='122,268 250,382 250,596 112,708 54,494'/%3E%3Cpolygon fill='%23AB604D' points='250,596 468,612 562,760 342,824 112,708'/%3E%3C/g%3E%3C/svg%3E");
+}
+.headline-screen .learn-geo::before{opacity:.50}
+.threads-screen .learn-geo::before{opacity:.18;right:-15vw;width:min(54vw,760px)}
+.threads-screen .learn-geo::after{opacity:.08}
+
+/* --------------------------------------------------------------------------
+   HEADLINE REVEAL — a short editorial "pop" rather than a soft text swap.
+   -------------------------------------------------------------------------- */
+.headline-screen{min-height:clamp(620px,calc(100dvh - 160px),980px)}
+.headline-wrap{
+  width:min(1460px,100%);
+  min-height:inherit;
+  padding:clamp(44px,6.5vw,96px) clamp(28px,7vw,104px);
+  justify-content:center;
+}
+.headline-top{max-width:1000px;margin-bottom:clamp(24px,4.2vh,48px)}
+.headline-main{position:relative;max-width:min(1020px,75vw);isolation:isolate;transform-origin:left center}
+.headline-main::before{
+  content:"";
+  position:absolute;
+  z-index:-1;
+  left:-18px;
+  top:50%;
+  width:min(72%,760px);
+  height:clamp(78px,12vw,160px);
+  background:#047E72;
+  opacity:0;
+  transform:translateY(-50%) scaleX(.08);
+  transform-origin:left center;
+}
+.headline-main::after{
+  content:"";
+  display:block;
+  width:min(220px,32vw);
+  height:5px;
+  margin-top:clamp(22px,3vh,34px);
+  background:#64c9bb;
+  transform:scaleX(0);
+  transform-origin:left;
+}
+.headline-main h1{
+  font-size:clamp(38px,min(5.5vw,8.1vh),84px);
+  line-height:.98;
+  max-width:100%;
+  overflow-wrap:normal;
+  word-break:normal;
+  text-wrap:balance;
+  text-shadow:0 12px 38px rgba(0,0,0,.22);
+}
+.headline-main.enter{animation:none}
+.headline-main.enter h1{animation:headlinePop .72s cubic-bezier(.16,1,.3,1) both}
+.headline-main.enter::before{animation:headlineAccentFlash .72s cubic-bezier(.16,1,.3,1) both}
+.headline-main.enter::after{animation:headlineRule .6s .18s cubic-bezier(.16,1,.3,1) both}
+@keyframes headlinePop{
+  0%{opacity:0;transform:translateY(34px) scale(.84);filter:blur(7px)}
+  58%{opacity:1;transform:translateY(-2px) scale(1.025);filter:blur(0)}
+  100%{opacity:1;transform:translateY(0) scale(1);filter:blur(0)}
+}
+@keyframes headlineAccentFlash{
+  0%{opacity:0;transform:translateY(-50%) scaleX(.04)}
+  35%{opacity:.30;transform:translateY(-50%) scaleX(1)}
+  100%{opacity:0;transform:translateY(-50%) scaleX(1)}
+}
+@keyframes headlineRule{from{transform:scaleX(0)}to{transform:scaleX(1)}}
+.headline-footer{margin-top:clamp(30px,5vh,62px);max-width:900px;position:relative;z-index:3}
+.headline-track{height:4px;background:rgba(255,255,255,.14)}
+.headline-track span{background:rgba(255,255,255,.16)}
+.headline-track span.done,.headline-track span.active{background:#64c9bb}
+.headline-skip{font-size:13px;color:#e6eaec;white-space:nowrap}
+
+/* --------------------------------------------------------------------------
+   RESPONSIVE REFINEMENT — laptops/tablets can scroll naturally; layouts stop
+   trying to hold a desktop composition once there is not enough width/height.
+   -------------------------------------------------------------------------- */
+body.learn-ready:not(.section-open){overflow-x:hidden;overflow-y:auto}
+body.learn-ready .learn-stage{overflow:visible}
+.learn-screen{overflow:hidden}
+
+@media(max-width:1366px){
+  .headline-wrap{padding-left:clamp(34px,5vw,70px);padding-right:clamp(34px,5vw,70px)}
+  .headline-main{max-width:min(900px,72vw)}
+  .finding-grid{grid-template-columns:minmax(0,1.04fr) minmax(340px,.96fr)}
+  .finding-copy{padding:clamp(38px,4.6vw,64px) clamp(30px,4.4vw,60px)}
+  .finding-copy h2{font-size:clamp(38px,4.4vw,60px)}
+  .finding-copy .finding-body{font-size:clamp(17px,1.45vw,21px)}
+  .finding-evidence{padding:clamp(36px,4vw,58px) clamp(26px,3.5vw,46px)}
+  .evidence-stat{min-height:112px;padding:15px 13px}
+  .threads-wrap{padding-left:clamp(28px,4vw,56px);padding-right:clamp(28px,4vw,56px)}
+  .thread-tab{padding:13px 21px;font-size:13px}
+}
+
+@media(max-width:1180px){
+  .headline-screen{min-height:auto}
+  .headline-wrap{min-height:calc(100dvh - 150px);padding-top:52px;padding-bottom:58px}
+  .headline-main{max-width:min(860px,82vw)}
+  .headline-main h1{font-size:clamp(38px,6.4vw,70px)}
+  .learn-geo::before{width:min(70vw,760px);right:-25vw;opacity:.35}
+  .finding-grid{grid-template-columns:1fr}
+  .finding-copy{padding:48px clamp(28px,5vw,58px) 34px}
+  .finding-copy h2{max-width:980px}
+  .finding-copy .finding-body,.finding-note{max-width:900px}
+  .finding-evidence{min-height:0;padding:44px clamp(28px,5vw,58px) 52px}
+  .evidence-inner{max-width:900px}
+  .finding-controls{margin-top:34px}
+  .threads-wrap{padding-top:54px;padding-bottom:64px}
+  .thread-tabs{gap:9px}
+}
+
+@media(max-width:900px){
+  .headline-wrap{min-height:calc(100dvh - 135px);padding:42px 30px 48px}
+  .headline-top{margin-bottom:28px}
+  .headline-main{max-width:100%}
+  .headline-main h1{font-size:clamp(36px,7.3vw,58px);line-height:1.01;letter-spacing:-.048em}
+  .headline-footer{margin-top:34px;align-items:flex-end}
+  .learn-geo::before{width:82vw;right:-33vw;top:47%;opacity:.28}
+  .learn-geo::after{width:34vw;left:-18vw;bottom:-10vw;opacity:.08}
+  .finding-copy{padding:42px 30px 30px}
+  .finding-header{margin-bottom:20px}
+  .finding-copy h2{font-size:clamp(34px,6.8vw,52px);line-height:1.01;margin-bottom:20px}
+  .finding-copy .finding-body{font-size:18px;line-height:1.5}
+  .finding-note{font-size:12.5px}
+  .finding-evidence{padding:38px 30px 46px}
+  .evidence-inner h3{font-size:clamp(23px,4vw,32px)}
+  .evidence-stat-grid{grid-template-columns:repeat(3,minmax(0,1fr))}
+  .threads-wrap{padding:46px 28px 56px}
+  .threads-wrap h2{font-size:clamp(34px,6vw,48px);margin:17px 0 30px}
+  .thread-tabs{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:8px}
+  .thread-tab{border-radius:0;text-align:left;white-space:normal;line-height:1.25}
+}
+
+@media(max-width:680px){
+  .headline-wrap{min-height:auto;padding:40px 20px 44px;justify-content:flex-start}
+  .headline-top{align-items:flex-start;gap:10px;margin-bottom:26px}
+  .headline-main h1{font-size:clamp(34px,10vw,50px);line-height:1.02;letter-spacing:-.045em;text-wrap:pretty}
+  .headline-main::before{left:-9px;height:110px}
+  .headline-main::after{height:4px;margin-top:22px}
+  .headline-footer{flex-direction:column;align-items:stretch;gap:16px;margin-top:30px}
+  .headline-skip{align-self:flex-start}
+  .learn-geo::before{width:108vw;right:-56vw;top:52%;opacity:.20}
+  .learn-geo::after{display:none}
+  .finding-copy{padding:36px 20px 26px}
+  .finding-copy h2{font-size:clamp(32px,9vw,44px)}
+  .finding-copy .finding-body{font-size:17px}
+  .finding-controls{flex-direction:column;align-items:stretch;gap:12px}
+  .finding-controls .control-pair{display:grid;grid-template-columns:1fr 1fr;gap:8px}
+  .finding-controls .learn-action{width:100%}
+  .finding-evidence{padding:34px 20px 40px}
+  .evidence-stat-grid{grid-template-columns:1fr 1fr}
+  .evidence-compare{grid-template-columns:1fr}
+  .evidence-phase{grid-template-columns:1fr}
+  .threads-wrap{padding:38px 20px 48px}
+  .threads-wrap h2{font-size:32px}
+  .thread-tabs{grid-template-columns:1fr}
+  .thread-panel{padding:24px 20px;min-height:0}
+  .thread-panel p{font-size:19px;line-height:1.52}
+  .thread-actions{flex-direction:column;align-items:stretch}
+}
+
+@media(max-width:430px){
+  .headline-top{flex-direction:column}
+  .headline-main h1{font-size:clamp(31px,9.6vw,40px)}
+  .finding-header{align-items:flex-start;flex-direction:column}
+  .evidence-stat-grid{grid-template-columns:1fr}
+  .finding-controls .control-pair{grid-template-columns:1fr}
+}
+
+/* Short laptop screens: reduce vertical pressure rather than crop. */
+@media(min-width:901px) and (max-height:820px){
+  .headline-wrap{padding-top:34px;padding-bottom:36px}
+  .headline-top{margin-bottom:24px}
+  .headline-main h1{font-size:clamp(38px,min(5vw,7.3vh),70px)}
+  .headline-footer{margin-top:28px}
+  .finding-copy{padding-top:34px;padding-bottom:28px}
+  .finding-header{margin-bottom:18px}
+  .finding-copy h2{font-size:clamp(36px,4vw,56px);margin-bottom:18px}
+  .finding-copy .finding-body{font-size:17px;line-height:1.42}
+  .finding-note{margin-top:18px;padding-top:15px}
+  .finding-controls{padding-top:20px}
+}
+
+@media(prefers-reduced-motion:reduce){
+  .headline-main.enter h1,.headline-main.enter::before,.headline-main.enter::after{animation:none!important}
+  .headline-main::after{transform:scaleX(1)}
+}
