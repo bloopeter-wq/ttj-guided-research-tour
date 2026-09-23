@@ -1,0 +1,127 @@
+/* Second-pass resource refinements: custom inline dropdowns and collapsed talking points. */
+
+/* Remove native-select styling once the custom control is mounted. */
+.ttj-resources-v2 .rv-custom-select{
+  position:relative;
+  border:1px solid #4b535e;
+  background:#fff;
+  overflow:visible;
+}
+.ttj-resources-v2 .rv-custom-select::before,
+.ttj-resources-v2 .rv-custom-select::after{display:none!important}
+.ttj-resources-v2 .rv-custom-select details{display:block}
+.ttj-resources-v2 .rv-custom-select summary{
+  list-style:none;
+  min-height:72px;
+  display:grid;
+  grid-template-columns:minmax(0,1fr) 54px;
+  align-items:center;
+  background:#fff;
+  color:#151923;
+  cursor:pointer;
+  user-select:none;
+}
+.ttj-resources-v2 .rv-custom-select summary::-webkit-details-marker{display:none}
+.ttj-resources-v2 .rv-custom-value{
+  display:block;
+  min-width:0;
+  padding:14px 18px;
+  font:700 15px/1.35 "Noto Sans",Arial,sans-serif;
+  white-space:normal;
+  overflow-wrap:anywhere;
+}
+.ttj-resources-v2 .rv-custom-arrow{
+  align-self:stretch;
+  position:relative;
+  border-left:1px solid #d7d9dc;
+  background:#f7f8f7;
+}
+.ttj-resources-v2 .rv-custom-arrow::before{
+  content:"";
+  position:absolute;
+  left:50%;
+  top:50%;
+  width:10px;
+  height:10px;
+  border-right:2px solid var(--accent);
+  border-bottom:2px solid var(--accent);
+  transform:translate(-50%,-65%) rotate(45deg);
+  transition:transform .2s ease;
+}
+.ttj-resources-v2 .rv-custom-select details[open] .rv-custom-arrow::before{
+  transform:translate(-50%,-35%) rotate(225deg);
+}
+.ttj-resources-v2 .rv-custom-options{
+  position:static;
+  display:grid;
+  gap:0;
+  border-top:1px solid #d7d9dc;
+  background:#fff;
+}
+.ttj-resources-v2 .rv-custom-options button{
+  width:100%;
+  border:0;
+  border-top:1px solid #eceeef;
+  background:#fff;
+  color:#171b22;
+  text-align:left;
+  padding:14px 18px;
+  font:600 14px/1.4 "Noto Sans",Arial,sans-serif;
+}
+.ttj-resources-v2 .rv-custom-options button:first-child{border-top:0}
+.ttj-resources-v2 .rv-custom-options button:hover,
+.ttj-resources-v2 .rv-custom-options button.selected{
+  background:#f2f5f1;
+  color:#0c1718;
+}
+.ttj-resources-v2 .rv-custom-options button.selected::after{
+  content:"✓";
+  float:right;
+  color:var(--accent);
+  font-weight:900;
+}
+.ttj-resources-v2 .rv-custom-select:focus-within{
+  outline:2px solid var(--accent);
+  outline-offset:3px;
+  border-color:var(--accent);
+}
+
+/* Let any open menu increase row height and push the live draft down cleanly. */
+.ttj-resources-v2 .rv-formula-grid{
+  align-items:start;
+  overflow:visible;
+}
+.ttj-resources-v2 .rv-formula-grid .rv-formula-select{
+  height:auto;
+  min-height:190px;
+  justify-content:flex-start;
+}
+.ttj-resources-v2 .rv-formula-grid .rv-formula-select>span{margin-bottom:34px}
+.ttj-resources-v2 .rv-custom-select{margin-top:auto}
+.ttj-resources-v2 .rv-formula-select:has(details[open]){
+  min-height:unset;
+}
+.ttj-resources-v2 .rv-message .rv-draft-output{
+  position:relative;
+  z-index:0;
+  clear:both;
+}
+
+/* Talking points should begin as a clean set of collapsed cards. */
+.ttj-resources-v2 #tool-3 .rv-point-card:not(.open) .rv-point-body{
+  grid-template-rows:0fr!important;
+  opacity:0!important;
+  padding-top:0!important;
+  padding-bottom:0!important;
+}
+
+@media(max-width:1000px){
+  .ttj-resources-v2 .rv-formula-grid{grid-template-columns:repeat(2,minmax(0,1fr))}
+}
+
+@media(max-width:760px){
+  .ttj-resources-v2 .rv-formula-grid{grid-template-columns:1fr}
+  .ttj-resources-v2 .rv-custom-select summary{min-height:66px;grid-template-columns:minmax(0,1fr) 50px}
+  .ttj-resources-v2 .rv-custom-value{font-size:14px;padding:13px 15px}
+  .ttj-resources-v2 .rv-custom-options button{font-size:14px;padding:13px 15px}
+}
