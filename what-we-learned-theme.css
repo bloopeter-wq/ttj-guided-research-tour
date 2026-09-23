@@ -20,11 +20,21 @@
   width:auto;
   height:auto;
   transform:none;
-  opacity:.96;
   filter:none;
   background-repeat:no-repeat;
   background-size:cover;
   background-position:center;
+}
+
+/* The headline geometry uses the same TTJ colour as the active headline. */
+.headline-screen .learn-geo::before{
+  opacity:.52;
+  background-image:var(--headline-geo-image);
+}
+
+/* The Five Threads screen keeps the same geometry in a neutral outline. */
+.threads-screen .learn-geo::before{
+  opacity:.96;
   background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 1600 900' preserveAspectRatio='xMidYMid slice'%3E%3Cg fill='none' stroke='%23363F46' stroke-width='7' stroke-linejoin='round' stroke-linecap='round'%3E%3Cpath d='M85 -90 L430 125 L190 415 L-45 220 Z'/%3E%3Cpath d='M430 125 L645 48 L875 175 L685 470 L190 415 Z'/%3E%3Cpath d='M875 175 L1115 62 L1395 215 L1260 505 L685 470 Z'/%3E%3Cpath d='M1395 215 L1650 85 L1650 410 L1260 505 Z'/%3E%3Cpath d='M-45 220 L190 415 L165 650 L-60 755 Z'/%3E%3Cpath d='M190 415 L685 470 L640 735 L165 650 Z'/%3E%3Cpath d='M685 470 L1260 505 L1090 790 L640 735 Z'/%3E%3Cpath d='M1260 505 L1650 410 L1640 720 L1090 790 Z'/%3E%3Cpath d='M165 650 L640 735 L790 970 L285 970 Z'/%3E%3Cpath d='M640 735 L1090 790 L1220 970 L790 970 Z'/%3E%3Cpath d='M1090 790 L1640 720 L1670 970 L1220 970 Z'/%3E%3C/g%3E%3C/svg%3E");
 }
 
@@ -84,6 +94,11 @@
   .headline-screen .learn-geo::before,
   .threads-screen .learn-geo::before{
     inset:0 -34%;
+  }
+  .headline-screen .learn-geo::before{
+    opacity:.42;
+  }
+  .threads-screen .learn-geo::before{
     opacity:.82;
   }
   .headline-main::after{
