@@ -96,10 +96,25 @@ showStep();
     document.head.appendChild(refine);
   }
 
+  if (!document.getElementById('what-we-learned-theme-css')) {
+    const theme = document.createElement('link');
+    theme.id = 'what-we-learned-theme-css';
+    theme.rel = 'stylesheet';
+    theme.href = 'what-we-learned-theme.css?v=1';
+    document.head.appendChild(theme);
+  }
+
   if (!document.getElementById('what-we-learned-js')) {
     const script = document.createElement('script');
     script.id = 'what-we-learned-js';
     script.src = 'what-we-learned.js?v=2';
     document.body.appendChild(script);
+  }
+
+  if (!document.getElementById('headline-palette-js')) {
+    const palette = document.createElement('script');
+    palette.id = 'headline-palette-js';
+    palette.src = 'headline-palette.js?v=1';
+    document.body.appendChild(palette);
   }
 })();
