@@ -152,10 +152,23 @@ showStep();
     css.href = 'resources-v2.css?v=1';
     document.head.appendChild(css);
   }
+  if (!document.getElementById('resources-refine-css')) {
+    const refineCss = document.createElement('link');
+    refineCss.id = 'resources-refine-css';
+    refineCss.rel = 'stylesheet';
+    refineCss.href = 'resources-refine.css?v=1';
+    document.head.appendChild(refineCss);
+  }
   if (!document.getElementById('resources-v2-js')) {
     const script = document.createElement('script');
     script.id = 'resources-v2-js';
     script.src = 'resources-v2.js?v=1';
     document.body.appendChild(script);
+  }
+  if (!document.getElementById('resources-refine-js')) {
+    const refineJs = document.createElement('script');
+    refineJs.id = 'resources-refine-js';
+    refineJs.src = 'resources-refine.js?v=1';
+    document.body.appendChild(refineJs);
   }
 })();
