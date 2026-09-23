@@ -118,3 +118,20 @@ showStep();
     document.body.appendChild(palette);
   }
 })();
+
+/* Load the redesigned Explore the Data experience without disturbing other sections. */
+(function loadExploreDataV2() {
+  if (!document.getElementById('explore-v2-css')) {
+    const css = document.createElement('link');
+    css.id = 'explore-v2-css';
+    css.rel = 'stylesheet';
+    css.href = 'explore-v2.css?v=1';
+    document.head.appendChild(css);
+  }
+  if (!document.getElementById('explore-v2-js')) {
+    const script = document.createElement('script');
+    script.id = 'explore-v2-js';
+    script.src = 'explore-v2.js?v=1';
+    document.body.appendChild(script);
+  }
+})();
