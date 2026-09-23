@@ -115,13 +115,170 @@
   padding-bottom:0!important;
 }
 
+/* Use the established TTJ irregular polygon network rather than the temporary diagonal/blob treatment. */
+.ttj-resources-v2 .rv-hero{
+  background:#071017!important;
+}
+.ttj-resources-v2 .rv-hero-shape{display:none!important}
+.ttj-resources-v2 .rv-hero::before,
+.ttj-resources-v2 .rv-language::before,
+.ttj-resources-v2 .rv-sector::before,
+.ttj-resources-v2 .rv-words::before,
+.ttj-resources-v2 .rv-decision::before{
+  content:""!important;
+  position:absolute!important;
+  inset:-5%!important;
+  pointer-events:none;
+  background-repeat:no-repeat!important;
+  background-size:cover!important;
+  background-position:center!important;
+  background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 1600 900' preserveAspectRatio='xMidYMid slice'%3E%3Cg fill='none' stroke='%23363F46' stroke-width='7' stroke-linejoin='round' stroke-linecap='round'%3E%3Cpath d='M85 -90 L430 125 L190 415 L-45 220 Z'/%3E%3Cpath d='M430 125 L645 48 L875 175 L685 470 L190 415 Z'/%3E%3Cpath d='M875 175 L1115 62 L1395 215 L1260 505 L685 470 Z'/%3E%3Cpath d='M1395 215 L1650 85 L1650 410 L1260 505 Z'/%3E%3Cpath d='M-45 220 L190 415 L165 650 L-60 755 Z'/%3E%3Cpath d='M190 415 L685 470 L640 735 L165 650 Z'/%3E%3Cpath d='M685 470 L1260 505 L1090 790 L640 735 Z'/%3E%3Cpath d='M1260 505 L1650 410 L1640 720 L1090 790 Z'/%3E%3Cpath d='M165 650 L640 735 L790 970 L285 970 Z'/%3E%3Cpath d='M640 735 L1090 790 L1220 970 L790 970 Z'/%3E%3Cpath d='M1090 790 L1640 720 L1670 970 L1220 970 Z'/%3E%3C/g%3E%3C/svg%3E")!important;
+}
+.ttj-resources-v2 .rv-hero::before{opacity:.92!important}
+.ttj-resources-v2 .rv-language::before,
+.ttj-resources-v2 .rv-sector::before,
+.ttj-resources-v2 .rv-words::before,
+.ttj-resources-v2 .rv-decision::before{opacity:.24!important}
+
 @media(max-width:1000px){
   .ttj-resources-v2 .rv-formula-grid{grid-template-columns:repeat(2,minmax(0,1fr))}
+  .ttj-resources-v2 .rv-hero::before,
+  .ttj-resources-v2 .rv-language::before,
+  .ttj-resources-v2 .rv-sector::before,
+  .ttj-resources-v2 .rv-words::before,
+  .ttj-resources-v2 .rv-decision::before{inset:-2% -18%!important}
 }
 
 @media(max-width:760px){
-  .ttj-resources-v2 .rv-formula-grid{grid-template-columns:1fr}
-  .ttj-resources-v2 .rv-custom-select summary{min-height:66px;grid-template-columns:minmax(0,1fr) 50px}
-  .ttj-resources-v2 .rv-custom-value{font-size:14px;padding:13px 15px}
-  .ttj-resources-v2 .rv-custom-options button{font-size:14px;padding:13px 15px}
+  .ttj-resources-v2 .rv-page{overflow-x:hidden}
+  .ttj-resources-v2 .rv-shell{width:calc(100% - 28px)!important}
+
+  /* Mobile hero: preserve impact without making the first screen overwhelmingly tall. */
+  .ttj-resources-v2 .rv-hero-inner{padding:48px 0 30px!important}
+  .ttj-resources-v2 .rv-hero .rv-eyebrow{font-size:10px;letter-spacing:.19em}
+  .ttj-resources-v2 .rv-hero h1{
+    font-size:clamp(54px,15.5vw,72px)!important;
+    line-height:.88!important;
+    letter-spacing:-.06em!important;
+    margin:18px 0 22px!important;
+    max-width:100%!important;
+  }
+  .ttj-resources-v2 .rv-hero-inner>p{
+    font-size:17px!important;
+    line-height:1.43!important;
+    max-width:34ch!important;
+  }
+  .ttj-resources-v2 .rv-tool-index{
+    grid-template-columns:repeat(2,minmax(0,1fr))!important;
+    margin-top:30px!important;
+  }
+  .ttj-resources-v2 .rv-tool-index button{
+    min-height:82px!important;
+    padding:13px 11px!important;
+    grid-template-columns:26px minmax(0,1fr)!important;
+    gap:7px!important;
+    align-content:start!important;
+  }
+  .ttj-resources-v2 .rv-tool-index button:last-child{
+    grid-column:1 / -1;
+    min-height:68px!important;
+  }
+  .ttj-resources-v2 .rv-tool-index b{font-size:10px!important}
+  .ttj-resources-v2 .rv-tool-index span{font-size:12px!important;line-height:1.25!important}
+  .ttj-resources-v2 .rv-hero::before,
+  .ttj-resources-v2 .rv-language::before,
+  .ttj-resources-v2 .rv-sector::before,
+  .ttj-resources-v2 .rv-words::before,
+  .ttj-resources-v2 .rv-decision::before{
+    inset:0 -34%!important;
+    background-position:center!important;
+  }
+
+  /* Shared mobile section rhythm. */
+  .ttj-resources-v2 .rv-tool{padding:64px 0 70px!important}
+  .ttj-resources-v2 .rv-tool-head{
+    grid-template-columns:1fr!important;
+    gap:18px!important;
+    align-items:start!important;
+    margin-bottom:28px!important;
+  }
+  .ttj-resources-v2.rv-numbers-fixed .rv-tool-head>div{padding-left:40px!important}
+  .ttj-resources-v2.rv-numbers-fixed .rv-number{top:2px!important;font-size:11px!important}
+  .ttj-resources-v2 .rv-tool-head h2{
+    font-size:clamp(38px,11.5vw,50px)!important;
+    line-height:.98!important;
+    letter-spacing:-.045em!important;
+    margin-top:10px!important;
+  }
+  .ttj-resources-v2 .rv-tool-head>p{
+    font-size:16px!important;
+    line-height:1.5!important;
+    max-width:none!important;
+  }
+
+  /* Formula + live output. */
+  .ttj-resources-v2 .rv-formula-intro{grid-template-columns:1fr!important;gap:8px!important}
+  .ttj-resources-v2 .rv-formula-grid{grid-template-columns:1fr!important;gap:10px!important}
+  .ttj-resources-v2 .rv-formula-grid .rv-formula-select{min-height:132px!important;padding:18px!important}
+  .ttj-resources-v2 .rv-formula-grid .rv-formula-select>span{margin-bottom:16px!important}
+  .ttj-resources-v2 .rv-custom-select{margin-top:0!important}
+  .ttj-resources-v2 .rv-custom-select summary{min-height:62px;grid-template-columns:minmax(0,1fr) 48px}
+  .ttj-resources-v2 .rv-custom-value{font-size:14px;padding:12px 14px}
+  .ttj-resources-v2 .rv-custom-options button{font-size:14px;padding:12px 14px}
+  .ttj-resources-v2 .rv-draft-output{grid-template-columns:1fr!important;gap:18px!important;padding:22px 20px!important}
+  .ttj-resources-v2 .rv-draft-output button{justify-self:start}
+
+  /* Comparison tool. */
+  .ttj-resources-v2 .rv-language-tabs,
+  .ttj-resources-v2 .rv-sector-tabs,
+  .ttj-resources-v2 .rv-decision-tabs{
+    flex-wrap:nowrap!important;
+    overflow-x:auto;
+    padding-bottom:4px;
+    scrollbar-width:none;
+  }
+  .ttj-resources-v2 .rv-language-tabs::-webkit-scrollbar,
+  .ttj-resources-v2 .rv-sector-tabs::-webkit-scrollbar,
+  .ttj-resources-v2 .rv-decision-tabs::-webkit-scrollbar{display:none}
+  .ttj-resources-v2 .rv-language-tabs button,
+  .ttj-resources-v2 .rv-sector-tabs button,
+  .ttj-resources-v2 .rv-decision-tabs button{flex:0 0 auto}
+  .ttj-resources-v2 .rv-language-stage{grid-template-columns:1fr!important}
+  .ttj-resources-v2 .rv-language-stage article{min-height:210px!important;padding:24px 22px!important}
+  .ttj-resources-v2 .rv-language-stage blockquote{font-size:25px!important;margin-top:28px!important}
+  .ttj-resources-v2 .rv-versus{height:54px!important;transform:rotate(90deg)}
+
+  /* Talking points + sector evidence. */
+  .ttj-resources-v2 .rv-point-grid{grid-template-columns:1fr!important;gap:10px!important}
+  .ttj-resources-v2 .rv-point-toggle{grid-template-columns:32px minmax(0,1fr) auto!important;padding:18px 16px!important;gap:10px!important}
+  .ttj-resources-v2 .rv-point-toggle h3{font-size:20px!important}
+  .ttj-resources-v2 .rv-point-body{padding-left:16px!important;padding-right:16px!important}
+  .ttj-resources-v2 .rv-point-card.open .rv-point-body{padding-bottom:20px!important}
+  .ttj-resources-v2 .rv-point-body p{font-size:17px!important;line-height:1.5!important}
+  .ttj-resources-v2 .rv-sector-panel{grid-template-columns:1fr!important;min-height:0!important}
+  .ttj-resources-v2 .rv-sector-left,
+  .ttj-resources-v2 .rv-sector-evidence{padding:24px 20px!important}
+  .ttj-resources-v2 .rv-sector-left h3{font-size:34px!important}
+  .ttj-resources-v2 .rv-sector-questions>div{grid-template-columns:28px minmax(0,1fr)!important;gap:12px!important}
+  .ttj-resources-v2 .rv-sector-questions p{font-size:15px!important}
+  .ttj-resources-v2 .rv-sector-evidence article{grid-template-columns:66px minmax(0,1fr)!important;gap:14px!important;padding:18px!important;min-height:0!important}
+  .ttj-resources-v2 .rv-sector-evidence strong{font-size:30px!important}
+
+  /* Remaining tools. */
+  .ttj-resources-v2 .rv-word-columns{grid-template-columns:1fr!important;gap:12px!important}
+  .ttj-resources-v2 .rv-word-col-head{padding:20px 18px!important;align-items:start!important;flex-direction:column!important;gap:8px!important}
+  .ttj-resources-v2 .rv-drafting-item{min-height:70px!important;padding:15px 14px!important}
+  .ttj-resources-v2 .rv-drafting-question{font-size:17px!important}
+  .ttj-resources-v2 .rv-decision-stage{grid-template-columns:1fr!important}
+  .ttj-resources-v2 .rv-shift{height:68px!important}
+}
+
+@media(max-width:420px){
+  .ttj-resources-v2 .rv-shell{width:calc(100% - 24px)!important}
+  .ttj-resources-v2 .rv-hero-inner{padding-top:40px!important}
+  .ttj-resources-v2 .rv-hero h1{font-size:clamp(50px,15vw,64px)!important}
+  .ttj-resources-v2 .rv-hero-inner>p{font-size:16px!important}
+  .ttj-resources-v2 .rv-tool-index button{min-height:76px!important;padding:12px 10px!important}
+  .ttj-resources-v2 .rv-tool-index span{font-size:11.5px!important}
+  .ttj-resources-v2 .rv-tool-head h2{font-size:clamp(36px,11vw,46px)!important}
 }
