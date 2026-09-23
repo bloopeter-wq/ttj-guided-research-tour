@@ -1,0 +1,86 @@
+/* Final clarity polish for Explore the Data — loaded after explore-v2.css. */
+
+/* Party comparison: put D / I / R on separate horizontal lanes so close values never collide. */
+.ttj-explore-v2 .xv-party-row{
+  padding:20px 0 24px;
+  align-items:start;
+}
+.ttj-explore-v2 .xv-party-track{
+  position:relative;
+  height:92px;
+  margin-right:72px;
+}
+.ttj-explore-v2 .xv-party-axis{
+  display:none;
+}
+.ttj-explore-v2 .xv-party-track::before{
+  content:"";
+  position:absolute;
+  left:0;
+  right:0;
+  top:17px;
+  height:1px;
+  background:#41454c;
+  box-shadow:0 29px 0 #41454c,0 58px 0 #41454c;
+}
+.ttj-explore-v2 .xv-party-track>span{
+  top:auto;
+  transform:translateX(-50%);
+  display:flex;
+  flex-direction:row;
+  align-items:center;
+  gap:7px;
+  z-index:2;
+}
+.ttj-explore-v2 .xv-party-track>span.dem{top:4px}
+.ttj-explore-v2 .xv-party-track>span.ind{top:33px}
+.ttj-explore-v2 .xv-party-track>span.rep{top:62px}
+.ttj-explore-v2 .xv-party-track i{
+  width:26px;
+  height:26px;
+  font-size:11px;
+  border-radius:3px;
+  box-shadow:0 0 0 3px #07090c;
+  flex:none;
+}
+.ttj-explore-v2 .xv-party-track b{
+  font-size:11px;
+  line-height:1;
+  min-width:38px;
+  text-align:left;
+  white-space:nowrap;
+}
+
+/* Give the large guardrail headline more breathing room. */
+.ttj-explore-v2 .xv-limits-head h2{
+  max-width:1080px;
+  line-height:1.04;
+  letter-spacing:-.03em;
+  word-spacing:.035em;
+  text-wrap:balance;
+}
+
+/* The source note stands on its own; remove the redundant resources link. */
+.ttj-explore-v2 .xv-source-inner{
+  grid-template-columns:1fr;
+  gap:0;
+}
+.ttj-explore-v2 .xv-source a[href="#resources"]{
+  display:none!important;
+}
+
+@media(max-width:760px){
+  .ttj-explore-v2 .xv-party-track{
+    height:90px;
+    margin-right:56px;
+  }
+  .ttj-explore-v2 .xv-party-track b{
+    font-size:10px;
+    min-width:34px;
+  }
+  .ttj-explore-v2 .xv-limits-head h2{
+    line-height:1.06;
+    letter-spacing:-.022em;
+    word-spacing:.025em;
+  }
+}
