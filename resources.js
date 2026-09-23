@@ -74,3 +74,24 @@ function showStep() {
 document.getElementById('step-back').addEventListener('click', () => { step = Math.max(0, step - 1); showStep(); });
 document.getElementById('step-next').addEventListener('click', () => { step = Math.min(3, step + 1); showStep(); });
 showStep();
+
+/* Load the redesigned What We Learned experience after the existing page is ready. */
+(function loadWhatWeLearned() {
+  try { if (typeof timer !== 'undefined') clearTimeout(timer); } catch (e) {}
+  try { if (typeof paused !== 'undefined') paused = true; } catch (e) {}
+
+  if (!document.getElementById('what-we-learned-css')) {
+    const css = document.createElement('link');
+    css.id = 'what-we-learned-css';
+    css.rel = 'stylesheet';
+    css.href = 'what-we-learned.css?v=1';
+    document.head.appendChild(css);
+  }
+
+  if (!document.getElementById('what-we-learned-js')) {
+    const script = document.createElement('script');
+    script.id = 'what-we-learned-js';
+    script.src = 'what-we-learned.js?v=1';
+    document.body.appendChild(script);
+  }
+})();
