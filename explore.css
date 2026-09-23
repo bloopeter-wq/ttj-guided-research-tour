@@ -52,22 +52,27 @@
   #data-view .theme-links button{flex:1 1 30%}
 }
 @media(max-width:600px){
-  #data-view{padding:28px 20px 0}
-  #data-view .section-heading{margin-bottom:16px}
-  #data-view .section-heading h1{font-size:clamp(43px,12vw,62px);margin-bottom:12px}
-  #data-view .section-heading p{font-size:17px}
-  #data-view .round-tabs{gap:8px;padding:14px 0 18px;margin-bottom:16px;justify-content:space-between}
-  #data-view .round-tabs button{width:43px;height:43px;font-size:15px}
-  #data-view .round-top .eyebrow{font-size:10px;letter-spacing:.13em}
-  #data-view .round-nav button{font-size:11px}
-  #data-view .round h2{font-size:clamp(27px,8vw,39px)}
+  #data-view{padding:22px 20px 0}
+  #data-view .section-heading{margin-bottom:12px}
+  #data-view .section-heading h1{font-size:clamp(38px,10vw,52px);line-height:1;margin-bottom:9px}
+  #data-view .section-heading p{font-size:15px;line-height:1.35}
+  #data-view .round-tabs{gap:7px;padding:12px 0 14px;margin-bottom:12px;justify-content:space-between}
+  #data-view .round-tabs button{width:39px;height:39px;font-size:14px}
+  #data-view .round{padding-top:0}
+  #data-view .round-top{flex-direction:row;align-items:center;justify-content:space-between;gap:12px}
+  #data-view .round-top .eyebrow{font-size:10px;letter-spacing:.13em;margin:0}
+  #data-view .round-nav{margin:0;gap:7px;flex:none}
+  #data-view .round-nav button{font-size:10px;padding:6px 1px}
+  #data-view .round-meta{margin:11px 0 17px;gap:4px 12px;padding:9px 0}
+  #data-view .round-meta span,#data-view .round-meta span:first-child{font-size:11px}
+  #data-view .round h2{font-size:clamp(26px,7vw,35px);line-height:1.12;margin-bottom:12px}
   #data-view .evidence-row{grid-template-columns:minmax(0,1fr) 50px;gap:5px 10px;padding:10px 0;border-bottom:1px solid #eceeed}
   #data-view .evidence-label span{grid-column:1;grid-row:1;font-size:14px}
   #data-view .evidence-label b{grid-column:2;grid-row:1;font-size:19px}
   #data-view .evidence-track{grid-column:1/-1;grid-row:2;height:9px}
   #data-view .interpretation{font-size:15px;margin-top:20px}
   #data-view .method-note{font-size:12px}
-  #data-view .cross-theme{margin:0 -20px;padding:28px 20px}
+  #data-view .cross-theme{margin:0 -20px;padding:24px 20px 28px}
   #data-view .theme-links{display:block}
   #data-view .theme-links button{width:100%;padding:10px 0;font-size:15px}
 }
