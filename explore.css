@@ -1,0 +1,73 @@
+/* Explore the Data: editorial TTJ evidence reader. */
+#data-view{background:#fff;padding:54px max(5vw,24px) 0;min-height:calc(100vh - 160px)}
+#data-view .section-heading{max-width:1200px;margin:0 auto 28px}
+#data-view .section-heading .eyebrow{color:#395399;margin-bottom:15px}
+#data-view .section-heading h1{font-family:"Noto Sans",Arial,sans-serif;font-size:clamp(58px,7.5vw,110px);font-weight:800;line-height:.97;letter-spacing:-.065em;margin:0 0 18px}
+#data-view .section-heading p{font-size:clamp(18px,2.2vw,27px);max-width:1000px;line-height:1.35;margin:0}
+#data-view .round-tabs{max-width:1200px;margin:0 auto 34px;padding:22px 0 28px;gap:17px;overflow-x:auto;border-bottom:1px solid #aeb3b5;scrollbar-width:thin}
+#data-view .round-tabs button{flex:none;display:grid;place-items:center;width:62px;height:62px;padding:0;border:1px solid #c3cbce;border-radius:50%;font-family:"Noto Sans",Arial,sans-serif;font-weight:700;font-size:21px;letter-spacing:-.04em;background:#fff;color:#111426}
+#data-view .round-tabs button.active,#data-view .round-tabs button:hover{background:#047e72;border-color:#047e72;color:#fff}
+#data-view .round{max-width:1200px;border:0;padding:12px 0 48px;position:relative;column-gap:38px;row-gap:0;grid-template-columns:205px minmax(0,1fr);grid-template-areas:"top title" "meta bars" "meta interpretation" "meta method"}
+#data-view .round.active{display:grid}
+#data-view .round-top{grid-area:top;display:block;align-self:start;position:relative}
+#data-view .round-top .eyebrow{color:#047e72;margin:0 0 14px}
+#data-view .round-nav{position:static;display:flex;gap:6px;margin:12px 0}
+#data-view .round-nav button{border:0;border-bottom:1px solid #9ba6a6;padding:7px 2px;background:none;color:#343c42;font:600 12px "Noto Sans",Arial,sans-serif}
+#data-view .round-nav button:hover:not(:disabled){background:none;color:#047e72;border-color:#047e72}
+#data-view .round h2{grid-area:title;font-family:"Noto Sans",Arial,sans-serif;font-size:clamp(30px,3.5vw,49px);font-weight:800;line-height:1.13;letter-spacing:-.045em;margin:0 0 25px;max-width:none}
+#data-view .round-meta{grid-area:meta;display:flex;flex-direction:column;justify-content:flex-start;gap:0;align-self:stretch;border:0;border-right:1px solid #b8bdc2;padding:0 22px 0 0;font-family:"Noto Serif",Georgia,serif;font-size:15px;letter-spacing:0;text-transform:none;line-height:1.35}
+#data-view .round-meta span{display:block;padding:12px 0;border-top:1px solid #b8bdc2}
+#data-view .round-meta span:first-child{padding-top:0;border:0}
+#data-view .round-meta span:last-child{font-size:13px}
+#data-view .tested{display:none}
+#data-view .evidence-rows{grid-area:bars;max-width:none}
+#data-view .evidence-row{display:grid;grid-template-columns:minmax(180px,1.1fr) minmax(150px,1.2fr) 64px;gap:15px;align-items:center;padding:8px 0}
+#data-view .evidence-label{display:contents}
+#data-view .evidence-label span{grid-column:1;grid-row:1;font-size:16px;line-height:1.3;min-width:0}
+#data-view .evidence-label b{grid-column:3;grid-row:1;text-align:right;font:700 23px "Noto Sans",Arial,sans-serif;color:#047e72}
+#data-view .evidence-track{grid-column:2;grid-row:1;height:17px;margin:0;background:#eceeef}
+#data-view .evidence-track span{background:#047e72}
+#data-view .interpretation{grid-area:interpretation;border:0;padding:0;margin:24px 0 5px;max-width:none;font-size:17px;line-height:1.5}
+#data-view .method-note{grid-area:method;font-size:13px;margin:5px 0 0;max-width:none}
+#data-view .source-note{max-width:1200px;margin:0 auto;padding:16px 0 25px;border-top:1px solid #c3c8c7;font-size:12px}
+#data-view .cross-theme{max-width:none;margin:0 calc(-1 * max(5vw,24px));padding:28px max(5vw,24px) 34px;background:#050505;color:#fff;border:0}
+#data-view .cross-theme>.eyebrow{max-width:1200px;margin:0 auto 17px;color:#35b9aa}
+#data-view .cross-theme h2{position:absolute;width:1px;height:1px;padding:0;margin:-1px;overflow:hidden;clip:rect(0,0,0,0);white-space:nowrap;border:0}
+#data-view .theme-links{max-width:1200px;margin:auto;display:flex;justify-content:space-between;gap:20px}
+#data-view .theme-links button{flex:1;min-width:0;display:flex;justify-content:space-between;align-items:center;gap:8px;border:0;border-bottom:1px solid #047e72;padding:0 0 10px;color:#fff;background:transparent;font:16px "Noto Serif",Georgia,serif;text-align:left;white-space:normal}
+#data-view .theme-links button:hover{background:transparent;color:#56cabe}
+#data-view .cross-theme p{max-width:1200px;margin:20px auto 0;color:#b5c3c0;font:12px/1.4 "Noto Sans",Arial,sans-serif}
+@media(max-width:850px){
+  #data-view{padding:36px 24px 0}
+  #data-view .section-heading h1{font-size:clamp(50px,10vw,80px)}
+  #data-view .round{grid-template-columns:1fr;grid-template-areas:"top" "meta" "title" "bars" "interpretation" "method";padding-bottom:36px}
+  #data-view .round-top{display:flex;justify-content:space-between;align-items:center}
+  #data-view .round-top .eyebrow{margin:0}
+  #data-view .round-nav{position:static}
+  #data-view .round-meta{border:0;border-top:1px solid #b8bdc2;border-bottom:1px solid #b8bdc2;display:flex;flex-direction:row;flex-wrap:wrap;gap:10px 18px;padding:11px 0;margin:15px 0 22px}
+  #data-view .round-meta span,#data-view .round-meta span:first-child{border:0;padding:0;font-size:12px}
+  #data-view .round h2{margin-bottom:18px}
+  #data-view .cross-theme{margin:0 -24px;padding:28px 24px}
+  #data-view .theme-links{flex-wrap:wrap}
+  #data-view .theme-links button{flex:1 1 30%}
+}
+@media(max-width:600px){
+  #data-view{padding:28px 20px 0}
+  #data-view .section-heading{margin-bottom:16px}
+  #data-view .section-heading h1{font-size:clamp(43px,12vw,62px);margin-bottom:12px}
+  #data-view .section-heading p{font-size:17px}
+  #data-view .round-tabs{gap:8px;padding:14px 0 18px;margin-bottom:16px;justify-content:space-between}
+  #data-view .round-tabs button{width:43px;height:43px;font-size:15px}
+  #data-view .round-top .eyebrow{font-size:10px;letter-spacing:.13em}
+  #data-view .round-nav button{font-size:11px}
+  #data-view .round h2{font-size:clamp(27px,8vw,39px)}
+  #data-view .evidence-row{grid-template-columns:minmax(0,1fr) 50px;gap:5px 10px;padding:10px 0;border-bottom:1px solid #eceeed}
+  #data-view .evidence-label span{grid-column:1;grid-row:1;font-size:14px}
+  #data-view .evidence-label b{grid-column:2;grid-row:1;font-size:19px}
+  #data-view .evidence-track{grid-column:1/-1;grid-row:2;height:9px}
+  #data-view .interpretation{font-size:15px;margin-top:20px}
+  #data-view .method-note{font-size:12px}
+  #data-view .cross-theme{margin:0 -20px;padding:28px 20px}
+  #data-view .theme-links{display:block}
+  #data-view .theme-links button{width:100%;padding:10px 0;font-size:15px}
+}
