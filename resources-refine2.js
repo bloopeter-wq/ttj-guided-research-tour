@@ -7,6 +7,10 @@
     if (root.dataset.resourcesRefined2 === '1') return true;
     root.dataset.resourcesRefined2 = '1';
 
+    /* Restore the original Tool 1 title only. */
+    const tool1Heading = document.querySelector('#tool-1 .rv-tool-head h2');
+    if (tool1Heading) tool1Heading.textContent = 'Build from the person out.';
+
     /* Cross-partisan talking points should arrive fully collapsed. */
     const tool3 = document.getElementById('tool-3');
     tool3?.querySelectorAll('.rv-point-card').forEach(card => {
