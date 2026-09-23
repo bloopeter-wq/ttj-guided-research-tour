@@ -1,0 +1,86 @@
+/* Laptop and tablet layouts for the guided tour and its companion pages. */
+@media (min-width:651px) and (max-width:1440px){
+  .app{min-height:0;height:100dvh;grid-template-rows:clamp(66px,8vh,88px) minmax(0,1fr) 58px}
+  .header{gap:24px;padding-inline:clamp(24px,4vw,60px)}
+  .logo{height:clamp(36px,4vw,48px);max-width:min(32vw,270px)}
+  .nav{gap:clamp(16px,2.5vw,38px);font-size:clamp(12px,1.15vw,15px)}
+  .nav a{padding-block:20px 17px;white-space:nowrap}
+  .stage{min-height:0}
+  .scene{grid-template-columns:minmax(0,1.2fr) minmax(0,.8fr)}
+  .story{overflow-y:auto;overscroll-behavior:contain;padding:clamp(24px,4vh,48px) clamp(26px,4vw,60px) 74px}
+  .eyebrow{font-size:11px;margin-bottom:10px}
+  .scene-index{margin-bottom:15px}
+  .title{font-size:clamp(38px,4.4vw,66px);line-height:1.02;margin-bottom:18px}
+  .stage.intro .title{font-size:clamp(32px,3.5vw,52px)}
+  .stage.intro .title .just{font-size:clamp(43px,5vw,74px);margin-top:10px}
+  .lede{font-size:clamp(16px,1.5vw,21px);line-height:1.38;margin-bottom:20px}
+  .headline-block{grid-template-columns:minmax(110px,25%) minmax(0,1fr);gap:16px;padding-top:16px}
+  .headline-copy{font-size:clamp(14px,1.25vw,17px);line-height:1.4}
+  .visual{min-width:0;padding:clamp(24px,4vh,42px) clamp(22px,3vw,44px)}
+  .visual-inner{max-height:100%;overflow-y:auto;scrollbar-width:thin}
+  .visual-kicker{margin-bottom:12px}
+  .intro-word{font-size:clamp(32px,3.5vw,52px)}
+  .big-number{font-size:clamp(70px,7vw,120px);margin-bottom:12px}
+  .visual h2{font-size:clamp(22px,2.4vw,30px)}
+  .visual p{font-size:clamp(14px,1.25vw,18px);margin-bottom:18px}
+  .bars{gap:10px}
+  .method{margin-top:14px;padding-top:12px}
+  .controls{bottom:14px;left:clamp(26px,4vw,60px);right:clamp(22px,3vw,44px);gap:12px}
+  .progress{max-width:420px}
+  .footer{padding-inline:clamp(24px,4vw,60px)}
+  .footer-links{gap:20px}
+  .completion-left{padding:clamp(28px,5vw,72px)}
+  .completion h1{font-size:clamp(42px,4.8vw,72px)}
+  .completion p{font-size:clamp(16px,1.6vw,21px)}
+  #data-view .section-heading h1{font-size:clamp(52px,6.5vw,92px)}
+  #data-view .theme-links{flex-wrap:wrap}
+  #data-view .theme-links button{flex:1 1 28%;min-height:42px}
+  #resources-view .use-heading h1{font-size:clamp(52px,7vw,94px)}
+}
+
+@media (min-width:651px) and (max-width:980px){
+  html,body{overflow:hidden}
+  .app,body.section-open .app{display:grid;min-height:0;height:100dvh;grid-template-rows:72px minmax(0,1fr) 56px}
+  .header{min-height:0;padding-inline:24px}
+  .stage{overflow:hidden;min-height:0}
+  .scene{position:absolute;inset:0 0 50px;display:grid;grid-template-columns:minmax(0,1.08fr) minmax(0,.92fr)}
+  .story{min-width:0;padding:24px}
+  .title{font-size:clamp(31px,4vw,45px)}
+  .stage.intro .title{font-size:clamp(29px,3.7vw,42px)}
+  .stage.intro .title .just{font-size:clamp(37px,5vw,55px)}
+  .lede{font-size:15px}
+  .headline-block{grid-template-columns:1fr;gap:5px}
+  .headline-copy{font-size:13px}
+  .visual{min-height:0;border-top:0;border-left:1px solid rgba(0,0,0,.12);padding:20px 22px}
+  .visual h2{font-size:21px}
+  .visual p{font-size:14px}
+  .bar-row{grid-template-columns:minmax(0,1fr) 48px;gap:7px}
+  .bar-label{font-size:11px}.bar-value{font-size:14px}
+  .controls{position:absolute;inset:auto 0 0;min-height:50px;display:flex;flex-wrap:nowrap;padding:5px 22px;background:#fff;color:#111426;gap:8px}
+  .progress{order:0;flex:1 1 auto;max-width:none}
+  .control{flex:none;min-height:38px;padding:5px;margin:0;font-size:12px}
+  .completion.show{position:absolute;inset:0;display:grid;grid-template-columns:1fr;overflow:auto}
+  .stage:has(.completion.show) .scene{display:none}
+  .completion-left{min-height:100%;justify-content:center}
+  .completion-right{display:none}
+  .footer{min-height:0;padding-inline:24px}
+  body.section-open{overflow:auto}
+  body.section-open .app{height:auto;min-height:100dvh;grid-template-rows:72px minmax(0,auto) 56px}
+  body.section-open .stage{overflow:visible}
+  #resources-view .use-heading{margin-inline:-24px;padding-inline:24px}
+}
+
+@media (min-width:651px) and (max-height:700px){
+  .app{grid-template-rows:62px minmax(0,1fr) 44px}
+  .header{min-height:0}
+  .story{justify-content:flex-start;padding-top:16px}
+  .scene-index{margin-bottom:8px}
+  .title{font-size:clamp(31px,3.6vw,50px);margin-bottom:12px}
+  .stage.intro .title .just{font-size:clamp(38px,4.2vw,60px)}
+  .lede{margin-bottom:12px}
+  .visual-kicker{margin-bottom:7px}
+  .visual p{margin-bottom:10px}
+  .big-number{font-size:clamp(60px,6vw,90px)}
+  .bars{gap:6px}
+  .controls{bottom:8px}
+}
