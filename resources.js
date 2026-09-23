@@ -142,3 +142,20 @@ showStep();
     document.body.appendChild(script);
   }
 })();
+
+/* Load the redesigned interactive Use the Research toolkit. */
+(function loadResourcesV2() {
+  if (!document.getElementById('resources-v2-css')) {
+    const css = document.createElement('link');
+    css.id = 'resources-v2-css';
+    css.rel = 'stylesheet';
+    css.href = 'resources-v2.css?v=1';
+    document.head.appendChild(css);
+  }
+  if (!document.getElementById('resources-v2-js')) {
+    const script = document.createElement('script');
+    script.id = 'resources-v2-js';
+    script.src = 'resources-v2.js?v=1';
+    document.body.appendChild(script);
+  }
+})();
