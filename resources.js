@@ -84,14 +84,22 @@ showStep();
     const css = document.createElement('link');
     css.id = 'what-we-learned-css';
     css.rel = 'stylesheet';
-    css.href = 'what-we-learned.css?v=1';
+    css.href = 'what-we-learned.css?v=2';
     document.head.appendChild(css);
+  }
+
+  if (!document.getElementById('what-we-learned-refine-css')) {
+    const refine = document.createElement('link');
+    refine.id = 'what-we-learned-refine-css';
+    refine.rel = 'stylesheet';
+    refine.href = 'what-we-learned-refine.css?v=2';
+    document.head.appendChild(refine);
   }
 
   if (!document.getElementById('what-we-learned-js')) {
     const script = document.createElement('script');
     script.id = 'what-we-learned-js';
-    script.src = 'what-we-learned.js?v=1';
+    script.src = 'what-we-learned.js?v=2';
     document.body.appendChild(script);
   }
 })();
