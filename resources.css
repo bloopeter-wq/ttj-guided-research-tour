@@ -1,0 +1,81 @@
+#resources-view{padding:50px max(5vw,24px) 0;background:#fff;color:#111426}
+#resources-view .eyebrow{color:#047e72;font:700 11px "Noto Sans",Arial,sans-serif;letter-spacing:.2em;text-transform:uppercase}
+#resources-view .use-heading,#resources-view .use-resources,#resources-view .language-tool,#resources-view .use-more{max-width:1200px;margin-left:auto;margin-right:auto}
+#resources-view .use-heading h1{font:800 clamp(56px,7vw,105px)/.98 "Noto Sans",Arial,sans-serif;letter-spacing:-.065em;margin:20px 0 13px}
+#resources-view .use-heading h1 span{color:#047e72}
+#resources-view .use-heading p{font-size:clamp(18px,2vw,25px);margin:0 0 36px}
+#resources-view .use-resources{border-top:2px solid #047e72;padding-top:20px;margin-bottom:38px}
+#resources-view .use-paths{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:0;margin-top:14px}
+#resources-view .use-path{padding:0 32px;border-left:1px solid #b8c3c3}
+#resources-view .use-path:first-child{padding-left:0;border-left:0}
+#resources-view .use-path h2{font:800 22px/1.15 "Noto Sans",Arial,sans-serif;letter-spacing:-.025em;margin:0 0 8px}
+#resources-view .use-path p{font-size:15px;line-height:1.4;min-height:62px;margin:0 0 14px}
+#resources-view .use-path a,#resources-view .use-more-links a{display:flex;justify-content:space-between;gap:12px;align-items:center;padding:13px 0;border-bottom:1px solid #b8c3c3;color:#075b55;text-decoration:none;font:600 14px/1.3 "Noto Sans",Arial,sans-serif}
+#resources-view .use-path a:hover,#resources-view .use-more-links a:hover{color:#000;border-color:#047e72}
+#resources-view .use-path a span,#resources-view .use-more-links a span{font-size:20px}
+#resources-view .message-builder{margin:0 calc(-1 * max(5vw,24px));padding:39px max(5vw,24px) 42px;background:#080d0d;color:#fff}
+#resources-view .message-builder>.eyebrow,#resources-view .message-builder>.scenario-label,#resources-view .message-output .eyebrow{color:#5dc9bc}
+#resources-view .message-builder>*{max-width:1200px;margin-left:auto;margin-right:auto}
+#resources-view .message-builder h2,#resources-view .language-tool h2{font:800 clamp(32px,4vw,55px)/1.08 "Noto Sans",Arial,sans-serif;letter-spacing:-.045em;margin-top:10px;margin-bottom:9px}
+#resources-view .message-builder>p{font-size:17px;line-height:1.4;margin-top:0}
+#resources-view .scenario-label,#resources-view .example-label{display:block;font:700 12px "Noto Sans",Arial,sans-serif;text-transform:uppercase;letter-spacing:.13em;margin-top:27px;margin-bottom:7px}
+#resources-view select,#resources-view input{width:100%;min-height:46px;border:1px solid #9aabaa;border-radius:0;padding:10px 13px;background:#fff;color:#142122;font:15px "Noto Sans",Arial,sans-serif}
+#resources-view #message-scenario{display:block;width:min(350px,100%);margin-left:max(0px,calc((100% - 1200px)/2));margin-right:auto}
+#resources-view .formula-fields{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:18px;margin-top:22px}
+#resources-view .mobile-steps{display:none}
+#resources-view .formula-fields label{font:700 11px "Noto Sans",Arial,sans-serif;letter-spacing:.12em;text-transform:uppercase}
+#resources-view .formula-fields input{display:block;margin-top:8px;letter-spacing:0;text-transform:none}
+#resources-view .message-output{display:flex;justify-content:space-between;align-items:center;gap:20px;background:#242d2e;padding:20px;margin-top:20px}
+#resources-view .message-output p{font-size:17px;line-height:1.45;margin:7px 0 0}
+#resources-view .message-output button{flex:none;border:1px solid #fff;background:transparent;color:#fff;padding:11px 17px;cursor:pointer;font:700 13px "Noto Sans",Arial,sans-serif}
+#resources-view .message-output button:disabled{opacity:.45;cursor:default}
+#resources-view .builder-note{font:12px/1.4 "Noto Sans",Arial,sans-serif;color:#bccdcc;margin-top:15px!important;margin-bottom:0!important}
+#resources-view .language-tool{padding:40px 0 32px}
+#resources-view .language-top{display:flex;justify-content:space-between;align-items:end;gap:20px}
+#resources-view .language-top p{margin:0;font-size:16px}
+#resources-view .language-top a,#resources-view .language-note a{color:#047e72;font:700 13px "Noto Sans",Arial,sans-serif;text-decoration:none;white-space:nowrap}
+#resources-view .example-label{margin-top:24px}
+#resources-view #language-example{max-width:350px}
+#resources-view .language-pair{display:grid;grid-template-columns:1fr 1fr;gap:20px;margin-top:22px}
+#resources-view .language-pair>div{border-top:4px solid #047e72;padding:15px 0;border-bottom:1px solid #b8c3c3}
+#resources-view .language-pair .avoid{border-top-color:#b02936}
+#resources-view .language-pair h3{font:800 12px "Noto Sans",Arial,sans-serif;text-transform:uppercase;letter-spacing:.14em;margin:0 0 10px}
+#resources-view .language-pair p{font-size:18px;line-height:1.4;margin:0;min-height:55px}
+#resources-view .language-note{font:12px/1.5 "Noto Sans",Arial,sans-serif;color:#4e5a5a;margin:18px 0 0}
+#resources-view .use-more{border-top:1px solid #aab7b5;padding:23px 0 50px}
+#resources-view .use-more-links{display:grid;grid-template-columns:repeat(3,1fr);gap:20px}
+@media(max-width:850px){
+  #resources-view{padding:33px 24px 0}
+  #resources-view .use-paths{grid-template-columns:1fr}
+  #resources-view .use-path,#resources-view .use-path:first-child{padding:18px 0;border-left:0;border-top:1px solid #b8c3c3}
+  #resources-view .use-path p{min-height:0;margin-bottom:6px}
+  #resources-view .message-builder{margin:0 -24px;padding:35px 24px}
+  #resources-view .formula-fields{grid-template-columns:1fr 1fr}
+  #resources-view .use-more-links{grid-template-columns:1fr}
+}
+@media(max-width:600px){
+  #resources-view{padding:23px 20px 0}
+  #resources-view .use-heading h1{font-size:clamp(39px,10vw,52px);margin:12px 0 9px}
+  #resources-view .use-heading p{font-size:16px;margin-bottom:20px}
+  #resources-view .use-resources{padding-top:14px;margin-bottom:25px}
+  #resources-view .use-path{padding:14px 0!important}
+  #resources-view .use-path h2{font-size:19px}
+  #resources-view .use-path p{font-size:14px}
+  #resources-view .use-path a{font-size:13px;padding:10px 0}
+  #resources-view .message-builder{margin:0 -20px;padding:29px 20px 33px}
+  #resources-view .message-builder h2,#resources-view .language-tool h2{font-size:32px}
+  #resources-view .message-builder>p{font-size:15px}
+  #resources-view .formula-fields{grid-template-columns:1fr;gap:13px}
+  #resources-view .mobile-steps{display:flex;justify-content:space-between;align-items:center;gap:10px;margin-top:20px;font:700 12px "Noto Sans",Arial,sans-serif}
+  #resources-view .mobile-steps button{border:0;border-bottom:1px solid #65bcb1;padding:6px 2px;margin-left:8px;background:transparent;color:#fff;font:700 12px "Noto Sans",Arial,sans-serif}
+  #resources-view .mobile-steps button:disabled{opacity:.35}
+  #resources-view .formula-fields label:not(.current){display:none}
+  #resources-view .message-output{display:block;padding:16px}
+  #resources-view .message-output button{margin-top:14px}
+  #resources-view .language-tool{padding:30px 0}
+  #resources-view .language-top{display:block}
+  #resources-view .language-top a{display:inline-block;margin-top:12px}
+  #resources-view .language-pair{grid-template-columns:1fr;gap:12px}
+  #resources-view .language-pair p{font-size:16px;min-height:0}
+  #resources-view .use-more{padding-bottom:35px}
+}
