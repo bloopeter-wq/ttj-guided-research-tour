@@ -2,6 +2,9 @@
 body.learn-traditional-open{overflow:auto!important;background:#f5f4ee}
 body.learn-traditional-open .app{height:auto!important;min-height:100vh!important;grid-template-rows:88px auto 72px!important}
 #tour.learn-stage.headline-banner-mode{display:block!important;height:auto!important;min-height:0!important;overflow:visible!important;background:#f5f4ee!important;color:#111426!important}
+/* Critical: respect the section router. When Explore or Resources is active, the
+   homepage receives the hidden attribute and must disappear completely. */
+#tour.learn-stage.headline-banner-mode[hidden]{display:none!important}
 #tour.headline-banner-mode>.learn-screen,
 #tour.headline-banner-mode>#completion{display:none!important}
 #tour.headline-banner-mode .learn-traditional-page{display:block!important;position:relative!important;min-height:0!important;background:#f5f4ee!important}
@@ -46,6 +49,7 @@ body.learn-traditional-open .app{height:auto!important;min-height:100vh!importan
 @media(max-width:700px){
   body.learn-traditional-open .app{display:block!important;height:auto!important;min-height:100vh!important;overflow:visible!important}
   #tour.learn-stage.headline-banner-mode{display:block!important;overflow:visible!important}
+  #tour.learn-stage.headline-banner-mode[hidden]{display:none!important}
   .hb2-hero{min-height:500px}
   .hb2-shell{width:calc(100% - 36px);padding:32px 0 28px}
   .hb2-top{gap:14px;padding-bottom:13px}.hb2-kicker,.hb2-count{font-size:9px;letter-spacing:.14em}
