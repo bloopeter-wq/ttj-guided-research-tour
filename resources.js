@@ -132,6 +132,21 @@ showStep();
     pageJs.src = 'what-we-learned-traditional.js?v=1';
     document.body.appendChild(pageJs);
   }
+
+  if (!document.getElementById('headline-banner-v2-css')) {
+    const bannerCss = document.createElement('link');
+    bannerCss.id = 'headline-banner-v2-css';
+    bannerCss.rel = 'stylesheet';
+    bannerCss.href = 'headline-banner-v2.css?v=1';
+    document.head.appendChild(bannerCss);
+  }
+
+  if (!document.getElementById('headline-banner-v2-js')) {
+    const bannerJs = document.createElement('script');
+    bannerJs.id = 'headline-banner-v2-js';
+    bannerJs.src = 'headline-banner-v2.js?v=1';
+    document.body.appendChild(bannerJs);
+  }
 })();
 
 /* Load the redesigned Explore the Data experience without disturbing other sections. */
