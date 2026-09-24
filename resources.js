@@ -117,6 +117,21 @@ showStep();
     palette.src = 'headline-palette.js?v=1';
     document.body.appendChild(palette);
   }
+
+  if (!document.getElementById('what-we-learned-traditional-css')) {
+    const pageCss = document.createElement('link');
+    pageCss.id = 'what-we-learned-traditional-css';
+    pageCss.rel = 'stylesheet';
+    pageCss.href = 'what-we-learned-traditional.css?v=1';
+    document.head.appendChild(pageCss);
+  }
+
+  if (!document.getElementById('what-we-learned-traditional-js')) {
+    const pageJs = document.createElement('script');
+    pageJs.id = 'what-we-learned-traditional-js';
+    pageJs.src = 'what-we-learned-traditional.js?v=1';
+    document.body.appendChild(pageJs);
+  }
 })();
 
 /* Load the redesigned Explore the Data experience without disturbing other sections. */
