@@ -49,12 +49,11 @@
       '<div class="hb2-shell">' +
         '<div class="hb2-top"><div class="hb2-kicker">Headlines from the research</div><div class="hb2-count" id="hb2-count">01 / 04</div></div>' +
         '<div class="hb2-main" id="hb2-main"><h1 id="hb2-text"></h1></div>' +
-        '<div class="hb2-bottom"><div class="hb2-track" id="hb2-track"></div><button class="hb2-scroll" id="hb2-scroll" type="button">Explore the findings ↓</button></div>' +
+        '<div class="hb2-bottom"><div class="hb2-track" id="hb2-track"></div><div class="hb2-actions"><div class="hb2-arrows"><button class="hb2-arrow" id="hb2-prev" type="button" aria-label="Previous headline">←</button><button class="hb2-arrow" id="hb2-next" type="button" aria-label="Next headline">→</button></div><button class="hb2-scroll" id="hb2-scroll" type="button">Explore the findings ↓</button></div></div>' +
       '</div>';
     tour.insertBefore(hero, page);
 
     var index = 0;
-    var timer = null;
     var reduced = window.matchMedia && window.matchMedia('(prefers-reduced-motion: reduce)').matches;
 
     function render() {
@@ -62,7 +61,9 @@
       var text = document.getElementById('hb2-text');
       var count = document.getElementById('hb2-count');
       var track = document.getElementById('hb2-track');
-      if (!main || !text || !count || !track) return;
+      var prev = document.getElementById('hb2-prev');
+      var next = document.getElementById('hb2-next');
+      if (!main || !text || !count || !track || !prev || !next) return;
 
       var colour = palette[index % palette.length];
       hero.style.setProperty('--hb2-color', colour);
@@ -76,32 +77,30 @@
       track.innerHTML = headlines.map(function (_, i) {
         return '<span class="' + (i < index ? 'done' : (i === index ? 'active' : '')) + '"></span>';
       }).join('');
+      prev.disabled = index === 0;
+      next.disabled = index === headlines.length - 1;
     }
 
-    function schedule() {
-      clearTimeout(timer);
-      if (reduced) return;
-      timer = setTimeout(function () {
-        if (!tour.hidden) {
-          index = (index + 1) % headlines.length;
-          render();
-        }
-        schedule();
-      }, 6000);
-    }
+    document.getElementById('hb2-prev').addEventListener('click', function () {
+      if (index > 0) {
+        index -= 1;
+        render();
+      }
+    });
 
-    render();
-    schedule();
+    document.getElementById('hb2-next').addEventListener('click', function () {
+      if (index < headlines.length - 1) {
+        index += 1;
+        render();
+      }
+    });
 
     document.getElementById('hb2-scroll').addEventListener('click', function () {
       var target = page.querySelector('.lt-snapshot') || page;
       target.scrollIntoView({ behavior: reduced ? 'auto' : 'smooth', block: 'start' });
     });
 
-    window.addEventListener('hashchange', function () {
-      if (location.hash === '#tour' || !location.hash) schedule();
-    });
-
+    render();
     return true;
   }
 
