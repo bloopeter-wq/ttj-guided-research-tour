@@ -16,7 +16,7 @@ body.learn-traditional-open .app{height:auto!important;min-height:100vh!importan
 .hb2-kicker,.hb2-count{font:800 11px/1.2 "Noto Sans",Arial,sans-serif;letter-spacing:.19em;text-transform:uppercase;transition:color .4s ease}
 .hb2-kicker{color:var(--hb2-color)}.hb2-count{color:var(--hb2-color)}
 .hb2-main{max-width:1170px;min-height:230px;display:flex;align-items:center;padding:28px 0}
-.hb2-main h1{margin:0;font:800 clamp(48px,6.2vw,96px)/.98 "Noto Sans",Arial,sans-serif;letter-spacing:-.057em;color:#fff;max-width:1150px;text-wrap:balance}
+.hb2-main h1{margin:0;font:800 clamp(48px,6.2vw,96px)/.98 "Noto Sans",Arial,sans-serif;letter-spacing:-.057em;color:var(--hb2-color);max-width:1150px;text-wrap:balance;transition:color .4s ease}
 .hb2-main h1::after{content:"";display:block;width:132px;height:7px;margin-top:24px;background:var(--hb2-color);transition:background .4s ease}
 .hb2-main.enter{animation:hb2Enter .62s cubic-bezier(.2,.72,.25,1)}
 @keyframes hb2Enter{from{opacity:0;transform:translateY(18px)}to{opacity:1;transform:translateY(0)}}
