@@ -10,10 +10,10 @@
   document.body.classList.add('learn-ready');
 
   var headlines = [
-    'New Research: More Than 70% of Voters, Including Majorities of Republicans, Want Real Limits on AI Decision-Making',
-    "Voters aren't asking for AI guardrails. They're asking for limits.",
-    'Corporations and agencies are letting AI decide who gets care, and voters want it stopped',
-    'AI is becoming a political issue, and this election is just the start.'
+    'Don’t Stop At Weak Guardrails: Voters Across Parties Want Strong AI Protections.',
+    'Voters support strong protections from harmful uses of AI.',
+    'AI is already being used to deny people health care, a stable income, a home, and a job.',
+    'This Is One of the Only Places that Parties Agree.'
   ];
 
   var findings = [
@@ -32,9 +32,9 @@
       evidence: '<div class="learn-kicker">Cross-partisan evidence</div><h3>The agreement shows up in policy, framing and concrete harm.</h3><div class="evidence-stat-grid"><div class="evidence-stat blue"><strong>69%</strong><span>Democrats supporting the full package</span></div><div class="evidence-stat green"><strong>73%</strong><span>Independents supporting the full package</span></div><div class="evidence-stat red"><strong>73%</strong><span>Republicans supporting the full package</span></div></div><div class="evidence-stat-grid"><div class="evidence-stat blue"><strong>+26.2</strong><span>Prevent, Protect, Repair · Democrats</span></div><div class="evidence-stat green"><strong>+26.6</strong><span>Prevent, Protect, Repair · Independents</span></div><div class="evidence-stat red"><strong>+21.9</strong><span>Prevent, Protect, Repair · Republicans</span></div></div><p class="evidence-sub" style="margin-top:18px">Insurer denial of doctor-recommended care scored <b>13.5</b> among Democrats, <b>14.6</b> among independents and <b>18.8</b> among Republicans.</p>'
     },
     {
-      label: 'Voters Want Bans, Not Just Guardrails',
-      title: 'The public is willing to draw real red lines.',
-      body: 'When we tested a full package of AI restrictions, every individual measure cleared 70% support. The response went well beyond transparency or voluntary oversight: voters backed off switches, safety proof, meaningful penalties, community authority and bans on some high-stakes uses.',
+      label: 'Voters Support Bans and More',
+      title: 'Voters support bans and more.',
+      body: 'Every major protection tested received support from at least seven in ten respondents, including bans, off switches, proof of safety before use, meaningful penalties, and community oversight boards with legal authority. We should not assume only voluntary or incremental measures will be publicly acceptable.',
       note: 'Only 14% said their bigger worry was too much government regulation. More than twice as many, 32%, worried the rules would not go far enough.',
       evidence: '<div class="learn-kicker">Support for strong restrictions</div><h3>Every measure tested cleared 70%.</h3><div class="evidence-bars"><div class="evidence-row"><div class="label">Off switches</div><div class="value">79–80%</div><div class="track"><div class="fill" style="width:80%"></div></div></div><div class="evidence-row yellow"><div class="label">Proof of safety before release</div><div class="value">79–80%</div><div class="track"><div class="fill" style="width:80%"></div></div></div><div class="evidence-row green"><div class="label">Meaningful penalties</div><div class="value">77–81%</div><div class="track"><div class="fill" style="width:81%"></div></div></div><div class="evidence-row red"><div class="label">Bans on some high-stakes uses</div><div class="value">70–80%</div><div class="track"><div class="fill" style="width:80%"></div></div></div><div class="evidence-row blue"><div class="label">Community boards with legal authority</div><div class="value">74–75%</div><div class="track"><div class="fill" style="width:75%"></div></div></div></div><div class="evidence-compare" style="margin-top:24px"><div class="compare-card"><strong>32%</strong><span>worried the rules would not go far enough</span></div><div class="compare-card negative"><strong>14%</strong><span>worried about too much government regulation</span></div></div>'
     },
