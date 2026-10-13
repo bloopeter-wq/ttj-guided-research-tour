@@ -107,7 +107,7 @@ showStep();
   if (!document.getElementById('what-we-learned-js')) {
     const script = document.createElement('script');
     script.id = 'what-we-learned-js';
-    script.src = 'what-we-learned.js?v=2';
+    script.src = 'what-we-learned.js?v=3';
     document.body.appendChild(script);
   }
 
