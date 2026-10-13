@@ -38,6 +38,10 @@
 .ux-section-nav button.active{color:#fff;border-bottom-color:#64C9BB}
 /* Keep the Explore navigator sticky without allowing its decorative artwork to create horizontal scroll. */
 .ttj-explore-v2 .xv-page{overflow-x:clip!important;overflow-y:visible!important}
+#data-view.explore-v3{overflow-x:clip!important;overflow-y:visible!important}
+.ttj-resources-v2 .rv-page{overflow-x:clip!important;overflow-y:visible!important}
+/* The redesigned experience scrolls the document itself; hidden html overflow at tablet widths prevents sticky positioning. */
+html:has(body.learn-traditional-open){overflow-x:hidden!important;overflow-y:visible!important}
 .ttj-explore-v2 .xv-rounds,.ttj-explore-v2 .xv-demographics,.ttj-explore-v2 .xv-institutions,
 .ttj-explore-v2 .xv-quotes,.ttj-explore-v2 .xv-limits,
 .learn-traditional-page .lt-snapshot,.learn-traditional-page .lt-core,.learn-traditional-page .lt-findings,
