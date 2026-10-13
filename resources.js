@@ -199,7 +199,7 @@ showStep();
   if (!document.getElementById('resources-v2-js')) {
     const script = document.createElement('script');
     script.id = 'resources-v2-js';
-    script.src = 'resources-v2.js?v=2';
+    script.src = 'resources-v2.js?v=3';
     document.body.appendChild(script);
   }
   if (!document.getElementById('resources-refine-js')) {
@@ -223,13 +223,13 @@ showStep();
     const css = document.createElement('link');
     css.id = 'ux-refine-css';
     css.rel = 'stylesheet';
-    css.href = 'ux-refine.css?v=1';
+    css.href = 'ux-refine.css?v=2';
     document.head.appendChild(css);
   }
   if (!document.getElementById('ux-refine-js')) {
     const script = document.createElement('script');
     script.id = 'ux-refine-js';
-    script.src = 'ux-refine.js?v=3';
+    script.src = 'ux-refine.js?v=4';
     document.body.appendChild(script);
   }
 })();
