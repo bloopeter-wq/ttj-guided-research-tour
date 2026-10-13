@@ -223,13 +223,13 @@ showStep();
     const css = document.createElement('link');
     css.id = 'ux-refine-css';
     css.rel = 'stylesheet';
-    css.href = 'ux-refine.css?v=4';
+    css.href = 'ux-refine.css?v=5';
     document.head.appendChild(css);
   }
   if (!document.getElementById('ux-refine-js')) {
     const script = document.createElement('script');
     script.id = 'ux-refine-js';
-    script.src = 'ux-refine.js?v=7';
+    script.src = 'ux-refine.js?v=8';
     document.body.appendChild(script);
   }
 })();
