@@ -19,7 +19,7 @@
 .learn-traditional-page .ux-evidence-link:hover{color:#047E72}
 .learn-traditional-page .lt-dark .ux-evidence-link:hover{color:#79d2c5}
 
-/* 3. Section navigation for Explore. */
+/* 3. Consistent in-page section navigation on every top-level page. */
 .ux-section-nav{
   position:sticky;top:0;z-index:80;background:rgba(7,16,23,.97);backdrop-filter:blur(12px);
   border-top:1px solid rgba(255,255,255,.08);border-bottom:1px solid rgba(255,255,255,.15)
@@ -37,7 +37,10 @@
 .ux-section-nav button:hover{color:#fff}
 .ux-section-nav button.active{color:#fff;border-bottom-color:#64C9BB}
 .ttj-explore-v2 .xv-rounds,.ttj-explore-v2 .xv-demographics,.ttj-explore-v2 .xv-institutions,
-.ttj-explore-v2 .xv-quotes,.ttj-explore-v2 .xv-limits{scroll-margin-top:72px}
+.ttj-explore-v2 .xv-quotes,.ttj-explore-v2 .xv-limits,
+.learn-traditional-page .lt-snapshot,.learn-traditional-page .lt-core,.learn-traditional-page .lt-findings,
+.learn-traditional-page .lt-threads,.learn-traditional-page .lt-next,.learn-traditional-page .lt-method,
+.ttj-resources-v2 .rv-tool,.ttj-resources-v2 .rv-downloads{scroll-margin-top:72px}
 
 /* 4. Resources: one obvious entry point, then task-oriented choices. */
 .ttj-resources-v2 .ux-start-badge{
