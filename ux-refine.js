@@ -207,7 +207,7 @@
     trigger.className='ux-site-search-trigger';
     trigger.setAttribute('aria-haspopup','dialog');
     trigger.setAttribute('aria-controls','ux-site-search');
-    trigger.innerHTML='<span>Search the site</span><kbd>/</kbd>';
+    trigger.innerHTML='<span>Search the site</span>';
     header.appendChild(trigger);
 
     var overlay=document.createElement('div');
