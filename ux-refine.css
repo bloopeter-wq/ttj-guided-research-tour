@@ -21,9 +21,11 @@
 
 /* 3. Consistent in-page section navigation on every top-level page. */
 .ux-section-nav{
-  position:sticky;top:0;z-index:80;background:rgba(7,16,23,.97);backdrop-filter:blur(12px);
+  position:relative;z-index:80;background:rgba(7,16,23,.97);backdrop-filter:blur(12px);
   border-top:1px solid rgba(255,255,255,.08);border-bottom:1px solid rgba(255,255,255,.15)
 }
+.ux-section-nav-holder{height:0}
+.ux-section-nav.is-fixed{position:fixed;top:0;left:0;right:0;width:100%;z-index:800}
 .ux-section-nav-inner{
   width:min(1320px,calc(100% - 80px));margin:0 auto;display:flex;align-items:center;gap:2px;overflow-x:auto;
   scrollbar-width:none
@@ -41,7 +43,7 @@
 #data-view.explore-v3{overflow-x:clip!important;overflow-y:visible!important}
 .ttj-resources-v2 .rv-page{overflow-x:clip!important;overflow-y:visible!important}
 /* The redesigned experience scrolls the document itself; hidden html overflow at tablet widths prevents sticky positioning. */
-html:has(body.learn-traditional-open){overflow-x:hidden!important;overflow-y:visible!important}
+html:has(body.learn-traditional-open),body.learn-traditional-open{overflow-x:clip!important;overflow-y:visible!important}
 .ttj-explore-v2 .xv-rounds,.ttj-explore-v2 .xv-demographics,.ttj-explore-v2 .xv-institutions,
 .ttj-explore-v2 .xv-quotes,.ttj-explore-v2 .xv-limits,
 .learn-traditional-page .lt-snapshot,.learn-traditional-page .lt-core,.learn-traditional-page .lt-findings,
