@@ -36,6 +36,8 @@
 }
 .ux-section-nav button:hover{color:#fff}
 .ux-section-nav button.active{color:#fff;border-bottom-color:#64C9BB}
+/* Keep the Explore navigator sticky without allowing its decorative artwork to create horizontal scroll. */
+.ttj-explore-v2 .xv-page{overflow-x:clip!important;overflow-y:visible!important}
 .ttj-explore-v2 .xv-rounds,.ttj-explore-v2 .xv-demographics,.ttj-explore-v2 .xv-institutions,
 .ttj-explore-v2 .xv-quotes,.ttj-explore-v2 .xv-limits,
 .learn-traditional-page .lt-snapshot,.learn-traditional-page .lt-core,.learn-traditional-page .lt-findings,
@@ -203,9 +205,15 @@ body.ux-search-open{overflow:hidden!important}
   .ux-site-search-trigger kbd{display:none}
 }
 @media(max-width:760px){
+  /* At phone and narrow-tablet widths, reserve a full row for primary navigation so search never overlaps it. */
+  .header{display:flex;flex-direction:column;align-items:stretch;gap:8px;padding:12px 18px 0}
+  .logo{height:34px;max-width:100%;align-self:flex-start}
+  .nav{width:100%;gap:8px;justify-content:space-between;font-size:10.5px;letter-spacing:-.01em}
+  .nav a{padding:9px 0 11px;white-space:nowrap;text-align:center}
   .ux-site-search-trigger{
-    position:absolute;right:18px;top:14px;min-width:82px;height:34px;padding:0 10px;justify-content:center;font-size:10px
+    position:absolute;right:18px;top:12px;min-width:82px;height:34px;padding:0 10px;justify-content:center;font-size:10px
   }
+  body:not(.section-open) .ux-site-search-trigger{top:9px}
   .ux-search-overlay{padding:0}
   .ux-search-dialog{width:100%;height:100dvh;max-height:none;border-top-width:5px}
   .ux-search-top{padding:22px 18px 18px;gap:16px}
