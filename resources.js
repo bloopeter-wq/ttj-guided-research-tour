@@ -129,7 +129,7 @@ showStep();
   if (!document.getElementById('what-we-learned-traditional-js')) {
     const pageJs = document.createElement('script');
     pageJs.id = 'what-we-learned-traditional-js';
-    pageJs.src = 'what-we-learned-traditional.js?v=1';
+    pageJs.src = 'what-we-learned-traditional.js?v=2';
     document.body.appendChild(pageJs);
   }
 
@@ -144,7 +144,7 @@ showStep();
   if (!document.getElementById('headline-banner-v2-js')) {
     const bannerJs = document.createElement('script');
     bannerJs.id = 'headline-banner-v2-js';
-    bannerJs.src = 'headline-banner-v2.js?v=1';
+    bannerJs.src = 'headline-banner-v2.js?v=2';
     document.body.appendChild(bannerJs);
   }
 })();
@@ -168,7 +168,7 @@ showStep();
   if (!document.getElementById('explore-v2-js')) {
     const script = document.createElement('script');
     script.id = 'explore-v2-js';
-    script.src = 'explore-v2.js?v=1';
+    script.src = 'explore-v2.js?v=2';
     document.body.appendChild(script);
   }
 })();
@@ -199,13 +199,13 @@ showStep();
   if (!document.getElementById('resources-v2-js')) {
     const script = document.createElement('script');
     script.id = 'resources-v2-js';
-    script.src = 'resources-v2.js?v=1';
+    script.src = 'resources-v2.js?v=2';
     document.body.appendChild(script);
   }
   if (!document.getElementById('resources-refine-js')) {
     const refineJs = document.createElement('script');
     refineJs.id = 'resources-refine-js';
-    refineJs.src = 'resources-refine.js?v=1';
+    refineJs.src = 'resources-refine.js?v=2';
     document.body.appendChild(refineJs);
   }
   if (!document.getElementById('resources-refine2-js')) {
