@@ -68,20 +68,20 @@
 
   const talkingPoints = [
     {
-      title: 'The basic issue',
-      text: 'The question is not whether AI is good or bad. The question is whether automated systems should be allowed to make consequential decisions about people.'
+      title: 'Protect people from AI harms',
+      text: 'Voters are concerned with the concrete harms AI enables when individuals or institutions use automated systems to wield power over an important part of someone’s life.'
     },
     {
       title: 'Responsibility',
-      text: 'If a company or agency chooses to use an automated system, that choice — not the software — is where responsibility sits. A person or institution made the decision to deploy it. A person or institution can be asked to answer for what it did.'
+      text: 'Naming the institution responsible for a decision does not require attacking it. The focus can stay on the choice to use automated decision-making in a particular context.'
     },
     {
       title: 'Human access',
-      text: 'When health care, benefits, housing, or work are at stake, people want to know that a live person — not a chatbot or a queue — can explain the decision and put it right.'
+      text: 'People want to be able to reach someone who can listen, explain, exercise judgment, take responsibility, and change an outcome in the way only a fellow human being can.'
     },
     {
-      title: 'Guardrails',
-      text: 'The research found support for concrete limits on high-stakes AI, including bans on some uses, off switches, meaningful penalties, and community boards with legal authority. Every major safeguard tested received support from at least seven in ten respondents.'
+      title: 'Strong protections',
+      text: 'Voters strongly support bans on the highest-stakes uses of AI, proof of safety before use, mandatory off switches, meaningful penalties for harm, and community oversight boards with legal authority. Every major protection tested received support from at least seven in ten respondents.'
     }
   ];
 
