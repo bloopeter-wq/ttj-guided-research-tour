@@ -11,7 +11,7 @@
       metric: 'MaxDiff',
       title: 'Main concerns about government use of AI',
       explainer: 'Twelve concerns compared directly using MaxDiff. Scores below are relative rankings, not percentages.',
-      suggestion: 'Concrete consequences beat abstract warnings.',
+      suggestion: 'Make the abstract concrete and make the invisible harm visible.',
       more: 'When people compared different concerns about government use of AI, the strongest worries were not technical. People were most concerned that public services would become harder to use, that a single mistake could affect millions, and that AI could be used to mislead the public. The messaging lesson is straightforward: start with what changes for the person using the service. An abstract warning about opacity or bias is less immediate than showing someone unable to get help, wrongly losing support, or facing an error nobody will take responsibility for.',
       detail: 'The strongest message was simple: technology gets between people and the public help they need. Scale also matters — one automated error can affect millions.',
       method: 'MaxDiff is a relative preference score, not a percentage. Positive values ranked higher against the other options tested in this round.',
@@ -358,8 +358,8 @@
       <section class="xv-institutions" aria-labelledby="xv-institutions-title">
         <div class="xv-shell">
           <div class="xv-kicker-line"><span></span><b>Round 3 / Trust and permission</b></div>
-          <h2 id="xv-institutions-title">A person may like an institution, but strongly dislike what it does with AI.</h2>
-          <p class="xv-institutions-dek">Choose an institution. Each panel compares ordinary favourability with discomfort about that institution controlling AI decisions about a person’s life.</p>
+          <h2 id="xv-institutions-title">Liking an institution does not necessarily mean trusting its use of AI.</h2>
+          <p class="xv-institutions-dek">Choose an institution. General favourability does not necessarily reduce concern about AI use. Naming the institution responsible does not require attacking it: the focus can stay on the choice to use automated decision-making in a particular context.</p>
           <div class="xv-institution-grid" id="xv-institution-grid">
             ${institutions.map((item, i) => `
               <button type="button" class="xv-institution-card ${i===0?'active':''}" data-institution="${item.key}" aria-pressed="${i===0}">
@@ -379,9 +379,9 @@
           <div class="xv-section-head xv-section-head-dark">
             <div>
               <div class="xv-eyebrow">In their own words</div>
-              <h2 id="xv-quotes-title">Search the <span>quote bank.</span></h2>
+              <h2 id="xv-quotes-title">Voters may not be aware of the harms that <span>concern them most.</span></h2>
             </div>
-            <p>Before respondents were shown concrete scenarios in Round 4, they were asked openly what concerned them about AI. These are verbatim responses.</p>
+            <p>Before respondents saw concrete scenarios, many defaulted to concerns they already had names for, including privacy and surveillance, job loss, and misinformation or deepfakes. Search their verbatim responses.</p>
           </div>
           <div class="xv-quote-toolbar">
             <label class="xv-search">
@@ -406,8 +406,8 @@
         <div class="xv-shell">
           <div class="xv-limits-head">
             <div class="xv-eyebrow">Round 6 / What people supported</div>
-            <h2 id="xv-limits-title">Majorities supported every <span>guardrail tested.</span></h2>
-            <p>Support was at least 70% for every major proposal in the final round.</p>
+            <h2 id="xv-limits-title">Voters support <span>bans and more.</span></h2>
+            <p>Every major protection tested received at least 70% support. We should not assume only voluntary or incremental measures will be publicly acceptable.</p>
           </div>
           <div class="xv-rails" id="xv-rails">
             ${safeguards.map((s, i) => `
