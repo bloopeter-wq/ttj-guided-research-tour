@@ -50,14 +50,14 @@
         <div class="lt-shell lt-core-grid">
           <div class="lt-kicker">The central finding</div>
           <div>
-            <h2>People respond most strongly to what AI <span>does to them</span> — not to AI in the abstract.</h2>
-            <p>Concern rises when an institution uses an automated system to decide whether somebody can get, keep or afford health care, benefits, housing, a job or a public service.</p>
+            <h2>Voters are concerned with the concrete harms AI enables when individuals or institutions use automated systems to wield power over an important part of someone’s life.</h2>
+            <p><strong>Make the abstract concrete and make the invisible harm visible.</strong> Be specific and human: show where AI is being used, who chose to use it, and what someone may lose due to it.</p>
           </div>
         </div>
         <div class="lt-shell lt-pillars">
-          <article><b>01</b><h3>Concrete consequences</h3><p>Start with what someone could lose, be denied, pay more for, or be unable to challenge.</p></article>
-          <article><b>02</b><h3>Human responsibility</h3><p>Name the institution that chose to deploy the system and the decision it made.</p></article>
-          <article><b>03</b><h3>Real limits</h3><p>Respondents backed enforceable protections, including off switches, penalties and bans on some high-stakes uses.</p></article>
+          <article><b>01</b><h3>Make the abstract concrete</h3><p>Talk about the everyday harm: what someone could lose, be denied, pay more for, or be unable to challenge.</p></article>
+          <article><b>02</b><h3>Make invisible harm visible</h3><p>Show where automated systems are already being used to make consequential decisions about people’s lives.</p></article>
+          <article><b>03</b><h3>Be specific and human</h3><p>Name who chose to use the system, what decision was made, and what the person may lose because of it.</p></article>
         </div>
       </section>
 
@@ -66,7 +66,7 @@
           <div class="lt-section-top"><div><div class="lt-kicker">Key findings</div><h2>Eight things the research tells us.</h2></div><p>Scroll through the evidence. The page is designed to read like a report, not a presentation.</p></div>
 
           <article class="lt-finding lt-feature">
-            <div class="lt-finding-copy"><span>01 / Concrete harm</span><h3>It’s not really about AI. It’s about power over people’s lives.</h3><p>Voters were less concerned with AI in the abstract than with what happened when an institution used an automated system to gain power over an important part of someone’s life.</p></div>
+            <div class="lt-finding-copy"><span>01 / Concrete harm</span><h3>It’s not really about AI. It’s about power over people’s lives.</h3><p>Voters are concerned with the concrete harms AI enables when individuals or institutions use automated systems to wield power over an important part of someone’s life, especially the ability to get, keep, or afford health care, public benefits, housing, or a job.</p></div>
             <div class="lt-evidence-bars">
               <div><span>Doctor-recommended treatment denied</span><b>73%</b><i style="--w:73%"></i></div>
               <div><span>Social Security / disability cut off</span><b>72%</b><i style="--w:72%"></i></div>
@@ -76,12 +76,12 @@
           </article>
 
           <article class="lt-finding">
-            <div class="lt-finding-copy"><span>02 / Cross-partisan agreement</span><h3>Real limits on consequential AI cut across party lines.</h3><p>The full policy package drew majority support across Democrats, independents and Republicans.</p></div>
+            <div class="lt-finding-copy"><span>02 / Cross-partisan agreement</span><h3>This is one of the only places that parties agree.</h3><p>A full package of strong policy protections drew support across voters, including majorities of Democrats, independents, and Republicans. Protecting people from AI harms does not require picking a partisan side to be effective.</p></div>
             <div class="lt-number-cluster"><div><strong>69%</strong><span>Democrats</span></div><div><strong>73%</strong><span>Independents</span></div><div><strong>73%</strong><span>Republicans</span></div></div>
           </article>
 
           <article class="lt-finding lt-dark">
-            <div class="lt-finding-copy"><span>03 / Stronger limits</span><h3>The public is willing to draw real red lines.</h3><p>Every major safeguard tested received support from at least seven in ten respondents. The package went beyond transparency to off switches, safety proof, meaningful penalties, community authority and bans on some high-stakes uses.</p></div>
+            <div class="lt-finding-copy"><span>03 / Stronger limits</span><h3>Voters support bans and more.</h3><p>Every major protection tested received support from at least seven in ten respondents, including bans, off switches, proof of safety before use, meaningful penalties, and community oversight boards with legal authority. We should not assume only voluntary or incremental measures will be publicly acceptable.</p></div>
             <div class="lt-evidence-bars light">
               <div><span>Off switches</span><b>79–80%</b><i style="--w:80%"></i></div>
               <div><span>Proof of safety before release</span><b>79–80%</b><i style="--w:80%"></i></div>
@@ -91,7 +91,7 @@
           </article>
 
           <article class="lt-finding">
-            <div class="lt-finding-copy"><span>04 / What comes to mind first</span><h3>Top-of-mind AI concerns are not the whole story.</h3><p>Unprompted, respondents often named privacy, job loss and misinformation. Once shown concrete examples of AI already affecting high-stakes decisions, concern broadened sharply.</p></div>
+            <div class="lt-finding-copy"><span>04 / Awareness gap</span><h3>Voters may not be aware of the harms that concern them most.</h3><p>Asked openly, many respondents defaulted to concerns they already had names for, including privacy and surveillance, job loss, and misinformation or deepfakes. Once shown concrete examples of AI affecting health care, benefits, employment, and housing, concern broadened sharply. Raising awareness of these less visible harms will be key.</p></div>
             <div class="lt-number-callout"><strong>62–73%</strong><span>extremely or very concerned across fifteen concrete high-stakes scenarios once real examples were shown</span></div>
           </article>
 
@@ -101,17 +101,17 @@
           </article>
 
           <article class="lt-finding">
-            <div class="lt-finding-copy"><span>06 / Human recourse</span><h3>People want someone who can listen, explain and change the outcome.</h3><p>The demand is not simply for a theoretical “human in the loop.” It is for somebody accountable and reachable when a decision affects someone’s life.</p></div>
+            <div class="lt-finding-copy"><span>06 / Human recourse</span><h3>People still want to reach people.</h3><p>People want to be able to reach someone who can listen, explain, exercise judgment, take responsibility, and change an outcome in the way only a fellow human being can.</p></div>
             <div class="lt-number-callout"><strong>69%</strong><span>extremely or very concerned about being forced to deal with AI instead of a person</span></div>
           </article>
 
           <article class="lt-finding">
-            <div class="lt-finding-copy"><span>07 / Framing nuance</span><h3>Specific harm is more compelling than “bias and discrimination” as a stand-alone phrase.</h3><p>That does not mean respondents do not care about discrimination. It means that, in the direct comparison tested, the concrete consequence was more compelling than the abstract label by itself.</p></div>
+            <div class="lt-finding-copy"><span>07 / Framing nuance</span><h3>A caution about bias and discrimination.</h3><p>An argument about bias and discrimination was less concerning than most of the other harms tested. That does not mean people should avoid talking about bias and discrimination. Concrete harms, such as health companies using AI to deny care, may resonate more strongly while still making visible the racial, gender, and disability biases layered into those harms.</p></div>
             <div class="lt-compare"><div><strong>+15.7</strong><span>Insurer uses AI to deny doctor-recommended care</span></div><div><strong>−7.7</strong><span>“Bias and discrimination” as a stand-alone frame</span></div></div>
           </article>
 
           <article class="lt-finding lt-feature">
-            <div class="lt-finding-copy"><span>08 / Institutions</span><h3>Trusting an institution does not mean trusting its use of AI.</h3><p>Naming the institution responsible for a decision does not require attacking it. People can view an institution favorably and still object to giving automated systems power over consequential decisions.</p></div>
+            <div class="lt-finding-copy"><span>08 / Institutions</span><h3>Liking an institution does not necessarily mean trusting its use of AI.</h3><p>General favourability is not necessarily associated with decreased anger about AI use. Naming the institution responsible for a decision does not require attacking it: the focus can stay on the choice to use automated decision-making in a particular context.</p></div>
             <div class="lt-evidence-bars">
               <div><span>Health insurers</span><b>68%</b><i style="--w:68%"></i></div>
               <div><span>Landlords</span><b>67%</b><i style="--w:67%"></i></div>
