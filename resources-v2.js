@@ -327,7 +327,7 @@
         <div class="rv-shell">
           <div class="rv-download-head"><div><div class="rv-eyebrow">Download the source materials</div><h2>Take the research with you.</h2></div><p>The interactive tools are companions to the full TTJ research and policy materials.</p></div>
           <div class="rv-download-grid">${downloads.map(([label,href],i)=>`<a href="${href}" download><span>0${i+1}</span><b>${label}</b><i>↓</i></a>`).join('')}</div>
-          <p class="rv-source-note">Source: TechTonic Justice + Data for Progress message testing, six national surveys of likely voters, March–July 2026. Question wording, measures and samples vary by round. MaxDiff scores are relative preferences, not percentages.</p>
+          <p class="rv-source-note">Source: TechTonic Justice + Data for Progress message testing, five national surveys of likely voters, March–July 2026. Question wording, measures and samples vary by round. MaxDiff scores are relative preferences, not percentages.</p>
         </div>
       </section>
     </div>`;
