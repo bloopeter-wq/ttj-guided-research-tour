@@ -20,8 +20,9 @@
     opts.sections.forEach(function(item){
       var el=q(item[1],scope);
       if (!el) return;
-      el.id=item[2];
-      valid.push([item[0],el,item[2]]);
+      var targetId=el.id || item[2];
+      if (!el.id) el.id=targetId;
+      valid.push([item[0],el,targetId]);
     });
     if (!valid.length) return null;
 
