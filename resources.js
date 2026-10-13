@@ -215,3 +215,21 @@ showStep();
     document.body.appendChild(refine2Js);
   }
 })();
+
+
+/* Final reversible UX refinement layer. */
+(function loadUxRefinements() {
+  if (!document.getElementById('ux-refine-css')) {
+    const css = document.createElement('link');
+    css.id = 'ux-refine-css';
+    css.rel = 'stylesheet';
+    css.href = 'ux-refine.css?v=1';
+    document.head.appendChild(css);
+  }
+  if (!document.getElementById('ux-refine-js')) {
+    const script = document.createElement('script');
+    script.id = 'ux-refine-js';
+    script.src = 'ux-refine.js?v=1';
+    document.body.appendChild(script);
+  }
+})();
