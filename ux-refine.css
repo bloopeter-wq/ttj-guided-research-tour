@@ -118,3 +118,108 @@
   .ux-orientation{transition:none}
   html{scroll-behavior:auto!important}
 }
+
+/* 7. Full site-wide search. */
+.header{position:relative}
+.ux-site-search-trigger{
+  appearance:none;flex:0 0 auto;min-width:154px;height:42px;display:flex;align-items:center;justify-content:space-between;gap:14px;
+  padding:0 12px 0 14px;border:1px solid rgba(255,255,255,.28);background:#080b10;color:#fff;
+  font:800 11px/1 "Noto Sans",Arial,sans-serif;letter-spacing:.04em;cursor:pointer
+}
+.ux-site-search-trigger:hover{border-color:#64C9BB;color:#64C9BB}
+.ux-site-search-trigger kbd,.ux-search-help kbd{
+  min-width:22px;padding:4px 6px;border:1px solid rgba(255,255,255,.24);background:rgba(255,255,255,.07);color:#dce2e1;
+  font:700 10px/1 "Noto Sans",Arial,sans-serif;text-align:center
+}
+body.ux-search-open{overflow:hidden!important}
+.ux-search-overlay{position:fixed;inset:0;z-index:10000;display:grid;place-items:start center;padding:7vh 24px 24px}
+.ux-search-overlay[hidden]{display:none!important}
+.ux-search-backdrop{position:absolute;inset:0;background:rgba(2,5,8,.78);backdrop-filter:blur(8px)}
+.ux-search-dialog{
+  position:relative;z-index:1;width:min(900px,100%);max-height:86vh;overflow:hidden;background:#f5f4ee;color:#111426;
+  border-top:7px solid #64C9BB;box-shadow:0 30px 90px rgba(0,0,0,.44);display:flex;flex-direction:column
+}
+.ux-search-top{display:flex;align-items:flex-start;justify-content:space-between;gap:30px;padding:28px 32px 22px;border-bottom:1px solid #cdd3d0}
+.ux-search-kicker{
+  display:block;margin-bottom:8px;color:#047E72;font:800 10px/1.2 "Noto Sans",Arial,sans-serif;
+  letter-spacing:.17em;text-transform:uppercase
+}
+.ux-search-top h2{margin:0;font:800 clamp(30px,4vw,48px)/.98 "Noto Sans",Arial,sans-serif;letter-spacing:-.045em}
+.ux-search-close{
+  appearance:none;border:1px solid #aeb7b4;background:transparent;color:#111426;padding:10px 13px;
+  font:800 11px/1 "Noto Sans",Arial,sans-serif;cursor:pointer
+}
+.ux-search-close:hover{background:#111426;color:#fff;border-color:#111426}
+.ux-search-box{
+  margin:24px 32px 0;display:grid;grid-template-columns:auto minmax(0,1fr);align-items:center;border:2px solid #111426;background:#fff
+}
+.ux-search-box>span{
+  align-self:stretch;display:flex;align-items:center;padding:0 16px;border-right:1px solid #d4d9d6;color:#047E72;
+  font:800 10px/1.1 "Noto Sans",Arial,sans-serif;letter-spacing:.12em;text-transform:uppercase
+}
+.ux-search-box input{
+  width:100%;min-width:0;border:0;outline:0;background:transparent;color:#111426;padding:17px 18px;
+  font:700 18px/1.3 "Noto Sans",Arial,sans-serif
+}
+.ux-search-box:focus-within{border-color:#047E72;box-shadow:0 0 0 3px rgba(4,126,114,.12)}
+.ux-search-help{
+  display:flex;align-items:center;justify-content:space-between;gap:20px;margin:9px 32px 16px;color:#687073;
+  font:600 10px/1.35 "Noto Sans",Arial,sans-serif
+}
+.ux-search-help kbd{border-color:#b5bcba;background:#fff;color:#4b5356}
+.ux-search-results{min-height:210px;overflow:auto;padding:0 32px 30px}
+.ux-search-count{
+  padding:10px 0 8px;color:#687073;font:800 10px/1.2 "Noto Sans",Arial,sans-serif;
+  letter-spacing:.12em;text-transform:uppercase
+}
+.ux-search-result{
+  appearance:none;width:100%;display:grid;grid-template-columns:130px minmax(0,1fr) auto;gap:6px 18px;align-items:start;
+  text-align:left;border:0;border-top:1px solid #ccd2cf;background:transparent;color:#111426;padding:17px 0;cursor:pointer
+}
+.ux-search-result:last-child{border-bottom:1px solid #ccd2cf}
+.ux-search-result:hover{background:#fff;padding-left:12px;padding-right:12px}
+.ux-search-page{
+  grid-row:1/3;color:#047E72;font:800 9px/1.35 "Noto Sans",Arial,sans-serif;letter-spacing:.12em;text-transform:uppercase;
+  padding-top:3px
+}
+.ux-search-result strong{font:800 16px/1.25 "Noto Sans",Arial,sans-serif}
+.ux-search-snippet{grid-column:2;color:#555d60;font:500 12.5px/1.5 "Noto Sans",Arial,sans-serif}
+.ux-search-result>b{grid-column:3;grid-row:1/3;align-self:center;color:#047E72;font:800 11px/1 "Noto Sans",Arial,sans-serif;white-space:nowrap}
+.ux-search-empty{padding:32px 0 22px;max-width:680px}
+.ux-search-empty strong{display:block;font:800 22px/1.2 "Noto Sans",Arial,sans-serif;margin-bottom:8px}
+.ux-search-empty p{margin:0;color:#5b6366;font:500 14px/1.5 "Noto Sans",Arial,sans-serif}
+.ux-search-suggestions{display:flex;flex-wrap:wrap;gap:8px;margin-top:20px}
+.ux-search-suggestions button{
+  appearance:none;border:1px solid #aeb7b4;background:#fff;color:#111426;padding:9px 12px;
+  font:800 11px/1 "Noto Sans",Arial,sans-serif;cursor:pointer
+}
+.ux-search-suggestions button:hover{border-color:#047E72;color:#047E72}
+.ux-site-search-trigger:focus-visible,.ux-search-close:focus-visible,.ux-search-result:focus-visible,.ux-search-suggestions button:focus-visible{
+  outline:3px solid #E4B82F;outline-offset:3px
+}
+
+@media(max-width:1080px){
+  .ux-site-search-trigger{min-width:104px}
+  .ux-site-search-trigger kbd{display:none}
+}
+@media(max-width:760px){
+  .ux-site-search-trigger{
+    position:absolute;right:18px;top:14px;min-width:82px;height:34px;padding:0 10px;justify-content:center;font-size:10px
+  }
+  .ux-search-overlay{padding:0}
+  .ux-search-dialog{width:100%;height:100dvh;max-height:none;border-top-width:5px}
+  .ux-search-top{padding:22px 18px 18px;gap:16px}
+  .ux-search-top h2{font-size:32px}
+  .ux-search-close{padding:9px 10px}
+  .ux-search-box{margin:18px 18px 0;grid-template-columns:1fr}
+  .ux-search-box>span{display:none}
+  .ux-search-box input{padding:15px 14px;font-size:16px}
+  .ux-search-help{margin:8px 18px 12px;font-size:9.5px}
+  .ux-search-help span:last-child{display:none}
+  .ux-search-results{padding:0 18px 24px;min-height:0}
+  .ux-search-result{grid-template-columns:1fr auto;gap:5px 12px;padding:15px 0}
+  .ux-search-page{grid-column:1;grid-row:auto;padding:0}
+  .ux-search-result strong{grid-column:1;font-size:15px}
+  .ux-search-snippet{grid-column:1;font-size:12px}
+  .ux-search-result>b{grid-column:2;grid-row:1/4}
+}
