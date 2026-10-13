@@ -31,7 +31,7 @@
       }));
     }
     const heroDek = root.querySelector('.rv-hero-inner>p');
-    if (heroDek) heroDek.textContent = 'Seven practical tools for turning the findings into clearer explanations, questions and drafts — without losing the evidence underneath them.';
+    if (heroDek) heroDek.textContent = 'Seven practical tools for making the abstract concrete, making invisible harm visible, and turning the findings into specific, human explanations, questions and drafts.';
 
     const renumber = [
       ['tool-1','01'],['tool-2','02'],['tool-3','03'],['tool-4','04'],
@@ -51,7 +51,7 @@
       const dek = tool1Head.querySelector(':scope > p');
       if (eyebrow) eyebrow.textContent = 'The message formula';
       if (heading) heading.textContent = 'Person + decision-maker + action + consequence.';
-      if (dek) dek.textContent = 'Mix and match the four parts to build a concrete sentence. The combinations are writing aids: the point is to make the person, decision and consequence visible.';
+      if (dek) dek.textContent = 'Show where AI is being used, who chose to use it, and what someone may lose due to it. Mix and match the four parts to build a specific, human sentence.';
     }
 
     const formulaOptions = {
