@@ -2,10 +2,10 @@
   'use strict';
 
   var headlines = [
-    'New Research: More Than 70% of Voters, Including Majorities of Republicans, Want Real Limits on AI Decision-Making',
-    "Voters aren't asking for AI guardrails. They're asking for limits.",
-    'Corporations and agencies are letting AI decide who gets care, and voters want it stopped',
-    'AI is becoming a political issue, and this election is just the start.'
+    'Don’t Stop At Weak Guardrails: Voters Across Parties Want Strong AI Protections.',
+    'Voters support strong protections from harmful uses of AI.',
+    'AI is already being used to deny people health care, a stable income, a home, and a job.',
+    'This Is One of the Only Places that Parties Agree.'
   ];
 
   /* Preserve the original headline palette: jade → gold → coral → lime. */
