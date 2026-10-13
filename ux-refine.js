@@ -51,7 +51,7 @@
     /* Keep the themes compact until somebody chooses one. */
     qa('.lt-thread-list details',page).forEach(function(d){ d.open=false; });
 
-    var targets=['#xv-round-panel','#xv-demographics','#xv-limits','#xv-quotes','#xv-round-panel','#xv-round-panel','#xv-round-panel','#xv-institutions'];
+    var targets=['#xv-round-panel','#xv-demographics','#xv-limits','#xv-quotes','#xv-round-panel','#xv-round-panel','#xv-institutions'];
     qa('.lt-finding',page).forEach(function(card,i){
       var copy=q('.lt-finding-copy',card);
       if(!copy || q('.ux-evidence-link',copy)) return;
@@ -161,7 +161,7 @@
       ['What We Learned','Key findings','.lt-findings'],
       ['What We Learned','Themes','.lt-threads'],
       ['What We Learned','Next steps','.lt-next'],
-      ['Explore','Six rounds','#ux-explore-rounds'],
+      ['Explore','Five rounds','#ux-explore-rounds'],
       ['Explore','Audiences','#ux-explore-audiences'],
       ['Explore','Institutions','#ux-explore-institutions'],
       ['Explore','What people said','#ux-explore-voices'],
