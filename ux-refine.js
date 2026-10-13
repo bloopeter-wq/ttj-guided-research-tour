@@ -129,26 +129,6 @@
     if(!root || !page || !hero || root.dataset.uxRefined==='1') return false;
     root.dataset.uxRefined='1';
 
-    var resourceHero=q('.rv-hero',root);
-    if(resourceHero){
-      buildSectionNav({
-        key:'resources',
-        scope:root,
-        anchor:resourceHero,
-        aria:'Use the Research sections',
-        sections:[
-          ['Message formula','#tool-1','ux-resource-formula'],
-          ['Say this / not that','#tool-2','ux-resource-language'],
-          ['Talking points','#tool-3','ux-resource-points'],
-          ['Sector','#tool-4','ux-resource-sector'],
-          ['Strong / weak words','#tool-6','ux-resource-words'],
-          ['Checklist','#tool-7','ux-resource-checklist'],
-          ['Lead with decision','#tool-8','ux-resource-decision'],
-          ['Downloads','.rv-downloads','ux-resource-downloads']
-        ]
-      });
-    }
-
     buildSectionNav({
       key:'explore',
       scope:root,
@@ -169,6 +149,26 @@
     var root=q('#resources-view.ttj-resources-v2');
     if(!root || root.dataset.uxRefined==='1') return false;
     root.dataset.uxRefined='1';
+
+    var resourceHero=q('.rv-hero',root);
+    if(resourceHero){
+      buildSectionNav({
+        key:'resources',
+        scope:root,
+        anchor:resourceHero,
+        aria:'Use the Research sections',
+        sections:[
+          ['Message formula','#tool-1','ux-resource-formula'],
+          ['Say this / not that','#tool-2','ux-resource-language'],
+          ['Talking points','#tool-3','ux-resource-points'],
+          ['Sector','#tool-4','ux-resource-sector'],
+          ['Strong / weak words','#tool-6','ux-resource-words'],
+          ['Checklist','#tool-7','ux-resource-checklist'],
+          ['Lead with decision','#tool-8','ux-resource-decision'],
+          ['Downloads','.rv-downloads','ux-resource-downloads']
+        ]
+      });
+    }
 
     var tool1=q('#tool-1',root), head=tool1&&q('.rv-tool-head>div',tool1);
     if(head && !q('.ux-start-badge',head)){
