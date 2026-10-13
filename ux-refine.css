@@ -42,6 +42,7 @@
 .ttj-explore-v2 .xv-page{overflow-x:clip!important;overflow-y:visible!important}
 #data-view.explore-v3{overflow-x:clip!important;overflow-y:visible!important}
 .ttj-resources-v2 .rv-page{overflow-x:clip!important;overflow-y:visible!important}
+#resources-view.ttj-resources-v2,.ttj-resources-v2 .rv-page{min-width:0!important;width:100%!important;max-width:100vw!important}
 /* The redesigned experience scrolls the document itself; hidden html overflow at tablet widths prevents sticky positioning. */
 html:has(body.learn-traditional-open),body.learn-traditional-open{overflow-x:clip!important;overflow-y:visible!important}
 .ttj-explore-v2 .xv-rounds,.ttj-explore-v2 .xv-demographics,.ttj-explore-v2 .xv-institutions,
