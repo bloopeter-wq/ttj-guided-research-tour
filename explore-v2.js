@@ -141,34 +141,6 @@
     },
     {
       id: 5,
-      date: 'Jul 10–13, 2026',
-      n: '1,219',
-      metric: 'MaxDiff',
-      title: 'Which three-word response feels right?',
-      explainer: 'Six accountability slogans compared directly using MaxDiff.',
-      suggestion: '“Prevent, Protect, Repair” gives TTJ a lifecycle of responsibility.',
-      more: 'This round asked a deceptively simple question: what language best describes what should happen when AI can cause harm? “Prevent, Protect, Repair” won overwhelmingly. The individual words matter. Prevent says harm should not simply be accepted as inevitable. Protect puts the emphasis on people while systems are being used. Repair says responsibility continues after something goes wrong and the harm should actually be put right. Importantly, the phrase also performed strongly across partisan groups.',
-      detail: 'Prevent beat Stop. Protect beat Mitigate by a large margin. Repair beat Fix. The winning phrase performed strongly among Democrats, Independents and Republicans.',
-      method: 'MaxDiff values are relative preference scores, not percentages.',
-      bars: [
-        ['Prevent, Protect, Repair', 24.7, '+24.7'],
-        ['Stop, Protect, Repair', 7.1, '+7.1'],
-        ['Prevent, Stop, Fix', 2.7, '+2.7'],
-        ['Stop, Protect, Fix', -4.3, '−4.3'],
-        ['Prevent, Stop, Treat', -7.5, '−7.5'],
-        ['Prevent, Mitigate, Repair', -22.6, '−22.6']
-      ],
-      all: [
-        ['Prevent, Protect, Repair', '+24.7'],
-        ['Stop, Protect, Repair', '+7.1'],
-        ['Prevent, Stop, Fix', '+2.7'],
-        ['Stop, Protect, Fix', '−4.3'],
-        ['Prevent, Stop, Treat', '−7.5'],
-        ['Prevent, Mitigate, Repair', '−22.6']
-      ]
-    },
-    {
-      id: 6,
       date: 'Jul 24–27, 2026',
       n: '1,058',
       metric: 'Support · % / reported range',
@@ -296,14 +268,14 @@
         <div class="xv-shell xv-hero-inner">
           <div class="xv-eyebrow">02 / Explore the evidence</div>
           <h1 id="xv-title">Explore the <span>data.</span></h1>
-          <p class="xv-hero-dek">Six rounds of national message testing reveal what people notice, what worries them, who they trust with consequential decisions, and what protections they support.</p>
+          <p class="xv-hero-dek">Five rounds of national message testing reveal what people notice, what worries them, who they trust with consequential decisions, and what protections they support.</p>
           <div class="xv-snapshot" aria-label="Research scale">
             <div class="xv-stat">
-              <strong data-count="7043">0</strong>
+              <strong data-count="5824">0</strong>
               <span>likely voters interviewed</span>
             </div>
             <div class="xv-stat xv-stat-accent">
-              <strong data-count="6">0</strong>
+              <strong data-count="5">0</strong>
               <span>rounds of research</span>
             </div>
             <div class="xv-stat xv-stat-time">
@@ -319,7 +291,7 @@
         <div class="xv-shell">
           <div class="xv-section-head">
             <div>
-              <div class="xv-eyebrow">The six rounds</div>
+              <div class="xv-eyebrow">The five rounds</div>
               <h2 id="xv-rounds-title">See what was tested.</h2>
             </div>
             <p>Move through each round. The interpretation comes first; the chart shows the evidence behind it. Open the drawer for the fuller result set and method.</p>
@@ -405,7 +377,7 @@
       <section class="xv-limits" aria-labelledby="xv-limits-title">
         <div class="xv-shell">
           <div class="xv-limits-head">
-            <div class="xv-eyebrow">Round 6 / What people supported</div>
+            <div class="xv-eyebrow">Round 5 / What people supported</div>
             <h2 id="xv-limits-title">Voters support <span>bans and more.</span></h2>
             <p>Every major protection tested received at least 70% support. We should not assume only voluntary or incremental measures will be publicly acceptable.</p>
           </div>
@@ -431,7 +403,7 @@
         <div class="xv-shell xv-source-inner">
           <div>
             <div class="xv-eyebrow">Source & method</div>
-            <p>TechTonic Justice + Data for Progress message testing, six national surveys of likely voters, March–July 2026. Question wording, measures and samples vary by round. MaxDiff scores are relative preferences, not percentages.</p>
+            <p>TechTonic Justice + Data for Progress message testing, five national surveys of likely voters, March–July 2026. Question wording, measures and samples vary by round. MaxDiff scores are relative preferences, not percentages.</p>
           </div>
           <a href="#resources">View research resources ↗</a>
         </div>
@@ -492,7 +464,7 @@
           <div><span>ROUND 0${round.id}</span><b>${round.date}</b></div>
           <div class="xv-round-nav">
             <button type="button" data-round-nav="${round.id-1}" ${round.id===1?'disabled':''}>← Previous</button>
-            <button type="button" data-round-nav="${round.id+1}" ${round.id===6?'disabled':''}>Next →</button>
+            <button type="button" data-round-nav="${round.id+1}" ${round.id===5?'disabled':''}>Next →</button>
           </div>
         </div>
         <div class="xv-round-titleblock">
