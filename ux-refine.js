@@ -12,6 +12,52 @@
     el.scrollIntoView({behavior: reduced ? 'auto' : 'smooth', block:'start'});
   }
 
+  function buildSectionNav(opts){
+    if (!opts || !opts.anchor || !opts.sections || q('.ux-section-nav[data-ux-nav="'+opts.key+'"]')) return null;
+
+    var scope=opts.scope || document;
+    var valid=[];
+    opts.sections.forEach(function(item){
+      var el=q(item[1],scope);
+      if (!el) return;
+      el.id=item[2];
+      valid.push([item[0],el,item[2]]);
+    });
+    if (!valid.length) return null;
+
+    var nav=document.createElement('nav');
+    nav.className='ux-section-nav';
+    nav.dataset.uxNav=opts.key;
+    nav.setAttribute('aria-label',opts.aria || 'Page sections');
+    nav.innerHTML='<div class="ux-section-nav-inner">'+valid.map(function(item,i){
+      return '<button type="button" data-ux-target="'+item[2]+'" class="'+(i===0?'active':'')+'">'+item[0]+'</button>';
+    }).join('')+'</div>';
+    opts.anchor.insertAdjacentElement('afterend',nav);
+
+    qa('button',nav).forEach(function(btn){
+      btn.addEventListener('click',function(){
+        scrollToTarget(document.getElementById(btn.dataset.uxTarget));
+      });
+    });
+
+    if('IntersectionObserver' in window){
+      var obs=new IntersectionObserver(function(entries){
+        var visible=entries
+          .filter(function(e){return e.isIntersecting && !e.target.closest('[hidden]');})
+          .sort(function(a,b){return b.intersectionRatio-a.intersectionRatio;})[0];
+        if(!visible) return;
+        qa('button',nav).forEach(function(btn){
+          var active=btn.dataset.uxTarget===visible.target.id;
+          btn.classList.toggle('active',active);
+          if(active) btn.setAttribute('aria-current','true');
+          else btn.removeAttribute('aria-current');
+        });
+      },{rootMargin:'-18% 0px -64% 0px',threshold:[0,.12,.3,.6]});
+      valid.forEach(function(item){obs.observe(item[1]);});
+    }
+    return nav;
+  }
+
   function routeAndScroll(section, selector){
     try {
       history.pushState(null,'','#'+section);
@@ -51,6 +97,21 @@
     /* Keep the themes compact until somebody chooses one. */
     qa('.lt-thread-list details',page).forEach(function(d){ d.open=false; });
 
+    buildSectionNav({
+      key:'home',
+      scope:page,
+      anchor:hero,
+      aria:'What We Learned sections',
+      sections:[
+        ['At a glance','.lt-snapshot','ux-home-snapshot'],
+        ['Central finding','.lt-core','ux-home-core'],
+        ['Key findings','.lt-findings','ux-home-findings'],
+        ['Themes','.lt-threads','ux-home-themes'],
+        ['Next steps','.lt-next','ux-home-next'],
+        ['About','.lt-method','ux-home-method']
+      ]
+    });
+
     var targets=['#xv-round-panel','#xv-demographics','#xv-limits','#xv-quotes','#xv-round-panel','#xv-round-panel','#xv-institutions'];
     qa('.lt-finding',page).forEach(function(card,i){
       var copy=q('.lt-finding-copy',card);
@@ -68,41 +129,39 @@
     if(!root || !page || !hero || root.dataset.uxRefined==='1') return false;
     root.dataset.uxRefined='1';
 
-    var sections=[
-      ['Rounds','.xv-rounds','ux-explore-rounds'],
-      ['Audiences','.xv-demographics','ux-explore-audiences'],
-      ['Institutions','.xv-institutions','ux-explore-institutions'],
-      ['What people said','.xv-quotes','ux-explore-voices'],
-      ['Protections','.xv-limits','ux-explore-protections']
-    ];
-    sections.forEach(function(item){
-      var el=q(item[1],root); if(el) el.id=item[2];
-    });
-
-    var nav=document.createElement('nav');
-    nav.className='ux-section-nav';
-    nav.setAttribute('aria-label','Explore the Data sections');
-    nav.innerHTML='<div class="ux-section-nav-inner">'+sections.map(function(item,i){
-      return '<button type="button" data-ux-target="'+item[2]+'" class="'+(i===0?'active':'')+'">'+item[0]+'</button>';
-    }).join('')+'</div>';
-    hero.insertAdjacentElement('afterend',nav);
-
-    qa('button',nav).forEach(function(btn){
-      btn.addEventListener('click',function(){ scrollToTarget(document.getElementById(btn.dataset.uxTarget)); });
-    });
-
-    if('IntersectionObserver' in window){
-      var obs=new IntersectionObserver(function(entries){
-        var visible=entries.filter(function(e){return e.isIntersecting;}).sort(function(a,b){return b.intersectionRatio-a.intersectionRatio;})[0];
-        if(!visible) return;
-        qa('button',nav).forEach(function(b){
-          var active=b.dataset.uxTarget===visible.target.id;
-          b.classList.toggle('active',active);
-          if(active) b.setAttribute('aria-current','true'); else b.removeAttribute('aria-current');
-        });
-      },{rootMargin:'-18% 0px -64% 0px',threshold:[0,.12,.3,.6]});
-      sections.forEach(function(item){ var el=document.getElementById(item[2]); if(el) obs.observe(el); });
+    var resourceHero=q('.rv-hero',root);
+    if(resourceHero){
+      buildSectionNav({
+        key:'resources',
+        scope:root,
+        anchor:resourceHero,
+        aria:'Use the Research sections',
+        sections:[
+          ['Message formula','#tool-1','ux-resource-formula'],
+          ['Say this / not that','#tool-2','ux-resource-language'],
+          ['Talking points','#tool-3','ux-resource-points'],
+          ['Sector','#tool-4','ux-resource-sector'],
+          ['Strong / weak words','#tool-6','ux-resource-words'],
+          ['Checklist','#tool-7','ux-resource-checklist'],
+          ['Lead with decision','#tool-8','ux-resource-decision'],
+          ['Downloads','.rv-downloads','ux-resource-downloads']
+        ]
+      });
     }
+
+    buildSectionNav({
+      key:'explore',
+      scope:root,
+      anchor:hero,
+      aria:'Explore the Data sections',
+      sections:[
+        ['Rounds','.xv-rounds','ux-explore-rounds'],
+        ['Audiences','.xv-demographics','ux-explore-audiences'],
+        ['Institutions','.xv-institutions','ux-explore-institutions'],
+        ['What people said','.xv-quotes','ux-explore-voices'],
+        ['Protections','.xv-limits','ux-explore-protections']
+      ]
+    });
     return true;
   }
 
