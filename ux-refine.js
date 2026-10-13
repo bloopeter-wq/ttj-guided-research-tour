@@ -139,6 +139,7 @@
 
   function addOrientation(){
     if(q('#ux-orientation')) return;
+    if(!q('.lt-snapshot') || !q('#ux-explore-rounds') || !q('#resources-view .rv-tool')) return;
     var o=document.createElement('div');
     o.id='ux-orientation'; o.className='ux-orientation'; o.setAttribute('aria-hidden','true');
     o.innerHTML='<b></b><span></span>'; document.body.appendChild(o);
