@@ -35,6 +35,22 @@
     }).join('')+'</div>';
     opts.anchor.insertAdjacentElement('afterend',nav);
 
+    /* A small holder lets the navigator become viewport-fixed without changing page height.
+       This is more reliable than native sticky positioning inside the site's clipped artwork containers. */
+    var holder=document.createElement('div');
+    holder.className='ux-section-nav-holder';
+    nav.parentNode.insertBefore(holder,nav);
+    function updatePinnedNav(){
+      var scopeVisible=!opts.scope || (opts.scope.getClientRects && opts.scope.getClientRects().length>0);
+      var shouldPin=scopeVisible && holder.getBoundingClientRect().top<=0;
+      nav.classList.toggle('is-fixed',shouldPin);
+      holder.style.height=shouldPin ? nav.offsetHeight+'px' : '0px';
+    }
+    window.addEventListener('scroll',updatePinnedNav,{passive:true});
+    window.addEventListener('resize',updatePinnedNav);
+    window.addEventListener('hashchange',function(){setTimeout(updatePinnedNav,0);});
+    requestAnimationFrame(updatePinnedNav);
+
     qa('button',nav).forEach(function(btn){
       btn.addEventListener('click',function(){
         scrollToTarget(document.getElementById(btn.dataset.uxTarget));
