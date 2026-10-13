@@ -150,7 +150,9 @@
       b.textContent=label; s.textContent=detail;
     }
     function updateVisibility(){
-      o.classList.toggle('show',window.scrollY>420 && window.innerWidth>760);
+      var footer=q('.footer');
+      var footerVisible=footer && footer.getBoundingClientRect().top < window.innerHeight;
+      o.classList.toggle('show',window.scrollY>420 && window.innerWidth>760 && !footerVisible);
     }
     window.addEventListener('scroll',updateVisibility,{passive:true}); window.addEventListener('resize',updateVisibility); updateVisibility();
 
