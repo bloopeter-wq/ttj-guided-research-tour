@@ -268,7 +268,7 @@
         <div class="xv-shell xv-hero-inner">
           <div class="xv-eyebrow">02 / Explore the evidence</div>
           <h1 id="xv-title">Explore the <span>data.</span></h1>
-          <p class="xv-hero-dek">Five rounds of national message testing reveal what people notice, what worries them, who they trust with consequential decisions, and what protections they support.</p>
+          <p class="xv-hero-dek">Most polling on AI asks people how they feel about AI as a whole and whether they want it regulated. Our polling is more specific: we tested real-world uses of AI, the ground-level harms those systems cause, and specific policies to address those harms.</p>
           <div class="xv-snapshot" aria-label="Research scale">
             <div class="xv-stat">
               <strong data-count="5824">0</strong>
@@ -292,9 +292,9 @@
           <div class="xv-section-head">
             <div>
               <div class="xv-eyebrow">The five rounds</div>
-              <h2 id="xv-rounds-title">See what was tested.</h2>
+              <h2 id="xv-rounds-title">Round by Round</h2>
             </div>
-            <p>Move through each round. The interpretation comes first; the chart shows the evidence behind it. Open the drawer for the fuller result set and method.</p>
+
           </div>
           <div class="xv-round-tabs" role="tablist" aria-label="Research rounds">
             ${rounds.map(r => `<button type="button" role="tab" data-round-select="${r.id}" aria-selected="${r.id===1}"><span>0${r.id}</span><small>${r.date.split(',')[0]}</small></button>`).join('')}
@@ -308,9 +308,9 @@
           <div class="xv-section-head xv-section-head-dark">
             <div>
               <div class="xv-eyebrow">Who thinks what?</div>
-              <h2 id="xv-who-title">One dataset.<br><span>Different lenses.</span></h2>
+              <h2 id="xv-who-title">Explore by Demographic</h2>
             </div>
-            <p>Explore Round 4 by age or party affiliation. The display changes measure deliberately: age shows forced-choice priority; party shows the share extremely or very concerned.</p>
+            <p>Round 4 asked voters about fifteen concrete uses of AI in health care, benefits, housing and work. Compare how those concerns differed by age and party affiliation. Age shows the issue respondents chose as their highest priority; party shows the share extremely or very concerned.</p>
           </div>
           <div class="xv-lens-card">
             <div class="xv-lens-top">
