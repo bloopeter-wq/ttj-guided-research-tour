@@ -1884,3 +1884,25 @@ body.ux-search-open{overflow:hidden!important}
     font-size:22px!important;
   }
 }
+
+
+/* Formatting review fixes: eliminate tiny mobile header collision and keep the task index compact. */
+@media(max-width:760px){
+  .ux-site-search-trigger{
+    top:6px!important;
+  }
+  .ttj-resources-v2 .ux-resource-guide-buttons{
+    display:flex!important;
+    flex-direction:column!important;
+    gap:0!important;
+  }
+  .ttj-resources-v2 .ux-resource-guide button{
+    border:0!important;
+    min-height:0!important;
+  }
+}
+@media(min-width:761px){
+  .ttj-resources-v2 .ux-resource-guide button{
+    border:0!important;
+  }
+}
