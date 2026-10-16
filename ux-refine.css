@@ -2009,3 +2009,371 @@ body.ux-search-open{overflow:hidden!important}
     white-space:nowrap!important;
   }
 }
+
+
+/* 16. Comprehensive UX system pass — evidence clarity, navigation, accessibility and handoffs. */
+:root{
+  --ux-jade:#047E72;
+  --ux-yellow:#E4B82F;
+  --ux-coral:#EC5E55;
+  --ux-ink:#111426;
+  --ux-muted:#687174;
+  --ux-paper:#F6F5F0;
+  --ux-rule:#D5DAD7;
+  --ux-space-major:88px;
+  --ux-space-section:68px;
+  --ux-space-sub:42px;
+  --ux-copy:17px;
+}
+
+/* Sticky header compresses after the opening viewport so research content retains vertical space. */
+.header{
+  transition:min-height .18s ease,padding .18s ease,box-shadow .18s ease;
+}
+.header.ux-header-compact{
+  min-height:62px!important;
+  height:62px!important;
+  padding-top:0!important;
+  padding-bottom:0!important;
+  box-shadow:0 2px 14px rgba(0,0,0,.14);
+}
+.header.ux-header-compact .logo{height:36px!important}
+.header.ux-header-compact .nav a{padding-top:19px!important;padding-bottom:16px!important}
+.header.ux-header-compact .ux-site-search-trigger{height:34px!important}
+@media(max-width:760px){
+  .header.ux-header-compact{height:auto!important;min-height:0!important}
+}
+
+/* Resources local navigation is now only orientation: Downloads / Write / Adapt / Check. */
+@media(min-width:1180px){
+  .ttj-resources-v2 .ux-section-nav[data-ux-nav="resources"] .ux-section-nav-inner{
+    grid-template-columns:repeat(4,minmax(0,1fr))!important;
+    max-width:1080px!important;
+  }
+  .ttj-resources-v2 .ux-section-nav[data-ux-nav="resources"] button{
+    min-height:52px!important;
+    font-size:10px!important;
+  }
+}
+@media(min-width:761px) and (max-width:1179px){
+  .ttj-resources-v2 .ux-section-nav[data-ux-nav="resources"] .ux-section-nav-inner{
+    grid-template-columns:repeat(4,minmax(0,1fr))!important;
+  }
+}
+
+/* The task index is the primary tool-selector, with outcome-oriented labels. */
+.ttj-resources-v2 .ux-resource-guide{
+  margin-top:24px!important;
+}
+.ttj-resources-v2 .ux-resource-guide-head>p{
+  max-width:175px!important;
+}
+.ttj-resources-v2 .ux-resource-guide button{
+  min-height:38px!important;
+}
+
+/* Download choices communicate audience and format before the click. */
+.ttj-resources-v2 .rv-download-grid a{
+  grid-template-columns:34px minmax(0,1fr) 24px!important;
+  align-items:center!important;
+  min-height:88px!important;
+  padding:17px 18px!important;
+}
+.ttj-resources-v2 .rv-download-grid a>div{
+  min-width:0;
+}
+.ttj-resources-v2 .rv-download-grid a b{
+  display:block;
+  line-height:1.3!important;
+}
+.ttj-resources-v2 .rv-download-grid a small{
+  display:block;
+  margin-top:6px;
+  color:#6b7475;
+  font:600 10.5px/1.4 "Noto Sans",Arial,sans-serif;
+  letter-spacing:.025em;
+}
+.ttj-resources-v2 .rv-download-grid a:hover small{color:inherit}
+
+/* Shareable tools and findings stay secondary to the content. */
+.ux-inline-actions{
+  display:flex;
+  align-items:center;
+  gap:14px;
+  flex-wrap:wrap;
+  margin-top:18px;
+}
+.ux-copy-link,
+.ux-tool-link,
+.xv-copy-link{
+  appearance:none;
+  border:0;
+  background:transparent;
+  padding:5px 0;
+  color:#5e686a;
+  font:700 11px/1.3 "Noto Sans",Arial,sans-serif;
+  text-decoration:underline;
+  text-decoration-color:#aab2af;
+  text-underline-offset:4px;
+  cursor:pointer;
+}
+.ux-copy-link:hover,
+.ux-tool-link:hover,
+.xv-copy-link:hover{color:var(--ux-jade);text-decoration-color:var(--ux-jade)}
+.ttj-resources-v2 .rv-tool-head{
+  position:relative;
+}
+.ttj-resources-v2 .ux-tool-link{
+  grid-column:1/-1;
+  justify-self:start;
+  margin-top:-12px;
+}
+
+/* Explore: every round uses the same evidence grammar. */
+.ttj-explore-v2 .xv-round-question{
+  max-width:860px;
+  margin:15px 0 10px!important;
+  font:650 16px/1.55 "Noto Sans",Arial,sans-serif!important;
+  color:#2f383a!important;
+}
+.ttj-explore-v2 .xv-round-question>span{
+  display:inline-block;
+  margin-right:12px;
+  color:var(--ux-jade);
+  font-size:10px;
+  font-weight:800;
+  letter-spacing:.13em;
+  text-transform:uppercase;
+}
+.ttj-explore-v2 .xv-research-details{
+  display:grid;
+  grid-template-columns:repeat(3,minmax(0,1fr));
+  margin:20px 0 0;
+  border-top:1px solid #ccd2cf;
+  border-bottom:1px solid #ccd2cf;
+}
+.ttj-explore-v2 .xv-research-details>div{
+  padding:12px 18px 12px 0;
+}
+.ttj-explore-v2 .xv-research-details>div+div{
+  padding-left:18px;
+  border-left:1px solid #d8ddda;
+}
+.ttj-explore-v2 .xv-research-details dt{
+  margin-bottom:3px;
+  color:#788082;
+  font:800 9px/1.3 "Noto Sans",Arial,sans-serif;
+  letter-spacing:.12em;
+  text-transform:uppercase;
+}
+.ttj-explore-v2 .xv-research-details dd{
+  margin:0;
+  color:var(--ux-ink);
+  font:650 12.5px/1.42 "Noto Sans",Arial,sans-serif;
+}
+.ttj-explore-v2 .xv-section-meta{
+  margin:16px 0 28px!important;
+  color:#667072!important;
+  font:650 11.5px/1.5 "Noto Sans",Arial,sans-serif!important;
+  letter-spacing:.015em;
+}
+.ttj-explore-v2 .xv-limits-head .xv-section-meta{
+  margin-top:16px!important;
+  margin-bottom:0!important;
+}
+.ttj-explore-v2 .xv-round-footer{
+  display:flex;
+  align-items:center;
+  justify-content:space-between;
+  gap:24px;
+  margin-top:28px;
+  padding-top:18px;
+  border-top:1px solid #d3d8d5;
+}
+.ttj-explore-v2 .xv-round-nav-bottom{
+  margin:0!important;
+}
+
+/* Selected quotes lead; exploration controls follow. */
+.ttj-explore-v2 .xv-featured-quotes{
+  display:grid;
+  grid-template-columns:repeat(2,minmax(0,1fr));
+  gap:1px;
+  margin:8px 0 34px;
+  background:#2a3035;
+  border:1px solid #2a3035;
+}
+.ttj-explore-v2 .xv-featured-quotes article{
+  min-height:180px;
+  padding:25px 26px;
+  background:#11161b;
+}
+.ttj-explore-v2 .xv-featured-quotes span{
+  display:block;
+  margin-bottom:15px;
+  color:#79d2c5;
+  font:800 9.5px/1.2 "Noto Sans",Arial,sans-serif;
+  letter-spacing:.12em;
+  text-transform:uppercase;
+}
+.ttj-explore-v2 .xv-featured-quotes blockquote{
+  margin:0;
+  color:#fff;
+  font:400 19px/1.55 "Noto Serif",Georgia,serif;
+}
+.ttj-explore-v2 .xv-explore-more-label{
+  display:flex;
+  align-items:baseline;
+  justify-content:space-between;
+  gap:30px;
+  margin:0 0 15px;
+  padding-top:22px;
+  border-top:1px solid rgba(255,255,255,.15);
+}
+.ttj-explore-v2 .xv-explore-more-label span{
+  color:#fff;
+  font:750 16px/1.3 "Noto Sans",Arial,sans-serif;
+}
+.ttj-explore-v2 .xv-explore-more-label p{
+  margin:0;
+  color:#aeb6b8;
+  font-size:13px;
+}
+
+/* Search results now show context and the actual matching phrase. */
+.ux-search-result mark{
+  background:#fff0a8;
+  color:inherit;
+  padding:0 .08em;
+}
+.ux-search-meta{
+  display:block;
+  color:#697274;
+  font:700 10px/1.35 "Noto Sans",Arial,sans-serif;
+  letter-spacing:.04em;
+  margin-top:2px;
+}
+
+/* One unmistakable next step closes each page. */
+.ux-flow-next{
+  width:min(1180px,calc(100% - 64px));
+  margin:0 auto 64px;
+  padding:28px 0;
+  display:flex;
+  align-items:center;
+  justify-content:space-between;
+  gap:48px;
+  border-top:1px solid #cbd1ce;
+  border-bottom:1px solid #cbd1ce;
+  color:var(--ux-ink);
+}
+.ux-flow-next>div{max-width:760px}
+.ux-flow-next span{
+  display:block;
+  margin-bottom:6px;
+  color:var(--ux-jade);
+  font:800 9.5px/1.2 "Noto Sans",Arial,sans-serif;
+  letter-spacing:.14em;
+  text-transform:uppercase;
+}
+.ux-flow-next strong{
+  display:block;
+  font:750 27px/1.18 "Noto Sans",Arial,sans-serif;
+  letter-spacing:-.02em;
+}
+.ux-flow-next p{
+  margin:7px 0 0;
+  color:#657072;
+  font-size:14.5px;
+  line-height:1.55;
+}
+.ux-flow-next button{
+  flex:0 0 auto;
+  min-height:44px;
+  padding:10px 18px;
+  border:1px solid var(--ux-jade);
+  background:transparent;
+  color:var(--ux-jade);
+  font:750 12px/1.2 "Noto Sans",Arial,sans-serif;
+  cursor:pointer;
+}
+.ux-flow-next button:hover{background:var(--ux-jade);color:#fff}
+
+/* Accessibility: predictable focus treatment and touch targets. */
+.ux-section-nav button:focus-visible,
+.ux-resource-guide button:focus-visible,
+.xv-round-tabs button:focus-visible,
+.xv-round-nav button:focus-visible,
+.xv-segmented button:focus-visible,
+.xv-subcontrols button:focus-visible,
+.xv-institution-card:focus-visible,
+.xv-quote-filters button:focus-visible,
+.xv-theme-stats button:focus-visible,
+.ux-flow-next button:focus-visible,
+.ux-tool-link:focus-visible,
+.ux-copy-link:focus-visible,
+.xv-copy-link:focus-visible{
+  outline:3px solid var(--ux-yellow)!important;
+  outline-offset:3px!important;
+}
+@media(max-width:760px){
+  .ux-site-search-trigger{min-height:40px!important}
+  .ttj-resources-v2 .ux-resource-guide button{min-height:44px!important}
+  .ttj-explore-v2 .xv-round-tabs button{min-height:48px!important}
+  .ux-flow-next{
+    width:min(100% - 36px,1180px);
+    margin-bottom:46px;
+    padding:24px 0;
+    align-items:flex-start;
+    flex-direction:column;
+    gap:18px;
+  }
+  .ux-flow-next button{width:100%}
+  .ttj-explore-v2 .xv-research-details{
+    grid-template-columns:1fr;
+  }
+  .ttj-explore-v2 .xv-research-details>div,
+  .ttj-explore-v2 .xv-research-details>div+div{
+    padding:9px 0!important;
+    border-left:0!important;
+    border-top:1px solid #dde1de;
+  }
+  .ttj-explore-v2 .xv-research-details>div:first-child{border-top:0}
+  .ttj-explore-v2 .xv-round-footer{
+    align-items:stretch;
+    flex-direction:column;
+  }
+  .ttj-explore-v2 .xv-round-footer .xv-round-nav{
+    display:grid!important;
+    grid-template-columns:1fr 1fr;
+    width:100%;
+  }
+  .ttj-explore-v2 .xv-copy-link{text-align:left}
+  .ttj-explore-v2 .xv-featured-quotes{grid-template-columns:1fr}
+  .ttj-explore-v2 .xv-featured-quotes article{min-height:0}
+  .ttj-explore-v2 .xv-explore-more-label{
+    align-items:flex-start;
+    flex-direction:column;
+    gap:5px;
+  }
+}
+
+/* Reduce below-the-fold paint work without changing document flow. */
+@supports(content-visibility:auto){
+  .learn-traditional-page .lt-findings,
+  .learn-traditional-page .lt-meaning,
+  .learn-traditional-page .lt-threads,
+  .ttj-explore-v2 .xv-demographics,
+  .ttj-explore-v2 .xv-institutions,
+  .ttj-explore-v2 .xv-quotes,
+  .ttj-explore-v2 .xv-limits,
+  .ttj-resources-v2 .rv-tool{
+    content-visibility:auto;
+    contain-intrinsic-size:auto 700px;
+  }
+}
+
+@media(prefers-reduced-motion:reduce){
+  .header,
+  .ux-resource-guide button::after{transition:none!important}
+}
