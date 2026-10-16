@@ -119,8 +119,10 @@
 
     [
       ['.lt-snapshot','ux-home-snapshot'],
+      ['.lt-difference','ux-home-difference'],
       ['.lt-core','ux-home-core'],
       ['.lt-findings','ux-home-findings'],
+      ['.lt-meaning','ux-home-meaning'],
       ['.lt-threads','ux-home-themes'],
       ['.lt-next','ux-home-next'],
       ['.lt-method','ux-home-method']
@@ -197,21 +199,22 @@
     root.dataset.uxRefined='1';
 
     var resourceHero=q('.rv-hero',root);
+    var resourceDownloads=q('.rv-downloads',root);
     if(resourceHero){
       buildSectionNav({
         key:'resources',
         scope:root,
-        anchor:resourceHero,
+        anchor:resourceDownloads || resourceHero,
         aria:'Use the Research sections',
         sections:[
           ['Downloads','.rv-downloads','ux-resource-downloads'],
-          ['Message formula','#tool-1','ux-resource-formula'],
-          ['Say this / not that','#tool-2','ux-resource-language'],
+          ['Message builder','#tool-1','ux-resource-formula'],
+          ['Concrete examples','#tool-2','ux-resource-language'],
           ['Talking points','#tool-3','ux-resource-points'],
-          ['Sector','#tool-4','ux-resource-sector'],
-          ['Strong / weak words','#tool-6','ux-resource-words'],
-          ['Checklist','#tool-7','ux-resource-checklist'],
-          ['Lead with decision','#tool-8','ux-resource-decision']
+          ['Sector questions','#tool-4','ux-resource-sector'],
+          ['Language choices','#tool-6','ux-resource-words'],
+          ['Drafting checklist','#tool-7','ux-resource-checklist'],
+          ['Decision-first framing','#tool-8','ux-resource-decision']
         ]
       });
     }
@@ -235,7 +238,10 @@
           '<button type="button" data-tool="#tool-8">Decision-first framing</button>'+
         '</div></div>'+
       '</div>';
-      index.insertAdjacentElement('beforebegin',guide);
+      var resourceNav=q('.ux-section-nav[data-ux-nav="resources"]',root);
+      if(resourceNav) resourceNav.insertAdjacentElement('afterend',guide);
+      else if(resourceDownloads) resourceDownloads.insertAdjacentElement('afterend',guide);
+      else index.insertAdjacentElement('beforebegin',guide);
       qa('button',guide).forEach(function(btn){
         btn.addEventListener('click',function(){ scrollToTarget(q(btn.dataset.tool,root)); });
       });
@@ -311,10 +317,12 @@
       var home=q('#learn-traditional-page');
       if(home){
         [
-          ['At a glance','.lt-snapshot','#ux-home-snapshot'],
-          ['Central finding','.lt-core','#ux-home-core'],
+          ['Research at a glance','.lt-snapshot','#ux-home-snapshot'],
+          ['What made this testing different','.lt-difference','#ux-home-difference'],
+          ['Core finding and recommendation','.lt-core','#ux-home-core'],
+          ['What this means','.lt-meaning','#ux-home-meaning'],
           ['Themes','.lt-threads','#ux-home-themes'],
-          ['Next steps','.lt-next','#ux-home-next'],
+          ['Go deeper','.lt-next','#ux-home-next'],
           ['About the research','.lt-method','#ux-home-method']
         ].forEach(function(row){
           var el=q(row[1],home);
