@@ -353,7 +353,7 @@
               <div class="xv-eyebrow">In their own words</div>
               <h2 id="xv-quotes-title">Voters may not be aware of the harms that <span>concern them most.</span></h2>
             </div>
-            <p>Before respondents saw concrete scenarios, many defaulted to concerns they already had names for, including privacy and surveillance, job loss, and misinformation or deepfakes. Search their verbatim responses.</p>
+            <p>Before respondents saw concrete scenarios, many defaulted to concerns they already had names for, including privacy and surveillance, job loss, and misinformation or deepfakes. Search the verbatim responses below.</p>
           </div>
           <div class="xv-quote-toolbar">
             <label class="xv-search">
@@ -473,7 +473,7 @@
           <div class="xv-round-meta"><span>N=${round.n} likely voters</span><span>${round.metric}</span></div>
         </div>
         <div class="xv-suggest">
-          <span>What this suggests</span>
+          <span>Key finding</span>
           <strong>${round.suggestion}</strong>
         </div>
         <div class="xv-evidence">${bars}</div>
