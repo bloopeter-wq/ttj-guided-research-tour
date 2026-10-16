@@ -2407,3 +2407,33 @@ body.ux-search-open{overflow:hidden!important}
     padding-top:16px;
   }
 }
+
+
+/* Accessibility corrections from WCAG 2.2 AA audit. */
+.nav a.active{
+  color:#64C9BB!important;
+  border-bottom-color:#64C9BB!important;
+}
+.ttj-resources-v2 .jade>span{color:#64C9BB!important}
+.ttj-resources-v2 .blue>span{color:#9CB2EC!important}
+.ttj-resources-v2 .rv-tool-head-light .ux-tool-link{
+  color:#D0D7D6!important;
+  text-decoration-color:#7D8988!important;
+}
+.ttj-resources-v2 .rv-tool-head-light .ux-tool-link:hover{
+  color:#fff!important;
+  text-decoration-color:#64C9BB!important;
+}
+
+/* Programmatic deep links need exact layout positions; keep below-fold sections fully laid out. */
+.learn-traditional-page .lt-findings,
+.learn-traditional-page .lt-meaning,
+.learn-traditional-page .lt-threads,
+.ttj-explore-v2 .xv-demographics,
+.ttj-explore-v2 .xv-institutions,
+.ttj-explore-v2 .xv-quotes,
+.ttj-explore-v2 .xv-limits,
+.ttj-resources-v2 .rv-tool{
+  content-visibility:visible!important;
+  contain-intrinsic-size:none!important;
+}
