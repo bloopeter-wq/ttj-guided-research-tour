@@ -7,9 +7,21 @@
     if (root.dataset.resourcesRefined2 === '1') return true;
     root.dataset.resourcesRefined2 = '1';
 
-    /* Restore the original Tool 1 title only. */
-    const tool1Heading = document.querySelector('#tool-1 .rv-tool-head h2');
-    if (tool1Heading) tool1Heading.textContent = 'Build from the person out.';
+    /* Use functional tool names rather than repeated slogan-style headings. */
+    const toolHeadings = {
+      'tool-1': 'Message builder',
+      'tool-2': 'Concrete language examples',
+      'tool-4': 'Sector questions',
+      'tool-6': 'Stronger and weaker language',
+      'tool-7': 'Drafting checklist',
+      'tool-8': 'Decision-first framing'
+    };
+    Object.entries(toolHeadings).forEach(([id, label]) => {
+      const heading = document.querySelector('#' + id + ' .rv-tool-head h2');
+      if (heading) heading.textContent = label;
+    });
+    const heroDek = document.querySelector('#resources-view .rv-hero-inner>p');
+    if (heroDek) heroDek.textContent = 'Practical tools for writing, adapting and checking public-facing messages based on the research.';
 
     /* Cross-partisan talking points should arrive fully collapsed. */
     const tool3 = document.getElementById('tool-3');
