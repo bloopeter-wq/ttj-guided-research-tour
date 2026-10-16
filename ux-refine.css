@@ -584,3 +584,385 @@ body.ux-search-open{overflow:hidden!important}
     letter-spacing:-.015em!important;
   }
 }
+
+
+/* 10. Editorial UX pass — preserve the existing site, but remove the repeated "dashboard/demo" treatment. */
+
+/* Quieter utility chrome. */
+.ux-site-search-trigger{
+  min-width:82px!important;
+  height:38px!important;
+  justify-content:center!important;
+  background:transparent!important;
+  border-color:rgba(255,255,255,.22)!important;
+  padding:0 12px!important;
+  font-size:10.5px!important;
+}
+.ux-site-search-trigger:hover{background:rgba(255,255,255,.04)!important}
+.ux-search-top h2{font-size:clamp(28px,3.2vw,40px)!important;line-height:1.08!important;letter-spacing:-.025em!important}
+.ux-orientation{display:none!important}
+
+/* HOME — editorial hierarchy below the hero. */
+.learn-traditional-page .lt-snapshot{padding:48px 0 56px!important}
+.learn-traditional-page .lt-section-top{
+  gap:44px!important;
+  margin-bottom:28px!important;
+}
+.learn-traditional-page .lt-section-top>div h2,
+.learn-traditional-page .lt-section-top>h2{
+  font-size:clamp(36px,4vw,52px)!important;
+  line-height:1.08!important;
+  letter-spacing:-.025em!important;
+}
+.learn-traditional-page .lt-section-top>p{font-size:16px!important;line-height:1.62!important}
+
+.learn-traditional-page .lt-stat-grid{
+  border:0!important;
+  border-top:1px solid #cdd3d0!important;
+  background:transparent!important;
+}
+.learn-traditional-page .lt-stat-grid article{
+  min-height:128px!important;
+  padding:22px 24px 18px 0!important;
+  border:0!important;
+  border-right:1px solid #d7dcda!important;
+}
+.learn-traditional-page .lt-stat-grid article:nth-child(2),
+.learn-traditional-page .lt-stat-grid article:nth-child(3){padding-left:24px!important}
+.learn-traditional-page .lt-stat-grid article:last-child{border-right:0!important}
+.learn-traditional-page .lt-stat-grid strong{
+  font-size:clamp(44px,4.4vw,62px)!important;
+  line-height:.95!important;
+  letter-spacing:-.035em!important;
+}
+.learn-traditional-page .lt-stat-grid span{font-size:12.5px!important;font-weight:650!important}
+
+.learn-traditional-page .lt-core{
+  padding:72px 0 78px!important;
+  overflow:visible!important;
+}
+.learn-traditional-page .lt-core .lt-geo{display:none!important}
+.learn-traditional-page .lt-pillars{
+  margin-top:40px!important;
+  gap:30px!important;
+  background:transparent!important;
+  border:0!important;
+}
+.learn-traditional-page .lt-pillars article{
+  min-height:0!important;
+  padding:20px 0 0!important;
+  background:transparent!important;
+  border-top:1px solid #3a4148!important;
+}
+.learn-traditional-page .lt-pillars h3{margin:24px 0 10px!important;font-size:22px!important}
+.learn-traditional-page .lt-pillars p{font-size:14.5px!important;line-height:1.62!important}
+
+.learn-traditional-page .lt-findings{padding:72px 0 82px!important}
+.learn-traditional-page .lt-findings-head h2{font-size:clamp(38px,4.2vw,54px)!important}
+.learn-traditional-page .lt-finding-toggle{padding:22px 0!important}
+.learn-traditional-page .lt-finding-toggle>span{font-size:11.5px!important;letter-spacing:.11em!important}
+.learn-traditional-page .lt-finding-toggle>strong{
+  font-size:clamp(23px,2.2vw,31px)!important;
+  line-height:1.18!important;
+  font-weight:750!important;
+}
+.learn-traditional-page .lt-finding-body{padding-bottom:34px!important}
+.learn-traditional-page .lt-finding.lt-dark{
+  margin:0!important;
+  padding-left:0!important;
+  padding-right:0!important;
+  background:transparent!important;
+  color:#111426!important;
+  border-color:#bfc6c2!important;
+}
+.learn-traditional-page .lt-finding.lt-dark .lt-finding-toggle{color:#111426!important}
+.learn-traditional-page .lt-finding.lt-dark .lt-finding-toggle>span,
+.learn-traditional-page .lt-finding.lt-dark .lt-finding-toggle>i{color:#047E72!important}
+.learn-traditional-page .lt-finding.lt-dark .lt-finding-copy p{color:#4c5255!important}
+.learn-traditional-page .lt-evidence-bars.light span{color:#252b32!important}
+.learn-traditional-page .lt-evidence-bars.light b{color:#047E72!important}
+.learn-traditional-page .lt-evidence-bars.light i{background:#dfe4e1!important}
+.learn-traditional-page .lt-evidence-bars.light i::before{background:#047E72!important}
+.learn-traditional-page .lt-number-cluster>div,
+.learn-traditional-page .lt-number-callout,
+.learn-traditional-page .lt-compare>div{
+  box-shadow:none!important;
+  background:#fafaf7!important;
+}
+.learn-traditional-page .lt-number-callout{
+  border-left:3px solid #E4B82F!important;
+  padding:24px 26px!important;
+}
+.learn-traditional-page .lt-number-callout strong{font-size:clamp(44px,4.6vw,64px)!important}
+.learn-traditional-page .lt-compare strong{font-size:36px!important}
+
+/* Keep the two sections Jane already liked intact, while reducing only headline scale. */
+.learn-traditional-page .lt-threads{padding-top:82px!important;padding-bottom:92px!important}
+.learn-traditional-page .lt-next h2{font-size:clamp(48px,5.6vw,78px)!important;line-height:.98!important}
+.learn-traditional-page .lt-method{padding:56px 0 64px!important;background:#eef0ed!important}
+.learn-traditional-page .lt-method-grid{gap:54px!important}
+.learn-traditional-page .lt-method-grid>div:last-child{max-width:820px}
+
+/* EXPLORE — make it read like a research interface, not a second landing page. */
+.ttj-explore-v2 .xv-hero{
+  min-height:430px!important;
+  align-items:flex-start!important;
+}
+.ttj-explore-v2 .xv-hero-inner{padding:62px 0 48px!important}
+.ttj-explore-v2 .xv-hero h1{
+  font-size:clamp(52px,5.2vw,72px)!important;
+  line-height:.98!important;
+  letter-spacing:-.03em!important;
+  margin:16px 0 22px!important;
+}
+.ttj-explore-v2 .xv-hero-dek{font-size:19px!important;line-height:1.58!important;max-width:900px!important}
+.ttj-explore-v2 .xv-network{opacity:.045!important}
+.ttj-explore-v2 .xv-snapshot{margin-top:38px!important}
+.ttj-explore-v2 .xv-stat{min-height:110px!important;padding-top:18px!important;padding-bottom:18px!important}
+.ttj-explore-v2 .xv-stat strong{font-size:clamp(40px,4vw,58px)!important}
+.ttj-explore-v2 .xv-stat-time strong{font-size:32px!important}
+
+.ttj-explore-v2 .xv-section-head h2,
+.ttj-explore-v2 .xv-institutions h2,
+.ttj-explore-v2 .xv-limits-head h2{
+  font-size:clamp(36px,4vw,54px)!important;
+  line-height:1.08!important;
+  letter-spacing:-.025em!important;
+}
+.ttj-explore-v2 .xv-section-head>p,
+.ttj-explore-v2 .xv-institutions-dek,
+.ttj-explore-v2 .xv-limits-head>p{font-size:16px!important;line-height:1.64!important}
+
+.ttj-explore-v2 .xv-suggest{
+  grid-template-columns:120px minmax(0,1fr)!important;
+  gap:22px!important;
+  align-items:start!important;
+  background:transparent!important;
+  color:#111426!important;
+  border-left:3px solid #047E72!important;
+  padding:17px 0 17px 20px!important;
+  margin:14px 0 28px!important;
+}
+.ttj-explore-v2 .xv-suggest span{color:#047E72!important;font-size:10px!important}
+.ttj-explore-v2 .xv-suggest strong{
+  font-size:20px!important;
+  line-height:1.45!important;
+  letter-spacing:-.015em!important;
+  font-weight:700!important;
+}
+
+.ttj-explore-v2 .xv-demographics::after,
+.ttj-explore-v2 .xv-quotes::after{display:none!important}
+.ttj-explore-v2 .xv-demographics,
+.ttj-explore-v2 .xv-quotes{padding-top:76px!important;padding-bottom:86px!important}
+
+/* Institutions become a flat comparison list while preserving the existing click-through detail. */
+.ttj-explore-v2 .xv-institution-grid{
+  grid-template-columns:repeat(2,minmax(0,1fr))!important;
+  border:0!important;
+  border-top:1px solid #c4c8c5!important;
+}
+.ttj-explore-v2 .xv-institution-card{
+  min-height:0!important;
+  padding:17px 18px!important;
+  display:grid!important;
+  grid-template-columns:minmax(0,1fr) auto!important;
+  gap:8px 20px!important;
+  align-items:center!important;
+  border:0!important;
+  border-bottom:1px solid #d1d5d2!important;
+  background:transparent!important;
+  color:#111426!important;
+  opacity:1!important;
+  transform:none!important;
+  transition:background .15s ease,box-shadow .15s ease!important;
+}
+.ttj-explore-v2 .xv-institution-card:nth-child(odd){border-right:1px solid #d1d5d2!important}
+.ttj-explore-v2 .xv-institution-card:hover,
+.ttj-explore-v2 .xv-institution-card.active{
+  background:#f1f3ef!important;
+  color:#111426!important;
+  box-shadow:inset 4px 0 0 #047E72!important;
+}
+.ttj-explore-v2 .xv-icon,.ttj-explore-v2 .xv-drop-mark{display:none!important}
+.ttj-explore-v2 .xv-inst-name{min-height:0!important;font-size:15px!important}
+.ttj-explore-v2 .xv-inst-tease{
+  margin:0!important;
+  display:flex!important;
+  gap:12px!important;
+  font-size:10px!important;
+  opacity:.7!important;
+}
+.ttj-explore-v2 .xv-inst-drawer{
+  background:#f5f4ee!important;
+  color:#111426!important;
+  padding:28px 32px!important;
+  border-top:3px solid #047E72!important;
+  gap:48px!important;
+}
+.ttj-explore-v2 .xv-inst-drawer-title>span{color:#047E72!important}
+.ttj-explore-v2 .xv-inst-drawer-title h3{font-size:30px!important}
+.ttj-explore-v2 .xv-inst-drawer-title p,
+.ttj-explore-v2 .xv-inst-meter span{color:#555d60!important}
+.ttj-explore-v2 .xv-meter{background:#dde1de!important}
+.ttj-explore-v2 .xv-inst-meter.ai .xv-meter i{background:#EC5E55!important}
+
+/* Quotes: let the respondent language do the work. */
+.ttj-explore-v2 .xv-surprise{display:none!important}
+.ttj-explore-v2 .xv-quote-toolbar{grid-template-columns:1fr!important;max-width:860px!important}
+.ttj-explore-v2 .xv-quote-grid{columns:2!important;column-gap:18px!important}
+.ttj-explore-v2 .xv-quote-card{background:#0f1318!important;padding:22px 24px!important}
+.ttj-explore-v2 .xv-quote-card.feature{
+  border-top:1px solid #2b3037!important;
+  padding-top:22px!important;
+}
+.ttj-explore-v2 .xv-quote-card blockquote{font-size:18px!important;line-height:1.56!important}
+
+/* Protections: static, evidence-first rows instead of animated showcase cards. */
+.ttj-explore-v2 .xv-limits{padding-top:82px!important;padding-bottom:92px!important}
+.ttj-explore-v2 .xv-limits-head{margin-bottom:38px!important}
+.ttj-explore-v2 .xv-rail{
+  grid-template-columns:minmax(240px,.8fr) 1fr 92px!important;
+  gap:22px!important;
+  min-height:86px!important;
+  opacity:1!important;
+  transform:none!important;
+  transition:none!important;
+}
+.ttj-explore-v2 .xv-rail-index{display:none!important}
+.ttj-explore-v2 .xv-rail-copy h3{font-size:18px!important}
+.ttj-explore-v2 .xv-rail-copy p{font-size:12.5px!important}
+.ttj-explore-v2 .xv-rail>strong{font-size:25px!important}
+.ttj-explore-v2 .xv-rail-track{height:8px!important}
+.ttj-explore-v2 .xv-rail-track span{width:var(--rail)!important;transition:none!important}
+.ttj-explore-v2 .xv-limit-stats{margin-top:34px!important}
+.ttj-explore-v2 .xv-limit-stats strong{font-size:38px!important}
+
+/* RESOURCES — functional toolkit hierarchy rather than a sequence of campaign panels. */
+.ttj-resources-v2 .rv-hero::before{opacity:.045!important}
+.ttj-resources-v2 .rv-hero-shape{display:none!important}
+.ttj-resources-v2 .rv-hero-inner{padding:62px 0 44px!important}
+.ttj-resources-v2 .rv-hero h1{
+  font-size:clamp(52px,5.4vw,74px)!important;
+  line-height:.98!important;
+  letter-spacing:-.03em!important;
+  margin:16px 0 22px!important;
+}
+.ttj-resources-v2 .rv-hero-inner>p{font-size:18px!important;line-height:1.58!important;max-width:780px!important}
+.ttj-resources-v2 .rv-tool-index{display:none!important}
+
+.ttj-resources-v2 .ux-resource-guide{
+  margin-top:34px!important;
+  padding-top:18px!important;
+  border-top:1px solid rgba(255,255,255,.18)!important;
+}
+.ttj-resources-v2 .ux-resource-guide>span{margin-bottom:14px!important}
+.ttj-resources-v2 .ux-resource-groups{
+  display:grid;
+  grid-template-columns:repeat(3,minmax(0,1fr));
+  gap:22px;
+}
+.ttj-resources-v2 .ux-resource-groups>div>b{
+  display:block;
+  margin-bottom:8px;
+  color:#fff;
+  font:750 13px/1.2 "Noto Sans",Arial,sans-serif;
+}
+.ttj-resources-v2 .ux-resource-guide-buttons{
+  display:flex!important;
+  gap:6px!important;
+}
+.ttj-resources-v2 .ux-resource-guide button{
+  min-height:34px!important;
+  padding:8px 10px!important;
+  font-size:10.5px!important;
+  background:transparent!important;
+}
+
+.ttj-resources-v2 .rv-downloads-top{padding-top:48px!important;padding-bottom:52px!important}
+.ttj-resources-v2 .rv-downloads-top .rv-download-head{margin-bottom:26px!important}
+.ttj-resources-v2 .rv-downloads-top .rv-download-head h2{font-size:clamp(34px,3.8vw,48px)!important}
+
+.ttj-resources-v2 .rv-tool{padding:72px 0 80px!important}
+.ttj-resources-v2 .rv-tool-head{
+  grid-template-columns:minmax(280px,.75fr) minmax(0,1fr)!important;
+  gap:54px!important;
+  margin-bottom:34px!important;
+  align-items:start!important;
+}
+.ttj-resources-v2 .rv-tool-head h2{
+  font-size:clamp(30px,3vw,42px)!important;
+  line-height:1.1!important;
+  letter-spacing:-.022em!important;
+  margin-top:10px!important;
+}
+.ttj-resources-v2 .rv-tool-head>p{
+  font-size:16px!important;
+  line-height:1.62!important;
+  max-width:620px!important;
+}
+.ttj-resources-v2 .rv-language::before,
+.ttj-resources-v2 .rv-sector::before,
+.ttj-resources-v2 .rv-words::before,
+.ttj-resources-v2 .rv-decision::before{display:none!important}
+.ttj-resources-v2 .rv-number{
+  color:#76807d!important;
+  font-size:10px!important;
+}
+.ttj-resources-v2 .rv-language-stage article{min-height:250px!important}
+.ttj-resources-v2 .rv-language-stage blockquote{font-size:clamp(22px,2.2vw,32px)!important}
+.ttj-resources-v2 .rv-sector-panel{min-height:0!important}
+.ttj-resources-v2 .rv-sector-left h3{font-size:30px!important}
+.ttj-resources-v2 .rv-system-first,
+.ttj-resources-v2 .rv-decision-first{min-height:250px!important}
+.ttj-resources-v2 .rv-system-first p,
+.ttj-resources-v2 .rv-decision-first p{font-size:clamp(23px,2.3vw,32px)!important}
+
+/* Fewer decorative transitions. */
+.ttj-explore-v2 .xv-institution-card,
+.ttj-explore-v2 .xv-rail,
+.ttj-resources-v2 .rv-check-item,
+.ttj-resources-v2 .rv-point-card{animation:none!important}
+
+@media(max-width:900px){
+  .ttj-explore-v2 .xv-hero{min-height:390px!important}
+  .ttj-explore-v2 .xv-hero h1{font-size:54px!important}
+  .ttj-explore-v2 .xv-institution-grid{grid-template-columns:1fr!important}
+  .ttj-explore-v2 .xv-institution-card:nth-child(odd){border-right:0!important}
+  .ttj-resources-v2 .ux-resource-groups{grid-template-columns:1fr!important;gap:14px!important}
+  .ttj-resources-v2 .ux-resource-guide-buttons{flex-wrap:wrap!important}
+  .ttj-resources-v2 .rv-tool-head{grid-template-columns:1fr!important;gap:14px!important}
+}
+@media(max-width:760px){
+  .learn-traditional-page .lt-stat-grid{grid-template-columns:1fr!important}
+  .learn-traditional-page .lt-stat-grid article,
+  .learn-traditional-page .lt-stat-grid article:nth-child(2),
+  .learn-traditional-page .lt-stat-grid article:nth-child(3){
+    min-height:0!important;
+    padding:17px 0!important;
+    border-right:0!important;
+    border-bottom:1px solid #dde1de!important;
+  }
+  .learn-traditional-page .lt-stat-grid strong{font-size:42px!important}
+  .learn-traditional-page .lt-section-top>div h2,
+  .learn-traditional-page .lt-section-top>h2{font-size:36px!important}
+  .learn-traditional-page .lt-finding-toggle>strong{font-size:22px!important}
+  .ttj-explore-v2 .xv-hero{min-height:auto!important}
+  .ttj-explore-v2 .xv-hero-inner{padding:46px 0 38px!important}
+  .ttj-explore-v2 .xv-hero h1{font-size:48px!important}
+  .ttj-explore-v2 .xv-snapshot{margin-top:30px!important}
+  .ttj-explore-v2 .xv-section-head h2,
+  .ttj-explore-v2 .xv-institutions h2,
+  .ttj-explore-v2 .xv-limits-head h2{font-size:36px!important}
+  .ttj-explore-v2 .xv-suggest{grid-template-columns:1fr!important;gap:6px!important}
+  .ttj-explore-v2 .xv-quote-grid{columns:1!important}
+  .ttj-explore-v2 .xv-rail{grid-template-columns:1fr 70px!important;padding:15px 0!important}
+  .ttj-explore-v2 .xv-rail-copy{grid-column:1/-1!important}
+  .ttj-explore-v2 .xv-rail-track{grid-column:1!important}
+  .ttj-explore-v2 .xv-rail>strong{grid-column:2!important}
+  .ttj-resources-v2 .rv-hero-inner{padding:46px 0 34px!important}
+  .ttj-resources-v2 .rv-hero h1{font-size:48px!important}
+  .ttj-resources-v2 .rv-tool{padding:58px 0 64px!important}
+  .ttj-resources-v2 .rv-tool-head h2{font-size:30px!important}
+  .ttj-resources-v2 .ux-resource-guide-buttons{display:flex!important}
+}
