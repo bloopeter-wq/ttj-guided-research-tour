@@ -334,12 +334,12 @@
         {
           n:1,
           title:'Round 1 · Main concerns about government use of AI',
-          text:'Public services harder to use. One mistake can harm millions. Misleading the public with fake media. No one takes responsibility for harm. Wrongful fraud flags or benefit cuts. MaxDiff. March 6–9 2026. 1,242 likely voters.'
+          text:'Public services harder to use. One mistake can harm millions. Misleading the public with fake media. No one takes responsibility for harm. Wrongful fraud flags or benefit cuts. Ranked comparison. March 6–9 2026. 1,242 likely voters.'
         },
         {
           n:2,
           title:'Round 2 · Which broader AI harms feel most serious?',
-          text:'Health insurer uses AI to deny doctor-recommended care. Data centres strain water and power. Government outsources programs to tech firms. Benefits housing or jobs cut without accountability. Tracking data without meaningful consent. Bias and discrimination. MaxDiff. March 20–23 2026. 1,193 likely voters.'
+          text:'Health insurer uses AI to deny doctor-recommended care. Data centres strain water and power. Government outsources programs to tech firms. Benefits housing or jobs cut without accountability. Tracking data without meaningful consent. Bias and discrimination. Ranked comparison. March 20–23 2026. 1,193 likely voters.'
         },
         {
           n:3,
