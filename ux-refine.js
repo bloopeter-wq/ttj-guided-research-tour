@@ -12,6 +12,35 @@
     el.scrollIntoView({behavior: reduced ? 'auto' : 'smooth', block:'start'});
   }
 
+  function copyDeepLink(params, hash, button, idleLabel){
+    var url=new URL(window.location.href);
+    Object.keys(params||{}).forEach(function(key){url.searchParams.set(key,String(params[key]));});
+    url.hash=hash||location.hash||'tour';
+    var text=url.toString();
+    var done=function(ok){
+      if(!button) return;
+      button.textContent=ok?'Link copied':'Copy unavailable';
+      setTimeout(function(){button.textContent=idleLabel||'Copy link';},1500);
+    };
+    if(navigator.clipboard && navigator.clipboard.writeText){
+      navigator.clipboard.writeText(text).then(function(){done(true);}).catch(function(){done(false);});
+    } else done(false);
+  }
+
+  function refineHeader(){
+    var header=q('.header');
+    if(!header || header.dataset.uxCompactReady==='1') return !!header;
+    header.dataset.uxCompactReady='1';
+    var update=function(){
+      var compact=window.scrollY>96 && window.innerWidth>760 && !document.body.classList.contains('ux-search-open');
+      header.classList.toggle('ux-header-compact',compact);
+    };
+    window.addEventListener('scroll',update,{passive:true});
+    window.addEventListener('resize',update);
+    update();
+    return true;
+  }
+
   function buildSectionNav(opts){
     if (!opts || !opts.anchor || !opts.sections || q('.ux-section-nav[data-ux-nav="'+opts.key+'"]')) return null;
 
@@ -133,12 +162,18 @@
 
     var targets=['#xv-round-panel','#xv-demographics','#xv-limits','#xv-quotes','#xv-round-panel','#xv-round-panel','#xv-institutions'];
     qa('.lt-finding',page).forEach(function(card,i){
+      card.id=card.id || 'finding-'+String(i+1);
       var copy=q('.lt-finding-copy',card);
       if(!copy || q('.ux-evidence-link',copy)) return;
+      var actions=document.createElement('div');
+      actions.className='ux-inline-actions';
       var b=document.createElement('button');
       b.type='button'; b.className='ux-evidence-link'; b.textContent='See the evidence →';
       b.addEventListener('click',function(){ routeAndScroll('explore',targets[i]||'#xv-round-panel'); });
-      copy.appendChild(b);
+      var link=document.createElement('button');
+      link.type='button'; link.className='ux-copy-link'; link.textContent='Copy link';
+      link.addEventListener('click',function(){copyDeepLink({finding:i+1},'tour',link,'Copy link');});
+      actions.appendChild(b); actions.appendChild(link); copy.appendChild(actions);
     });
 
     /* Key findings: compact accordion treatment so each finding has a clear beginning and end. */
@@ -181,6 +216,22 @@
         toggle.setAttribute('aria-expanded',open?'true':'false');
       });
     });
+
+    var linkedFinding=Number(new URLSearchParams(location.search).get('finding'));
+    if(linkedFinding>=1 && linkedFinding<=7 && page.dataset.deepLinkHandled!=='1'){
+      page.dataset.deepLinkHandled='1';
+      setTimeout(function(){
+        var skip=q('#headline-skip');
+        if(page.hidden && skip) skip.click();
+        var card=q('#finding-'+linkedFinding,page);
+        var toggle=card&&q('.lt-finding-toggle',card);
+        if(card && toggle){
+          card.classList.add('is-open');
+          toggle.setAttribute('aria-expanded','true');
+          setTimeout(function(){scrollToTarget(card);},120);
+        }
+      },120);
+    }
     return true;
   }
 
