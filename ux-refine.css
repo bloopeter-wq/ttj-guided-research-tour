@@ -1635,3 +1635,252 @@ body.ux-search-open{overflow:hidden!important}
 @media(max-width:760px){
   .learn-traditional-page .lt-findings .lt-findings-head h2{font-size:32px!important}
 }
+
+
+/* 14. Final visual polish — compact navigation, consistent numerals, and cleaner evidence layouts. */
+
+/* Resources: turn the task navigator into a compact editorial index instead of a row of boxed buttons. */
+.ttj-resources-v2 .ux-resource-guide{
+  width:min(1180px,calc(100% - 64px))!important;
+  display:grid!important;
+  grid-template-columns:190px minmax(0,1fr)!important;
+  gap:28px!important;
+  align-items:start!important;
+  margin:28px auto 8px!important;
+  padding:22px 26px!important;
+  background:#f8f7f2!important;
+  border:1px solid #d5dad7!important;
+  border-left:4px solid #047E72!important;
+  color:#111426!important;
+}
+.ttj-resources-v2 .ux-resource-guide-head{
+  padding-top:2px;
+}
+.ttj-resources-v2 .ux-resource-guide-head>span{
+  display:block;
+  margin:0 0 7px;
+  font:800 10px/1.2 "Noto Sans",Arial,sans-serif;
+  letter-spacing:.15em;
+  text-transform:uppercase;
+  color:#047E72;
+}
+.ttj-resources-v2 .ux-resource-guide-head>p{
+  margin:0;
+  max-width:160px;
+  font:500 13px/1.45 "Noto Sans",Arial,sans-serif;
+  color:#667072;
+}
+.ttj-resources-v2 .ux-resource-groups{
+  display:grid!important;
+  grid-template-columns:repeat(3,minmax(0,1fr))!important;
+  gap:0!important;
+}
+.ttj-resources-v2 .ux-resource-group{
+  min-width:0;
+  padding:0 24px!important;
+  border-left:1px solid #d5dad7;
+}
+.ttj-resources-v2 .ux-resource-group:first-child{padding-left:0!important;border-left:0}
+.ttj-resources-v2 .ux-resource-group:last-child{padding-right:0!important}
+.ttj-resources-v2 .ux-resource-groups>div>b{
+  display:block;
+  margin:0 0 8px!important;
+  font:750 15px/1.25 "Noto Sans",Arial,sans-serif!important;
+  letter-spacing:-.01em!important;
+  color:#111426!important;
+}
+.ttj-resources-v2 .ux-resource-guide-buttons{
+  display:flex!important;
+  flex-direction:column!important;
+  align-items:stretch!important;
+  gap:0!important;
+}
+.ttj-resources-v2 .ux-resource-guide button{
+  width:100%!important;
+  min-height:0!important;
+  display:flex!important;
+  align-items:center!important;
+  justify-content:space-between!important;
+  gap:12px!important;
+  padding:7px 0!important;
+  border:0!important;
+  border-top:1px solid transparent!important;
+  background:transparent!important;
+  color:#30383a!important;
+  font:650 12.5px/1.35 "Noto Sans",Arial,sans-serif!important;
+  text-align:left!important;
+  box-shadow:none!important;
+}
+.ttj-resources-v2 .ux-resource-guide button::after{
+  content:'→';
+  flex:0 0 auto;
+  color:#047E72;
+  font-size:14px;
+  font-weight:700;
+  opacity:.75;
+  transition:transform .15s ease,opacity .15s ease;
+}
+.ttj-resources-v2 .ux-resource-guide button:hover{
+  color:#047E72!important;
+  background:transparent!important;
+}
+.ttj-resources-v2 .ux-resource-guide button:hover::after{
+  transform:translateX(3px);
+  opacity:1;
+}
+.ttj-resources-v2 .ux-resource-guide button:focus-visible{
+  outline:2px solid #047E72!important;
+  outline-offset:3px!important;
+  border-radius:1px;
+}
+
+/* Remove orphaned section numbers now that task navigation provides the structure. */
+.ttj-resources-v2 .rv-number{display:none!important}
+.ttj-resources-v2 .rv-tool-head{
+  align-items:start!important;
+}
+.ttj-resources-v2 .rv-tool-head>div{padding-left:0!important}
+
+/* Explore: percentage ranges are data labels, not display headlines. Keep them on one line. */
+.ttj-explore-v2 .xv-rail{
+  grid-template-columns:minmax(280px,.78fr) minmax(280px,1fr) 118px!important;
+  gap:28px!important;
+  align-items:center!important;
+  min-height:82px!important;
+  padding:20px 0!important;
+}
+.ttj-explore-v2 .xv-rail-copy h3{
+  margin-bottom:4px!important;
+  font-size:18px!important;
+  line-height:1.25!important;
+}
+.ttj-explore-v2 .xv-rail-copy p{
+  max-width:520px!important;
+  font-size:12.5px!important;
+  line-height:1.5!important;
+}
+.ttj-explore-v2 .xv-rail-track{
+  height:9px!important;
+  background:#e4e8e5!important;
+}
+.ttj-explore-v2 .xv-rail>strong{
+  min-width:112px!important;
+  margin:0!important;
+  color:#047E72!important;
+  font:800 26px/1 "Noto Sans",Arial,sans-serif!important;
+  letter-spacing:-.025em!important;
+  text-align:right!important;
+  white-space:nowrap!important;
+  font-variant-numeric:tabular-nums lining-nums;
+}
+.ttj-explore-v2 .xv-limit-stats strong{
+  font-size:38px!important;
+  white-space:nowrap!important;
+  font-variant-numeric:tabular-nums lining-nums;
+}
+
+/* Keep every public-facing percentage/range visually stable and single-line. */
+.learn-traditional-page .lt-evidence-bars b,
+.learn-traditional-page .lt-package-support strong,
+.learn-traditional-page .lt-number-callout strong,
+.ttj-explore-v2 .xv-evidence-line b,
+.ttj-explore-v2 .xv-rail>strong,
+.ttj-explore-v2 .xv-limit-stats strong,
+.ttj-explore-v2 .xv-inst-meter strong,
+.ttj-explore-v2 .xv-inst-drawer strong,
+.ttj-resources-v2 .rv-stat strong{
+  white-space:nowrap!important;
+  font-variant-numeric:tabular-nums lining-nums;
+}
+
+/* Small alignment refinements surfaced in the full formatting review. */
+.ttj-explore-v2 .xv-evidence-line{
+  align-items:baseline!important;
+  gap:20px!important;
+}
+.ttj-explore-v2 .xv-evidence-line b{
+  min-width:82px;
+  text-align:right;
+  letter-spacing:-.02em!important;
+}
+.ttj-explore-v2 .xv-ranked-row{
+  min-height:54px;
+}
+.ttj-resources-v2 .rv-download-grid a,
+.ttj-resources-v2 .rv-tool button,
+.ttj-explore-v2 button{
+  text-underline-offset:3px;
+}
+.learn-traditional-page .lt-finding-toggle>em{
+  max-width:780px;
+}
+
+/* Tablet: retain the editorial navigator, with enough room for all three task groups. */
+@media(max-width:1000px){
+  .ttj-resources-v2 .ux-resource-guide{
+    grid-template-columns:150px minmax(0,1fr)!important;
+    gap:22px!important;
+    padding:20px 22px!important;
+  }
+  .ttj-resources-v2 .ux-resource-group{padding:0 16px!important}
+  .ttj-explore-v2 .xv-rail{
+    grid-template-columns:minmax(220px,.9fr) minmax(180px,1fr) 100px!important;
+    gap:20px!important;
+  }
+  .ttj-explore-v2 .xv-rail>strong{
+    min-width:96px!important;
+    font-size:23px!important;
+  }
+}
+
+/* Mobile: task navigator stacks cleanly; evidence values stay intact beside their bars. */
+@media(max-width:760px){
+  .ttj-resources-v2 .ux-resource-guide{
+    width:min(100% - 36px,1180px)!important;
+    grid-template-columns:1fr!important;
+    gap:18px!important;
+    margin-top:22px!important;
+    padding:20px!important;
+  }
+  .ttj-resources-v2 .ux-resource-guide-head{
+    display:grid;
+    grid-template-columns:auto minmax(0,1fr);
+    gap:12px;
+    align-items:baseline;
+  }
+  .ttj-resources-v2 .ux-resource-guide-head>span{margin:0!important}
+  .ttj-resources-v2 .ux-resource-guide-head>p{max-width:none!important}
+  .ttj-resources-v2 .ux-resource-groups{
+    grid-template-columns:1fr!important;
+  }
+  .ttj-resources-v2 .ux-resource-group,
+  .ttj-resources-v2 .ux-resource-group:first-child,
+  .ttj-resources-v2 .ux-resource-group:last-child{
+    padding:14px 0!important;
+    border-left:0!important;
+    border-top:1px solid #d5dad7;
+  }
+  .ttj-resources-v2 .ux-resource-group:first-child{border-top:0!important}
+  .ttj-resources-v2 .ux-resource-guide-buttons{
+    display:grid!important;
+    grid-template-columns:repeat(2,minmax(0,1fr))!important;
+    column-gap:18px!important;
+  }
+
+  .ttj-explore-v2 .xv-rail{
+    grid-template-columns:minmax(0,1fr) 92px!important;
+    gap:10px 16px!important;
+    padding:17px 0!important;
+  }
+  .ttj-explore-v2 .xv-rail-copy{
+    grid-column:1/-1!important;
+  }
+  .ttj-explore-v2 .xv-rail-track{
+    grid-column:1!important;
+  }
+  .ttj-explore-v2 .xv-rail>strong{
+    grid-column:2!important;
+    min-width:88px!important;
+    font-size:22px!important;
+  }
+}
