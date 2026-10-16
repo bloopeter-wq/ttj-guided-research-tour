@@ -258,6 +258,7 @@ body.ux-search-open{overflow:hidden!important}
 .hb2-main{min-height:0!important;flex:1 1 auto!important}
 .hb2-main h1{line-height:1.03!important}
 .hb2-main h1 .hb2-emphasis{color:#E4B82F!important}
+.hb2-track{grid-template-columns:repeat(3,1fr)!important}
 
 /* Home: Central Finding becomes a conventional heading + paragraph. */
 .learn-traditional-page .lt-core{padding:72px 0 78px}
