@@ -129,7 +129,7 @@ showStep();
   if (!document.getElementById('what-we-learned-traditional-js')) {
     const pageJs = document.createElement('script');
     pageJs.id = 'what-we-learned-traditional-js';
-    pageJs.src = 'what-we-learned-traditional.js?v=6';
+    pageJs.src = 'what-we-learned-traditional.js?v=7';
     document.body.appendChild(pageJs);
   }
 
@@ -229,7 +229,7 @@ showStep();
   if (!document.getElementById('ux-refine-js')) {
     const script = document.createElement('script');
     script.id = 'ux-refine-js';
-    script.src = 'ux-refine.js?v=17';
+    script.src = 'ux-refine.js?v=18';
     document.body.appendChild(script);
   }
 })();
