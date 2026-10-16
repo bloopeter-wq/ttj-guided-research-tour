@@ -652,48 +652,6 @@
     return true;
   }
 
-  function addOrientation(){
-    if(q('#ux-orientation')) return;
-    if(!q('.lt-snapshot') || !q('#ux-explore-rounds') || !q('#resources-view .rv-tool')) return;
-    var o=document.createElement('div');
-    o.id='ux-orientation'; o.className='ux-orientation'; o.setAttribute('aria-hidden','true');
-    o.innerHTML='<b></b><span></span>'; document.body.appendChild(o);
-    var b=q('b',o), s=q('span',o), current='';
-
-    function set(label,detail){
-      var key=label+'|'+detail; if(key===current) return; current=key;
-      b.textContent=label; s.textContent=detail;
-    }
-    function updateVisibility(){
-      var footer=q('.footer');
-      var footerVisible=footer && footer.getBoundingClientRect().top < window.innerHeight;
-      o.classList.toggle('show',window.scrollY>420 && window.innerWidth>760 && !footerVisible);
-    }
-    window.addEventListener('scroll',updateVisibility,{passive:true}); window.addEventListener('resize',updateVisibility); updateVisibility();
-
-    if(!('IntersectionObserver' in window)) return;
-    var items=[
-      ['What We Learned','Research at a glance','.lt-snapshot'],
-      ['What We Learned','Central finding','.lt-core'],
-      ['What We Learned','Key findings','.lt-findings'],
-      ['What We Learned','Themes','.lt-threads'],
-      ['What We Learned','Next steps','.lt-next'],
-      ['Explore','Five rounds','#ux-explore-rounds'],
-      ['Explore','Audiences','#ux-explore-audiences'],
-      ['Explore','Institutions','#ux-explore-institutions'],
-      ['Explore','What people said','#ux-explore-voices'],
-      ['Explore','Protections','#ux-explore-protections']
-    ];
-    qa('#resources-view .rv-tool').forEach(function(el,i){ items.push(['Resources','Tool '+String(i+1).padStart(2,'0'), '#'+el.id]); });
-    var obs=new IntersectionObserver(function(entries){
-      var v=entries.filter(function(e){return e.isIntersecting&&!e.target.closest('[hidden]');}).sort(function(a,b){return b.intersectionRatio-a.intersectionRatio;})[0];
-      if(!v) return;
-      var item=items.find(function(x){return q(x[2])===v.target;});
-      if(item) set(item[0],item[1]);
-    },{rootMargin:'-22% 0px -62% 0px',threshold:[0,.1,.3]});
-    items.forEach(function(item){var el=q(item[2]);if(el)obs.observe(el);});
-  }
-
   function addFlowHandoffs(){
     var home=q('#learn-traditional-page'), explore=q('#data-view.ttj-explore-v2'), resources=q('#resources-view.ttj-resources-v2');
     function add(root,anchor,label,title,target,selector,copy){
