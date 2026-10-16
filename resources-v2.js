@@ -187,14 +187,14 @@
   };
 
   const downloads = [
-    ['Movement pamphlet', 'resources/TTJ_Message_Testing_Pamphlet_V1_Movement_Organisations_Copy_Draft_Google_Docs_Ready.docx'],
-    ['Movement one-page cheat sheet', 'resources/TTJ_Message_Testing_One_Page_Cheat_Sheet_Movement_Organisations_Copy_Full_Page.docx'],
-    ['Policymaker pamphlet', 'resources/TTJ_Message_Testing_Pamphlet_V2_Policymakers_Copy_Draft.docx'],
-    ['Policymaker one-page cheat sheet', 'resources/TTJ_Message_Testing_One_Page_Cheat_Sheet_Policymakers_Copy_Full_Page.docx'],
-    ['Message Testing Cheat Sheet', 'resources/TTJ_Message%20Testing%20Cheat%20Sheet_PB%20-%20Revised_September%202026.pdf'],
-    ['Prevent, Protect, Repair one-sheet', 'resources/TTJ_Policy_Framework_One_Sheet_Google_Docs_Editable_v2.docx'],
-    ['PPR policy framework pamphlet', 'resources/TTJ_Policy_Framework_Pamphlet_Policymakers_Google_Docs_Fully_Editable_FINAL.docx'],
-    ['Sector one-page cheat sheet', 'resources/TTJ_One_Page_Sector_Cheat_Sheet_Copy_Clean_Full_Page_FINAL.docx']
+    {label:'Movement pamphlet', href:'resources/TTJ_Message_Testing_Pamphlet_V1_Movement_Organisations_Copy_Draft_Google_Docs_Ready.docx', format:'DOCX', audience:'Movement organisations'},
+    {label:'Movement one-page cheat sheet', href:'resources/TTJ_Message_Testing_One_Page_Cheat_Sheet_Movement_Organisations_Copy_Full_Page.docx', format:'DOCX · 1 page', audience:'Movement organisations'},
+    {label:'Policymaker pamphlet', href:'resources/TTJ_Message_Testing_Pamphlet_V2_Policymakers_Copy_Draft.docx', format:'DOCX', audience:'Policymakers'},
+    {label:'Policymaker one-page cheat sheet', href:'resources/TTJ_Message_Testing_One_Page_Cheat_Sheet_Policymakers_Copy_Full_Page.docx', format:'DOCX · 1 page', audience:'Policymakers'},
+    {label:'Message Testing Cheat Sheet', href:'resources/TTJ_Message%20Testing%20Cheat%20Sheet_PB%20-%20Revised_September%202026.pdf', format:'PDF · Sep 2026', audience:'Research summary'},
+    {label:'Prevent, Protect, Repair one-sheet', href:'resources/TTJ_Policy_Framework_One_Sheet_Google_Docs_Editable_v2.docx', format:'DOCX · 1 page', audience:'Policy framework'},
+    {label:'PPR policy framework pamphlet', href:'resources/TTJ_Policy_Framework_Pamphlet_Policymakers_Google_Docs_Fully_Editable_FINAL.docx', format:'DOCX', audience:'Policymakers'},
+    {label:'Sector one-page cheat sheet', href:'resources/TTJ_One_Page_Sector_Cheat_Sheet_Copy_Clean_Full_Page_FINAL.docx', format:'DOCX · 1 page', audience:'Sector guidance'}
   ];
 
   root.classList.add('ttj-resources-v2');
@@ -215,7 +215,7 @@
       <section class="rv-downloads rv-downloads-top">
         <div class="rv-shell">
           <div class="rv-download-head"><div><div class="rv-eyebrow">Downloadable materials</div><h2>Downloads and kits</h2></div><p>Download the current TTJ research and policy materials. Additional kits are in progress.</p></div>
-          <div class="rv-download-grid">${downloads.map(([label,href],i)=>`<a href="${href}" download><span>0${i+1}</span><b>${label}</b><i>↓</i></a>`).join('')}</div>
+          <div class="rv-download-grid">${downloads.map((item,i)=>`<a href="${item.href}" download aria-label="Download ${item.label}, ${item.format}, for ${item.audience}"><span>0${i+1}</span><div><b>${item.label}</b><small>${item.audience} · ${item.format}</small></div><i aria-hidden="true">↓</i></a>`).join('')}</div>
           <p class="rv-source-note">Source: TechTonic Justice + Data for Progress message testing, five national surveys of likely voters, March–July 2026. Question wording, measures and samples vary by round.</p>
         </div>
       </section>
