@@ -2385,3 +2385,32 @@ body.ux-search-open{overflow:hidden!important}
     white-space:nowrap!important;
   }
 }
+
+
+/* WCAG 2.2 AA contrast corrections found in the full Home / Explore audit. */
+.learn-traditional-page .lt-meaning .lt-kicker,
+.learn-traditional-page .lt-method .lt-kicker{
+  color:#006E65!important;
+}
+.ttj-explore-v2 .xv-round-tabs button.active small{
+  color:#FFFFFF!important;
+  opacity:1!important;
+}
+.ttj-explore-v2 .xv-research-details dt{
+  color:#555E60!important;
+}
+.ttj-explore-v2 .xv-section-head-dark .xv-eyebrow{
+  color:#64C9BB!important;
+}
+.ttj-explore-v2 .xv-source .xv-eyebrow{
+  color:#006E65!important;
+}
+.ttj-explore-v2 .xv-quote-theme{
+  color:#79D2C5!important;
+}
+.ttj-explore-v2 .xv-quote-source{
+  color:#C1C9CA!important;
+}
+.ttj-explore-v2 .xv-limit-note>b{
+  color:#A83B34!important;
+}
