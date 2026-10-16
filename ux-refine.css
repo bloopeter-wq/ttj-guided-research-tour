@@ -2377,3 +2377,33 @@ body.ux-search-open{overflow:hidden!important}
   .header,
   .ux-resource-guide button::after{transition:none!important}
 }
+
+
+/* Homepage cover-to-report transition and clearer demographic state. */
+.learn-traditional-page .ux-report-transition{
+  width:min(1180px,calc(100% - 64px));
+  margin:0 auto;
+  padding:20px 0 18px;
+  border-bottom:1px solid #d5dad7;
+}
+.learn-traditional-page .ux-report-transition span{
+  color:#047E72;
+  font:800 10px/1.2 "Noto Sans",Arial,sans-serif;
+  letter-spacing:.16em;
+  text-transform:uppercase;
+}
+.ttj-explore-v2 .xv-segmented button,
+.ttj-explore-v2 .xv-subcontrols button{
+  transition:background .15s ease,color .15s ease,border-color .15s ease,box-shadow .15s ease;
+}
+.ttj-explore-v2 .xv-segmented button.active,
+.ttj-explore-v2 .xv-segmented button[aria-pressed="true"],
+.ttj-explore-v2 .xv-subcontrols button.active{
+  box-shadow:inset 0 -3px 0 #E4B82F!important;
+}
+@media(max-width:760px){
+  .learn-traditional-page .ux-report-transition{
+    width:min(100% - 36px,1180px);
+    padding-top:16px;
+  }
+}
