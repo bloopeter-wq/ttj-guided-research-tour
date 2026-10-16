@@ -95,7 +95,6 @@
         'Who is accountable when the system is wrong?'
       ],
       evidence: [
-        ['+15.7', 'MaxDiff for insurer AI denying doctor-recommended care'],
         ['73%', 'extremely or very concerned about doctor-recommended treatment being denied']
       ]
     },
@@ -213,6 +212,14 @@
         </div>
       </section>
 
+      <section class="rv-downloads rv-downloads-top">
+        <div class="rv-shell">
+          <div class="rv-download-head"><div><div class="rv-eyebrow">Downloadable materials</div><h2>Downloads and kits</h2></div><p>Download the current TTJ research and policy materials. Additional kits are in progress.</p></div>
+          <div class="rv-download-grid">${downloads.map(([label,href],i)=>`<a href="${href}" download><span>0${i+1}</span><b>${label}</b><i>↓</i></a>`).join('')}</div>
+          <p class="rv-source-note">Source: TechTonic Justice + Data for Progress message testing, five national surveys of likely voters, March–July 2026. Question wording, measures and samples vary by round.</p>
+        </div>
+      </section>
+
       <section class="rv-tool rv-message" id="tool-1">
         <div class="rv-shell">
           <div class="rv-tool-head">
@@ -323,13 +330,7 @@
         </div>
       </section>
 
-      <section class="rv-downloads">
-        <div class="rv-shell">
-          <div class="rv-download-head"><div><div class="rv-eyebrow">Download the source materials</div><h2>Take the research with you.</h2></div><p>The interactive tools are companions to the full TTJ research and policy materials.</p></div>
-          <div class="rv-download-grid">${downloads.map(([label,href],i)=>`<a href="${href}" download><span>0${i+1}</span><b>${label}</b><i>↓</i></a>`).join('')}</div>
-          <p class="rv-source-note">Source: TechTonic Justice + Data for Progress message testing, five national surveys of likely voters, March–July 2026. Question wording, measures and samples vary by round. MaxDiff scores are relative preferences, not percentages.</p>
-        </div>
-      </section>
+
     </div>`;
 
   const esc = s => String(s).replace(/[&<>"']/g, c => ({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#039;'}[c]));
