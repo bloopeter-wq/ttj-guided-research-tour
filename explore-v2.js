@@ -339,6 +339,7 @@
           <div class="xv-kicker-line"><span></span><b>Round 3 / Trust and permission</b></div>
           <h2 id="xv-institutions-title">Liking an institution does not necessarily mean trusting its use of AI.</h2>
           <p class="xv-institutions-dek">Choose an institution. General favourability does not necessarily reduce concern about AI use. Naming the institution responsible does not require attacking it: the focus can stay on the choice to use automated decision-making in a particular context.</p>
+          <p class="xv-section-meta">Round 3 · Apr 24–27, 2026 · N=1,167 likely voters · Measure: at least somewhat upset (%)</p>
           <div class="xv-institution-grid" id="xv-institution-grid">
             ${institutions.map((item, i) => `
               <button type="button" class="xv-institution-card ${i===0?'active':''}" data-institution="${item.key}" aria-pressed="${i===0}">
@@ -394,6 +395,7 @@
             <div class="xv-eyebrow">Round 5 / What people supported</div>
             <h2 id="xv-limits-title">Voters support <span>bans and more.</span></h2>
             <p>Every major protection tested received at least 70% support. We should not assume only voluntary or incremental measures will be publicly acceptable.</p>
+            <div class="xv-section-meta">Round 5 · Jul 24–27, 2026 · N=1,058 likely voters · Measure: support (%) / reported range</div>
           </div>
           <div class="xv-rails" id="xv-rails">
             ${safeguards.map((s, i) => `
@@ -476,7 +478,8 @@
       ? round.all.map(([label], index) => `<div class="xv-full-row xv-full-rank"><span><i>${String(index + 1).padStart(2,'0')}</i>${label}</span></div>`).join('')
       : round.all.map(([label, value]) => `<div class="xv-full-row"><span>${label}</span><b>${value}</b></div>`).join('');
 
-    document.getElementById('xv-round-panel').innerHTML = `
+    const panel=document.getElementById('xv-round-panel');
+    panel.innerHTML = `
       <article class="xv-round-card" data-round="${round.id}">
         <div class="xv-round-topline">
           <div><span>ROUND 0${round.id}</span><b>${round.date}</b></div>
@@ -523,6 +526,7 @@
           <button type="button" class="xv-copy-link" data-copy-round="${round.id}">Copy link to this round</button>
         </div>
       </article>`;
+    panel.setAttribute('aria-labelledby','xv-round-'+round.id+'-title');
 
     document.querySelectorAll('[data-round-nav]').forEach(btn => {
       btn.addEventListener('click', () => {
