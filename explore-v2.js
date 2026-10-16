@@ -8,13 +8,14 @@
       id: 1,
       date: 'Mar 6–9, 2026',
       n: '1,242',
-      metric: 'MaxDiff',
+      metric: 'Ranked comparison',
+      rankOnly: true,
       title: 'Main concerns about government use of AI',
-      explainer: 'Twelve concerns compared directly using MaxDiff. Scores below are relative rankings, not percentages.',
+      explainer: 'Twelve concerns were compared directly. Results are shown in ranked order; comparative score values are intentionally not displayed.',
       suggestion: 'Make the abstract concrete and make the invisible harm visible.',
       more: 'When people compared different concerns about government use of AI, the strongest worries were not technical. People were most concerned that public services would become harder to use, that a single mistake could affect millions, and that AI could be used to mislead the public. The messaging lesson is straightforward: start with what changes for the person using the service. An abstract warning about opacity or bias is less immediate than showing someone unable to get help, wrongly losing support, or facing an error nobody will take responsibility for.',
       detail: 'The strongest message was simple: technology gets between people and the public help they need. Scale also matters — one automated error can affect millions.',
-      method: 'MaxDiff is a relative preference score, not a percentage. Positive values ranked higher against the other options tested in this round.',
+      method: 'This round used a comparative ranking method. Items are shown in ranked order; the underlying comparative score values are not displayed.',
       bars: [
         ['Public services become harder to use', 6.3, '+6.3'],
         ['One mistake can harm millions', 5.3, '+5.3'],
@@ -41,13 +42,14 @@
       id: 2,
       date: 'Mar 20–23, 2026',
       n: '1,193',
-      metric: 'MaxDiff',
+      metric: 'Ranked comparison',
+      rankOnly: true,
       title: 'Which broader AI harms feel most serious?',
-      explainer: 'Twelve harms compared directly using MaxDiff.',
+      explainer: 'Twelve harms were compared directly. Results are shown in ranked order; comparative score values are intentionally not displayed.',
       suggestion: 'The doctor-versus-algorithm conflict is the standout.',
       more: 'One result towers over everything else: an insurer using AI to deny doctor-recommended care. The example combines several features that recur throughout the research: something essential is at stake, a recognizable institution is responsible, a human judgment is being displaced, and the person experiencing the harm has something concrete taken away. It is also notable that data-center pressure on water and electricity came second, showing that the physical and community consequences of AI infrastructure can resonate when described concretely.',
       detail: 'People react most strongly when AI becomes a gatekeeper between a person and something essential. Concrete institutional action is more powerful than abstract warnings about corporate power.',
-      method: 'MaxDiff is a relative preference score, not a percentage. Positive and negative values show relative position within this set.',
+      method: 'This round used a comparative ranking method. Items are shown in ranked order; the underlying comparative score values are not displayed.',
       bars: [
         ['Insurer AI denies doctor-recommended care', 15.7, '+15.7'],
         ['Data centres strain water and power', 5.2, '+5.2'],
@@ -403,7 +405,7 @@
         <div class="xv-shell xv-source-inner">
           <div>
             <div class="xv-eyebrow">Source & method</div>
-            <p>TechTonic Justice + Data for Progress message testing, five national surveys of likely voters, March–July 2026. Question wording, measures and samples vary by round. MaxDiff scores are relative preferences, not percentages.</p>
+            <p>TechTonic Justice + Data for Progress message testing, five national surveys of likely voters, March–July 2026. Question wording, measures and samples vary by round. Comparative rounds are shown in ranked order; percentage-based rounds show percentages.</p>
           </div>
           <a href="#resources">View research resources ↗</a>
         </div>
@@ -448,15 +450,19 @@
       btn.setAttribute('aria-selected', String(active));
     });
 
-    const bars = round.bars.map(([label, value, display]) => {
-      const negative = typeof value === 'number' && value < 0;
-      return `<div class="xv-evidence-row ${negative?'negative':''}">
-        <div class="xv-evidence-line"><span>${label}</span><b>${display}</b></div>
-        <div class="xv-evidence-track"><span style="--w:${barWidth(round, value)}%"></span></div>
-      </div>`;
-    }).join('');
+    const bars = round.rankOnly
+      ? `<div class="xv-ranked-list">${round.bars.map(([label], index) => `<div class="xv-ranked-row"><span>${String(index + 1).padStart(2,'0')}</span><strong>${label}</strong></div>`).join('')}</div>`
+      : round.bars.map(([label, value, display]) => {
+          const negative = typeof value === 'number' && value < 0;
+          return `<div class="xv-evidence-row ${negative?'negative':''}">
+            <div class="xv-evidence-line"><span>${label}</span><b>${display}</b></div>
+            <div class="xv-evidence-track"><span style="--w:${barWidth(round, value)}%"></span></div>
+          </div>`;
+        }).join('');
 
-    const fullRows = round.all.map(([label, value]) => `<div class="xv-full-row"><span>${label}</span><b>${value}</b></div>`).join('');
+    const fullRows = round.rankOnly
+      ? round.all.map(([label], index) => `<div class="xv-full-row xv-full-rank"><span><i>${String(index + 1).padStart(2,'0')}</i>${label}</span></div>`).join('')
+      : round.all.map(([label, value]) => `<div class="xv-full-row"><span>${label}</span><b>${value}</b></div>`).join('');
 
     document.getElementById('xv-round-panel').innerHTML = `
       <article class="xv-round-card" data-round="${round.id}">
@@ -497,7 +503,7 @@
     document.querySelectorAll('[data-round-nav]').forEach(btn => {
       btn.addEventListener('click', () => {
         const target = Number(btn.dataset.roundNav);
-        if (target >= 1 && target <= 6) {
+        if (target >= 1 && target <= 5) {
           renderRound(target);
           document.getElementById('xv-round-panel').scrollIntoView({behavior: reducedMotion?'auto':'smooth', block:'start'});
         }
