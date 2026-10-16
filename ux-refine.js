@@ -349,6 +349,7 @@
     trigger.className='ux-site-search-trigger';
     trigger.setAttribute('aria-haspopup','dialog');
     trigger.setAttribute('aria-controls','ux-site-search');
+    trigger.setAttribute('aria-expanded','false');
     trigger.innerHTML='<span>Search</span>';
     header.appendChild(trigger);
 
@@ -392,7 +393,8 @@
         target:target
       };
       if(extra) Object.keys(extra).forEach(function(k){item[k]=extra[k];});
-      item.search=normalise(item.title+' '+item.text);
+      item.meta=cleanText(item.meta || item.page);
+      item.search=normalise(item.title+' '+item.text+' '+item.meta);
       searchIndex.push(item);
     }
     function ensureId(el,prefix,i){
@@ -415,11 +417,11 @@
           ['About the research','.lt-method','#ux-home-method']
         ].forEach(function(row){
           var el=q(row[1],home);
-          if(el) addItem('What We Learned','tour',row[0],el.innerText,row[2]);
+          if(el) addItem('What We Learned','tour',row[0],el.innerText,row[2],{meta:'What We Learned · section'});
         });
         qa('.lt-finding',home).forEach(function(el,i){
           var title=q('h3',el);
-          addItem('What We Learned','tour',title ? title.textContent : 'Key finding '+(i+1),el.textContent,ensureId(el,'ux-search-finding',i));
+          addItem('What We Learned','tour',title ? title.textContent : 'Key finding '+(i+1),el.textContent,ensureId(el,'ux-search-finding',i),{meta:'What We Learned · finding '+(i+1)});
         });
         qa('.lt-thread-list details',home).forEach(function(el,i){
           var title=q('summary',el);
@@ -430,32 +432,37 @@
       var roundEntries=[
         {
           n:1,
+          meta:'Mar 6–9, 2026 · N=1,242',
           title:'Round 1 · Main concerns about government use of AI',
           text:'Public services harder to use. One mistake can harm millions. Misleading the public with fake media. No one takes responsibility for harm. Wrongful fraud flags or benefit cuts. Ranked comparison. March 6–9 2026. 1,242 likely voters.'
         },
         {
           n:2,
+          meta:'Mar 20–23, 2026 · N=1,193',
           title:'Round 2 · Which broader AI harms feel most serious?',
           text:'Health insurer uses AI to deny doctor-recommended care. Data centres strain water and power. Government outsources programs to tech firms. Benefits housing or jobs cut without accountability. Tracking data without meaningful consent. Bias and discrimination. Ranked comparison. March 20–23 2026. 1,193 likely voters.'
         },
         {
           n:3,
+          meta:'Apr 24–27, 2026 · N=1,167',
           title:'Round 3 · Who controls consequential AI decisions?',
           text:'Health insurance companies. Landlords. Private companies running public programs. State government officials. Big Tech companies. Employers. Institutional trust and permission. April 24–27 2026. 1,167 likely voters.'
         },
         {
           n:4,
+          meta:'Jul 2–5, 2026 · N=1,164',
           title:'Round 4 · Concrete harms and lived consequences',
           text:'Doctor-recommended treatment denied. Social Security or disability cut off. Benefits fraud. Groceries pricing. Job rejection with no human involved. Workplace monitoring. Forced to deal with AI instead of a person. Medicaid. Eviction surveillance. Housing. July 2–5 2026. 1,164 likely voters.'
         },
         {
           n:5,
+          meta:'Jul 24–27, 2026 · N=1,058',
           title:'Round 5 · What rules are people willing to support?',
           text:'Meaningful penalties. Off switches. Safety proof before release. High-stakes bans. Safety proof before use. Community boards with legal authority. Full policy package. July 24–27 2026. 1,058 likely voters.'
         }
       ];
       roundEntries.forEach(function(item){
-        addItem('Explore the Data','explore',item.title,item.text,'#ux-explore-rounds',{round:item.n});
+        addItem('Explore the Data','explore',item.title,item.text,'#ux-explore-rounds',{round:item.n,meta:'Round '+item.n+' · '+item.meta});
       });
 
       var explore=q('#data-view.ttj-explore-v2');
@@ -467,7 +474,7 @@
           ['Protections','.xv-limits','#ux-explore-protections']
         ].forEach(function(row){
           var el=q(row[1],explore);
-          if(el) addItem('Explore the Data','explore',row[0],el.innerText,row[2]);
+          if(el) addItem('Explore the Data','explore',row[0],el.innerText,row[2],{meta:'Explore the Data · section'});
         });
       }
 
@@ -478,10 +485,10 @@
           var eyebrow=q('.rv-eyebrow',el);
           var h2=q('h2',el);
           var title=[eyebrow&&eyebrow.textContent,h2&&h2.textContent].filter(Boolean).join(' · ') || 'Resource '+(i+1);
-          addItem('Resources','resources',title,el.innerText,'#'+el.id);
+          addItem('Resources','resources',title,el.innerText,'#'+el.id,{meta:'Resources · practical tool'});
         });
         var downloads=q('.rv-downloads',resources);
-        if(downloads) addItem('Resources','resources','Downloads and source materials',downloads.innerText,'#ux-resource-downloads');
+        if(downloads) addItem('Resources','resources','Downloads and source materials',downloads.innerText,'#ux-resource-downloads',{meta:'Resources · downloads'});
       }
     }
 
@@ -497,6 +504,27 @@
       if(start>0) out='…'+out;
       if(end<text.length) out=out+'…';
       return out;
+    }
+
+    function escapeHtml(value){
+      return String(value||'').replace(/[&<>"']/g,function(ch){
+        return {'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#039;'}[ch];
+      });
+    }
+    function highlightMatch(value,query){
+      var text=String(value||'');
+      var raw=cleanText(query);
+      if(!raw) return escapeHtml(text);
+      var lower=text.toLowerCase();
+      var needle=raw.toLowerCase();
+      var at=lower.indexOf(needle);
+      if(at<0){
+        var first=raw.split(/\s+/).filter(function(x){return x.length>1;})[0]||'';
+        needle=first.toLowerCase();
+        at=needle ? lower.indexOf(needle) : -1;
+      }
+      if(at<0) return escapeHtml(text);
+      return escapeHtml(text.slice(0,at))+'<mark>'+escapeHtml(text.slice(at,at+needle.length))+'</mark>'+escapeHtml(text.slice(at+needle.length));
     }
 
     function search(query){
@@ -544,9 +572,10 @@
         '<div class="ux-search-count">'+found.length+' result'+(found.length===1?'':'s')+'</div>'+
         found.map(function(item,i){
           return '<button type="button" class="ux-search-result" data-search-result="'+i+'">'+
-            '<span class="ux-search-page">'+item.page+'</span>'+
-            '<strong>'+item.title.replace(/&/g,'&amp;').replace(/</g,'&lt;').replace(/>/g,'&gt;')+'</strong>'+
-            '<span class="ux-search-snippet">'+snippet(item,query).replace(/&/g,'&amp;').replace(/</g,'&lt;').replace(/>/g,'&gt;')+'</span>'+
+            '<span class="ux-search-page">'+escapeHtml(item.page)+'</span>'+
+            '<strong>'+highlightMatch(item.title,query)+'</strong>'+
+            '<span class="ux-search-meta">'+escapeHtml(item.meta)+'</span>'+
+            '<span class="ux-search-snippet">'+highlightMatch(snippet(item,query),query)+'</span>'+
             '<b>Open →</b>'+
           '</button>';
         }).join('');
@@ -577,14 +606,18 @@
       buildSearchIndex();
       lastFocus=document.activeElement;
       overlay.hidden=false;
+      trigger.setAttribute('aria-expanded','true');
       document.body.classList.add('ux-search-open');
+      var app=q('.app'); if(app && 'inert' in app) app.inert=true;
       input.value='';
       renderResults('');
       setTimeout(function(){input.focus();},30);
     }
     function closeSearch(){
       overlay.hidden=true;
+      trigger.setAttribute('aria-expanded','false');
       document.body.classList.remove('ux-search-open');
+      var app=q('.app'); if(app && 'inert' in app) app.inert=false;
       if(lastFocus && lastFocus.focus) lastFocus.focus();
     }
 
@@ -600,6 +633,12 @@
       } else if(e.key==='Escape' && !overlay.hidden){
         e.preventDefault();
         closeSearch();
+      } else if(e.key==='Tab' && !overlay.hidden){
+        var focusable=qa('button:not([disabled]),input:not([disabled]),[href],[tabindex]:not([tabindex="-1"])',overlay).filter(function(el){return el.offsetParent!==null;});
+        if(!focusable.length) return;
+        var first=focusable[0], last=focusable[focusable.length-1];
+        if(e.shiftKey && document.activeElement===first){e.preventDefault();last.focus();}
+        else if(!e.shiftKey && document.activeElement===last){e.preventDefault();first.focus();}
       }
     });
 
