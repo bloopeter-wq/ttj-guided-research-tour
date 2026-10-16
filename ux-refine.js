@@ -216,23 +216,24 @@
       });
     }
 
-    var tool1=q('#tool-1',root), head=tool1&&q('.rv-tool-head>div',tool1);
-    if(head && !q('.ux-start-badge',head)){
-      var badge=document.createElement('span');
-      badge.className='ux-start-badge'; badge.textContent='Start here';
-      head.insertBefore(badge,head.firstChild);
-    }
-
     var heroInner=q('.rv-hero-inner',root), index=q('.rv-tool-index',root);
     if(heroInner && index && !q('.ux-resource-guide',root)){
       var guide=document.createElement('div');
       guide.className='ux-resource-guide';
-      guide.innerHTML='<span>Choose by task</span><div class="ux-resource-guide-buttons">'+
-        '<button type="button" data-tool="#tool-1">Build a message</button>'+
-        '<button type="button" data-tool="#tool-2">Compare language</button>'+
-        '<button type="button" data-tool="#tool-3">Prepare talking points</button>'+
-        '<button type="button" data-tool="#tool-4">Work by sector</button>'+
-        '<button type="button" data-tool="#tool-7">Check a draft</button>'+
+      guide.innerHTML='<span>Tools by task</span><div class="ux-resource-groups">'+
+        '<div><b>Write</b><div class="ux-resource-guide-buttons">'+
+          '<button type="button" data-tool="#tool-1">Message builder</button>'+
+          '<button type="button" data-tool="#tool-2">Concrete examples</button>'+
+          '<button type="button" data-tool="#tool-3">Talking points</button>'+
+        '</div></div>'+
+        '<div><b>Adapt</b><div class="ux-resource-guide-buttons">'+
+          '<button type="button" data-tool="#tool-4">Sector questions</button>'+
+          '<button type="button" data-tool="#tool-6">Language choices</button>'+
+        '</div></div>'+
+        '<div><b>Check</b><div class="ux-resource-guide-buttons">'+
+          '<button type="button" data-tool="#tool-7">Drafting checklist</button>'+
+          '<button type="button" data-tool="#tool-8">Decision-first framing</button>'+
+        '</div></div>'+
       '</div>';
       index.insertAdjacentElement('beforebegin',guide);
       qa('button',guide).forEach(function(btn){
@@ -253,7 +254,7 @@
     trigger.className='ux-site-search-trigger';
     trigger.setAttribute('aria-haspopup','dialog');
     trigger.setAttribute('aria-controls','ux-site-search');
-    trigger.innerHTML='<span>Search the site</span>';
+    trigger.innerHTML='<span>Search</span>';
     header.appendChild(trigger);
 
     var overlay=document.createElement('div');
@@ -264,7 +265,7 @@
       '<div class="ux-search-backdrop" data-search-close></div>'+
       '<section class="ux-search-dialog" role="dialog" aria-modal="true" aria-labelledby="ux-search-title">'+
         '<div class="ux-search-top">'+
-          '<div><span class="ux-search-kicker">Site-wide search</span><h2 id="ux-search-title">Find anything in the research.</h2></div>'+
+          '<div><span class="ux-search-kicker">Search</span><h2 id="ux-search-title">Search the research</h2></div>'+
           '<button type="button" class="ux-search-close" data-search-close>Close</button>'+
         '</div>'+
         '<label class="ux-search-box" for="ux-search-input">'+
@@ -423,8 +424,8 @@
       if(!normalise(query)){
         results.innerHTML=
           '<div class="ux-search-empty">'+
-            '<strong>Search the whole dashboard.</strong>'+
-            '<p>Find findings, polling rounds, institutions, harms, safeguards, talking points and practical tools.</p>'+
+            '<strong>Search the research.</strong>'+
+            '<p>Find polling rounds, findings, institutions, protections and practical tools.</p>'+
             '<div class="ux-search-suggestions">'+
               '<button type="button" data-search-suggestion="health care">Health care</button>'+
               '<button type="button" data-search-suggestion="human">Human recourse</button>'+
@@ -555,7 +556,6 @@
     refineHome(); refineExplore(); refineResources();
     if(refineHome() || refineExplore() || refineResources()){}
     refineSearch();
-    addOrientation();
   }
 
   boot();
