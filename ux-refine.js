@@ -85,6 +85,13 @@
 
     qa('button',nav).forEach(function(btn){
       btn.addEventListener('click',function(){
+        qa('button',nav).forEach(function(item){
+          var active=item===btn;
+          item.classList.toggle('active',active);
+          if(active) item.setAttribute('aria-current','true');
+          else item.removeAttribute('aria-current');
+        });
+        try { btn.scrollIntoView({behavior:'smooth',block:'nearest',inline:'center'}); } catch(e) {}
         scrollToTarget(document.getElementById(btn.dataset.uxTarget));
       });
     });
