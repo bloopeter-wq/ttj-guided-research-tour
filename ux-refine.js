@@ -142,6 +142,15 @@
     });
 
     /* Key findings: compact accordion treatment so each finding has a clear beginning and end. */
+    var evidenceCues=[
+      '72% support overall across parties',
+      '75–81% support across the major protections tested',
+      '85% concerned about being forced to deal with AI instead of a person',
+      '53–68% upset about institutions using AI for important decisions',
+      'Concrete harms ranked above a stand-alone bias frame',
+      '80–83% concerned about several high-stakes real-world uses',
+      'Top-of-mind AI concerns differ from the harms people react to most strongly'
+    ];
     qa('.lt-finding',page).forEach(function(card,i){
       if(card.dataset.accordionReady==='1') return;
       card.dataset.accordionReady='1';
@@ -160,7 +169,7 @@
       toggle.className='lt-finding-toggle';
       toggle.setAttribute('aria-controls',body.id);
       toggle.setAttribute('aria-expanded',i===0?'true':'false');
-      toggle.innerHTML='<span>'+label.textContent+'</span><strong>'+title.textContent+'</strong><i aria-hidden="true">+</i>';
+      toggle.innerHTML='<span>'+label.textContent+'</span><strong>'+title.textContent+'</strong><em>'+(evidenceCues[i]||'')+'</em><i aria-hidden="true">+</i>';
 
       card.appendChild(toggle);
       card.appendChild(body);
