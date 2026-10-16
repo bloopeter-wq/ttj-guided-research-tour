@@ -42,8 +42,11 @@
     nav.parentNode.insertBefore(holder,nav);
     function updatePinnedNav(){
       var scopeVisible=!opts.scope || (opts.scope.getClientRects && opts.scope.getClientRects().length>0);
-      var shouldPin=scopeVisible && holder.getBoundingClientRect().top<=0;
+      var header=q('.header');
+      var headerHeight=header ? Math.ceil(header.getBoundingClientRect().height) : 0;
+      var shouldPin=scopeVisible && holder.getBoundingClientRect().top<=headerHeight;
       nav.classList.toggle('is-fixed',shouldPin);
+      nav.style.top=shouldPin ? headerHeight+'px' : '';
       holder.style.height=shouldPin ? nav.offsetHeight+'px' : '0px';
     }
     window.addEventListener('scroll',updatePinnedNav,{passive:true});
@@ -114,19 +117,16 @@
     /* Keep the themes compact until somebody chooses one. */
     qa('.lt-thread-list details',page).forEach(function(d){ d.open=false; });
 
-    buildSectionNav({
-      key:'home',
-      scope:page,
-      anchor:hero,
-      aria:'What We Learned sections',
-      sections:[
-        ['At a glance','.lt-snapshot','ux-home-snapshot'],
-        ['Central finding','.lt-core','ux-home-core'],
-        ['Key findings','.lt-findings','ux-home-findings'],
-        ['Themes','.lt-threads','ux-home-themes'],
-        ['Next steps','.lt-next','ux-home-next'],
-        ['About','.lt-method','ux-home-method']
-      ]
+    [
+      ['.lt-snapshot','ux-home-snapshot'],
+      ['.lt-core','ux-home-core'],
+      ['.lt-findings','ux-home-findings'],
+      ['.lt-threads','ux-home-themes'],
+      ['.lt-next','ux-home-next'],
+      ['.lt-method','ux-home-method']
+    ].forEach(function(item){
+      var el=q(item[0],page);
+      if(el && !el.id) el.id=item[1];
     });
 
     var targets=['#xv-round-panel','#xv-demographics','#xv-limits','#xv-quotes','#xv-round-panel','#xv-round-panel','#xv-institutions'];
@@ -138,6 +138,38 @@
       b.addEventListener('click',function(){ routeAndScroll('explore',targets[i]||'#xv-round-panel'); });
       copy.appendChild(b);
     });
+
+    /* Key findings: compact accordion treatment so each finding has a clear beginning and end. */
+    qa('.lt-finding',page).forEach(function(card,i){
+      if(card.dataset.accordionReady==='1') return;
+      card.dataset.accordionReady='1';
+      var copy=q('.lt-finding-copy',card);
+      var label=copy&&q('span',copy);
+      var title=copy&&q('h3',copy);
+      if(!copy || !label || !title) return;
+
+      var body=document.createElement('div');
+      body.className='lt-finding-body';
+      body.id='lt-finding-body-'+String(i+1);
+      while(card.firstChild) body.appendChild(card.firstChild);
+
+      var toggle=document.createElement('button');
+      toggle.type='button';
+      toggle.className='lt-finding-toggle';
+      toggle.setAttribute('aria-controls',body.id);
+      toggle.setAttribute('aria-expanded',i===0?'true':'false');
+      toggle.innerHTML='<span>'+label.textContent+'</span><strong>'+title.textContent+'</strong><i aria-hidden="true">+</i>';
+
+      card.appendChild(toggle);
+      card.appendChild(body);
+      card.classList.toggle('is-open',i===0);
+
+      toggle.addEventListener('click',function(){
+        var open=!card.classList.contains('is-open');
+        card.classList.toggle('is-open',open);
+        toggle.setAttribute('aria-expanded',open?'true':'false');
+      });
+    });
     return true;
   }
 
@@ -146,18 +178,15 @@
     if(!root || !page || !hero || root.dataset.uxRefined==='1') return false;
     root.dataset.uxRefined='1';
 
-    buildSectionNav({
-      key:'explore',
-      scope:root,
-      anchor:hero,
-      aria:'Explore the Data sections',
-      sections:[
-        ['Rounds','.xv-rounds','ux-explore-rounds'],
-        ['Audiences','.xv-demographics','ux-explore-audiences'],
-        ['Institutions','.xv-institutions','ux-explore-institutions'],
-        ['What people said','.xv-quotes','ux-explore-voices'],
-        ['Protections','.xv-limits','ux-explore-protections']
-      ]
+    [
+      ['.xv-rounds','ux-explore-rounds'],
+      ['.xv-demographics','ux-explore-audiences'],
+      ['.xv-institutions','ux-explore-institutions'],
+      ['.xv-quotes','ux-explore-voices'],
+      ['.xv-limits','ux-explore-protections']
+    ].forEach(function(item){
+      var el=q(item[0],root);
+      if(el && !el.id) el.id=item[1];
     });
     return true;
   }
@@ -175,14 +204,14 @@
         anchor:resourceHero,
         aria:'Use the Research sections',
         sections:[
+          ['Downloads','.rv-downloads','ux-resource-downloads'],
           ['Message formula','#tool-1','ux-resource-formula'],
           ['Say this / not that','#tool-2','ux-resource-language'],
           ['Talking points','#tool-3','ux-resource-points'],
           ['Sector','#tool-4','ux-resource-sector'],
           ['Strong / weak words','#tool-6','ux-resource-words'],
           ['Checklist','#tool-7','ux-resource-checklist'],
-          ['Lead with decision','#tool-8','ux-resource-decision'],
-          ['Downloads','.rv-downloads','ux-resource-downloads']
+          ['Lead with decision','#tool-8','ux-resource-decision']
         ]
       });
     }
@@ -292,7 +321,7 @@
         });
         qa('.lt-finding',home).forEach(function(el,i){
           var title=q('h3',el);
-          addItem('What We Learned','tour',title ? title.textContent : 'Key finding '+(i+1),el.innerText,ensureId(el,'ux-search-finding',i));
+          addItem('What We Learned','tour',title ? title.textContent : 'Key finding '+(i+1),el.textContent,ensureId(el,'ux-search-finding',i));
         });
         qa('.lt-thread-list details',home).forEach(function(el,i){
           var title=q('summary',el);
