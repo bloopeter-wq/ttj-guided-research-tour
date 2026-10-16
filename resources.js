@@ -144,7 +144,7 @@ showStep();
   if (!document.getElementById('headline-banner-v2-js')) {
     const bannerJs = document.createElement('script');
     bannerJs.id = 'headline-banner-v2-js';
-    bannerJs.src = 'headline-banner-v2.js?v=3';
+    bannerJs.src = 'headline-banner-v2.js?v=4';
     document.body.appendChild(bannerJs);
   }
 })();
@@ -223,7 +223,7 @@ showStep();
     const css = document.createElement('link');
     css.id = 'ux-refine-css';
     css.rel = 'stylesheet';
-    css.href = 'ux-refine.css?v=10';
+    css.href = 'ux-refine.css?v=11';
     document.head.appendChild(css);
   }
   if (!document.getElementById('ux-refine-js')) {
