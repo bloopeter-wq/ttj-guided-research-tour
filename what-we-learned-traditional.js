@@ -14,6 +14,7 @@
     page.className = 'learn-traditional-page';
     page.hidden = true;
     page.innerHTML = `
+      <div class="ux-report-transition"><span>What the research found</span></div>
       <section class="lt-hero lt-memo-intro">
         <div class="lt-shell">
           <div class="lt-kicker">You should know</div>
