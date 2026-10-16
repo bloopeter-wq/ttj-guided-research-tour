@@ -1939,3 +1939,73 @@ body.ux-search-open{overflow:hidden!important}
     flex-direction:column!important;
   }
 }
+
+
+/* 15. Resources section navigator: fit every destination cleanly on-screen at desktop/tablet widths. */
+@media(min-width:1180px){
+  .ttj-resources-v2 .ux-section-nav[data-ux-nav="resources"] .ux-section-nav-inner{
+    width:calc(100% - 48px)!important;
+    max-width:1760px!important;
+    display:grid!important;
+    grid-template-columns:repeat(8,minmax(0,1fr))!important;
+    gap:0!important;
+    overflow:visible!important;
+  }
+  .ttj-resources-v2 .ux-section-nav[data-ux-nav="resources"] button{
+    width:100%!important;
+    min-width:0!important;
+    min-height:62px!important;
+    padding:0 10px!important;
+    display:flex!important;
+    align-items:center!important;
+    justify-content:center!important;
+    text-align:center!important;
+    white-space:normal!important;
+    overflow:visible!important;
+    font-size:10px!important;
+    line-height:1.25!important;
+    letter-spacing:.065em!important;
+  }
+}
+
+@media(min-width:761px) and (max-width:1179px){
+  .ttj-resources-v2 .ux-section-nav[data-ux-nav="resources"] .ux-section-nav-inner{
+    width:calc(100% - 36px)!important;
+    max-width:none!important;
+    display:grid!important;
+    grid-template-columns:repeat(4,minmax(0,1fr))!important;
+    gap:0!important;
+    overflow:visible!important;
+    padding:0!important;
+  }
+  .ttj-resources-v2 .ux-section-nav[data-ux-nav="resources"] button{
+    width:100%!important;
+    min-width:0!important;
+    min-height:48px!important;
+    padding:0 10px!important;
+    display:flex!important;
+    align-items:center!important;
+    justify-content:center!important;
+    text-align:center!important;
+    white-space:normal!important;
+    font-size:9.5px!important;
+    line-height:1.25!important;
+    letter-spacing:.055em!important;
+  }
+}
+
+/* On phones, retain swipeable navigation but make the final item visibly reachable. */
+@media(max-width:760px){
+  .ttj-resources-v2 .ux-section-nav[data-ux-nav="resources"]{
+    position:relative;
+  }
+  .ttj-resources-v2 .ux-section-nav[data-ux-nav="resources"] .ux-section-nav-inner{
+    width:100%!important;
+    padding:0 18px 0 12px!important;
+    scroll-padding-inline:12px;
+  }
+  .ttj-resources-v2 .ux-section-nav[data-ux-nav="resources"] button{
+    flex:0 0 auto!important;
+    white-space:nowrap!important;
+  }
+}
