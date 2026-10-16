@@ -1906,3 +1906,36 @@ body.ux-search-open{overflow:hidden!important}
     border:0!important;
   }
 }
+
+
+/* Mobile task index: keep the guide short and swipeable instead of stacking seven links vertically. */
+@media(max-width:760px){
+  .ttj-resources-v2 .ux-resource-groups{
+    display:flex!important;
+    gap:18px!important;
+    overflow-x:auto!important;
+    overflow-y:hidden!important;
+    padding:2px 2px 8px!important;
+    scroll-snap-type:x proximity;
+    -webkit-overflow-scrolling:touch;
+    scrollbar-width:none;
+  }
+  .ttj-resources-v2 .ux-resource-groups::-webkit-scrollbar{display:none}
+  .ttj-resources-v2 .ux-resource-group,
+  .ttj-resources-v2 .ux-resource-group:first-child,
+  .ttj-resources-v2 .ux-resource-group:last-child{
+    flex:0 0 210px!important;
+    min-width:210px!important;
+    padding:10px 0 0!important;
+    border:0!important;
+    scroll-snap-align:start;
+  }
+  .ttj-resources-v2 .ux-resource-group + .ux-resource-group{
+    padding-left:18px!important;
+    border-left:1px solid #d5dad7!important;
+  }
+  .ttj-resources-v2 .ux-resource-guide-buttons{
+    display:flex!important;
+    flex-direction:column!important;
+  }
+}
