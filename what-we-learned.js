@@ -57,7 +57,7 @@
       title: 'Specific harm is more compelling than the abstract phrase alone.',
       body: 'This finding needs to be handled carefully. In direct comparison, “bias and discrimination” scored well behind the insurer-denial harm. That does not mean voters do not care about discrimination. It means the phrase alone was less compelling than a specific example of what happened to someone.',
       note: 'The research did not test whether evidence of disparity becomes more powerful when it is attached to a concrete harm.',
-      evidence: '<div class="learn-kicker">Direct comparison · MaxDiff</div><h3>Concrete consequence vs. stand-alone frame.</h3><div class="evidence-compare"><div class="compare-card"><strong>+15.7</strong><span>Insurer uses AI to deny doctor-recommended care</span></div><div class="compare-card negative"><strong>−7.7</strong><span>“Bias and discrimination” as a stand-alone frame</span></div></div>'
+      evidence: '<div class="learn-kicker">Direct comparison</div><h3>Concrete consequence vs. stand-alone frame.</h3><p>The insurer-care example ranked far above a stand-alone “bias and discrimination” frame. Comparative score values are not displayed.</p>'
     },
     {
       label: 'Trusting an Institution Does Not Mean Trusting Its Use of AI',
