@@ -146,13 +146,6 @@
     /* Keep the themes compact until somebody chooses one. */
     qa('.lt-thread-list details',page).forEach(function(d){ d.open=false; });
 
-    if(!q('.ux-report-transition',page)){
-      var transition=document.createElement('div');
-      transition.className='ux-report-transition';
-      transition.innerHTML='<span>What the research found</span>';
-      page.insertBefore(transition,page.firstChild);
-    }
-
     [
       ['.lt-snapshot','ux-home-snapshot'],
       ['.lt-difference','ux-home-difference'],
@@ -351,14 +344,17 @@
     var nav=q('.nav',header);
     if(!header || !nav || !q('#learn-traditional-page') || !q('#data-view.ttj-explore-v2') || !q('#resources-view.ttj-resources-v2')) return false;
 
-    var trigger=document.createElement('button');
-    trigger.type='button';
-    trigger.className='ux-site-search-trigger';
+    var trigger=q('.ux-site-search-trigger',header);
+    if(!trigger){
+      trigger=document.createElement('button');
+      trigger.type='button';
+      trigger.className='ux-site-search-trigger';
+      trigger.innerHTML='<span>Search</span>';
+      header.appendChild(trigger);
+    }
     trigger.setAttribute('aria-haspopup','dialog');
     trigger.setAttribute('aria-controls','ux-site-search');
     trigger.setAttribute('aria-expanded','false');
-    trigger.innerHTML='<span>Search</span>';
-    header.appendChild(trigger);
 
     var overlay=document.createElement('div');
     overlay.id='ux-site-search';
