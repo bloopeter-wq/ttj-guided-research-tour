@@ -146,6 +146,13 @@
     /* Keep the themes compact until somebody chooses one. */
     qa('.lt-thread-list details',page).forEach(function(d){ d.open=false; });
 
+    if(!q('.ux-report-transition',page)){
+      var transition=document.createElement('div');
+      transition.className='ux-report-transition';
+      transition.innerHTML='<span>What the research found</span>';
+      page.insertBefore(transition,page.firstChild);
+    }
+
     [
       ['.lt-snapshot','ux-home-snapshot'],
       ['.lt-difference','ux-home-difference'],
