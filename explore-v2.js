@@ -10,6 +10,7 @@
       n: '1,242',
       metric: 'Ranked comparison',
       rankOnly: true,
+      question: 'Which concerns about government use of AI stand out most when compared directly?',
       title: 'Main concerns about government use of AI',
       explainer: 'Twelve concerns were compared directly. Results are shown in ranked order; comparative score values are intentionally not displayed.',
       suggestion: 'Make the abstract concrete and make the invisible harm visible.',
@@ -44,6 +45,7 @@
       n: '1,193',
       metric: 'Ranked comparison',
       rankOnly: true,
+      question: 'Which broader harms associated with AI feel most serious when compared directly?',
       title: 'Which broader AI harms feel most serious?',
       explainer: 'Twelve harms were compared directly. Results are shown in ranked order; comparative score values are intentionally not displayed.',
       suggestion: 'The doctor-versus-algorithm conflict is the standout.',
@@ -77,6 +79,7 @@
       date: 'Apr 24–27, 2026',
       n: '1,167',
       metric: 'At least somewhat upset · %',
+      question: 'How upset would voters be if each institution controlled AI used to make consequential decisions?',
       title: 'Who controls consequential AI decisions?',
       explainer: 'Share at least somewhat upset if each actor were in charge of AI used to make consequential decisions.',
       suggestion: 'The issue is consequential decision power.',
@@ -109,6 +112,7 @@
       date: 'Jul 2–5, 2026',
       n: '1,164',
       metric: 'Extremely / very concerned · %',
+      question: 'How concerned are voters about specific high-stakes uses of AI in health care, benefits, housing and work?',
       title: 'Which specific uses of AI cross the line?',
       explainer: 'People rated fifteen concrete scenarios, then selected the one they most wanted addressed first.',
       suggestion: 'Specific uses reveal a broad boundary.',
@@ -146,7 +150,8 @@
       date: 'Jul 24–27, 2026',
       n: '1,058',
       metric: 'Support · % / reported range',
-      title: 'What rules are people willing to support?',
+      question: 'Which concrete protections against harmful uses of AI do voters support?',
+      title: 'What rules are people willing to support?'
       explainer: 'Support for concrete guardrails on high-stakes AI. Every major proposal tested at 70% or higher.',
       suggestion: 'Concern has become permission for meaningful intervention.',
       more: 'The final round answers one of the biggest questions raised by the previous research: does concern actually translate into support for action? Every major guardrail tested received support of 70 percent or more, including safety proof, off switches, meaningful penalties, community authority and bans on some high-stakes uses. More people worried that regulation would not go far enough than worried about excessive intervention.',
@@ -301,7 +306,7 @@
           <div class="xv-round-tabs" role="tablist" aria-label="Research rounds">
             ${rounds.map(r => `<button type="button" role="tab" data-round-select="${r.id}" aria-selected="${r.id===1}"><span>0${r.id}</span><small>${r.date.split(',')[0]}</small></button>`).join('')}
           </div>
-          <div id="xv-round-panel" class="xv-round-panel" aria-live="polite"></div>
+          <div id="xv-round-panel" class="xv-round-panel" role="tabpanel" tabindex="0" aria-live="polite" aria-label="Selected research round"></div>
         </div>
       </section>
 
@@ -357,6 +362,13 @@
             </div>
             <p>Before respondents saw concrete scenarios, many defaulted to concerns they already had names for, including privacy and surveillance, job loss, and misinformation or deepfakes. Search the verbatim responses below.</p>
           </div>
+          <div class="xv-featured-quotes" aria-label="Selected respondent quotes">
+            <article><span>Jobs & economy</span><blockquote>“AI is untrustworthy and is used to cut jobs while maximize profits for big corporations.”</blockquote></article>
+            <article><span>Resources & infrastructure</span><blockquote>“AI taking up energy and water through data centers and causing water shortages and energy price increases. Also AI taking jobs from humans.”</blockquote></article>
+            <article><span>Human connection</span><blockquote>“Taking away connections between human to human. I fear were moving into isolation because technology has us occupied”</blockquote></article>
+            <article><span>Control & autonomy</span><blockquote>“I worry that AI is somewhat out of control already and that companies will use it in ways that are detrimental to citizens.”</blockquote></article>
+          </div>
+          <div class="xv-explore-more-label"><span>Explore more responses</span><p>Search or filter the wider set of open-ended responses.</p></div>
           <div class="xv-quote-toolbar">
             <label class="xv-search">
               <span class="xv-search-icon" aria-hidden="true">⌕</span>
@@ -474,9 +486,14 @@
           </div>
         </div>
         <div class="xv-round-titleblock">
-          <h3>${round.title}</h3>
+          <h3 id="xv-round-${round.id}-title">${round.title}</h3>
+          <p class="xv-round-question"><span>Question</span>${round.question}</p>
           <p class="xv-round-explainer">${round.explainer}</p>
-          <div class="xv-round-meta"><span>N=${round.n} likely voters</span><span>${round.metric}</span></div>
+          <dl class="xv-research-details" aria-label="Research details">
+            <div><dt>Date</dt><dd>${round.date}</dd></div>
+            <div><dt>Sample</dt><dd>${round.n} likely voters</dd></div>
+            <div><dt>Measure</dt><dd>${round.metric}</dd></div>
+          </dl>
         </div>
         <div class="xv-suggest">
           <span>Key finding</span>
@@ -484,7 +501,7 @@
         </div>
         <div class="xv-evidence">${bars}</div>
         <details class="xv-more">
-          <summary><span>More about this round</span><i aria-hidden="true">+</i></summary>
+          <summary><span>Method and full results</span><i aria-hidden="true">+</i></summary>
           <div class="xv-more-inner">
             <div class="xv-more-copy">
               <span class="xv-mini-label">What this round tells us</span>
@@ -498,23 +515,76 @@
             </div>
           </div>
         </details>
+        <div class="xv-round-footer">
+          <div class="xv-round-nav xv-round-nav-bottom">
+            <button type="button" data-round-nav="${round.id-1}" ${round.id===1?'disabled':''}>← Previous round</button>
+            <button type="button" data-round-nav="${round.id+1}" ${round.id===5?'disabled':''}>Next round →</button>
+          </div>
+          <button type="button" class="xv-copy-link" data-copy-round="${round.id}">Copy link to this round</button>
+        </div>
       </article>`;
 
     document.querySelectorAll('[data-round-nav]').forEach(btn => {
       btn.addEventListener('click', () => {
         const target = Number(btn.dataset.roundNav);
-        if (target >= 1 && target <= 5) {
-          renderRound(target);
-          document.getElementById('xv-round-panel').scrollIntoView({behavior: reducedMotion?'auto':'smooth', block:'start'});
-        }
+        if (target >= 1 && target <= 5) selectRound(target, true);
       });
+    });
+    const copyButton = document.querySelector('[data-copy-round="'+round.id+'"]');
+    if (copyButton) copyButton.addEventListener('click', async () => {
+      const url = new URL(window.location.href);
+      url.hash = 'explore';
+      url.searchParams.set('round', String(round.id));
+      try {
+        await navigator.clipboard.writeText(url.toString());
+        copyButton.textContent = 'Link copied';
+        setTimeout(() => { copyButton.textContent = 'Copy link to this round'; }, 1600);
+      } catch {
+        copyButton.textContent = 'Copy unavailable';
+      }
     });
   }
 
+  function setRoundUrl(id) {
+    if (location.hash !== '#explore') return;
+    const url = new URL(window.location.href);
+    url.searchParams.set('round', String(id));
+    url.hash = 'explore';
+    history.replaceState(null, '', url.toString());
+  }
+
+  function selectRound(id, scroll) {
+    const target = Math.min(5, Math.max(1, Number(id) || 1));
+    renderRound(target);
+    setRoundUrl(target);
+    const active = root.querySelector('[data-round-select="'+target+'"]');
+    root.querySelectorAll('[data-round-select]').forEach(btn => {
+      const on = btn === active;
+      btn.tabIndex = on ? 0 : -1;
+      btn.setAttribute('aria-selected', String(on));
+    });
+    if (scroll) document.getElementById('xv-round-panel').scrollIntoView({behavior: reducedMotion?'auto':'smooth', block:'start'});
+  }
+
   root.querySelectorAll('[data-round-select]').forEach(btn => {
-    btn.addEventListener('click', () => renderRound(Number(btn.dataset.roundSelect)));
+    btn.setAttribute('aria-controls','xv-round-panel');
+    btn.tabIndex = Number(btn.dataset.roundSelect)===1 ? 0 : -1;
+    btn.addEventListener('click', () => selectRound(Number(btn.dataset.roundSelect), false));
+    btn.addEventListener('keydown', event => {
+      if (!['ArrowDown','ArrowUp','ArrowRight','ArrowLeft','Home','End'].includes(event.key)) return;
+      event.preventDefault();
+      const current = Number(btn.dataset.roundSelect);
+      let target = current;
+      if (event.key==='Home') target=1;
+      else if (event.key==='End') target=5;
+      else if (event.key==='ArrowRight'||event.key==='ArrowDown') target=current===5?1:current+1;
+      else target=current===1?5:current-1;
+      selectRound(target,false);
+      root.querySelector('[data-round-select="'+target+'"]').focus();
+    });
   });
-  renderRound(1);
+  const linkedRound = Number(new URLSearchParams(location.search).get('round'));
+  selectRound(linkedRound >= 1 && linkedRound <= 5 ? linkedRound : 1, false);
 
   let lens = 'age';
   let ageMode = 'compare';
@@ -604,8 +674,10 @@
   }
 
   root.querySelectorAll('[data-lens]').forEach(btn => {
+    btn.setAttribute('aria-pressed', String(btn.dataset.lens === lens));
     btn.addEventListener('click', () => {
       lens = btn.dataset.lens;
+      root.querySelectorAll('[data-lens]').forEach(item => item.setAttribute('aria-pressed', String(item.dataset.lens === lens)));
       renderLens();
     });
   });
@@ -672,7 +744,14 @@
 
   function filteredQuotes() {
     const q = quoteSearch.trim().toLowerCase();
+    const featured = new Set([
+      'AI is untrustworthy and is used to cut jobs while maximize profits for big corporations.',
+      'AI taking up energy and water through data centers and causing water shortages and energy price increases. Also AI taking jobs from humans.',
+      'Taking away connections between human to human. I fear were moving into isolation because technology has us occupied',
+      'I worry that AI is somewhat out of control already and that companies will use it in ways that are detrimental to citizens.'
+    ]);
     return quotes.filter(item => {
+      if (featured.has(item.text)) return false;
       const themeOK = quoteTheme === 'All' || item.theme === quoteTheme;
       const searchOK = !q || item.text.toLowerCase().includes(q) || item.theme.toLowerCase().includes(q);
       return themeOK && searchOK;
