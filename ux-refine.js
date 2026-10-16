@@ -232,21 +232,25 @@
     if(heroInner && index && !q('.ux-resource-guide',root)){
       var guide=document.createElement('div');
       guide.className='ux-resource-guide';
-      guide.innerHTML='<span>Tools by task</span><div class="ux-resource-groups">'+
-        '<div><b>Write</b><div class="ux-resource-guide-buttons">'+
-          '<button type="button" data-tool="#tool-1">Message builder</button>'+
-          '<button type="button" data-tool="#tool-2">Concrete examples</button>'+
-          '<button type="button" data-tool="#tool-3">Talking points</button>'+
-        '</div></div>'+
-        '<div><b>Adapt</b><div class="ux-resource-guide-buttons">'+
-          '<button type="button" data-tool="#tool-4">Sector questions</button>'+
-          '<button type="button" data-tool="#tool-6">Language choices</button>'+
-        '</div></div>'+
-        '<div><b>Check</b><div class="ux-resource-guide-buttons">'+
-          '<button type="button" data-tool="#tool-7">Drafting checklist</button>'+
-          '<button type="button" data-tool="#tool-8">Decision-first framing</button>'+
-        '</div></div>'+
-      '</div>';
+      guide.innerHTML='<div class="ux-resource-guide-head">'+
+          '<span>Tools by task</span>'+
+          '<p>Jump directly to the tool you need.</p>'+
+        '</div>'+
+        '<div class="ux-resource-groups">'+
+          '<div class="ux-resource-group"><b>Write</b><div class="ux-resource-guide-buttons">'+
+            '<button type="button" data-tool="#tool-1">Message builder</button>'+
+            '<button type="button" data-tool="#tool-2">Concrete examples</button>'+
+            '<button type="button" data-tool="#tool-3">Talking points</button>'+
+          '</div></div>'+
+          '<div class="ux-resource-group"><b>Adapt</b><div class="ux-resource-guide-buttons">'+
+            '<button type="button" data-tool="#tool-4">Sector questions</button>'+
+            '<button type="button" data-tool="#tool-6">Language choices</button>'+
+          '</div></div>'+
+          '<div class="ux-resource-group"><b>Check</b><div class="ux-resource-guide-buttons">'+
+            '<button type="button" data-tool="#tool-7">Drafting checklist</button>'+
+            '<button type="button" data-tool="#tool-8">Decision-first framing</button>'+
+          '</div></div>'+
+        '</div>';
       var resourceNav=q('.ux-section-nav[data-ux-nav="resources"]',root);
       if(resourceNav) resourceNav.insertAdjacentElement('afterend',guide);
       else if(resourceDownloads) resourceDownloads.insertAdjacentElement('afterend',guide);
