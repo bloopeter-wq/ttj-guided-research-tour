@@ -497,3 +497,75 @@ body.ux-search-open{overflow:hidden!important}
 @media(prefers-reduced-motion:reduce){
   .learn-traditional-page .lt-finding-toggle>i{transition:none}
 }
+
+
+/* 9. Display typography spacing pass — loosen oversized headings so letterforms never crowd each other. */
+.hb2-main h1,
+.learn-traditional-page h2,
+.learn-traditional-page .lt-finding-toggle>strong,
+.ttj-explore-v2 h1,
+.ttj-explore-v2 h2,
+.ttj-explore-v2 .xv-round-titleblock h3,
+.ttj-resources-v2 h1,
+.ttj-resources-v2 h2{
+  font-kerning:normal;
+  font-optical-sizing:auto;
+  text-rendering:optimizeLegibility;
+}
+
+/* The hero was previously tracked too tightly, especially around pairs such as i/p and l/p. */
+.hb2-main h1{
+  letter-spacing:-.03em!important;
+  line-height:1.06!important;
+}
+
+/* Keep the rest of the large display type strong without compressed letter collisions. */
+.learn-traditional-page .lt-section-top h2,
+.learn-traditional-page .lt-findings-head h2,
+.learn-traditional-page .lt-next h2,
+.learn-traditional-page .lt-method h2{
+  letter-spacing:-.028em!important;
+}
+.learn-traditional-page .lt-core h2,
+.learn-traditional-page .lt-finding-toggle>strong{
+  letter-spacing:-.025em!important;
+}
+
+.ttj-explore-v2 .xv-hero h1{
+  letter-spacing:-.035em!important;
+  line-height:.92!important;
+}
+.ttj-explore-v2 .xv-section-head h2,
+.ttj-explore-v2 .xv-institutions h2,
+.ttj-explore-v2 .xv-limits-head h2,
+.ttj-explore-v2 .xv-round-titleblock h3{
+  letter-spacing:-.025em!important;
+}
+
+.ttj-resources-v2 .rv-hero h1,
+.ttj-resources-v2 .rv-tool-head h2,
+.ttj-resources-v2 .rv-download-head h2{
+  letter-spacing:-.028em!important;
+}
+
+@media(max-width:760px){
+  .hb2-main h1{
+    letter-spacing:-.015em!important;
+    line-height:1.08!important;
+  }
+  .ttj-explore-v2 .xv-hero h1{
+    letter-spacing:-.02em!important;
+    line-height:.96!important;
+  }
+  .learn-traditional-page .lt-section-top h2,
+  .learn-traditional-page .lt-findings-head h2,
+  .learn-traditional-page .lt-core h2,
+  .learn-traditional-page .lt-finding-toggle>strong,
+  .ttj-explore-v2 .xv-section-head h2,
+  .ttj-explore-v2 .xv-institutions h2,
+  .ttj-explore-v2 .xv-limits-head h2,
+  .ttj-resources-v2 .rv-tool-head h2,
+  .ttj-resources-v2 .rv-download-head h2{
+    letter-spacing:-.015em!important;
+  }
+}
