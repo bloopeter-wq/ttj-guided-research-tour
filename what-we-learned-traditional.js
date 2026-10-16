@@ -102,7 +102,7 @@
 
           <article class="lt-finding">
             <div class="lt-finding-copy"><span>06 / Framing nuance</span><h3>A caution about bias and discrimination.</h3><p>An argument about bias and discrimination was less concerning than most of the other harms tested. That does not mean people should avoid talking about bias and discrimination. Concrete harms, such as health companies using AI to deny care, may resonate more strongly while still making visible the racial, gender, and disability biases layered into those harms.</p></div>
-            <div class="lt-compare"><div><strong>+15.7</strong><span>Insurer uses AI to deny doctor-recommended care</span></div><div><strong>−7.7</strong><span>“Bias and discrimination” as a stand-alone frame</span></div></div>
+            <div class="lt-editorial-note"><b>What the comparison showed</b><p>The insurer-care example ranked far above a stand-alone “bias and discrimination” frame. The comparative score values are not displayed.</p></div>
           </article>
 
           <article class="lt-finding lt-feature">
@@ -147,7 +147,7 @@
       <section class="lt-method">
         <div class="lt-shell lt-method-grid">
           <div><div class="lt-kicker">About the research</div></div>
-          <div><p>TechTonic Justice and Data for Progress conducted five rounds of message testing with 5,824 likely voters between March and July 2026. Different rounds used different methods, including MaxDiff and percentage-based concern or support measures.</p><p>MaxDiff scores are relative preference scores, not percentages. Percentages and ranges should be read under the question wording and sample used in the relevant round.</p><a href="#explore" data-lt-section="explore">See methodology and round details →</a></div>
+          <div><p>TechTonic Justice and Data for Progress conducted five rounds of message testing with 5,824 likely voters between March and July 2026. The first two rounds used comparative ranking; later rounds report percentages for concern or support.</p><p>Comparative rounds are shown in ranked order without their underlying score values. Percentages and ranges should be read under the question wording and sample used in the relevant round.</p><a href="#explore" data-lt-section="explore">See methodology and round details →</a></div>
         </div>
       </section>
     `;
