@@ -70,6 +70,7 @@
 
       main.classList.remove('enter');
       void main.offsetWidth;
+      text.className = 'hb2-slide hb2-slide-' + index;
       text.innerHTML = headlines[index];
       main.classList.add('enter');
       count.textContent = String(index + 1).padStart(2,'0') + ' / ' + String(headlines.length).padStart(2,'0');
