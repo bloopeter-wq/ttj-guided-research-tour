@@ -129,7 +129,7 @@ showStep();
   if (!document.getElementById('what-we-learned-traditional-js')) {
     const pageJs = document.createElement('script');
     pageJs.id = 'what-we-learned-traditional-js';
-    pageJs.src = 'what-we-learned-traditional.js?v=3';
+    pageJs.src = 'what-we-learned-traditional.js?v=4';
     document.body.appendChild(pageJs);
   }
 
@@ -144,7 +144,7 @@ showStep();
   if (!document.getElementById('headline-banner-v2-js')) {
     const bannerJs = document.createElement('script');
     bannerJs.id = 'headline-banner-v2-js';
-    bannerJs.src = 'headline-banner-v2.js?v=2';
+    bannerJs.src = 'headline-banner-v2.js?v=3';
     document.body.appendChild(bannerJs);
   }
 })();
@@ -168,7 +168,7 @@ showStep();
   if (!document.getElementById('explore-v2-js')) {
     const script = document.createElement('script');
     script.id = 'explore-v2-js';
-    script.src = 'explore-v2.js?v=3';
+    script.src = 'explore-v2.js?v=4';
     document.body.appendChild(script);
   }
 })();
@@ -199,7 +199,7 @@ showStep();
   if (!document.getElementById('resources-v2-js')) {
     const script = document.createElement('script');
     script.id = 'resources-v2-js';
-    script.src = 'resources-v2.js?v=3';
+    script.src = 'resources-v2.js?v=4';
     document.body.appendChild(script);
   }
   if (!document.getElementById('resources-refine-js')) {
@@ -223,13 +223,13 @@ showStep();
     const css = document.createElement('link');
     css.id = 'ux-refine-css';
     css.rel = 'stylesheet';
-    css.href = 'ux-refine.css?v=7';
+    css.href = 'ux-refine.css?v=8';
     document.head.appendChild(css);
   }
   if (!document.getElementById('ux-refine-js')) {
     const script = document.createElement('script');
     script.id = 'ux-refine-js';
-    script.src = 'ux-refine.js?v=9';
+    script.src = 'ux-refine.js?v=10';
     document.body.appendChild(script);
   }
 })();
