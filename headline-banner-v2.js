@@ -2,14 +2,13 @@
   'use strict';
 
   var headlines = [
-    'Don’t Stop At Weak Guardrails: Voters Across Parties Want Strong AI Protections.',
-    'Voters support strong protections from harmful uses of AI.',
+    'Don’t Stop At Weak Guardrails: Voters Across Parties Want <span class="hb2-emphasis">Strong AI Protections</span>.',
     'AI is already being used to deny people health care, a stable income, a home, and a job.',
     'This Is One of the Only Places that Parties Agree.'
   ];
 
   /* Preserve the original headline palette: jade → gold → coral → lime. */
-  var palette = ['#64C9BB', '#E4B82F', '#EC5E55', '#92B93E'];
+  var palette = ['#64C9BB', '#EC5E55', '#92B93E'];
   var geometryPaths = [
     'M85 -90 L430 125 L190 415 L-45 220 Z',
     'M430 125 L645 48 L875 175 L685 470 L190 415 Z',
@@ -47,7 +46,7 @@
     hero.className = 'hb2-hero';
     hero.innerHTML = '<div class="hb2-geo" aria-hidden="true"></div>' +
       '<div class="hb2-shell">' +
-        '<div class="hb2-top"><div class="hb2-kicker">Headlines from the research</div><div class="hb2-count" id="hb2-count">01 / 04</div></div>' +
+        '<div class="hb2-top"><div class="hb2-kicker">Headlines from the research</div><div class="hb2-count" id="hb2-count">01 / 03</div></div>' +
         '<div class="hb2-main" id="hb2-main"><h1 id="hb2-text"></h1></div>' +
         '<div class="hb2-bottom"><div class="hb2-track" id="hb2-track"></div><div class="hb2-actions"><div class="hb2-arrows"><button class="hb2-arrow" id="hb2-prev" type="button" aria-label="Previous headline">←</button><button class="hb2-arrow" id="hb2-next" type="button" aria-label="Next headline">→</button></div><button class="hb2-scroll" id="hb2-scroll" type="button">Explore the findings ↓</button></div></div>' +
       '</div>';
@@ -71,7 +70,7 @@
 
       main.classList.remove('enter');
       void main.offsetWidth;
-      text.textContent = headlines[index];
+      text.innerHTML = headlines[index];
       main.classList.add('enter');
       count.textContent = String(index + 1).padStart(2,'0') + ' / ' + String(headlines.length).padStart(2,'0');
       track.innerHTML = headlines.map(function (_, i) {
@@ -94,6 +93,24 @@
         render();
       }
     });
+
+    /* Mobile: swipe horizontally between headlines while preserving vertical page scrolling. */
+    var touchStartX = null;
+    var touchStartY = null;
+    hero.addEventListener('touchstart', function (event) {
+      if (!event.touches || event.touches.length !== 1) return;
+      touchStartX = event.touches[0].clientX;
+      touchStartY = event.touches[0].clientY;
+    }, { passive: true });
+    hero.addEventListener('touchend', function (event) {
+      if (touchStartX === null || !event.changedTouches || event.changedTouches.length !== 1) return;
+      var dx = event.changedTouches[0].clientX - touchStartX;
+      var dy = event.changedTouches[0].clientY - touchStartY;
+      touchStartX = null; touchStartY = null;
+      if (Math.abs(dx) < 45 || Math.abs(dx) <= Math.abs(dy)) return;
+      if (dx < 0 && index < headlines.length - 1) { index += 1; render(); }
+      if (dx > 0 && index > 0) { index -= 1; render(); }
+    }, { passive: true });
 
     document.getElementById('hb2-scroll').addEventListener('click', function () {
       var target = page.querySelector('.lt-snapshot') || page;
