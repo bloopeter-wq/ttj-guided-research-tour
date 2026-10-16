@@ -63,7 +63,7 @@
 
       <section class="lt-findings">
         <div class="lt-shell">
-          <div class="lt-section-top"><div><div class="lt-kicker">Key findings</div><h2>Seven things the research tells us.</h2></div><p>Scroll through the evidence. The page is designed to read like a report, not a presentation.</p></div>
+          <div class="lt-section-top lt-findings-head"><div><div class="lt-kicker">Key findings</div><h2>Seven things the research tells us.</h2></div></div>
 
           <article class="lt-finding lt-feature">
             <div class="lt-finding-copy"><span>01 / Concrete harm</span><h3>It’s not really about AI. It’s about power over people’s lives.</h3><p>Voters are concerned with the concrete harms AI enables when individuals or institutions use automated systems to wield power over an important part of someone’s life, especially the ability to get, keep, or afford health care, public benefits, housing, or a job.</p></div>
@@ -146,7 +146,7 @@
 
       <section class="lt-method">
         <div class="lt-shell lt-method-grid">
-          <div><div class="lt-kicker">About the research</div><h2>Five rounds. Different questions. One recurring pattern.</h2></div>
+          <div><div class="lt-kicker">About the research</div></div>
           <div><p>TechTonic Justice and Data for Progress conducted five rounds of message testing with 5,824 likely voters between March and July 2026. Different rounds used different methods, including MaxDiff and percentage-based concern or support measures.</p><p>MaxDiff scores are relative preference scores, not percentages. Percentages and ranges should be read under the question wording and sample used in the relevant round.</p><a href="#explore" data-lt-section="explore">See methodology and round details →</a></div>
         </div>
       </section>
