@@ -160,6 +160,21 @@
       if(el && !el.id) el.id=item[1];
     });
 
+    buildSectionNav({
+      key:'home',
+      scope:page,
+      anchor:hero,
+      aria:'What We Learned sections',
+      sections:[
+        ['At a glance','.lt-snapshot','ux-home-snapshot'],
+        ['Central finding','.lt-core','ux-home-core'],
+        ['Key findings','.lt-findings','ux-home-findings'],
+        ['Themes','.lt-threads','ux-home-themes'],
+        ['Next steps','.lt-next','ux-home-next'],
+        ['About','.lt-method','ux-home-method']
+      ]
+    });
+
     var targets=['#xv-round-panel','#xv-demographics','#xv-limits','#xv-quotes','#xv-round-panel','#xv-round-panel','#xv-institutions'];
     qa('.lt-finding',page).forEach(function(card,i){
       card.id=card.id || 'finding-'+String(i+1);
@@ -250,6 +265,20 @@
       var el=q(item[0],root);
       if(el && !el.id) el.id=item[1];
     });
+
+    buildSectionNav({
+      key:'explore',
+      scope:root,
+      anchor:hero,
+      aria:'Explore the Data sections',
+      sections:[
+        ['Rounds','.xv-rounds','ux-explore-rounds'],
+        ['Audiences','.xv-demographics','ux-explore-audiences'],
+        ['Institutions','.xv-institutions','ux-explore-institutions'],
+        ['What people said','.xv-quotes','ux-explore-voices'],
+        ['Protections','.xv-limits','ux-explore-protections']
+      ]
+    });
     return true;
   }
 
@@ -264,13 +293,17 @@
       buildSectionNav({
         key:'resources',
         scope:root,
-        anchor:resourceDownloads || resourceHero,
+        anchor:resourceHero,
         aria:'Use the Research sections',
         sections:[
-          ['Downloads','.rv-downloads','ux-resource-downloads'],
-          ['Write','#tool-1','ux-resource-write'],
-          ['Adapt','#tool-4','ux-resource-adapt'],
-          ['Check','#tool-7','ux-resource-check']
+          ['Message formula','#tool-1','ux-resource-formula'],
+          ['Say this / not that','#tool-2','ux-resource-language'],
+          ['Talking points','#tool-3','ux-resource-points'],
+          ['Sector','#tool-4','ux-resource-sector'],
+          ['Strong / weak words','#tool-6','ux-resource-words'],
+          ['Checklist','#tool-7','ux-resource-checklist'],
+          ['Lead with decision','#tool-8','ux-resource-decision'],
+          ['Downloads','.rv-downloads','ux-resource-downloads']
         ]
       });
     }
