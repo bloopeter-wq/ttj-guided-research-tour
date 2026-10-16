@@ -151,7 +151,7 @@
       n: '1,058',
       metric: 'Support · % / reported range',
       question: 'Which concrete protections against harmful uses of AI do voters support?',
-      title: 'What rules are people willing to support?'
+      title: 'What rules are people willing to support?',
       explainer: 'Support for concrete guardrails on high-stakes AI. Every major proposal tested at 70% or higher.',
       suggestion: 'Concern has become permission for meaningful intervention.',
       more: 'The final round answers one of the biggest questions raised by the previous research: does concern actually translate into support for action? Every major guardrail tested received support of 70 percent or more, including safety proof, off switches, meaningful penalties, community authority and bans on some high-stakes uses. More people worried that regulation would not go far enough than worried about excessive intervention.',
