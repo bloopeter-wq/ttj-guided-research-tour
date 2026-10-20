@@ -137,14 +137,14 @@ showStep();
     const bannerCss = document.createElement('link');
     bannerCss.id = 'headline-banner-v2-css';
     bannerCss.rel = 'stylesheet';
-    bannerCss.href = 'headline-banner-v2.css?v=1';
+    bannerCss.href = 'headline-banner-v2.css?v=2';
     document.head.appendChild(bannerCss);
   }
 
   if (!document.getElementById('headline-banner-v2-js')) {
     const bannerJs = document.createElement('script');
     bannerJs.id = 'headline-banner-v2-js';
-    bannerJs.src = 'headline-banner-v2.js?v=4';
+    bannerJs.src = 'headline-banner-v2.js?v=5';
     document.body.appendChild(bannerJs);
   }
 })();
