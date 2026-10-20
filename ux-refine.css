@@ -2485,3 +2485,38 @@ body.ux-search-open{overflow:hidden!important}
     scroll-margin-top:150px!important;
   }
 }
+
+
+/* Jane round: increase breathing room in display titles site-wide. */
+.hb2-main h1{
+  line-height:1.09!important;
+}
+.learn-traditional-page .lt-memo-intro h1,
+.learn-traditional-page .lt-core h2,
+.learn-traditional-page .lt-meaning h2,
+.learn-traditional-page .lt-threads .lt-section-top h2,
+.learn-traditional-page .lt-next h2,
+.ttj-explore-v2 .xv-hero h1,
+.ttj-explore-v2 .xv-section-head h2,
+.ttj-explore-v2 .xv-institutions h2,
+.ttj-explore-v2 .xv-limits-head h2,
+.ttj-explore-v2 .xv-round-titleblock h3,
+.ttj-resources-v2 .rv-hero h1,
+.ttj-resources-v2 .rv-download-head h2,
+.ttj-resources-v2 .rv-tool-head h2{
+  line-height:1.10!important;
+}
+.learn-traditional-page .lt-finding-toggle>strong,
+.learn-traditional-page .lt-route-grid h3{
+  line-height:1.18!important;
+}
+@media(max-width:760px){
+  .hb2-main h1{
+    line-height:1.10!important;
+  }
+  .learn-traditional-page .lt-next h2,
+  .ttj-explore-v2 .xv-hero h1,
+  .ttj-resources-v2 .rv-hero h1{
+    line-height:1.08!important;
+  }
+}
