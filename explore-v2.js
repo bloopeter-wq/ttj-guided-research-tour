@@ -54,14 +54,14 @@
       method: 'This round used a comparative ranking method. Items are shown in ranked order; the underlying comparative score values are not displayed.',
       bars: [
         ['Insurer AI denies doctor-recommended care', 15.7, '+15.7'],
-        ['Data centres strain water and power', 5.2, '+5.2'],
+        ['Data centers strain water and power', 5.2, '+5.2'],
         ['Government outsources programs to tech firms', 3.7, '+3.7'],
         ['Benefits / housing / jobs cut, no accountability', 1.3, '+1.3'],
         ['Tracking data without meaningful consent', 0.5, '+0.5']
       ],
       all: [
         ['Insurer AI denies doctor-recommended care', '+15.7'],
-        ['Data centres strain water and power', '+5.2'],
+        ['Data centers strain water and power', '+5.2'],
         ['Government outsources programs to tech firms', '+3.7'],
         ['Benefits / housing / jobs cut, no accountability', '+1.3'],
         ['Tracking data without meaningful consent', '+0.5'],
@@ -84,7 +84,7 @@
       explainer: 'Share at least somewhat upset if each actor were in charge of AI used to make consequential decisions.',
       suggestion: 'The issue is consequential decision power.',
       more: 'People are uneasy about giving almost any powerful institution permission to put AI in charge of consequential decisions. Health insurers generated the strongest concern, but landlords, government contractors, state officials, Big Tech companies and others were close behind. Even employers, who were viewed comparatively more favorably, still produced substantial unease. This tells us something important about the “villain” in AI messaging: the institution does not need to be universally hated. A person can trust or even like an organization and still believe it should not have certain automated powers over them.',
-      detail: 'Named political figures can produce very intense reactions but also polarise. Everyday gatekeepers create broader shared unease. Employers were generally viewed more favourably, yet 53% were still at least somewhat upset about employer-controlled AI.',
+      detail: 'Named political figures can produce very intense reactions but also polarise. Everyday gatekeepers create broader shared unease. Employers were generally viewed more favorably, yet 53% were still at least somewhat upset about employer-controlled AI.',
       method: 'Percentages show the share at least somewhat upset under this question wording. Named political actors are available in the expanded results; they are not used in the main institutional comparison below.',
       bars: [
         ['Health insurance companies', 68, '68%'],
@@ -152,10 +152,10 @@
       metric: 'Support · % / reported range',
       question: 'Which concrete protections against harmful uses of AI do voters support?',
       title: 'What rules are people willing to support?',
-      explainer: 'Support for concrete guardrails on high-stakes AI. Every major proposal tested at 70% or higher.',
+      explainer: 'Support for strong protections against high-stakes AI harms. Every major proposal tested at 70% or higher.',
       suggestion: 'Concern has become permission for meaningful intervention.',
-      more: 'The final round answers one of the biggest questions raised by the previous research: does concern actually translate into support for action? Every major guardrail tested received support of 70 percent or more, including safety proof, off switches, meaningful penalties, community authority and bans on some high-stakes uses. More people worried that regulation would not go far enough than worried about excessive intervention.',
-      detail: '72% supported the full package; 32% worried rules would not go far enough; 48% said the maker and user should be equally responsible. Only 4% said neither the vendor nor the organisation using the system should be responsible after a harmful hiring error.',
+      more: 'The final round answers one of the biggest questions raised by the previous research: does concern actually translate into support for action? Every bold protection tested received support of 70 percent or more, including safety proof, off switches, meaningful penalties, community authority and bans on some high-stakes uses. More people worried that regulation would not go far enough than worried about excessive intervention.',
+      detail: '72% supported the full package; 32% worried rules would not go far enough; 48% said the maker and user should be equally responsible. Only 4% said neither the vendor nor the organization using the system should be responsible after a harmful hiring error.',
       method: 'Ranges preserve split-sample or version differences. They should not be treated as single-point estimates.',
       bars: [
         ['Meaningful penalties', 79, '77–81%'],
@@ -203,12 +203,12 @@
   ];
 
   const institutions = [
-    { key:'employer', name:'Your employer', fav:75, upset:53, note:'Among employed respondents, 75% viewed their employer favourably. 53% were at least somewhat upset about their employer being in charge of AI used to make consequential decisions.', icon:'briefcase' },
-    { key:'tech', name:'Big Tech', fav:57, upset:64, note:'57% viewed Big Tech companies such as Google, Meta and Amazon favourably. 64% were at least somewhat upset about Big Tech controlling consequential AI decisions.', icon:'server' },
-    { key:'state', name:'State government', fav:53, upset:66, note:'53% viewed officials in their state government favourably. 66% were at least somewhat upset about state officials controlling consequential AI decisions.', icon:'building' },
-    { key:'insurer', name:'Health insurers', fav:47, upset:68, note:'Views of health insurance companies were evenly split at 47% favourable and 47% unfavourable. 68% were at least somewhat upset about insurer-controlled AI decisions.', icon:'health' },
-    { key:'landlord', name:'Landlords', fav:40, upset:67, note:'40% viewed landlords favourably. 67% were at least somewhat upset about landlords controlling consequential AI decisions.', icon:'key' },
-    { key:'contractor', name:'Public-program contractors', fav:33, upset:67, note:'33% viewed private companies hired by government to run public programs favourably. 67% were at least somewhat upset about these contractors controlling consequential AI decisions.', icon:'network' }
+    { key:'employer', name:'Your employer', fav:75, upset:53, note:'Among employed respondents, 75% viewed their employer favorably. 53% were at least somewhat upset about their employer being in charge of AI used to make consequential decisions.', icon:'briefcase' },
+    { key:'tech', name:'Big Tech', fav:57, upset:64, note:'57% viewed Big Tech companies such as Google, Meta and Amazon favorably. 64% were at least somewhat upset about Big Tech controlling consequential AI decisions.', icon:'server' },
+    { key:'state', name:'State government', fav:53, upset:66, note:'53% viewed officials in their state government favorably. 66% were at least somewhat upset about state officials controlling consequential AI decisions.', icon:'building' },
+    { key:'insurer', name:'Health insurers', fav:47, upset:68, note:'Views of health insurance companies were evenly split at 47% favorable and 47% unfavorable. 68% were at least somewhat upset about insurer-controlled AI decisions.', icon:'health' },
+    { key:'landlord', name:'Landlords', fav:40, upset:67, note:'40% viewed landlords favorably. 67% were at least somewhat upset about landlords controlling consequential AI decisions.', icon:'key' },
+    { key:'contractor', name:'Public-program contractors', fav:33, upset:67, note:'33% viewed private companies hired by government to run public programs favorably. 67% were at least somewhat upset about these contractors controlling consequential AI decisions.', icon:'network' }
   ];
 
   const quotes = [
@@ -250,7 +250,7 @@
     { name:'Off switches', value:'79–80%', min:79, copy:'The ability to stop a system when it is causing harm.' },
     { name:'Safety proof before release', value:'79–80%', min:79, copy:'Requiring evidence of safety before a system reaches the public.' },
     { name:'High-stakes bans', value:'70–80%', min:70, copy:'Restrictions on some AI decisions involving health care, housing or work.' },
-    { name:'Safety proof before use', value:'77%', min:77, copy:'Requiring organisations to demonstrate safety before deployment.' },
+    { name:'Safety proof before use', value:'77%', min:77, copy:'Requiring organizations to demonstrate safety before deployment.' },
     { name:'Community authority', value:'74–75%', min:74, copy:'Community boards with real or legal authority over high-stakes uses.' }
   ];
 
@@ -338,19 +338,19 @@
         <div class="xv-shell">
           <div class="xv-kicker-line"><span></span><b>Round 3 / Trust and permission</b></div>
           <h2 id="xv-institutions-title">Liking an institution does not necessarily mean trusting its use of AI.</h2>
-          <p class="xv-institutions-dek">Choose an institution. General favourability does not necessarily reduce concern about AI use. Naming the institution responsible does not require attacking it: the focus can stay on the choice to use automated decision-making in a particular context.</p>
+          <p class="xv-institutions-dek">Choose an institution. General favorability does not necessarily reduce concern about AI use. Naming the institution responsible does not require attacking it: the focus can stay on the choice to use automated decision-making in a particular context.</p>
           <p class="xv-section-meta">Round 3 · Apr 24–27, 2026 · N=1,167 likely voters · Measure: at least somewhat upset (%)</p>
           <div class="xv-institution-grid" id="xv-institution-grid">
             ${institutions.map((item, i) => `
               <button type="button" class="xv-institution-card ${i===0?'active':''}" data-institution="${item.key}" aria-pressed="${i===0}">
                 <div class="xv-icon">${iconSvg(item.icon)}</div>
                 <div class="xv-inst-name">${item.name}</div>
-                <div class="xv-inst-tease"><span>${item.fav}% favourable</span><span>${item.upset}% upset about AI control</span></div>
+                <div class="xv-inst-tease"><span>${item.fav}% favorable</span><span>${item.upset}% upset about AI control</span></div>
                 <div class="xv-drop-mark" aria-hidden="true">↓</div>
               </button>`).join('')}
           </div>
           <div id="xv-institution-detail" class="xv-institution-detail" aria-live="polite"></div>
-          <p class="xv-method">Favourability and “at least somewhat upset” come from two different questions. They should not be subtracted from one another or read as complementary shares. Employer favourability is among employed respondents.</p>
+          <p class="xv-method">Favorability and “at least somewhat upset” come from two different questions. They should not be subtracted from one another or read as complementary shares. Employer favorability is among employed respondents.</p>
         </div>
       </section>
 
@@ -411,7 +411,7 @@
             <div><strong>32%</strong><span>worried rules would not go far enough</span></div>
             <div><strong>48%</strong><span>said maker + user should be equally responsible</span></div>
           </div>
-          <div class="xv-limit-note"><b>One more accountability signal:</b> only 4% said neither the vendor nor the organisation using the system should be responsible after a harmful hiring error.</div>
+          <div class="xv-limit-note"><b>One more accountability signal:</b> only 4% said neither the vendor nor the organization using the system should be responsible after a harmful hiring error.</div>
         </div>
       </section>
 
@@ -703,7 +703,7 @@
         </div>
         <div class="xv-inst-meters">
           <div class="xv-inst-meter favourable">
-            <div><span>Favourable view of institution</span><b>${item.fav}%</b></div>
+            <div><span>Favorable view of institution</span><b>${item.fav}%</b></div>
             <div class="xv-meter"><i style="width:${item.fav}%"></i></div>
           </div>
           <div class="xv-inst-meter ai">
