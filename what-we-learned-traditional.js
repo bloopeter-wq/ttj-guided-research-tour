@@ -35,7 +35,7 @@
           <div class="lt-kicker">The Core Finding and Recommendation</div>
           <div>
             <h2>Make the invisible harms of AI impossible to ignore.</h2>
-            <p>People may not recognize AI as the source of the problems they experience every day. But when they learn how insurers use AI to deny health care, employers use it to make hiring decisions, or government agencies use it to determine benefits, the stakes become real. Our research shows why exposing these harms and the institutions responsible is such a powerful starting point for winning stronger protections.</p>
+            <p>People may not recognize AI as the source of the problems they experience every day. When voters are presented with concrete examples of insurers using AI to deny health care, employers using it to make hiring decisions, or government agencies using it to determine benefits, the stakes become much clearer. Our research suggests that exposing these harms and the institutions responsible offers a powerful opportunity to build public support for stronger protections.</p>
           </div>
         </div>
         <div class="lt-shell lt-recommendation">
