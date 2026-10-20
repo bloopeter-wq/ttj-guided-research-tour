@@ -2520,3 +2520,14 @@ body.ux-search-open{overflow:hidden!important}
     line-height:1.08!important;
   }
 }
+
+
+/* Hero slide 2 needs additional leading because the display font's descenders visually crowd the next line. */
+.hb2-main h1.hb2-slide-1{
+  line-height:1.20!important;
+}
+@media(max-width:760px){
+  .hb2-main h1.hb2-slide-1{
+    line-height:1.20!important;
+  }
+}
