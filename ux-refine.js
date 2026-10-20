@@ -154,8 +154,7 @@
     qa('.lt-thread-list details',page).forEach(function(d){ d.open=false; });
 
     [
-      ['.lt-snapshot','ux-home-snapshot'],
-      ['.lt-difference','ux-home-difference'],
+      ['.lt-polling-intro','ux-home-polling'],
       ['.lt-core','ux-home-core'],
       ['.lt-findings','ux-home-findings'],
       ['.lt-meaning','ux-home-meaning'],
@@ -174,7 +173,7 @@
       position:'before',
       aria:'What We Learned sections',
       sections:[
-        ['At a glance','.lt-snapshot','ux-home-snapshot'],
+        ['About the polling','.lt-polling-intro','ux-home-polling'],
         ['Central finding','.lt-core','ux-home-core'],
         ['Key findings','.lt-findings','ux-home-findings'],
         ['Themes','.lt-threads','ux-home-themes'],
@@ -454,8 +453,7 @@
       var home=q('#learn-traditional-page');
       if(home){
         [
-          ['Research at a glance','.lt-snapshot','#ux-home-snapshot'],
-          ['What made this testing different','.lt-difference','#ux-home-difference'],
+          ['A wholly different kind of AI polling','.lt-polling-intro','#ux-home-polling'],
           ['Core finding and recommendation','.lt-core','#ux-home-core'],
           ['What this means','.lt-meaning','#ux-home-meaning'],
           ['Themes','.lt-threads','#ux-home-themes'],
