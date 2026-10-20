@@ -61,7 +61,7 @@
     },
     human: {
       title: 'Human access',
-      say: 'You need help from a person. The organisation will only let you talk to a machine.',
+      say: 'You need help from a person. The organization will only let you talk to a machine.',
       avoid: 'AI systems can reduce human interaction.'
     }
   };
@@ -163,7 +163,7 @@
 
   const strongWords = [
     ['Prevent', 'signals that harm should not simply be accepted as inevitable'],
-    ['Protect', 'centres the person while a system is being used'],
+    ['Protect', 'centers the person while a system is being used'],
     ['Repair', 'makes responsibility continue after harm occurs'],
     ['Deny / cut / reject', 'names the decision rather than the technology'],
     ['Explain / answer / correct', 'makes human recourse concrete'],
@@ -187,8 +187,8 @@
   };
 
   const downloads = [
-    {label:'Movement pamphlet', href:'resources/TTJ_Message_Testing_Pamphlet_V1_Movement_Organisations_Copy_Draft_Google_Docs_Ready.docx', format:'DOCX', audience:'Movement organisations'},
-    {label:'Movement one-page cheat sheet', href:'resources/TTJ_Message_Testing_One_Page_Cheat_Sheet_Movement_Organisations_Copy_Full_Page.docx', format:'DOCX · 1 page', audience:'Movement organisations'},
+    {label:'Movement pamphlet', href:'resources/TTJ_Message_Testing_Pamphlet_V1_Movement_Organisations_Copy_Draft_Google_Docs_Ready.docx', format:'DOCX', audience:'Movement organizations'},
+    {label:'Movement one-page cheat sheet', href:'resources/TTJ_Message_Testing_One_Page_Cheat_Sheet_Movement_Organisations_Copy_Full_Page.docx', format:'DOCX · 1 page', audience:'Movement organizations'},
     {label:'Policymaker pamphlet', href:'resources/TTJ_Message_Testing_Pamphlet_V2_Policymakers_Copy_Draft.docx', format:'DOCX', audience:'Policymakers'},
     {label:'Policymaker one-page cheat sheet', href:'resources/TTJ_Message_Testing_One_Page_Cheat_Sheet_Policymakers_Copy_Full_Page.docx', format:'DOCX · 1 page', audience:'Policymakers'},
     {label:'Message Testing Cheat Sheet', href:'resources/TTJ_Message%20Testing%20Cheat%20Sheet_PB%20-%20Revised_September%202026.pdf', format:'PDF · Sep 2026', audience:'Research summary'},
@@ -270,7 +270,7 @@
         <div class="rv-shell">
           <div class="rv-tool-head rv-tool-head-light">
             <div><span class="rv-number">04</span><div class="rv-eyebrow">Sector snapshot / committee-assignment aid</div><h2>Ask the right questions by sector.</h2></div>
-            <p>Choose a sector to reveal a concise oversight checklist and the most relevant evidence from the message-testing programme.</p>
+            <p>Choose a sector to reveal a concise oversight checklist and the most relevant evidence from the message-testing program.</p>
           </div>
           <div class="rv-sector-tabs" id="rv-sector-tabs"></div>
           <div class="rv-sector-panel" id="rv-sector-panel"></div>
@@ -319,7 +319,7 @@
         <div class="rv-shell">
           <div class="rv-tool-head rv-tool-head-light">
             <div><span class="rv-number">08</span><div class="rv-eyebrow">Lead with the decision, not the system</div><h2>Change what the sentence is about.</h2></div>
-            <p>The same facts can be organised around the technology or around the institution making a consequential decision. Toggle sectors to see the shift.</p>
+            <p>The same facts can be organized around the technology or around the institution making a consequential decision. Toggle sectors to see the shift.</p>
           </div>
           <div class="rv-decision-tabs" id="rv-decision-tabs"></div>
           <div class="rv-decision-stage">
