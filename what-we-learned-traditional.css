@@ -105,3 +105,122 @@ body.learn-traditional-open{overflow:auto;background:#f5f4ee}
   .lt-next h2{font-size:52px;margin-bottom:36px}.lt-route-grid{grid-template-columns:1fr}.lt-route-grid a{min-height:250px;padding:24px}.lt-route-grid h3{font-size:34px;margin-top:45px}.lt-route-grid p{font-size:14px}
   .lt-method{padding:62px 0 72px}.lt-method-grid{gap:30px}.lt-method h2{font-size:42px}.lt-method-grid>div:last-child p{font-size:15px}
 }
+
+
+/* Jane C1–C9: replace Research at a Glance with a clear "what is this?" introduction. */
+.learn-traditional-page .lt-polling-intro{
+  background:#f5f4ee;
+  padding:92px 0 96px;
+  border-bottom:1px solid #c9cfcb;
+}
+.learn-traditional-page .lt-polling-intro-grid{
+  display:grid;
+  grid-template-columns:minmax(320px,.78fr) minmax(0,1.22fr);
+  gap:96px;
+  align-items:start;
+}
+.learn-traditional-page .lt-polling-intro-title{
+  position:sticky;
+  top:126px;
+}
+.learn-traditional-page .lt-polling-intro-title .lt-kicker{
+  margin-bottom:18px;
+  color:#047E72;
+}
+.learn-traditional-page .lt-polling-intro-title h1{
+  margin:0;
+  max-width:560px;
+  color:#111426;
+  font:800 clamp(46px,5vw,70px)/1.08 "Noto Sans",Arial,sans-serif;
+  letter-spacing:-.045em;
+}
+.learn-traditional-page .lt-polling-intro-copy{
+  max-width:760px;
+  padding-top:32px;
+  border-top:4px solid #047E72;
+}
+.learn-traditional-page .lt-polling-intro-copy p{
+  margin:0 0 20px;
+  color:#394245;
+  font-size:18px;
+  line-height:1.68;
+}
+.learn-traditional-page .lt-polling-intro-copy p:first-child{
+  color:#111426;
+  font-size:20px;
+  line-height:1.62;
+}
+.learn-traditional-page .lt-placeholder{
+  display:inline;
+  padding:1px 5px 2px;
+  background:#fff0a8;
+  color:#111426;
+  font-weight:800;
+  box-decoration-break:clone;
+  -webkit-box-decoration-break:clone;
+}
+.learn-traditional-page .lt-memo-download{
+  display:inline-flex;
+  align-items:center;
+  justify-content:center;
+  min-height:46px;
+  margin-top:10px;
+  padding:12px 18px;
+  border:1px solid #047E72;
+  background:#047E72;
+  color:#fff;
+  font:800 12px/1.2 "Noto Sans",Arial,sans-serif;
+  letter-spacing:.01em;
+  text-decoration:none;
+  transition:background .16s ease,color .16s ease,border-color .16s ease;
+}
+.learn-traditional-page .lt-memo-download:hover{
+  background:#111426;
+  border-color:#111426;
+  color:#fff;
+}
+.learn-traditional-page .lt-memo-download:focus-visible{
+  outline:3px solid #E4B82F;
+  outline-offset:3px;
+}
+@media(max-width:900px){
+  .learn-traditional-page .lt-polling-intro{
+    padding:72px 0 78px;
+  }
+  .learn-traditional-page .lt-polling-intro-grid{
+    grid-template-columns:1fr;
+    gap:42px;
+  }
+  .learn-traditional-page .lt-polling-intro-title{
+    position:static;
+  }
+  .learn-traditional-page .lt-polling-intro-title h1{
+    max-width:760px;
+  }
+  .learn-traditional-page .lt-polling-intro-copy{
+    max-width:none;
+    padding-top:26px;
+  }
+}
+@media(max-width:700px){
+  .learn-traditional-page .lt-polling-intro{
+    padding:58px 0 64px;
+  }
+  .learn-traditional-page .lt-polling-intro-grid{
+    gap:32px;
+  }
+  .learn-traditional-page .lt-polling-intro-title h1{
+    font-size:40px;
+    line-height:1.10;
+    letter-spacing:-.035em;
+  }
+  .learn-traditional-page .lt-polling-intro-copy p,
+  .learn-traditional-page .lt-polling-intro-copy p:first-child{
+    font-size:16.5px;
+    line-height:1.66;
+  }
+  .learn-traditional-page .lt-memo-download{
+    width:100%;
+    min-height:48px;
+  }
+}
