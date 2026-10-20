@@ -49,7 +49,7 @@
 
       <section class="lt-findings">
         <div class="lt-shell">
-          <div class="lt-section-top lt-findings-head"><div><div class="lt-kicker">More Findings</div><h2>What the research found.</h2></div></div>
+          <div class="lt-section-top lt-findings-head"><div><h2>What the research found.</h2></div></div>
 
           <article class="lt-finding">
             <div class="lt-finding-copy"><span>01 / Cross-partisan agreement</span><h3>This Is One of the Only Places that Parties Agree</h3><p>A full package of strong policy protections, including bans, off switches, proof of safety before use, penalties for harm and community oversight boards with legal authority, drew 72% support across all voters. Protecting people from AI harms does not require picking a partisan side to be effective.</p></div>
@@ -121,7 +121,7 @@
         <div class="lt-shell">
           <div class="lt-section-top"><div><div class="lt-kicker">Explore the themes</div><h2>Five threads running through five rounds.</h2></div><p>These are the recurring ideas that connect the individual findings.</p></div>
           <div class="lt-thread-list">
-            <details open><summary><span>01</span>Power & control</summary><p>It's not really about AI. It's about who has power over people's lives, and whether they have any say in decisions that affect them.</p></details>
+            <details><summary><span>01</span>Power & control</summary><p>It's not really about AI. It's about who has power over people's lives, and whether they have any say in decisions that affect them.</p></details>
             <details><summary><span>02</span>Concrete harm</summary><p>Specific, tangible harms move people more than abstract warnings about AI in general. “Your insurer used AI to deny the treatment your doctor says you need” beats “AI can produce bias in health care” every time it was tested.</p></details>
             <details><summary><span>03</span>Institutional accountability</summary><p>The strongest messages name the institution, the action it took, and what a person lost. “AI” should not become a grammatical trick that makes human decisions sound like nobody made them.</p></details>
             <details><summary><span>04</span>Prevention & protection</summary><p>Voters support strong protections against harmful uses of AI, including bans on the highest-stakes uses, proof of safety before use, off switches, meaningful penalties, and community oversight with legal authority.</p></details>
