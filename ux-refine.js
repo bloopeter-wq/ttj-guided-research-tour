@@ -62,7 +62,7 @@
     nav.innerHTML='<div class="ux-section-nav-inner">'+valid.map(function(item,i){
       return '<button type="button" data-ux-target="'+item[2]+'" class="'+(i===0?'active':'')+'">'+item[0]+'</button>';
     }).join('')+'</div>';
-    opts.anchor.insertAdjacentElement('afterend',nav);
+    opts.anchor.insertAdjacentElement(opts.position==='before' ? 'beforebegin' : 'afterend',nav);
 
     /* A small holder lets the navigator become viewport-fixed without changing page height.
        This is more reliable than native sticky positioning inside the site's clipped artwork containers. */
@@ -171,6 +171,7 @@
       key:'home',
       scope:page,
       anchor:hero,
+      position:'before',
       aria:'What We Learned sections',
       sections:[
         ['At a glance','.lt-snapshot','ux-home-snapshot'],
@@ -277,6 +278,7 @@
       key:'explore',
       scope:root,
       anchor:hero,
+      position:'before',
       aria:'Explore the Data sections',
       sections:[
         ['Rounds','.xv-rounds','ux-explore-rounds'],
@@ -301,6 +303,7 @@
         key:'resources',
         scope:root,
         anchor:resourceHero,
+        position:'before',
         aria:'Use the Research sections',
         sections:[
           ['Message formula','#tool-1','ux-resource-formula'],
