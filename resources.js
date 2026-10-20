@@ -27,7 +27,7 @@ const languageExamples = {
   },
   human: {
     avoid: 'AI systems can reduce human interaction.',
-    say: 'You need help from a person. The organisation will only let you talk to a machine.'
+    say: 'You need help from a person. The organization will only let you talk to a machine.'
   }
 };
 
