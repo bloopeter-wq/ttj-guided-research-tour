@@ -34,8 +34,8 @@
         <div class="lt-shell lt-core-grid">
           <div class="lt-kicker">The Core Finding and Recommendation</div>
           <div>
-            <h2>Voters are concerned with the concrete harms AI enables when individuals or institutions use automated systems to wield power over an important part of someone’s life.</h2>
-            <p>More abstract concerns were consistently less compelling than tangible harms to the ability to get, keep or afford health care, public benefits such as Social Security, housing or a job.</p>
+            <h2>Make the invisible harms of AI impossible to ignore.</h2>
+            <p>People may not recognize AI as the source of the problems they experience every day. But when they learn how insurers use AI to deny health care, employers use it to make hiring decisions, or government agencies use it to determine benefits, the stakes become real. Our research shows why exposing these harms and the institutions responsible is such a powerful starting point for winning stronger protections.</p>
           </div>
         </div>
         <div class="lt-shell lt-recommendation">
