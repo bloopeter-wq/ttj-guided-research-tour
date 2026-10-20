@@ -41,8 +41,8 @@
         <div class="lt-shell lt-recommendation">
           <span>Recommendation</span>
           <div>
-            <h3>Make the abstract concrete and make the invisible harm visible.</h3>
-            <p>People do not necessarily think about health care, benefits and housing when they think about harmful AI. They may not even know automated systems are making these decisions. Show where AI is being used, who chose to use it and what someone may lose because of it. Be specific and human.</p>
+            <h3>Show the harm. Name who’s responsible. Make the case for change.</h3>
+            <p>Start with the real decisions affecting people’s lives. Show how AI is being used to deny health care, threaten housing, cut benefits, or determine someone’s future at work. Name the institution choosing to use it and explain what people stand to lose. Make the consequences impossible to ignore, then connect them to the bold protections needed to prevent harm and hold decision-makers accountable.</p>
           </div>
         </div>
       </section>
