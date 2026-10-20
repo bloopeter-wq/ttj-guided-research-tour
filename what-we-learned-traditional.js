@@ -47,6 +47,48 @@
         </div>
       </section>
 
+      <section class="lt-meaning" aria-labelledby="lt-invisible-title">
+        <div class="lt-shell">
+          <div class="lt-meaning-grid">
+            <div>
+              <div class="lt-kicker">What This Means / The Opportunity</div>
+              <h2 id="lt-invisible-title">Invisible Harm.<br><em>Real Opportunity.</em></h2>
+              <div class="lt-meaning-rule" aria-hidden="true"></div>
+            </div>
+            <div class="lt-meaning-statement">
+              <p class="lt-meaning-lede">Voters are deeply concerned by ongoing AI uses that hurt health care, work, housing and benefits, and they support bold policy proposals to stop those harms. Raising awareness should therefore be a priority.</p>
+              <p>That can mean talking with the communities you belong to or serve, sharing stories of injustice, amplifying similar stories from elsewhere, and directly taking on fights to resist harmful uses of AI where you have the capacity to do so.</p>
+            </div>
+          </div>
+          <div class="lt-fight" aria-labelledby="lt-fight-heading">
+            <div class="lt-fight-heading"><div><span class="lt-fight-eyebrow">Put the findings to work</span><h3 id="lt-fight-heading">Key Takeaways for Your Fight</h3></div><p>Find the argument that fits your work.</p></div>
+            <div class="lt-fight-list">
+              <details>
+                <summary><span class="lt-fight-no">01</span><span>Advocates in health care, housing, benefits, employment &amp; education</span><span class="lt-fight-toggle" aria-hidden="true"></span></summary>
+                <div class="lt-fight-panel">
+                  <p>Are you an advocate in health care, housing, benefits, employment, or education? Expose how powerful people and institutions use AI against the people you serve. Get more specific than you think. Start with the person, then name the decision-maker, and show how that caused harm.</p>
+                  <div class="lt-fight-examples"><div><b>Say This</b><p>“Your doctor says you need the treatment, but your insurer’s AI denied it.”</p></div><div><b>Not</b><p>“AI is affecting access to health care.” or “Automated systems can impact health care decisions”</p></div></div>
+                </div>
+              </details>
+              <details>
+                <summary><span class="lt-fight-no">02</span><span>AI and tech justice advocates</span><span class="lt-fight-toggle" aria-hidden="true"></span></summary>
+                <div class="lt-fight-panel">
+                  <p>For advocates in the AI and tech justice space, We now have a real opening to question whether AI belongs in decisions about basic human needs at all. It starts with the numbers: 80% of voters, across parties, support banning AI from deciding who gets health care, housing, or work. So use the polling data to attack the legitimacy of AI making high-stakes decisions in the first place, move off of guardrails-focused discussion, and build support for the bold protections voters want.</p>
+                </div>
+              </details>
+              <details>
+                <summary><span class="lt-fight-no">03</span><span>Policymakers</span><span class="lt-fight-toggle" aria-hidden="true"></span></summary>
+                <div class="lt-fight-panel"><p>Policymakers have a unique opportunity to use their platforms to expose the AI lurking in our everyday lives while touting that strong protections against these harms are one of the only places Republicans, Democrats, and Independents agree.</p></div>
+              </details>
+              <details>
+                <summary><span class="lt-fight-no">04</span><span>Funders</span><span class="lt-fight-toggle" aria-hidden="true"></span></summary>
+                <div class="lt-fight-panel"><p>Raising awareness of these ongoing, ground-level harms may be the best untapped opportunity to motivate the popular support needed to protect us all. You can help by funding more polling, narrative change strategies, and other strategic awareness campaigns that make these findings more common knowledge.</p></div>
+              </details>
+            </div>
+          </div>
+        </div>
+      </section>
+
       <section class="lt-findings">
         <div class="lt-shell">
           <div class="lt-section-top lt-findings-head"><div><h2>What the research found.</h2></div></div>
@@ -104,16 +146,6 @@
             <div class="lt-finding-copy"><span>07 / Awareness gap</span><h3>Voters may not be aware of the harms that concern them most.</h3><p>Asked openly what uses of AI concerned them, many respondents defaulted to concerns they already had names for, such as privacy and surveillance, job loss, misinformation or deepfakes. Those top-of-mind concerns can change when people are shown other harms, including medical care being denied, benefits being cut off, job rejections with no human involved and workplace monitoring.</p></div>
             <div class="lt-editorial-note"><b>Awareness gap</b><p>Raising awareness of these ongoing, ground-level harms is a key opportunity for public communication and organizing.</p></div>
           </article>
-        </div>
-      </section>
-
-      <section class="lt-meaning">
-        <div class="lt-shell lt-meaning-grid">
-          <div><div class="lt-kicker">What This Means</div><h2>Invisible Harm and Opportunity</h2></div>
-          <div>
-            <p>Voters are deeply concerned by ongoing AI uses that hurt health care, work, housing and benefits, and they support bold policy proposals to stop those harms. Raising awareness should therefore be a priority.</p>
-            <p>That can mean talking with the communities you belong to or serve, sharing stories of injustice, amplifying similar stories from elsewhere, and directly taking on fights to resist harmful uses of AI where you have the capacity to do so.</p>
-          </div>
         </div>
       </section>
 
