@@ -14,45 +14,18 @@
     page.className = 'learn-traditional-page';
     page.hidden = true;
     page.innerHTML = `
-      <div class="ux-report-transition"><span>What the research found</span></div>
-      <section class="lt-hero lt-memo-intro">
-        <div class="lt-shell">
-          <div class="lt-kicker">You should know</div>
-          <div class="lt-memo-intro-grid">
-            <div>
-              <h1>AI is already making decisions about our lives.</h1>
-              <p class="lt-lede">People often think of “AI” in terms of chatbots, deepfakes, killer robots and possible job loss. What is less well known is how much AI has already infiltrated major decisions being made about our lives right now.</p>
-            </div>
-            <div class="lt-memo-examples" aria-label="Examples of decisions already affected by AI">
-              <p>Whether a health insurer approves a life-saving medical treatment.</p>
-              <p>Whether a Social Security case gets falsely flagged as fraud.</p>
-              <p>Whether a landlord raises the rent.</p>
-            </div>
+      <section class="lt-polling-intro">
+        <div class="lt-shell lt-polling-intro-grid">
+          <div class="lt-polling-intro-title">
+            <div class="lt-kicker">What this is</div>
+            <h1>A wholly different kind of AI polling</h1>
           </div>
-          <div class="lt-memo-now"><strong>These are not future risks.</strong><p>Powerful people are already using these technologies to make decisions, mostly invisibly, about people who have no idea automated systems were involved.</p></div>
-        </div>
-      </section>
-
-      <section class="lt-snapshot">
-        <div class="lt-shell">
-          <div class="lt-section-top"><div class="lt-kicker">Research at a glance</div><p>Five rounds of TechTonic Justice + Data for Progress message testing.</p></div>
-          <div class="lt-stat-grid">
-            <article><strong>5,824</strong><span>likely voters interviewed</span></article>
-            <article><strong>5</strong><span>rounds of research</span></article>
-            <article><strong>Mar–Jul</strong><span>2026 fieldwork</span></article>
-          </div>
-        </div>
-      </section>
-
-      <section class="lt-difference">
-        <div class="lt-shell lt-difference-grid">
-          <div>
-            <div class="lt-kicker">What made this testing different</div>
-            <h2>We tested real-world uses of AI, the harms those systems cause, and specific policies to address those harms.</h2>
-          </div>
-          <div>
-            <p>Most polling on AI asks people how they feel about AI as a whole and whether they want it regulated. That helps explain general attitudes. This polling was more specific.</p>
-            <p>Knowing how people react to real-world uses, ground-level harms and concrete protections gives a better picture of how to build public support for proposals that prevent, protect against and repair harm.</p>
+          <div class="lt-polling-intro-copy">
+            <p>As an organization on the frontlines of the fight against AI injustice, we at TechTonic Justice wanted to understand <span class="lt-placeholder">TKTKTK from TTJ</span>. We designed this polling to build around research that has come before.</p>
+            <p>Most polling on AI asks people how they feel about AI as a whole and whether they want it regulated. This helps us understand general attitudes about AI and “regulation” as a concept. Our polling is more specific.</p>
+            <p>We tested real-world uses of AI, the ground-level harms those systems cause, and specific policies to address those harms. Knowing how people react to these things gives us a better idea of how to build public support for proposals that prevent, protect against, and repair the harms.</p>
+            <p>This website lays out more of what five rounds of research found and what it means, whether that work happens in a legislature, a courtroom, or a community meeting.</p>
+            <a class="lt-memo-download" href="resources/TTJ_Message_Testing_Memo.html" download="TTJ_Message_Testing_Memo.html">Download our memo ↓</a>
           </div>
         </div>
       </section>
