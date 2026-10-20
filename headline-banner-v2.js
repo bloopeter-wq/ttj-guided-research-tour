@@ -46,23 +46,19 @@
     hero.className = 'hb2-hero';
     hero.innerHTML = '<div class="hb2-geo" aria-hidden="true"></div>' +
       '<div class="hb2-shell">' +
-        '<div class="hb2-top"><div class="hb2-kicker">Headlines from the research</div><div class="hb2-count" id="hb2-count">01 / 03</div></div>' +
         '<div class="hb2-main" id="hb2-main"><h1 id="hb2-text"></h1></div>' +
-        '<div class="hb2-bottom"><div class="hb2-track" id="hb2-track"></div><div class="hb2-actions"><div class="hb2-arrows"><button class="hb2-arrow" id="hb2-prev" type="button" aria-label="Previous headline">←</button><button class="hb2-arrow" id="hb2-next" type="button" aria-label="Next headline">→</button></div><button class="hb2-scroll" id="hb2-scroll" type="button">Explore the findings ↓</button></div></div>' +
+        '<div class="hb2-bottom"><div class="hb2-track" id="hb2-track" aria-hidden="true"></div><div class="hb2-actions"><div class="hb2-arrows"><button class="hb2-arrow" id="hb2-prev" type="button" aria-label="Previous headline">←</button><button class="hb2-arrow" id="hb2-next" type="button" aria-label="Next headline">→</button></div></div></div>' +
       '</div>';
     tour.insertBefore(hero, page);
 
     var index = 0;
-    var reduced = window.matchMedia && window.matchMedia('(prefers-reduced-motion: reduce)').matches;
-
     function render() {
       var main = document.getElementById('hb2-main');
       var text = document.getElementById('hb2-text');
-      var count = document.getElementById('hb2-count');
       var track = document.getElementById('hb2-track');
       var prev = document.getElementById('hb2-prev');
       var next = document.getElementById('hb2-next');
-      if (!main || !text || !count || !track || !prev || !next) return;
+      if (!main || !text || !track || !prev || !next) return;
 
       var colour = palette[index % palette.length];
       hero.style.setProperty('--hb2-color', colour);
@@ -73,7 +69,6 @@
       text.className = 'hb2-slide hb2-slide-' + index;
       text.innerHTML = headlines[index];
       main.classList.add('enter');
-      count.textContent = String(index + 1).padStart(2,'0') + ' / ' + String(headlines.length).padStart(2,'0');
       track.innerHTML = headlines.map(function (_, i) {
         return '<span class="' + (i < index ? 'done' : (i === index ? 'active' : '')) + '"></span>';
       }).join('');
@@ -112,11 +107,6 @@
       if (dx < 0 && index < headlines.length - 1) { index += 1; render(); }
       if (dx > 0 && index > 0) { index -= 1; render(); }
     }, { passive: true });
-
-    document.getElementById('hb2-scroll').addEventListener('click', function () {
-      var target = page.querySelector('.lt-snapshot') || page;
-      target.scrollIntoView({ behavior: reduced ? 'auto' : 'smooth', block: 'start' });
-    });
 
     render();
     return true;
