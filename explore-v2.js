@@ -8,12 +8,12 @@
       id: 1,
       date: 'Mar 6–9, 2026',
       n: '1,242',
-      metric: 'Ranked comparison',
+      metric: 'MaxDiff comparative score',
       rankOnly: true,
       question: 'Which concerns about government use of AI stand out most when compared directly?',
       title: 'Main concerns about government use of AI',
       context: "We wanted to understand which types of harmful AI use concerned people the most when used by the government. So we asked: Some government agencies are using AI systems in their work. Here are some concerns people have raised about this. For each, please pick which you find most concerning and which you find least concerning.",
-      explainer: 'Twelve concerns were compared directly using MaxDiff.'
+      explainer: 'Twelve concerns were compared directly using MaxDiff.',
       suggestion: 'Make the abstract concrete and make the invisible harm visible.',
       more: 'When people compared different concerns about government use of AI, the strongest worries were not technical. People were most concerned that public services would become harder to use, that a single mistake could affect millions, and that AI could be used to mislead the public. The messaging lesson is straightforward: start with what changes for the person using the service. An abstract warning about opacity or bias is less immediate than showing someone unable to get help, wrongly losing support, or facing an error nobody will take responsibility for.',
       detail: 'The strongest message was simple: technology gets between people and the public help they need. Scale also matters — one automated error can affect millions.',
@@ -80,12 +80,12 @@
       id: 2,
       date: 'Mar 20–23, 2026',
       n: '1,193',
-      metric: 'Ranked comparison',
+      metric: 'MaxDiff comparative score',
       rankOnly: true,
       question: 'Which broader harms associated with AI feel most serious when compared directly?',
       title: 'Which broader AI harms feel most serious?',
       context: "We wanted to understand which types of AI harms that were not necessarily just governmental concerned people the most. So we asked: Below are some concerns people have raised about artificial intelligence (AI). For each, please pick which you find most concerning and which you find least concerning.",
-      explainer: 'Twelve harms were compared directly using MaxDiff.'
+      explainer: 'Twelve harms were compared directly using MaxDiff.',
       suggestion: 'The doctor-versus-algorithm conflict is the standout.',
       more: 'One result towers over everything else: an insurer using AI to deny doctor-recommended care. The example combines several features that recur throughout the research: something essential is at stake, a recognizable institution is responsible, a human judgment is being displaced, and the person experiencing the harm has something concrete taken away. It is also notable that data-center pressure on water and electricity came second, showing that the physical and community consequences of AI infrastructure can resonate when described concretely.',
       detail: 'People react most strongly when AI becomes a gatekeeper between a person and something essential. Concrete institutional action is more powerful than abstract warnings about corporate power.',
@@ -160,7 +160,7 @@
       suggestion: 'The issue is consequential decision power.',
       more: 'People are uneasy about giving almost any powerful institution permission to put AI in charge of consequential decisions. Health insurers generated the strongest concern, but landlords, government contractors, state officials, Big Tech companies and others were close behind. Even employers, who were viewed comparatively more favorably, still produced substantial unease. This tells us something important about the “villain” in AI messaging: the institution does not need to be universally hated. A person can trust or even like an organization and still believe it should not have certain automated powers over them.',
       detail: 'Named political figures can produce very intense reactions but also polarise. Everyday gatekeepers create broader shared unease. Employers were generally viewed more favorably, yet 53% were still at least somewhat upset about employer-controlled AI.',
-      method: 'Percentages show the share at least somewhat upset under this question wording. Named political actors are available in the expanded results; they are not used in the main institutional comparison below.',
+      method: 'The paired chart shows favorability and the share at least somewhat upset about AI decision-making among six institutions. These percentages come from separate questions and must not be subtracted. The list also includes the four public figures and institutions without a paired favorability comparison.'
       bars: [
         ['Health insurance companies', 68, '68%'],
         ['Landlords', 67, '67%'],
@@ -227,13 +227,13 @@
       n: '1,058',
       metric: 'Support · % / reported range',
       question: 'Which concrete protections against harmful uses of AI do voters support?',
-      title: 'What rules are people willing to support?',
+      title: 'Support for strong protections against AI harms',
       context: "We wanted to understand what types of interventions and protections against AI harms voters would support. We showed respondents a full policy package of bold protections.",
       explainer: 'Support for strong protections against AI harms. Every major proposal tested at 70% or higher.',
       suggestion: 'Concern has become permission for meaningful intervention.',
       more: 'The final round answers one of the biggest questions raised by the previous research: does concern actually translate into support for action? Every bold protection tested received support of 70 percent or more, including safety proof, off switches, meaningful penalties, community authority and bans on some high-stakes uses. More people worried that regulation would not go far enough than worried about excessive intervention.',
       detail: '72% supported the full package; 32% worried rules would not go far enough; 48% said the maker and user should be equally responsible. Only 4% said neither the vendor nor the organization using the system should be responsible after a harmful hiring error.',
-      method: 'Ranges preserve split-sample or version differences. They should not be treated as single-point estimates.',
+      method: 'Every major bold protection tested received support of 70 percent or more. Ranges preserve split-sample or version differences and should not be treated as single-point estimates.'
       bars: [
         ['Meaningful penalties', 79, '77–81%'],
         ['Off switches', 79.5, '79–80%'],
@@ -573,6 +573,7 @@
         <div class="xv-round-titleblock">
           <h3 id="xv-round-${round.id}-title">${round.title}</h3>
           <p class="xv-round-context">${round.context}</p>
+          ${round.id === 5 ? '<p class="xv-round-standout">Every major proposal tested received at least 70% support.</p>' : ''}
           <dl class="xv-research-details" aria-label="Research details">
             <div><dt>Date</dt><dd>${round.date}</dd></div>
             <div><dt>Sample</dt><dd>${round.n} likely voters</dd></div>
