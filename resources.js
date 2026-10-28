@@ -1,4 +1,4 @@
-// Working examples from the TTJ movement pamphlet. Generated drafts are not poll tested.
+// Message-builder examples are illustrative and have not been poll tested.
 const messageScenarios = {
   health: ['a patient', 'a health insurer', 'uses AI to deny doctor-recommended treatment', 'can lose access to the care their doctor recommended'],
   benefits: ['a person receiving benefits', 'a public benefits agency', 'uses an automated system to flag someone for fraud', 'can have their benefits stopped without an explanation'],
@@ -217,7 +217,7 @@ showStep();
 })();
 
 
-/* Final reversible UX refinement layer. */
+
 (function loadUxRefinements() {
   if (!document.getElementById('ux-refine-css')) {
     const css = document.createElement('link');
