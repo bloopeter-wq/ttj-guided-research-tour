@@ -13,7 +13,7 @@
     /* Remove the now-duplicative rapid response checklist. */
     document.getElementById('tool-5')?.remove();
 
-    /* Rebuild the toolkit index as seven tools and renumber the remaining sections. */
+    
     const index = root.querySelector('.rv-tool-index');
     const indexItems = [
       ['tool-1','Message formula'],
@@ -42,7 +42,7 @@
       if (number) number.textContent = n;
     });
 
-    /* TOOL 1 — Message formula, rebuilt as a Jane-style mix-and-match selector. */
+    
     const tool1 = document.getElementById('tool-1');
     const tool1Head = tool1.querySelector('.rv-tool-head');
     if (tool1Head) {
@@ -142,7 +142,7 @@
       toggle?.setAttribute('aria-expanded', String(open));
     });
 
-    /* TOOL 6 — replace the textarea heuristic with the drafting checklist shown in Jane's design. */
+    
     const tool7 = document.getElementById('tool-7');
     const tool7Head = tool7.querySelector('.rv-tool-head');
     if (tool7Head) {
