@@ -11,10 +11,10 @@
 - [x] Eliminate the short results list.
 - [x] Left column: What this round tells us, existing substantive contextual explanation, and methodology.
 - [x] Right column: Results (full set), preserving all entries and scores.
-- [x] Round 1: Jane's context; original 12 statements, exact ranked order and scores from the Data for Progress original March 6–9 MaxDiff cross-tabs.
-- [x] Round 1: Remove claim that comparative scores are intentionally undisplayed. Show scores as MaxDiff, not percentages.
-- [x] Round 2: Jane's context; original 12 statements, exact ranked order and scores from the Data for Progress March 20–23 MaxDiff cross-tabs.
-- [x] Round 2: Show scores as MaxDiff, not percentages.
+- [x] Round 1: Jane's context; original 12 statements, exact ranked order from the original Data for Progress March 6–9 comparative-ranking cross-tabs, without displaying comparative scores.
+- [x] Round 1: Remove claim that comparative scores are intentionally undisplayed. Show ranked order only, without comparative score values or invented percentages.
+- [x] Round 2: Jane's context; original 12 statements, exact ranked order from the original Data for Progress March 20–23 comparative-ranking cross-tabs, without displaying comparative scores.
+- [x] Round 2: Show ranked order only, without comparative score values or invented percentages.
 - [x] Round 3: Change title to “Who is choosing to use AI?” and insert Jane's context.
 - [x] Round 3: Show paired favorability / concern percentages for six institutions, alongside the complete upset results set.
 - [x] Round 4: Insert Jane's context.
@@ -39,3 +39,10 @@
 - Jane's explicit Round 1–5 context and layout directions, supplied by the user.
 
 The source files are retained as evidence; original polling language must not be replaced with descriptive summaries.
+
+## Jane's explicit percentage-only instruction (28 October correction)
+
+- [x] Rounds 1 and 2 display all twelve original survey statements in their ranked order, with **no MaxDiff numerical scores** shown.
+- [x] No invented percentage conversion is displayed for comparative ranking data.
+- [x] Rounds 3, 4, and 5 retain their genuine reported percentages and percentage ranges.
+- [ ] Re-run the corrected acceptance tests and verify production before sign-off.
