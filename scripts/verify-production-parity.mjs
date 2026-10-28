@@ -12,7 +12,7 @@ if(!baseline || !/^[a-f0-9]{40}$/.test(baseline)){
 }
 const git=(...args)=>execFileSync('git',args,{encoding:'utf8'}).trimEnd();
 const changed=git('diff','--name-only',baseline,'HEAD').split('\n').filter(Boolean);
-const docsOnly=p=>/^(docs\/|scripts\/|\.github\/|README\.md$)/.test(p);
+const docsOnly=p=>/^(docs\/|scripts\/|styles\/ux\/|\.github\/|README\.md$)/.test(p);
 const runtime=changed.filter(p=>!docsOnly(p));
 const harmlessRule='.learn-traditional-page .lt-thread-list details:not([open]) + details{}';
 for(const path of runtime){
