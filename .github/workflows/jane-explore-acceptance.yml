@@ -1,7 +1,7 @@
 name: Jane Explore acceptance
 on:
   push:
-    branches: [feature/jane-explore-rounds-2026-10-28]
+    branches: [feature/jane-explore-rounds-2026-10-28, fix/jane-ranked-only-rounds-2026-10-28]
   pull_request:
     branches: [main]
 jobs:

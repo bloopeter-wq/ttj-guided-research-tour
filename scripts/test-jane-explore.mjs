@@ -25,8 +25,9 @@ for(const viewport of [{width:1440,height:900},{width:820,height:1180},{width:39
   if(id===1||id===2){
     const first=await card.locator('.xv-full-row').first().innerText();
     if(!first.includes(id===1?'When the government uses AI to run public services':'Health insurance companies are using AI to deny care'))throw Error('Round '+id+' not using original statements');
-    const scores=await card.locator('.xv-full-row b').allTextContents();
-    if(scores.length!==12||!scores.every(s=>/^[+−]\d+\.\d$/.test(s)))throw Error('Round '+id+' is missing original MaxDiff scores');
+    if(await card.locator('.xv-full-row b').count()) throw Error('Round '+id+' displays forbidden comparative scores');
+    if((await card.locator('.xv-research-details').innerText()).includes('MaxDiff')) throw Error('Round '+id+' shows MaxDiff instead of ranked results');
+    if((await card.locator('.xv-method-box').innerText()).includes('MaxDiff')) throw Error('Round '+id+' contains forbidden score terminology');
   }
   if(id===3){
     if(!await card.getByRole('heading',{name:'Who is choosing to use AI?'}).count())throw Error('Round 3 title wrong');
