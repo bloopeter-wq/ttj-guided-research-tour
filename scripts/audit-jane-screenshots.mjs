@@ -18,7 +18,11 @@ async function capture(page,width,label,selector){
    await page.waitForTimeout(180);
  }
  const path=out+'/'+width+'-'+label+'.png';
- await page.screenshot({path,animations:'disabled',timeout:25000});
+ if(loc && await loc.count() && !label.startsWith('17-navigation-')){
+   await loc.screenshot({path,animations:'disabled',timeout:25000});
+ }else{
+   await page.screenshot({path,animations:'disabled',timeout:25000});
+ }
  shots.push(path);
 }
 async function getText(page,sel){return page.locator(sel).first().innerText();}
