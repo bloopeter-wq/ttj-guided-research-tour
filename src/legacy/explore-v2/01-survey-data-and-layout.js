@@ -225,7 +225,7 @@
       id: 5,
       date: 'Jul 24–27, 2026',
       n: '1,058',
-      metric: 'Support · % / reported range',
+      metric: 'Support · %',
       question: 'Which concrete protections against harmful uses of AI do voters support?',
       title: 'Support for strong protections against AI harms',
       context: "We wanted to understand what types of interventions and protections against AI harms voters would support. We showed respondents a full policy package of bold protections.",
@@ -233,22 +233,20 @@
       suggestion: 'Concern has become permission for meaningful intervention.',
       more: 'The final round answers one of the biggest questions raised by the previous research: does concern actually translate into support for action? Every bold protection tested received support of 70 percent or more, including safety proof, off switches, meaningful penalties, community authority and bans on some high-stakes uses. More people worried that regulation would not go far enough than worried about excessive intervention.',
       detail: '72% supported the full package; 32% worried rules would not go far enough; 48% said the maker and user should be equally responsible. Only 4% said neither the vendor nor the organization using the system should be responsible after a harmful hiring error.',
-      method: 'Every major bold protection tested received support of 70 percent or more. Ranges preserve split-sample or version differences and should not be treated as single-point estimates.',
+      method: 'The figures shown are the five support percentages supplied by TechTonic Justice. The survey used two differently worded proposal versions; these displayed figures should not be described as a single split-sample result.',
       bars: [
-        ['Meaningful penalties', 79, '77–81%'],
-        ['Off switches', 79.5, '79–80%'],
-        ['Safety proof before release', 79.5, '79–80%'],
-        ['High-stakes bans', 75, '70–80%'],
-        ['Safety proof before use', 77, '77%'],
-        ['Community boards with real/legal authority', 74.5, '74–75%']
+        ["meaningful penalties for actors that use harmful AI", 81, "81%"],
+        ["immediate off switches for AI", 80, "80%"],
+        ["proof of model harmlessness before release", 80, "80%"],
+        ["bans on high-stakes uses of AI that hurt health, housing, or work", 80, "80%"],
+        ["community oversight boards with legal authority to investigate and act on AI problems", 75, "75%"]
       ],
       all: [
-        ['Meaningful penalties', '77–81%'],
-        ['Off switches', '79–80%'],
-        ['Safety proof before release', '79–80%'],
-        ['High-stakes bans', '70–80%'],
-        ['Safety proof before use', '77%'],
-        ['Community boards with real/legal authority', '74–75%']
+        ["meaningful penalties for actors that use harmful AI", "81%"],
+        ["immediate off switches for AI", "80%"],
+        ["proof of model harmlessness before release", "80%"],
+        ["bans on high-stakes uses of AI that hurt health, housing, or work", "80%"],
+        ["community oversight boards with legal authority to investigate and act on AI problems", "75%"]
       ]
     }
   ];

@@ -20,7 +20,7 @@ for(const viewport of [{width:1440,height:900},{width:820,height:1180},{width:39
   if(await card.locator('.xv-suggest, .xv-evidence').count())throw Error('Round '+id+' still has a key finding or shortlist');
   if(!(await card.locator('.xv-round-context').innerText()).startsWith('We wanted to understand'))throw Error('Round '+id+' missing survey context');
   if(await card.locator('.xv-research-details dd').count()!==3)throw Error('Round '+id+' lacks complete metadata');
-  const expected=id===1||id===2?12:id===3?10:id===4?15:6;
+  const expected=id===1||id===2?12:id===3?10:id===4?15:5;
   if(await card.locator('.xv-full-row').count()!==expected)throw Error('Round '+id+' full set has wrong count');
   if(id===1||id===2){
     const first=await card.locator('.xv-full-row').first().innerText();
@@ -44,6 +44,19 @@ for(const viewport of [{width:1440,height:900},{width:820,height:1180},{width:39
   if(id===5){
     const text=await card.innerText();
     if(/guardrails/i.test(text)||!text.includes('strong protections against AI harms'))throw Error('Round 5 weak protection language');
+    const values=(await card.locator('.xv-full-row b').allTextContents()).map(x=>x.trim());
+    if(JSON.stringify(values)!==JSON.stringify(['81%','80%','80%','80%','75%']))throw Error('Round 5 must show the exact five TTJ percentages; found '+values.join(', '));
+    if(!text.includes('two differently worded proposal versions'))throw Error('Round 5 methodology must acknowledge split wording');
+    if(/\d+\s*[–-]\s*\d+%/.test(text))throw Error('Round 5 contains a forbidden percentage range');
+    const labels=(await card.locator('.xv-full-row>span').allTextContents()).map(x=>x.trim());
+    const expectedLabels=[
+      'meaningful penalties for actors that use harmful AI',
+      'immediate off switches for AI',
+      'proof of model harmlessness before release',
+      'bans on high-stakes uses of AI that hurt health, housing, or work',
+      'community oversight boards with legal authority to investigate and act on AI problems'
+    ];
+    if(JSON.stringify(labels)!==JSON.stringify(expectedLabels))throw Error('Round 5 proposal wording/order does not match TTJ');
   }
  }
  const bodyWidth=await page.evaluate(()=>document.documentElement.scrollWidth);
