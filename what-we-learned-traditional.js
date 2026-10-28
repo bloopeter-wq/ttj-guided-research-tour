@@ -21,7 +21,7 @@
             <h1>A wholly different kind of AI polling</h1>
           </div>
           <div class="lt-polling-intro-copy">
-            <p>As an organization on the frontlines of the fight against AI injustice, we at TechTonic Justice wanted to understand what people really think about the harms AI is causing in their lives, and what it would take to build public support for stopping them. We designed this polling to build around research that has come before.</p>
+            <p>As an organization on the frontlines of the fight against AI injustice, we at TechTonic Justice wanted to understand what people really think about the harms AI is causing in their lives, and what it would take to build public support for stopping them. We built on earlier studies to conduct original polling that takes a fresh approach to understanding public opinion.</p>
             <p>Most polling on AI asks people how they feel about AI as a whole and whether they want it regulated. This helps us understand general attitudes about AI and “regulation” as a concept. Our polling is more specific.</p>
             <p>We tested real-world uses of AI, the ground-level harms those systems cause, and specific policies to address those harms. Knowing how people react to these things gives us a better idea of how to build public support for proposals that prevent, protect against, and repair the harms.</p>
             <p>This website lays out more of what five rounds of research found and what it means, whether that work happens in a legislature, a courtroom, or a community meeting.</p>
