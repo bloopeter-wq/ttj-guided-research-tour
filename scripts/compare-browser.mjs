@@ -38,8 +38,24 @@ for (const viewport of resolutions) for (const location of locations) {
     await page.goto(url + location.hash,{waitUntil:'networkidle'});
     await page.evaluate(async () => { await document.fonts.ready; });
     await page.addStyleTag({content:'*,*::before,*::after{animation:none!important;transition:none!important;caret-color:transparent!important}html{scroll-behavior:auto!important}'});
-    await page.waitForTimeout(300);
-    const image=await page.screenshot({fullPage:true,animations:'disabled'});
+    // Wait until the page renders two consecutive identical frames.
+    // This rejects moving hero artwork and asynchronously initialized content
+    // without hiding genuine baseline-to-candidate differences.
+    let image=null;
+    let previous=null;
+    let stable=false;
+    for(let attempt=0;attempt<12;attempt++){
+      await page.waitForTimeout(350);
+      const frame=await page.screenshot({fullPage:true,animations:'disabled'});
+      if(previous && frame.equals(previous)){image=frame;stable=true;break;}
+      previous=frame;
+    }
+    if(!stable){
+      console.error('UNSTABLE:',kind,location.name,viewport.name,'never produced two identical frames');
+      await writeFile('artifacts/parity/'+location.name+'-'+viewport.name+'-'+kind+'-unstable.png',previous);
+      failures++;
+      image=previous;
+    }
     const text=await page.locator('body').innerText();
     const file='artifacts/parity/'+location.name+'-'+viewport.name+'-'+kind+'.png';
     await writeFile(file,image);
