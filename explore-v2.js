@@ -160,7 +160,7 @@
       suggestion: 'The issue is consequential decision power.',
       more: 'People are uneasy about giving almost any powerful institution permission to put AI in charge of consequential decisions. Health insurers generated the strongest concern, but landlords, government contractors, state officials, Big Tech companies and others were close behind. Even employers, who were viewed comparatively more favorably, still produced substantial unease. This tells us something important about the “villain” in AI messaging: the institution does not need to be universally hated. A person can trust or even like an organization and still believe it should not have certain automated powers over them.',
       detail: 'Named political figures can produce very intense reactions but also polarise. Everyday gatekeepers create broader shared unease. Employers were generally viewed more favorably, yet 53% were still at least somewhat upset about employer-controlled AI.',
-      method: 'The paired chart shows favorability and the share at least somewhat upset about AI decision-making among six institutions. These percentages come from separate questions and must not be subtracted. The list also includes the four public figures and institutions without a paired favorability comparison.'
+      method: 'The paired chart shows favorability and the share at least somewhat upset about AI decision-making among six institutions. These percentages come from separate questions and must not be subtracted. The list also includes the four public figures and institutions without a paired favorability comparison.',
       bars: [
         ['Health insurance companies', 68, '68%'],
         ['Landlords', 67, '67%'],
@@ -194,7 +194,7 @@
       suggestion: 'Specific uses reveal a broad boundary.',
       more: 'This round exposes the gap between what people immediately associate with AI and what becomes most concerning once they see what AI can actually be used to do. Without examples, privacy, surveillance, job loss and misinformation came readily to mind. But when people saw specific scenarios, concern was extremely high across health care, disability and Social Security, benefits, workplace monitoring, pricing, housing and being forced to deal with an AI instead of a person. The communications implication is significant: do not assume the most familiar AI issue is the strongest one. Give people concrete examples of automated power in everyday life.',
       detail: '897 people supplied open-ended responses before seeing the scenarios. The most common spontaneous themes were privacy/data/surveillance (20%), job loss/economic harm (16%), and misinformation/deepfakes (10%).',
-      method: 'Results show the percentage extremely or very concerned about each specific use. The separate forced-choice priority measure is not shown here.'
+      method: 'Results show the percentage extremely or very concerned about each specific use. The separate forced-choice priority measure is not shown here.',
       bars: [
         ['Doctor-recommended treatment denied', 73, '73%'],
         ['Social Security / disability cut off', 72, '72%'],
@@ -233,7 +233,7 @@
       suggestion: 'Concern has become permission for meaningful intervention.',
       more: 'The final round answers one of the biggest questions raised by the previous research: does concern actually translate into support for action? Every bold protection tested received support of 70 percent or more, including safety proof, off switches, meaningful penalties, community authority and bans on some high-stakes uses. More people worried that regulation would not go far enough than worried about excessive intervention.',
       detail: '72% supported the full package; 32% worried rules would not go far enough; 48% said the maker and user should be equally responsible. Only 4% said neither the vendor nor the organization using the system should be responsible after a harmful hiring error.',
-      method: 'Every major bold protection tested received support of 70 percent or more. Ranges preserve split-sample or version differences and should not be treated as single-point estimates.'
+      method: 'Every major bold protection tested received support of 70 percent or more. Ranges preserve split-sample or version differences and should not be treated as single-point estimates.',
       bars: [
         ['Meaningful penalties', 79, '77–81%'],
         ['Off switches', 79.5, '79–80%'],
