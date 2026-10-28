@@ -37,16 +37,16 @@
     health: {
       title: 'Health care',
       say: 'Your doctor says you need the treatment. Your insurer’s AI says you cannot have it.',
-      avoid: 'AI may introduce bias into health care.'
+      avoid: 'AI is affecting access to health care.'
     },
     benefits: {
       title: 'Public benefits',
-      say: 'A system flags you for fraud. Your benefits stop. Nobody can explain why.',
+      say: 'The Social Security Administration uses an AI system that falsely flags you for fraud which immediately cuts off your benefits. Nobody can explain why and you can’t reach a human for help.',
       avoid: 'Automated systems can affect access to public benefits.'
     },
     housing: {
       title: 'Housing',
-      say: 'Your landlord uses an automated screening system. It gets you wrong. You lose the apartment.',
+      say: 'Landlords are using AI screening systems that can falsely flag people for evictions or mix them up with someone who has the same name. The applications are denied and the renters have no idea why.',
       avoid: 'AI can create risks for tenants.'
     },
     work: {
@@ -187,14 +187,10 @@
   };
 
   const downloads = [
-    {label:'Movement pamphlet', href:'resources/TTJ_Message_Testing_Pamphlet_V1_Movement_Organisations_Copy_Draft_Google_Docs_Ready.docx', format:'DOCX', audience:'Movement organizations'},
-    {label:'Movement one-page cheat sheet', href:'resources/TTJ_Message_Testing_One_Page_Cheat_Sheet_Movement_Organisations_Copy_Full_Page.docx', format:'DOCX · 1 page', audience:'Movement organizations'},
-    {label:'Policymaker pamphlet', href:'resources/TTJ_Message_Testing_Pamphlet_V2_Policymakers_Copy_Draft.docx', format:'DOCX', audience:'Policymakers'},
-    {label:'Policymaker one-page cheat sheet', href:'resources/TTJ_Message_Testing_One_Page_Cheat_Sheet_Policymakers_Copy_Full_Page.docx', format:'DOCX · 1 page', audience:'Policymakers'},
-    {label:'Message Testing Cheat Sheet', href:'resources/TTJ_Message%20Testing%20Cheat%20Sheet_PB%20-%20Revised_September%202026.pdf', format:'PDF · Sep 2026', audience:'Research summary'},
-    {label:'Prevent, Protect, Repair one-sheet', href:'resources/TTJ_Policy_Framework_One_Sheet_Google_Docs_Editable_v2.docx', format:'DOCX · 1 page', audience:'Policy framework'},
-    {label:'PPR policy framework pamphlet', href:'resources/TTJ_Policy_Framework_Pamphlet_Policymakers_Google_Docs_Fully_Editable_FINAL.docx', format:'DOCX', audience:'Policymakers'},
-    {label:'Sector one-page cheat sheet', href:'resources/TTJ_One_Page_Sector_Cheat_Sheet_Copy_Clean_Full_Page_FINAL.docx', format:'DOCX · 1 page', audience:'Sector guidance'}
+    {label:'Memo', href:'resources/TTJ_Message_Testing_Memo.html', format:'HTML', audience:'Research memo'},
+    {label:'Cheat Sheet for Policymakers', href:'resources/TTJ_Message_Testing_One_Page_Cheat_Sheet_Policymakers_Copy_Full_Page.docx', format:'DOCX', audience:'Policymakers'},
+    {label:'Cheat Sheet for Movement Orgs', href:'resources/TTJ_Message_Testing_One_Page_Cheat_Sheet_Movement_Organisations_Copy_Full_Page.docx', format:'DOCX', audience:'Movement organizations'},
+    {label:'Say This, Not That and other Messaging Hints', href:'resources/TTJ_Say_This_Not_That_Messaging_Hints.html', format:'HTML', audience:'Messaging guidance'}
   ];
 
   root.classList.add('ttj-resources-v2');
@@ -205,17 +201,29 @@
         <div class="rv-shell rv-hero-inner">
           <div class="rv-eyebrow">03 / Practical use</div>
           <h1>Use the <span>research.</span></h1>
-          <p>Eight practical tools for turning the findings into clearer explanations, questions and drafts — without losing the evidence underneath them.</p>
-          <div class="rv-tool-index" aria-label="Toolkit index">
-            ${['Message formula','Say this, not that','Cross-partisan talking points','Sector snapshot','Rapid response checklist','Strong / weak words','Draft checklist','Lead with the decision'].map((x,i)=>`<button type="button" data-tool-jump="tool-${i+1}"><b>0${i+1}</b><span>${x}</span></button>`).join('')}
-          </div>
+          <p>Practical tools for turning the findings into clearer explanations, questions and drafts — without losing the evidence underneath them.</p>
+
         </div>
       </section>
 
       <section class="rv-downloads rv-downloads-top">
         <div class="rv-shell">
           <div class="rv-download-head"><div><div class="rv-eyebrow">Downloadable materials</div><h2>Downloads and kits</h2></div><p>Download the current TTJ research and policy materials. Additional kits are in progress.</p></div>
-          <div class="rv-download-grid">${downloads.map((item,i)=>`<a href="${item.href}" download aria-label="Download ${item.label}, ${item.format}, for ${item.audience}"><span>0${i+1}</span><div><b>${item.label}</b><small>${item.audience} · ${item.format}</small></div><i aria-hidden="true">↓</i></a>`).join('')}</div>
+          <div class="rv-download-layout">
+            <div class="rv-download-grid">
+              ${downloads.map((item,i)=>`<a href="${item.href}" download aria-label="Download ${item.label}, ${item.format}, for ${item.audience}"><span>0${i+1}</span><div><b>${item.label}</b><small>${item.audience} · ${item.format}</small></div><i aria-hidden="true">↓</i></a>`).join('')}
+            </div>
+            <a class="rv-cheatsheet-preview" href="resources/TTJ_Message%20Testing%20Cheat%20Sheet_PB%20-%20Revised_September%202026.pdf" aria-label="Open the complete message-testing cheat sheet PDF">
+              <div class="rv-preview-sheet">
+                <span class="rv-preview-mark">TechTonic Justice</span>
+                <span class="rv-preview-eyebrow">Research companion</span>
+                <strong>What people actually told us about AI harms.</strong>
+                <span class="rv-preview-rule"></span>
+                <span class="rv-preview-caption">Message Testing Cheat Sheet</span>
+                <span class="rv-preview-foot">Preview illustration · View the PDF ↗</span>
+              </div>
+            </a>
+          </div>
           <p class="rv-source-note">Source: TechTonic Justice + Data for Progress message testing, five national surveys of likely voters, March–July 2026. Question wording, measures and samples vary by round.</p>
         </div>
       </section>
@@ -315,20 +323,7 @@
         </div>
       </section>
 
-      <section class="rv-tool rv-decision" id="tool-8">
-        <div class="rv-shell">
-          <div class="rv-tool-head rv-tool-head-light">
-            <div><span class="rv-number">08</span><div class="rv-eyebrow">Lead with the decision, not the system</div><h2>Change what the sentence is about.</h2></div>
-            <p>The same facts can be organized around the technology or around the institution making a consequential decision. Toggle sectors to see the shift.</p>
-          </div>
-          <div class="rv-decision-tabs" id="rv-decision-tabs"></div>
-          <div class="rv-decision-stage">
-            <div class="rv-system-first"><span>System-first</span><p id="rv-system-first"></p></div>
-            <div class="rv-shift"><span></span><b>Shift the subject</b><span></span></div>
-            <div class="rv-decision-first"><span>Decision-first</span><p id="rv-decision-first"></p></div>
-          </div>
-        </div>
-      </section>
+
 
 
     </div>`;
