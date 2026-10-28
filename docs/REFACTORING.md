@@ -76,3 +76,16 @@ and mobile layout. Check browser console and all resource requests for errors.
 7. Re-run every test; refuse promotion on any mismatch.
 
 Do not remove audit or source provenance records to imply a false authorship history.
+
+## Initial regression results, 28 October 2026
+
+- Strict source-parity CI passed: runtime source differs only by removal of one empty CSS rule.
+- All 12 screenshot comparisons contain identical extracted page text.
+- The Explore and Resources screenshots matched exactly at all four measured viewport sizes.
+- Homepage screenshots showed intermittent pixel mismatches concentrated within the top 210–230 pixels, with no extracted text difference. This has not been conclusively diagnosed, so the visual gate remains blocked.
+- Basic route, initial accordion state, accordion toggling and memo link parity passed in the Playwright interaction smoke test.
+- The draft pull request remains unmerged. Do not promote until the screenshot mismatch is resolved and richer interactions are tested.
+
+Run and evidence: https://github.com/bloopeter-wq/ttj-guided-research-tour/actions/runs/40679489688
+
+A successful Vercel preview is not sufficient to bypass the failing visual gate.
