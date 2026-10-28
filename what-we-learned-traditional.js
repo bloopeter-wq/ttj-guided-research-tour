@@ -73,7 +73,7 @@
               <details>
                 <summary><span class="lt-fight-no">02</span><span>AI and tech justice advocates</span><span class="lt-fight-toggle" aria-hidden="true"></span></summary>
                 <div class="lt-fight-panel">
-                  <p>For advocates in the AI and tech justice space, We now have a real opening to question whether AI belongs in decisions about basic human needs at all. It starts with the numbers: 80% of voters, across parties, support banning AI from deciding who gets health care, housing, or work. So use the polling data to attack the legitimacy of AI making high-stakes decisions in the first place, move off of guardrails-focused discussion, and build support for the bold protections voters want.</p>
+                  <p>For advocates in the AI and tech justice space, We now have a real opening to question whether AI belongs in decisions about basic human needs at all. It starts with the numbers: 80% of voters, across parties, support banning AI from deciding who gets health care, housing, or work. So use the polling data to attack the legitimacy of AI making high-stakes decisions in the first place, move beyond discussion of weak guardrails, and build support for the bold protections voters want.</p>
                 </div>
               </details>
               <details>
