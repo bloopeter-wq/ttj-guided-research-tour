@@ -12,6 +12,7 @@
 import { createHash } from 'node:crypto';
 import { mkdir, writeFile } from 'node:fs/promises';
 import { exit } from 'node:process';
+import { PNG } from 'pngjs';
 
 const baseline = process.env.BASELINE_URL;
 const candidate = process.env.CANDIDATE_URL;
@@ -59,12 +60,27 @@ for (const viewport of resolutions) for (const location of locations) {
     const text=await page.locator('body').innerText();
     const file='artifacts/parity/'+location.name+'-'+viewport.name+'-'+kind+'.png';
     await writeFile(file,image);
-    captures.push({hash:createHash('sha256').update(image).digest('hex'),text});
+    captures.push({hash:createHash('sha256').update(image).digest('hex'),text,image});
     await page.close();
   }
   const imageEqual=captures[0].hash===captures[1].hash;
   const textEqual=captures[0].text===captures[1].text;
   console.log(location.name,viewport.name,'pixels:',imageEqual?'IDENTICAL':'DIFFERENT','text:',textEqual?'IDENTICAL':'DIFFERENT');
+  if(!imageEqual) {
+    const [a,b]=captures.map(c=>PNG.sync.read(c.image));
+    if(a.width!==b.width||a.height!==b.height) {
+      console.error('SIZE DIFF',location.name,viewport.name,a.width,a.height,b.width,b.height);
+    } else {
+      let count=0,minX=a.width,minY=a.height,maxX=-1,maxY=-1;
+      for(let y=0;y<a.height;y++)for(let x=0;x<a.width;x++){
+        const i=(y*a.width+x)*4;
+        if(a.data[i]!==b.data[i]||a.data[i+1]!==b.data[i+1]||a.data[i+2]!==b.data[i+2]||a.data[i+3]!==b.data[i+3]){
+          count++;minX=Math.min(minX,x);maxX=Math.max(maxX,x);minY=Math.min(minY,y);maxY=Math.max(maxY,y);
+        }
+      }
+      console.error('PIXEL DIFF',location.name,viewport.name,'count',count,'bounds',[minX,minY,maxX,maxY],'of',a.width*a.height);
+    }
+  }
   if(!imageEqual||!textEqual)failures++;
 }
 await browser.close();
