@@ -1,0 +1,34 @@
+name: Jane Resources acceptance
+on:
+  push:
+    branches: [feature/jane-resources-revisions-2026-10-28]
+  pull_request:
+    branches: [main]
+jobs:
+  acceptance:
+    runs-on: ubuntu-latest
+    timeout-minutes: 20
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '24'
+      - name: Confirm valid scripts and maintained source modules
+        run: |
+          node --check resources-v2.js
+          node --check resources.js
+          node scripts/build-legacy-js.mjs
+          node scripts/build-ux-css.mjs
+      - name: Install Chromium
+        run: |
+          npm install --no-save playwright
+          npx playwright install --with-deps chromium
+      - name: Serve candidate
+        run: |
+          python3 -m http.server 4172 > /tmp/ttj-resources.log 2>&1 &
+          sleep 3
+          curl --fail http://localhost:4172/ >/dev/null
+      - name: Verify every Jane Resources instruction at four screen widths
+        env:
+          TEST_URL: http://localhost:4172/
+        run: node scripts/test-jane-resources.mjs
