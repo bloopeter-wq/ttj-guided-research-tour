@@ -98,11 +98,23 @@ for(const width of [1440,390]){
  // Navigation should precede the hero and follow the top-level header on all three pages.
  for(const [route,heroSel] of [['tour','#hb2-hero'],['explore','.xv-hero'],['resources','.rv-hero']]){
   await navigate(route,heroSel);
+  await page.evaluate(()=>window.scrollTo(0,0));
+  await page.waitForTimeout(240);
   const nav=page.locator('.ux-section-nav[data-ux-nav="'+(route==='tour'?'home':route)+'"]');
   const hr=await page.locator(heroSel).boundingBox(),nr=await nav.boundingBox();
-  record(width,route+'.page-menu-above-hero',!!nr&&!!hr&&nr.y+nr.height<=hr.y+4,{nav:nr,hero:hr});
+  const beforeHero=await nav.evaluate((n,selector)=>Boolean(n.compareDocumentPosition(document.querySelector(selector)) & Node.DOCUMENT_POSITION_FOLLOWING),heroSel);
+  record(width,route+'.page-menu-above-hero',beforeHero&&!!nr&&!!hr&&nr.y+nr.height<=hr.y+5,JSON.stringify({beforeHero,nav:nr,hero:hr}));
   await capture(page,width,'17-navigation-'+route,heroSel);
  }
+ // Check copy variants displayed to visitors rather than variable/class names.
+ const visible=(await page.locator('body').innerText()).replace(/\\s+/g,' ');
+ record(width,'copy.US-English',!/(\\borganisations?\\b|\\borganisers?\\b|\\bcentres?\\b|\\bprioritise\\b|\\boptimise\\b|\\bcolour\\b)/i.test(visible));
+ const prohibited=[...visible.matchAll(/guardrails?/gi)].filter(m=>!/^weak\\s+$/i.test(visible.slice(Math.max(0,m.index-7),m.index)));
+ record(width,'copy.guardrails-only-when-weak',prohibited.length===0,prohibited.map(m=>visible.slice(m.index-30,m.index+30)).join(' | '));
+ await page.goto(base+'#tour',{waitUntil:'networkidle'});
+ await page.locator('#hb2-text').waitFor({state:'visible'});
+ const ratios=await Promise.all(['#hb2-text','.lt-findings-head h2','.lt-route-grid h3'].map(sel=>page.locator(sel).first().evaluate(el=>{const st=getComputedStyle(el);return {name:el.tagName,ratio:parseFloat(st.lineHeight)/parseFloat(st.fontSize)}})));
+ record(width,'typography.heading-leading',ratios.every(x=>x.ratio>=1.14),JSON.stringify(ratios));
  record(width,'ui.no-uncaught-js-errors',jsErrors.length===0,jsErrors.join('; '));
  await page.close();
 }
