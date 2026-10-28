@@ -193,13 +193,13 @@ showStep();
     const refine2Css = document.createElement('link');
     refine2Css.id = 'resources-refine2-css';
     refine2Css.rel = 'stylesheet';
-    refine2Css.href = 'resources-refine2.css?v=2';
+    refine2Css.href = 'resources-refine2.css?v=3';
     document.head.appendChild(refine2Css);
   }
   if (!document.getElementById('resources-v2-js')) {
     const script = document.createElement('script');
     script.id = 'resources-v2-js';
-    script.src = 'resources-v2.js?v=7';
+    script.src = 'resources-v2.js?v=8';
     document.body.appendChild(script);
   }
   if (!document.getElementById('resources-refine-js')) {

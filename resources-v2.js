@@ -41,7 +41,7 @@
     },
     benefits: {
       title: 'Public benefits',
-      say: 'The Social Security Administration uses an AI system that falsely flags you for fraud which immediately cuts off your benefits. Nobody can explain why and you can’t reach a human for help.',
+      say: 'The Social Security Administration uses an AI systemt that falsely flags you for fraud which immediately cuts off your benefits. Nobody can explain why and you can’t reach a human for help.',
       avoid: 'Automated systems can affect access to public benefits.'
     },
     housing: {

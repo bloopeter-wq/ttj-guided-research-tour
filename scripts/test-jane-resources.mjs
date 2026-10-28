@@ -28,11 +28,22 @@ for(const width of [1440,1024,820,390]){
  const layout=await page.locator('.rv-download-layout').evaluate(el=>getComputedStyle(el).gridTemplateColumns.split(' ').filter(Boolean).length);
  await assert(layout===(width>850?2:1),'Download section does not respond to viewport');
  const draft=await page.locator('.rv-drafting-list').evaluate(el=>getComputedStyle(el).gridTemplateColumns.split(' ').filter(Boolean).length);
- await assert(draft===(width>700?2:1),'Drafting checklist columns not responsive');
+ await assert(draft===2,'Drafting checklist columns not responsive');
+ const geometry=await page.locator('.rv-drafting-item').evaluateAll(nodes=>{
+   const a=nodes[0]?.getBoundingClientRect(),b=nodes[1]?.getBoundingClientRect();
+   return a&&b?{aX:a.x,bX:b.x,aY:a.y,bY:b.y,aWidth:a.width,bWidth:b.width}:null;
+ });
+ await assert(geometry&&Math.abs(geometry.aY-geometry.bY)<3&&geometry.bX>geometry.aX+geometry.aWidth-3,'Drafting checklist items are not visually side by side: '+JSON.stringify(geometry));
+ const draftBoxes=page.locator('.rv-drafting-list input[type="checkbox"]');
+ await assert(await draftBoxes.count()===11,'Drafting checklist lost its eleven questions');
+ await page.locator('.rv-drafting-item').first().click();
+ await assert((await page.locator('#rv-drafting-count').innerText()).includes('1 of 11'),'Drafting progress did not update');
+ await page.locator('#rv-drafting-reset').click();
+ await assert((await page.locator('#rv-drafting-count').innerText()).includes('0 of 11'),'Drafting reset failed');
  const tabs=page.locator('#rv-language-tabs [data-language]');
  for(const [key,expectedSay,expectedAvoid] of [
  ['health',null,'AI is affecting access to health care.'],
- ['benefits','The Social Security Administration uses an AI system that falsely flags you for fraud which immediately cuts off your benefits. Nobody can explain why and you can’t reach a human for help.',null],
+ ['benefits','The Social Security Administration uses an AI systemt that falsely flags you for fraud which immediately cuts off your benefits. Nobody can explain why and you can’t reach a human for help.',null],
  ['housing','Landlords are using AI screening systems that can falsely flag people for evictions or mix them up with someone who has the same name. The applications are denied and the renters have no idea why.',null]
  ]) {
    await tabs.filter({has:page.locator('[data-language="'+key+'"]')}).count().catch(()=>0);
