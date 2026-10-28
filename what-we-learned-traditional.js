@@ -182,6 +182,10 @@
       </section>
     `;
 
+    /* The homepage accordions always begin closed; readers open them explicitly. */
+    page.querySelectorAll('.lt-fight-list details, .lt-thread-list details, .lt-findings details').forEach(function (item) {
+      item.open = false;
+    });
     tour.appendChild(page);
 
     var showingStatic = false;
