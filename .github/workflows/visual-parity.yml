@@ -1,0 +1,47 @@
+name: TTJ visual parity
+on:
+  push:
+    branches:
+      - refactor/zero-change-maintenance-2026-10-28
+  workflow_dispatch:
+
+jobs:
+  screenshot-comparison:
+    runs-on: ubuntu-latest
+    timeout-minutes: 20
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          path: candidate
+      - uses: actions/checkout@v4
+        with:
+          ref: 1395b9a3f791d9b7a6b27a887bd933ca6833e2a4
+          path: baseline
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '24'
+      - name: Install browser tooling
+        working-directory: candidate
+        run: |
+          npm install --no-save playwright
+          npx playwright install --with-deps chromium
+      - name: Serve baseline and candidate locally
+        run: |
+          python3 -m http.server 4171 --directory baseline > /tmp/ttj-baseline.log 2>&1 &
+          python3 -m http.server 4172 --directory candidate > /tmp/ttj-candidate.log 2>&1 &
+          sleep 3
+          curl --fail http://127.0.0.1:4171/ > /dev/null
+          curl --fail http://127.0.0.1:4172/ > /dev/null
+      - name: Compare all primary pages at four screen sizes
+        working-directory: candidate
+        env:
+          BASELINE_URL: http://127.0.0.1:4171/
+          CANDIDATE_URL: http://127.0.0.1:4172/
+        run: node scripts/compare-browser.mjs
+      - name: Save comparison screenshots
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: ttj-visual-parity
+          path: candidate/artifacts/parity/
+          if-no-files-found: ignore
