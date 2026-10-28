@@ -179,7 +179,7 @@ showStep();
     const css = document.createElement('link');
     css.id = 'resources-v2-css';
     css.rel = 'stylesheet';
-    css.href = 'resources-v2.css?v=1';
+    css.href = 'resources-v2.css?v=2';
     document.head.appendChild(css);
   }
   if (!document.getElementById('resources-refine-css')) {
@@ -193,13 +193,13 @@ showStep();
     const refine2Css = document.createElement('link');
     refine2Css.id = 'resources-refine2-css';
     refine2Css.rel = 'stylesheet';
-    refine2Css.href = 'resources-refine2.css?v=1';
+    refine2Css.href = 'resources-refine2.css?v=2';
     document.head.appendChild(refine2Css);
   }
   if (!document.getElementById('resources-v2-js')) {
     const script = document.createElement('script');
     script.id = 'resources-v2-js';
-    script.src = 'resources-v2.js?v=6';
+    script.src = 'resources-v2.js?v=7';
     document.body.appendChild(script);
   }
   if (!document.getElementById('resources-refine-js')) {

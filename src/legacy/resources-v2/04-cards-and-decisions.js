@@ -18,13 +18,5 @@
     analysis.innerHTML=`<div class="rv-analysis-head"><span>Structural check</span><b>${text.split(/\s+/).length} words</b></div>${checks.map(([label,fn])=>{const ok=fn(text);return `<div class="rv-analysis-row ${ok?'ok':'consider'}"><i>${ok?'✓':'→'}</i><span>${label}</span><b>${ok?'Found':'Consider'}</b></div>`}).join('')}<p class="rv-analysis-note">This automated check looks only for structural signals. It does not assess factual accuracy, political effectiveness or whether a statement was survey tested.</p>`;
   });
 
-  let decisionKey='health';
-  const decisionTabs=document.getElementById('rv-decision-tabs');
-  function renderDecision(){
-    decisionTabs.innerHTML=Object.entries(decisionExamples).map(([key])=>`<button type="button" data-decision="${key}" class="${key===decisionKey?'active':''}">${scenarios[key].label}</button>`).join('');
-    document.getElementById('rv-system-first').textContent=decisionExamples[decisionKey][0];
-    document.getElementById('rv-decision-first').textContent=decisionExamples[decisionKey][1];
-    decisionTabs.querySelectorAll('[data-decision]').forEach(btn=>btn.addEventListener('click',()=>{decisionKey=btn.dataset.decision;renderDecision();}));
-  }
-  renderDecision();
+
 })();
