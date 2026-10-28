@@ -10,7 +10,7 @@ jobs:
     runs-on: ubuntu-latest
     timeout-minutes: 25
     permissions:
-      contents: read
+      contents: write
     steps:
       - uses: actions/checkout@v4
       - uses: actions/setup-node@v4
@@ -52,3 +52,18 @@ jobs:
           path: jane-visual-evidence/
           if-no-files-found: warn
           retention-days: 30
+      - name: Publish viewable screenshot gallery on isolated evidence branch
+        if: success() && github.ref != 'refs/heads/main'
+        run: |
+          mkdir -p /tmp/jane-evidence
+          cp -R jane-visual-evidence/. /tmp/jane-evidence/
+          git config user.name "TTJ Screenshot Audit"
+          git config user.email "actions@users.noreply.github.com"
+          git fetch origin evidence/jane-screenshots-2026-10-28
+          git switch -C evidence-jane FETCH_HEAD
+          mkdir -p docs/screenshots/2026-10-28
+          cp /tmp/jane-evidence/*.png docs/screenshots/2026-10-28/
+          cp /tmp/jane-evidence/audit-results.json docs/screenshots/2026-10-28/
+          git add docs/screenshots/2026-10-28
+          git commit -m "Capture Jane visual acceptance screenshots [skip ci]"
+          git push origin HEAD:refs/heads/evidence/jane-screenshots-2026-10-28
