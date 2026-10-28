@@ -78,12 +78,12 @@
       toggle.type='button';
       toggle.className='lt-finding-toggle';
       toggle.setAttribute('aria-controls',body.id);
-      toggle.setAttribute('aria-expanded',i===0?'true':'false');
+      toggle.setAttribute('aria-expanded','false');
       toggle.innerHTML='<span>'+label.textContent+'</span><strong>'+title.textContent+'</strong><em>'+(evidenceCues[i]||'')+'</em><i aria-hidden="true">+</i>';
 
       card.appendChild(toggle);
       card.appendChild(body);
-      card.classList.toggle('is-open',i===0);
+      card.classList.remove('is-open');
 
       toggle.addEventListener('click',function(){
         var open=!card.classList.contains('is-open');

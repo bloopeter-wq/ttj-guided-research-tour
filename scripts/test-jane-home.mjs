@@ -13,6 +13,17 @@ for(const width of [1440,1024,820,390]){
  if(!title.includes('Don’t Stop At Weak Guardrails: Voters Across Parties Want')||!title.includes('Strong AI Protections'))errors.push(width+' Wrong hero first-slide text');
  const hero=page.locator('#hb2-hero');
  if(await hero.locator('#hb2-prev,#hb2-next,#hb2-track,.hb2-arrows').count())errors.push(width+' Slider controls still present');
+ const firstResearch=page.locator('#learn-traditional-page .lt-findings .lt-finding').first();
+ await page.waitForFunction(()=>document.querySelector('#learn-traditional-page .lt-findings .lt-finding')?.dataset.accordionReady==='1',{timeout:16000});
+ const researchToggle=firstResearch.locator('.lt-finding-toggle');
+ if(await firstResearch.evaluate(el=>el.classList.contains('is-open')))errors.push(width+' First What the research found item is OPEN on load');
+ if(await researchToggle.getAttribute('aria-expanded')!=='false')errors.push(width+' First research accordion aria-expanded is not false on load');
+ await researchToggle.click();
+ if(!await firstResearch.evaluate(el=>el.classList.contains('is-open')))errors.push(width+' First research accordion failed to open on click');
+ if(await researchToggle.getAttribute('aria-expanded')!=='true')errors.push(width+' First research accordion aria-expanded did not update on opening');
+ await researchToggle.click();
+ if(await firstResearch.evaluate(el=>el.classList.contains('is-open')))errors.push(width+' First research accordion failed to close on click');
+ if(await researchToggle.getAttribute('aria-expanded')!=='false')errors.push(width+' First research accordion aria-expanded did not update on closing');
  const firstFight=page.locator('#learn-traditional-page .lt-fight-list details').first();
  const firstThread=page.locator('#learn-traditional-page .lt-thread-list details').first();
  if(await firstFight.evaluate(e=>e.open))errors.push(width+' First homepage fight accordion initially open');
