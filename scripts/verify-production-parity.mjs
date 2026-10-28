@@ -24,6 +24,10 @@ const approvedExplore={
  'resources-v2.css':'2a4da1025e177bd47c7567f6985e6c9cbb09e4c0',
  'resources-refine2.css':'208fbe0f7ceb7bedec9ed91b34ee433500d0f955',
  'resources/TTJ_Say_This_Not_That_Messaging_Hints.html':'8513b342530edf1bb6a4e7a280488e0a9a248ae8'
+,
+ 'headline-banner-v2.js':'b9b45d72c7eccf83f3df70a3a08c0fa4799defda',
+ 'what-we-learned-traditional.js':'d5827cef153257644525261fe2a67c6e04cc8fdc',
+ 'resources.js':'f23f8b14bd22d98f336a4343cea19219b905c815'
 };
 for(const file of runtime){
  const sha=git('rev-parse','HEAD:'+file);
