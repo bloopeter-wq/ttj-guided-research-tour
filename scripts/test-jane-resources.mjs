@@ -27,8 +27,8 @@ for(const width of [1440,1024,820,390]){
  await assert((await page.request.get(new URL(pdf,base).href)).status()===200,'Preview PDF broken');
  const layout=await page.locator('.rv-download-layout').evaluate(el=>getComputedStyle(el).gridTemplateColumns.split(' ').filter(Boolean).length);
  await assert(layout===(width>850?2:1),'Download section does not respond to viewport');
- const draft=await page.locator('.rv-draft-check-layout').evaluate(el=>getComputedStyle(el).gridTemplateColumns.split(' ').filter(Boolean).length);
- await assert(draft===(width>640?2:1),'Drafting checklist columns not responsive');
+ const draft=await page.locator('.rv-drafting-list').evaluate(el=>getComputedStyle(el).gridTemplateColumns.split(' ').filter(Boolean).length);
+ await assert(draft===(width>700?2:1),'Drafting checklist columns not responsive');
  const tabs=page.locator('#rv-language-tabs [data-language]');
  for(const [key,expectedSay,expectedAvoid] of [
  ['health',null,'AI is affecting access to health care.'],
