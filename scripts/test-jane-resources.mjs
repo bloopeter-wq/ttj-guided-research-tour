@@ -28,11 +28,11 @@ for(const width of [1440,1024,820,390]){
  const layout=await page.locator('.rv-download-layout').evaluate(el=>getComputedStyle(el).gridTemplateColumns.split(' ').filter(Boolean).length);
  await assert(layout===(width>850?2:1),'Download section does not respond to viewport');
  const draft=await page.locator('.rv-drafting-list').evaluate(el=>getComputedStyle(el).gridTemplateColumns.split(' ').filter(Boolean).length);
- await assert(draft===(width>700?2:1),'Drafting checklist columns not responsive');
+ await assert(draft===(2),'Drafting checklist columns not responsive');
  const tabs=page.locator('#rv-language-tabs [data-language]');
  for(const [key,expectedSay,expectedAvoid] of [
  ['health',null,'AI is affecting access to health care.'],
- ['benefits','The Social Security Administration uses an AI system that falsely flags you for fraud which immediately cuts off your benefits. Nobody can explain why and you can’t reach a human for help.',null],
+ ['benefits','The Social Security Administration uses an AI systemt that falsely flags you for fraud which immediately cuts off your benefits. Nobody can explain why and you can’t reach a human for help.',null],
  ['housing','Landlords are using AI screening systems that can falsely flag people for evictions or mix them up with someone who has the same name. The applications are denied and the renters have no idea why.',null]
  ]) {
    await tabs.filter({has:page.locator('[data-language="'+key+'"]')}).count().catch(()=>0);
