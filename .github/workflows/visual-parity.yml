@@ -25,7 +25,7 @@ jobs:
       - name: Install browser tooling
         working-directory: candidate
         run: |
-          npm install --no-save playwright
+          npm install --no-save playwright pngjs
           npx playwright install --with-deps chromium
       - name: Serve baseline and candidate locally
         run: |
