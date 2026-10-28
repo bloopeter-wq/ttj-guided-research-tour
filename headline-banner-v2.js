@@ -1,14 +1,11 @@
 (function () {
   'use strict';
 
-  var headlines = [
-    'Don’t Stop At Weak Guardrails: Voters Across Parties Want <span class="hb2-emphasis">Strong AI Protections</span>.',
-    'AI is already being used to deny people health care, a stable income, a home, and a job.',
-    'This Is One of the Only Places that Parties Agree.'
-  ];
+  /* Jane's approved single headline, formerly the first slide. */
+  var headline = 'Don’t Stop At Weak Guardrails: Voters Across Parties Want <span class="hb2-emphasis">Strong AI Protections</span>.';
 
   /* Preserve the original headline palette: jade → gold → coral → lime. */
-  var palette = ['#64C9BB', '#EC5E55', '#92B93E'];
+  var colour = '#64C9BB';
   var geometryPaths = [
     'M85 -90 L430 125 L190 415 L-45 220 Z',
     'M430 125 L645 48 L875 175 L685 470 L190 415 Z',
@@ -47,68 +44,19 @@
     hero.innerHTML = '<div class="hb2-geo" aria-hidden="true"></div>' +
       '<div class="hb2-shell">' +
         '<div class="hb2-main" id="hb2-main"><h1 id="hb2-text"></h1></div>' +
-        '<div class="hb2-bottom"><div class="hb2-track" id="hb2-track" aria-hidden="true"></div><div class="hb2-actions"><div class="hb2-arrows"><button class="hb2-arrow" id="hb2-prev" type="button" aria-label="Previous headline">←</button><button class="hb2-arrow" id="hb2-next" type="button" aria-label="Next headline">→</button></div></div></div>' +
+        '<div class="hb2-bottom" aria-hidden="true"></div>' +
       '</div>';
     tour.insertBefore(hero, page);
 
-    var index = 0;
-    function render() {
-      var main = document.getElementById('hb2-main');
-      var text = document.getElementById('hb2-text');
-      var track = document.getElementById('hb2-track');
-      var prev = document.getElementById('hb2-prev');
-      var next = document.getElementById('hb2-next');
-      if (!main || !text || !track || !prev || !next) return;
-
-      var colour = palette[index % palette.length];
-      hero.style.setProperty('--hb2-color', colour);
-      hero.style.setProperty('--hb2-geo-image', geometryImage(colour));
-
-      main.classList.remove('enter');
-      void main.offsetWidth;
-      text.className = 'hb2-slide hb2-slide-' + index;
-      text.innerHTML = headlines[index];
-      main.classList.add('enter');
-      track.innerHTML = headlines.map(function (_, i) {
-        return '<span class="' + (i < index ? 'done' : (i === index ? 'active' : '')) + '"></span>';
-      }).join('');
-      prev.disabled = index === 0;
-      next.disabled = index === headlines.length - 1;
+    /* Static hero: no timers, navigation arrows, slide changes or swipe handlers. */
+    hero.style.setProperty('--hb2-color', colour);
+    hero.style.setProperty('--hb2-geo-image', geometryImage(colour));
+    var title = document.getElementById('hb2-text');
+    if (title) {
+      title.className = 'hb2-slide hb2-slide-0';
+      title.innerHTML = headline;
     }
 
-    document.getElementById('hb2-prev').addEventListener('click', function () {
-      if (index > 0) {
-        index -= 1;
-        render();
-      }
-    });
-
-    document.getElementById('hb2-next').addEventListener('click', function () {
-      if (index < headlines.length - 1) {
-        index += 1;
-        render();
-      }
-    });
-
-    /* Mobile: swipe horizontally between headlines while preserving vertical page scrolling. */
-    var touchStartX = null;
-    var touchStartY = null;
-    hero.addEventListener('touchstart', function (event) {
-      if (!event.touches || event.touches.length !== 1) return;
-      touchStartX = event.touches[0].clientX;
-      touchStartY = event.touches[0].clientY;
-    }, { passive: true });
-    hero.addEventListener('touchend', function (event) {
-      if (touchStartX === null || !event.changedTouches || event.changedTouches.length !== 1) return;
-      var dx = event.changedTouches[0].clientX - touchStartX;
-      var dy = event.changedTouches[0].clientY - touchStartY;
-      touchStartX = null; touchStartY = null;
-      if (Math.abs(dx) < 45 || Math.abs(dx) <= Math.abs(dy)) return;
-      if (dx < 0 && index < headlines.length - 1) { index += 1; render(); }
-      if (dx > 0 && index > 0) { index -= 1; render(); }
-    }, { passive: true });
-
-    render();
     return true;
   }
 
