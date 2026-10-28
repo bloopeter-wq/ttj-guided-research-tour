@@ -1,0 +1,973 @@
+/* 11. Percentage-only public display: comparative rounds use rank order without MaxDiff scores. */
+.ttj-explore-v2 .xv-ranked-list{
+  border-top:1px solid #cbd0cd;
+}
+.ttj-explore-v2 .xv-ranked-row{
+  display:grid;
+  grid-template-columns:42px minmax(0,1fr);
+  gap:18px;
+  align-items:center;
+  padding:16px 0;
+  border-bottom:1px solid #d9ddda;
+}
+.ttj-explore-v2 .xv-ranked-row>span{
+  font:800 10px/1 "Noto Sans",Arial,sans-serif;
+  letter-spacing:.12em;
+  color:#047E72;
+}
+.ttj-explore-v2 .xv-ranked-row>strong{
+  font:700 17px/1.45 "Noto Sans",Arial,sans-serif;
+  color:#111426;
+}
+.ttj-explore-v2 .xv-full-rank>span{
+  display:flex;
+  align-items:flex-start;
+  gap:12px;
+}
+.ttj-explore-v2 .xv-full-rank i{
+  min-width:28px;
+  font:800 10px/1.5 "Noto Sans",Arial,sans-serif;
+  font-style:normal;
+  color:#047E72;
+}
+.learn-traditional-page .lt-editorial-note{
+  border-top:1px solid #c8cecb;
+  padding:20px 0 0;
+  max-width:620px;
+}
+.learn-traditional-page .lt-editorial-note b{
+  display:block;
+  margin-bottom:9px;
+  font-size:12px;
+  letter-spacing:.08em;
+  text-transform:uppercase;
+  color:#047E72;
+}
+.learn-traditional-page .lt-editorial-note p{
+  margin:0;
+  font-size:16px;
+  line-height:1.62;
+  color:#4c5255;
+}
+
+
+
+
+/* The long-form homepage now opens like the memo, not like a second campaign hero. */
+.learn-traditional-page .lt-memo-intro{
+  background:#f5f4ee!important;
+  color:#111426!important;
+  padding:76px 0 70px!important;
+  overflow:visible!important;
+}
+.learn-traditional-page .lt-memo-intro::after{display:none!important}
+.learn-traditional-page .lt-memo-intro .lt-kicker{color:#047E72!important}
+.learn-traditional-page .lt-memo-intro-grid{
+  display:grid;
+  grid-template-columns:minmax(0,1.15fr) minmax(320px,.65fr);
+  gap:82px;
+  align-items:start;
+  margin-top:18px;
+}
+.learn-traditional-page .lt-memo-intro h1{
+  color:#111426!important;
+  font-size:clamp(44px,5vw,68px)!important;
+  line-height:1.02!important;
+  letter-spacing:-.035em!important;
+  max-width:920px!important;
+  margin:0 0 28px!important;
+}
+.learn-traditional-page .lt-memo-intro .lt-lede{
+  color:#4d5457!important;
+  font-size:20px!important;
+  line-height:1.62!important;
+  max-width:820px!important;
+}
+.learn-traditional-page .lt-memo-examples{
+  border-top:1px solid #bcc3bf;
+}
+.learn-traditional-page .lt-memo-examples p{
+  margin:0;
+  padding:18px 0;
+  border-bottom:1px solid #d1d6d3;
+  font:700 17px/1.45 "Noto Sans",Arial,sans-serif;
+  color:#111426;
+}
+.learn-traditional-page .lt-memo-now{
+  display:grid;
+  grid-template-columns:220px minmax(0,1fr);
+  gap:42px;
+  align-items:start;
+  margin-top:48px;
+  padding-top:24px;
+  border-top:3px solid #EC5E55;
+}
+.learn-traditional-page .lt-memo-now strong{
+  font-size:18px;
+  line-height:1.35;
+  color:#EC5E55;
+}
+.learn-traditional-page .lt-memo-now p{
+  margin:0;
+  max-width:820px;
+  font-size:17px;
+  line-height:1.62;
+  color:#3f4649;
+}
+
+/* Keep the research snapshot understated between narrative sections. */
+.learn-traditional-page .lt-snapshot{padding:44px 0 50px!important}
+
+/* What made the testing different follows the memo directly. */
+.learn-traditional-page .lt-difference{
+  background:#fff;
+  padding:76px 0 82px;
+  border-top:1px solid #e0e3e1;
+  border-bottom:1px solid #e0e3e1;
+}
+.learn-traditional-page .lt-difference-grid{
+  display:grid;
+  grid-template-columns:minmax(0,.9fr) minmax(0,1.1fr);
+  gap:88px;
+  align-items:start;
+}
+.learn-traditional-page .lt-difference h2{
+  margin:16px 0 0;
+  max-width:700px;
+  font-size:clamp(34px,3.7vw,50px);
+  line-height:1.08;
+  letter-spacing:-.028em;
+}
+.learn-traditional-page .lt-difference-grid>div:last-child{
+  max-width:760px;
+  padding-top:26px;
+}
+.learn-traditional-page .lt-difference p{
+  margin:0 0 18px;
+  font-size:17px;
+  line-height:1.68;
+  color:#4c5356;
+}
+
+/* Core finding stays important, but the recommendation carries the practical action. */
+.learn-traditional-page .lt-core{
+  padding:80px 0 86px!important;
+}
+.learn-traditional-page .lt-recommendation{
+  display:grid;
+  grid-template-columns:180px minmax(0,1fr);
+  gap:48px;
+  align-items:start;
+  margin-top:46px!important;
+  padding-top:28px;
+  border-top:1px solid #3d454d;
+}
+.learn-traditional-page .lt-recommendation>span{
+  font:800 11px/1.3 "Noto Sans",Arial,sans-serif;
+  letter-spacing:.15em;
+  text-transform:uppercase;
+  color:#E4B82F;
+}
+.learn-traditional-page .lt-recommendation h3{
+  margin:0 0 14px;
+  max-width:840px;
+  font-size:clamp(28px,3vw,40px);
+  line-height:1.12;
+  letter-spacing:-.025em;
+  color:#fff;
+}
+.learn-traditional-page .lt-recommendation p{
+  margin:0;
+  max-width:850px;
+  font-size:17px;
+  line-height:1.64;
+  color:#c8ced0;
+}
+
+/* More Findings mirrors the memo order and lets the accordion titles carry the hierarchy. */
+.learn-traditional-page .lt-findings-head h2{
+  font-size:clamp(34px,3.8vw,48px)!important;
+  font-weight:750!important;
+}
+.learn-traditional-page .lt-package-support{
+  border-top:1px solid #c8cecb;
+  padding-top:18px;
+}
+.learn-traditional-page .lt-package-support strong{
+  display:block;
+  font-size:clamp(50px,5vw,72px);
+  line-height:.95;
+  letter-spacing:-.04em;
+  color:#047E72;
+}
+.learn-traditional-page .lt-package-support>span{
+  display:block;
+  margin-top:8px;
+  font:700 13px/1.4 "Noto Sans",Arial,sans-serif;
+  color:#555d60;
+}
+.learn-traditional-page .lt-package-support p{
+  margin:18px 0 0;
+  font:700 14px/1.55 "Noto Sans",Arial,sans-serif;
+  color:#111426;
+}
+
+/* Memo conclusion appears as a quiet editorial section. */
+.learn-traditional-page .lt-meaning{
+  background:#eef3f0;
+  padding:76px 0 82px;
+  border-top:1px solid #d7ddda;
+  border-bottom:1px solid #d7ddda;
+}
+.learn-traditional-page .lt-meaning-grid{
+  display:grid;
+  grid-template-columns:minmax(280px,.75fr) minmax(0,1.25fr);
+  gap:84px;
+  align-items:start;
+}
+.learn-traditional-page .lt-meaning h2{
+  margin:15px 0 0;
+  font-size:clamp(36px,4vw,54px);
+  line-height:1.06;
+  letter-spacing:-.03em;
+}
+.learn-traditional-page .lt-meaning-grid>div:last-child{padding-top:24px;max-width:760px}
+.learn-traditional-page .lt-meaning p{
+  margin:0 0 18px;
+  font-size:17px;
+  line-height:1.66;
+  color:#465053;
+}
+
+
+.learn-traditional-page .lt-threads{padding:108px 0 118px!important}
+.learn-traditional-page .lt-next{padding:108px 0 120px!important}
+.learn-traditional-page .lt-next h2{
+  font-size:clamp(54px,7vw,104px)!important;
+  line-height:.9!important;
+  letter-spacing:-.06em!important;
+  margin:19px 0 55px!important;
+}
+
+/* Downloads now really are the first substantive Resources content after the hero. */
+.ttj-resources-v2 .ux-resource-guide{
+  width:min(1180px,calc(100% - 64px));
+  margin:30px auto 0!important;
+  padding:22px 0 0!important;
+  border-top:1px solid #cfd5d2!important;
+  color:#111426!important;
+}
+.ttj-resources-v2 .ux-resource-guide>span{
+  color:#047E72!important;
+}
+.ttj-resources-v2 .ux-resource-groups>div>b{
+  color:#111426!important;
+}
+.ttj-resources-v2 .ux-resource-guide button{
+  color:#111426!important;
+  border-color:#b9c1bd!important;
+  background:#fff!important;
+}
+.ttj-resources-v2 .ux-resource-guide button:hover{
+  border-color:#047E72!important;
+  color:#047E72!important;
+}
+
+/* Search targets for the added memo sections. */
+.learn-traditional-page .lt-difference,
+.learn-traditional-page .lt-meaning{scroll-margin-top:100px!important}
+
+@media(max-width:900px){
+  .learn-traditional-page .lt-memo-intro-grid,
+  .learn-traditional-page .lt-difference-grid,
+  .learn-traditional-page .lt-meaning-grid{
+    grid-template-columns:1fr;
+    gap:34px;
+  }
+  .learn-traditional-page .lt-memo-now{
+    grid-template-columns:1fr;
+    gap:10px;
+  }
+  .learn-traditional-page .lt-recommendation{
+    grid-template-columns:1fr;
+    gap:12px;
+  }
+}
+@media(max-width:760px){
+  .learn-traditional-page .lt-memo-intro{padding:54px 0 56px!important}
+  .learn-traditional-page .lt-memo-intro h1{font-size:42px!important}
+  .learn-traditional-page .lt-memo-intro .lt-lede{font-size:17px!important}
+  .learn-traditional-page .lt-memo-examples p{font-size:15px!important;padding:15px 0!important}
+  .learn-traditional-page .lt-memo-now{margin-top:34px!important}
+  .learn-traditional-page .lt-difference,
+  .learn-traditional-page .lt-meaning{padding:58px 0 64px!important}
+  .learn-traditional-page .lt-difference h2,
+  .learn-traditional-page .lt-meaning h2{font-size:34px!important}
+  .learn-traditional-page .lt-core{padding:60px 0 66px!important}
+  .learn-traditional-page .lt-recommendation{margin-top:34px!important}
+  .learn-traditional-page .lt-recommendation h3{font-size:28px!important}
+  .learn-traditional-page .lt-package-support strong{font-size:48px!important}
+
+  
+  .learn-traditional-page .lt-threads,
+  .learn-traditional-page .lt-next{padding:66px 0 72px!important}
+  .learn-traditional-page .lt-next h2{
+    font-size:52px!important;
+    line-height:.9!important;
+    margin-bottom:36px!important;
+  }
+
+  .ttj-resources-v2 .ux-resource-guide{
+    width:min(100% - 36px,1180px);
+    margin-top:24px!important;
+  }
+}
+
+
+
+
+/* HOME: only the top hero and Core Finding should feel like primary moments. */
+.learn-traditional-page .lt-memo-intro h1{
+  font-size:clamp(44px,4.2vw,56px)!important;
+  line-height:1.06!important;
+  letter-spacing:-.028em!important;
+}
+.learn-traditional-page .lt-memo-intro .lt-lede{
+  max-width:760px!important;
+  font-size:18px!important;
+  line-height:1.64!important;
+}
+.learn-traditional-page .lt-memo-examples p{font-size:16px!important}
+
+/* Snapshot = factual strip, not a competing feature block. */
+.learn-traditional-page .lt-snapshot{padding:36px 0 42px!important}
+.learn-traditional-page .lt-stat-grid article{
+  min-height:108px!important;
+  padding-top:18px!important;
+  padding-bottom:16px!important;
+}
+.learn-traditional-page .lt-stat-grid strong{
+  font-size:clamp(40px,3.7vw,54px)!important;
+}
+.learn-traditional-page .lt-stat-grid span{
+  font-size:11.5px!important;
+  font-weight:650!important;
+}
+
+/* Context section should read as context, not a second conclusion. */
+.learn-traditional-page .lt-difference{padding:62px 0 68px!important}
+.learn-traditional-page .lt-difference h2{
+  font-size:clamp(32px,3.1vw,40px)!important;
+  line-height:1.12!important;
+  letter-spacing:-.022em!important;
+}
+.learn-traditional-page .lt-difference-grid>div:last-child{
+  max-width:690px!important;
+  padding-top:20px!important;
+}
+.learn-traditional-page .lt-difference p{font-size:16.5px!important}
+
+/* Core Finding is the second-strongest moment on the homepage. */
+.learn-traditional-page .lt-core{
+  padding:88px 0 94px!important;
+}
+.learn-traditional-page .lt-core h2{
+  font-size:clamp(44px,4.7vw,54px)!important;
+  line-height:1.08!important;
+  letter-spacing:-.03em!important;
+  max-width:1040px!important;
+}
+.learn-traditional-page .lt-core-grid p{
+  font-size:19px!important;
+  line-height:1.64!important;
+  max-width:820px!important;
+}
+.learn-traditional-page .lt-recommendation{
+  margin-top:52px!important;
+  padding-top:32px!important;
+}
+.learn-traditional-page .lt-recommendation h3{
+  font-size:clamp(32px,3.2vw,42px)!important;
+}
+
+/* Supporting findings step down clearly from the Core Finding. */
+.learn-traditional-page .lt-findings{
+  padding:64px 0 74px!important;
+}
+.learn-traditional-page .lt-findings-head{
+  margin-bottom:16px!important;
+}
+.learn-traditional-page .lt-findings-head h2{
+  font-size:clamp(32px,3vw,38px)!important;
+  line-height:1.12!important;
+  letter-spacing:-.02em!important;
+}
+.learn-traditional-page .lt-finding-toggle{
+  grid-template-columns:168px minmax(0,1fr) 38px!important;
+  grid-template-rows:auto auto;
+  column-gap:24px!important;
+  row-gap:5px!important;
+  padding:20px 0!important;
+}
+.learn-traditional-page .lt-finding-toggle>span{
+  grid-column:1!important;
+  grid-row:1 / span 2!important;
+  align-self:start!important;
+  padding-top:5px!important;
+}
+.learn-traditional-page .lt-finding-toggle>strong{
+  grid-column:2!important;
+  grid-row:1!important;
+  font-size:clamp(26px,2.15vw,30px)!important;
+  line-height:1.18!important;
+  letter-spacing:-.018em!important;
+  font-weight:740!important;
+}
+.learn-traditional-page .lt-finding-toggle>em{
+  grid-column:2!important;
+  grid-row:2!important;
+  display:block;
+  margin-top:2px;
+  font:600 13px/1.5 "Noto Sans",Arial,sans-serif;
+  font-style:normal;
+  color:#687174;
+}
+.learn-traditional-page .lt-finding-toggle>i{
+  grid-column:3!important;
+  grid-row:1 / span 2!important;
+  align-self:center!important;
+}
+.learn-traditional-page .lt-finding-body{
+  padding-top:4px!important;
+  padding-bottom:30px!important;
+}
+.learn-traditional-page .lt-finding-body .lt-evidence-bars b,
+.learn-traditional-page .lt-finding-body .lt-package-support strong,
+.learn-traditional-page .lt-finding-body .lt-number-callout strong{
+  font-weight:800!important;
+}
+
+/* The conclusion rises above the supporting findings, without becoming another hero. */
+.learn-traditional-page .lt-meaning{
+  padding:82px 0 90px!important;
+}
+.learn-traditional-page .lt-meaning h2{
+  font-size:clamp(40px,4.1vw,48px)!important;
+  line-height:1.08!important;
+  letter-spacing:-.025em!important;
+}
+.learn-traditional-page .lt-meaning p{
+  font-size:17.5px!important;
+  line-height:1.68!important;
+}
+
+/* Closing sections remain distinctive but subordinate to the argument above. */
+.learn-traditional-page .lt-threads{
+  padding:78px 0 88px!important;
+}
+.learn-traditional-page .lt-threads .lt-section-top h2{
+  font-size:clamp(34px,3.5vw,40px)!important;
+  line-height:1.1!important;
+}
+.learn-traditional-page .lt-next{
+  padding:82px 0 90px!important;
+}
+.learn-traditional-page .lt-next h2{
+  font-size:clamp(54px,5.4vw,72px)!important;
+  line-height:.98!important;
+  letter-spacing:-.04em!important;
+  margin-bottom:42px!important;
+}
+
+/* Methodology/reference material should be intentionally quiet. */
+.learn-traditional-page .lt-method{
+  padding:48px 0 54px!important;
+}
+.learn-traditional-page .lt-method .lt-kicker{font-size:10px!important}
+.learn-traditional-page .lt-method h2{
+  font-size:clamp(24px,2.3vw,30px)!important;
+  line-height:1.18!important;
+}
+.learn-traditional-page .lt-method p{
+  font-size:14px!important;
+  line-height:1.65!important;
+  color:#5d6668!important;
+}
+
+/* EXPLORE: data should visually outrank the explanatory headings. */
+.ttj-explore-v2 .xv-hero{
+  min-height:390px!important;
+}
+.ttj-explore-v2 .xv-hero h1{
+  font-size:clamp(50px,4.8vw,60px)!important;
+  line-height:1!important;
+}
+.ttj-explore-v2 .xv-hero-dek{
+  font-size:17.5px!important;
+  max-width:820px!important;
+}
+.ttj-explore-v2 .xv-rounds .xv-section-head h2{
+  font-size:clamp(38px,3.8vw,44px)!important;
+  line-height:1.08!important;
+}
+.ttj-explore-v2 .xv-demographics .xv-section-head h2,
+.ttj-explore-v2 .xv-institutions h2,
+.ttj-explore-v2 .xv-quotes .xv-section-head h2{
+  font-size:clamp(30px,3vw,34px)!important;
+  line-height:1.12!important;
+}
+.ttj-explore-v2 .xv-limits-head h2{
+  font-size:clamp(32px,3.1vw,36px)!important;
+  line-height:1.12!important;
+}
+.ttj-explore-v2 .xv-rounds{padding-top:62px!important;padding-bottom:74px!important}
+.ttj-explore-v2 .xv-demographics,
+.ttj-explore-v2 .xv-institutions,
+.ttj-explore-v2 .xv-quotes,
+.ttj-explore-v2 .xv-limits{
+  padding-top:64px!important;
+  padding-bottom:74px!important;
+}
+.ttj-explore-v2 .xv-evidence-line b{
+  font-size:25px!important;
+  line-height:1!important;
+}
+.ttj-explore-v2 .xv-rail>strong{
+  font-size:30px!important;
+  line-height:1!important;
+}
+.ttj-explore-v2 .xv-limit-stats strong{
+  font-size:42px!important;
+}
+.ttj-explore-v2 .xv-inst-meter strong,
+.ttj-explore-v2 .xv-inst-drawer strong{
+  font-weight:800!important;
+}
+
+/* RESOURCES: one toolkit, with downloads and task groups above the individual tools. */
+.ttj-resources-v2 .rv-hero h1{
+  font-size:clamp(48px,4.8vw,56px)!important;
+  line-height:1!important;
+}
+.ttj-resources-v2 .rv-hero-inner>p{
+  font-size:17px!important;
+  max-width:720px!important;
+}
+.ttj-resources-v2 .rv-downloads-top{
+  padding-top:46px!important;
+  padding-bottom:50px!important;
+}
+.ttj-resources-v2 .rv-downloads-top .rv-download-head h2{
+  font-size:clamp(34px,3.4vw,40px)!important;
+  line-height:1.08!important;
+}
+.ttj-resources-v2 .ux-resource-groups>div>b{
+  font-size:clamp(20px,1.7vw,24px)!important;
+  line-height:1.15!important;
+  letter-spacing:-.015em!important;
+  margin-bottom:10px!important;
+}
+.ttj-resources-v2 .rv-tool{
+  padding:54px 0 60px!important;
+}
+.ttj-resources-v2 .rv-tool-head{
+  gap:38px!important;
+  margin-bottom:26px!important;
+}
+.ttj-resources-v2 .rv-tool-head h2{
+  font-size:clamp(24px,2.2vw,28px)!important;
+  line-height:1.18!important;
+  letter-spacing:-.015em!important;
+  font-weight:720!important;
+}
+.ttj-resources-v2 .rv-tool-head>p{
+  font-size:15.5px!important;
+  line-height:1.62!important;
+}
+
+/* Secondary page sections mostly stay on neutral surfaces; contrast is reserved for the key story moments. */
+.ttj-explore-v2 .xv-demographics,
+.ttj-explore-v2 .xv-institutions,
+.ttj-explore-v2 .xv-limits,
+.ttj-resources-v2 .rv-tool{
+  background-image:none!important;
+}
+
+@media(max-width:900px){
+  .learn-traditional-page .lt-finding-toggle{
+    grid-template-columns:140px minmax(0,1fr) 34px!important;
+  }
+}
+@media(max-width:760px){
+  .learn-traditional-page .lt-memo-intro h1{font-size:40px!important}
+  .learn-traditional-page .lt-difference h2{font-size:32px!important}
+  .learn-traditional-page .lt-core h2{font-size:38px!important}
+  .learn-traditional-page .lt-core-grid p{font-size:17px!important}
+  .learn-traditional-page .lt-findings-head h2{font-size:32px!important}
+  .learn-traditional-page .lt-finding-toggle{
+    grid-template-columns:minmax(0,1fr) 30px!important;
+    grid-template-rows:auto auto auto!important;
+    gap:5px 14px!important;
+    padding:18px 0!important;
+  }
+  .learn-traditional-page .lt-finding-toggle>span{
+    grid-column:1/-1!important;
+    grid-row:1!important;
+    padding-top:0!important;
+  }
+  .learn-traditional-page .lt-finding-toggle>strong{
+    grid-column:1!important;
+    grid-row:2!important;
+    font-size:23px!important;
+  }
+  .learn-traditional-page .lt-finding-toggle>em{
+    grid-column:1!important;
+    grid-row:3!important;
+    font-size:12.5px!important;
+  }
+  .learn-traditional-page .lt-finding-toggle>i{
+    grid-column:2!important;
+    grid-row:2 / span 2!important;
+  }
+  .learn-traditional-page .lt-meaning h2{font-size:36px!important}
+  .learn-traditional-page .lt-threads{padding:62px 0 68px!important}
+  .learn-traditional-page .lt-threads .lt-section-top h2{font-size:34px!important}
+  .learn-traditional-page .lt-next{padding:64px 0 70px!important}
+  .learn-traditional-page .lt-next h2{font-size:48px!important;margin-bottom:32px!important}
+  .learn-traditional-page .lt-method{padding:42px 0 48px!important}
+
+  .ttj-explore-v2 .xv-hero h1{font-size:46px!important}
+  .ttj-explore-v2 .xv-rounds .xv-section-head h2{font-size:36px!important}
+  .ttj-explore-v2 .xv-demographics .xv-section-head h2,
+  .ttj-explore-v2 .xv-institutions h2,
+  .ttj-explore-v2 .xv-quotes .xv-section-head h2,
+  .ttj-explore-v2 .xv-limits-head h2{font-size:30px!important}
+  .ttj-explore-v2 .xv-rounds,
+  .ttj-explore-v2 .xv-demographics,
+  .ttj-explore-v2 .xv-institutions,
+  .ttj-explore-v2 .xv-quotes,
+  .ttj-explore-v2 .xv-limits{padding-top:54px!important;padding-bottom:60px!important}
+
+  .ttj-resources-v2 .rv-hero h1{font-size:44px!important}
+  .ttj-resources-v2 .rv-downloads-top .rv-download-head h2{font-size:32px!important}
+  .ttj-resources-v2 .ux-resource-groups>div>b{font-size:20px!important}
+  .ttj-resources-v2 .rv-tool{padding:44px 0 50px!important}
+  .ttj-resources-v2 .rv-tool-head h2{font-size:25px!important}
+}
+
+
+/* Hierarchy specificity fix: keep the More Findings section heading subordinate to the Core Finding. */
+.learn-traditional-page .lt-findings .lt-findings-head h2{
+  font-size:clamp(32px,3vw,38px)!important;
+  line-height:1.12!important;
+  letter-spacing:-.02em!important;
+}
+@media(max-width:760px){
+  .learn-traditional-page .lt-findings .lt-findings-head h2{font-size:32px!important}
+}
+
+
+
+
+/* Resources: turn the task navigator into a compact editorial index instead of a row of boxed buttons. */
+.ttj-resources-v2 .ux-resource-guide{
+  width:min(1180px,calc(100% - 64px))!important;
+  display:grid!important;
+  grid-template-columns:190px minmax(0,1fr)!important;
+  gap:28px!important;
+  align-items:start!important;
+  margin:28px auto 8px!important;
+  padding:22px 26px!important;
+  background:#f8f7f2!important;
+  border:1px solid #d5dad7!important;
+  border-left:4px solid #047E72!important;
+  color:#111426!important;
+}
+.ttj-resources-v2 .ux-resource-guide-head{
+  padding-top:2px;
+}
+.ttj-resources-v2 .ux-resource-guide-head>span{
+  display:block;
+  margin:0 0 7px;
+  font:800 10px/1.2 "Noto Sans",Arial,sans-serif;
+  letter-spacing:.15em;
+  text-transform:uppercase;
+  color:#047E72;
+}
+.ttj-resources-v2 .ux-resource-guide-head>p{
+  margin:0;
+  max-width:160px;
+  font:500 13px/1.45 "Noto Sans",Arial,sans-serif;
+  color:#667072;
+}
+.ttj-resources-v2 .ux-resource-groups{
+  display:grid!important;
+  grid-template-columns:repeat(3,minmax(0,1fr))!important;
+  gap:0!important;
+}
+.ttj-resources-v2 .ux-resource-group{
+  min-width:0;
+  padding:0 24px!important;
+  border-left:1px solid #d5dad7;
+}
+.ttj-resources-v2 .ux-resource-group:first-child{padding-left:0!important;border-left:0}
+.ttj-resources-v2 .ux-resource-group:last-child{padding-right:0!important}
+.ttj-resources-v2 .ux-resource-groups>div>b{
+  display:block;
+  margin:0 0 8px!important;
+  font:750 15px/1.25 "Noto Sans",Arial,sans-serif!important;
+  letter-spacing:-.01em!important;
+  color:#111426!important;
+}
+.ttj-resources-v2 .ux-resource-guide-buttons{
+  display:flex!important;
+  flex-direction:column!important;
+  align-items:stretch!important;
+  gap:0!important;
+}
+.ttj-resources-v2 .ux-resource-guide button{
+  width:100%!important;
+  min-height:0!important;
+  display:flex!important;
+  align-items:center!important;
+  justify-content:space-between!important;
+  gap:12px!important;
+  padding:7px 0!important;
+  border:0!important;
+  border-top:1px solid transparent!important;
+  background:transparent!important;
+  color:#30383a!important;
+  font:650 12.5px/1.35 "Noto Sans",Arial,sans-serif!important;
+  text-align:left!important;
+  box-shadow:none!important;
+}
+.ttj-resources-v2 .ux-resource-guide button::after{
+  content:'→';
+  flex:0 0 auto;
+  color:#047E72;
+  font-size:14px;
+  font-weight:700;
+  opacity:.75;
+  transition:transform .15s ease,opacity .15s ease;
+}
+.ttj-resources-v2 .ux-resource-guide button:hover{
+  color:#047E72!important;
+  background:transparent!important;
+}
+.ttj-resources-v2 .ux-resource-guide button:hover::after{
+  transform:translateX(3px);
+  opacity:1;
+}
+.ttj-resources-v2 .ux-resource-guide button:focus-visible{
+  outline:2px solid #047E72!important;
+  outline-offset:3px!important;
+  border-radius:1px;
+}
+
+/* Remove orphaned section numbers now that task navigation provides the structure. */
+.ttj-resources-v2 .rv-number{display:none!important}
+.ttj-resources-v2 .rv-tool-head{
+  align-items:start!important;
+}
+.ttj-resources-v2 .rv-tool-head>div{padding-left:0!important}
+
+/* Explore: percentage ranges are data labels, not display headlines. Keep them on one line. */
+.ttj-explore-v2 .xv-rail{
+  grid-template-columns:minmax(280px,.78fr) minmax(280px,1fr) 118px!important;
+  gap:28px!important;
+  align-items:center!important;
+  min-height:82px!important;
+  padding:20px 0!important;
+}
+.ttj-explore-v2 .xv-rail-copy h3{
+  margin-bottom:4px!important;
+  font-size:18px!important;
+  line-height:1.25!important;
+}
+.ttj-explore-v2 .xv-rail-copy p{
+  max-width:520px!important;
+  font-size:12.5px!important;
+  line-height:1.5!important;
+}
+.ttj-explore-v2 .xv-rail-track{
+  height:9px!important;
+  background:#e4e8e5!important;
+}
+.ttj-explore-v2 .xv-rail>strong{
+  min-width:112px!important;
+  margin:0!important;
+  color:#047E72!important;
+  font:800 26px/1 "Noto Sans",Arial,sans-serif!important;
+  letter-spacing:-.025em!important;
+  text-align:right!important;
+  white-space:nowrap!important;
+  font-variant-numeric:tabular-nums lining-nums;
+}
+.ttj-explore-v2 .xv-limit-stats strong{
+  font-size:38px!important;
+  white-space:nowrap!important;
+  font-variant-numeric:tabular-nums lining-nums;
+}
+
+/* Keep every public-facing percentage/range visually stable and single-line. */
+.learn-traditional-page .lt-evidence-bars b,
+.learn-traditional-page .lt-package-support strong,
+.learn-traditional-page .lt-number-callout strong,
+.ttj-explore-v2 .xv-evidence-line b,
+.ttj-explore-v2 .xv-rail>strong,
+.ttj-explore-v2 .xv-limit-stats strong,
+.ttj-explore-v2 .xv-inst-meter strong,
+.ttj-explore-v2 .xv-inst-drawer strong,
+.ttj-resources-v2 .rv-stat strong{
+  white-space:nowrap!important;
+  font-variant-numeric:tabular-nums lining-nums;
+}
+
+
+.ttj-explore-v2 .xv-evidence-line{
+  align-items:baseline!important;
+  gap:20px!important;
+}
+.ttj-explore-v2 .xv-evidence-line b{
+  min-width:82px;
+  text-align:right;
+  letter-spacing:-.02em!important;
+}
+.ttj-explore-v2 .xv-ranked-row{
+  min-height:54px;
+}
+.ttj-resources-v2 .rv-download-grid a,
+.ttj-resources-v2 .rv-tool button,
+.ttj-explore-v2 button{
+  text-underline-offset:3px;
+}
+.learn-traditional-page .lt-finding-toggle>em{
+  max-width:780px;
+}
+
+/* Tablet: retain the editorial navigator, with enough room for all three task groups. */
+@media(max-width:1000px){
+  .ttj-resources-v2 .ux-resource-guide{
+    grid-template-columns:150px minmax(0,1fr)!important;
+    gap:22px!important;
+    padding:20px 22px!important;
+  }
+  .ttj-resources-v2 .ux-resource-group{padding:0 16px!important}
+  .ttj-explore-v2 .xv-rail{
+    grid-template-columns:minmax(220px,.9fr) minmax(180px,1fr) 100px!important;
+    gap:20px!important;
+  }
+  .ttj-explore-v2 .xv-rail>strong{
+    min-width:96px!important;
+    font-size:23px!important;
+  }
+}
+
+/* Mobile: task navigator stacks cleanly; evidence values stay intact beside their bars. */
+@media(max-width:760px){
+  .ttj-resources-v2 .ux-resource-guide{
+    width:min(100% - 36px,1180px)!important;
+    grid-template-columns:1fr!important;
+    gap:18px!important;
+    margin-top:22px!important;
+    padding:20px!important;
+  }
+  .ttj-resources-v2 .ux-resource-guide-head{
+    display:grid;
+    grid-template-columns:auto minmax(0,1fr);
+    gap:12px;
+    align-items:baseline;
+  }
+  .ttj-resources-v2 .ux-resource-guide-head>span{margin:0!important}
+  .ttj-resources-v2 .ux-resource-guide-head>p{max-width:none!important}
+  .ttj-resources-v2 .ux-resource-groups{
+    grid-template-columns:1fr!important;
+  }
+  .ttj-resources-v2 .ux-resource-group,
+  .ttj-resources-v2 .ux-resource-group:first-child,
+  .ttj-resources-v2 .ux-resource-group:last-child{
+    padding:14px 0!important;
+    border-left:0!important;
+    border-top:1px solid #d5dad7;
+  }
+  .ttj-resources-v2 .ux-resource-group:first-child{border-top:0!important}
+  .ttj-resources-v2 .ux-resource-guide-buttons{
+    display:grid!important;
+    grid-template-columns:repeat(2,minmax(0,1fr))!important;
+    column-gap:18px!important;
+  }
+
+  .ttj-explore-v2 .xv-rail{
+    grid-template-columns:minmax(0,1fr) 92px!important;
+    gap:10px 16px!important;
+    padding:17px 0!important;
+  }
+  .ttj-explore-v2 .xv-rail-copy{
+    grid-column:1/-1!important;
+  }
+  .ttj-explore-v2 .xv-rail-track{
+    grid-column:1!important;
+  }
+  .ttj-explore-v2 .xv-rail>strong{
+    grid-column:2!important;
+    min-width:88px!important;
+    font-size:22px!important;
+  }
+}
+
+
+/* Formatting review fixes: eliminate tiny mobile header collision and keep the task index compact. */
+@media(max-width:760px){
+  .ux-site-search-trigger{
+    top:6px!important;
+  }
+  .ttj-resources-v2 .ux-resource-guide-buttons{
+    display:flex!important;
+    flex-direction:column!important;
+    gap:0!important;
+  }
+  .ttj-resources-v2 .ux-resource-guide button{
+    border:0!important;
+    min-height:0!important;
+  }
+}
+@media(min-width:761px){
+  .ttj-resources-v2 .ux-resource-guide button{
+    border:0!important;
+  }
+}
+
+
+/* Mobile task index: keep the guide short and swipeable instead of stacking seven links vertically. */
+@media(max-width:760px){
+  .ttj-resources-v2 .ux-resource-groups{
+    display:flex!important;
+    gap:18px!important;
+    overflow-x:auto!important;
+    overflow-y:hidden!important;
+    padding:2px 2px 8px!important;
+    scroll-snap-type:x proximity;
+    -webkit-overflow-scrolling:touch;
+    scrollbar-width:none;
+  }
+  .ttj-resources-v2 .ux-resource-groups::-webkit-scrollbar{display:none}
+  .ttj-resources-v2 .ux-resource-group,
+  .ttj-resources-v2 .ux-resource-group:first-child,
+  .ttj-resources-v2 .ux-resource-group:last-child{
+    flex:0 0 210px!important;
+    min-width:210px!important;
+    padding:10px 0 0!important;
+    border:0!important;
+    scroll-snap-align:start;
+  }
+  .ttj-resources-v2 .ux-resource-group + .ux-resource-group{
+    padding-left:18px!important;
+    border-left:1px solid #d5dad7!important;
+  }
+  .ttj-resources-v2 .ux-resource-guide-buttons{
+    display:flex!important;
+    flex-direction:column!important;
+  }
+}
+
+
