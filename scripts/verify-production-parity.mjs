@@ -17,12 +17,12 @@ const runtime=changed.filter(p=>!nonRuntime(p));
 // Explicitly reviewed Explore release assets. These precise blob hashes are locked:
  // changing any of these files again requires an updated reviewed release gate.
 const approvedExplore={
- 'ux-refine.css':'4fb259c77f10a8ee487c69fa8459f81d5481cf7c',
+ 'ux-refine.css':'ad82dcae953bfec17f12cab5aef3bb0c0086836c',
  'index.html':'7a6f2ebfe34253fa40261b6bd39643d405be7635',
  'ux-refine.js':'1d2fa3b7a6a50c04f37222d44608f5f872d10e14',
  'explore-v2.js':'6d02c8d0d90cc50059635bc6feefe66e54b3e535',
  'explore-v2.css':'a05533cf5e20e9c1f2c568497d82309139258dda',
- 'resources.js':'2ccf1bc00749d3a8b3221a3a0c4a2542239833cd',
+ 'resources.js':'2e076e910cb28f820fc47a28054c55b300f656aa',
  'resources-v2.js':'6ed84c046d73c14b1fb166073a5a4ffe195f20f4',
  'resources-v2.css':'2a4da1025e177bd47c7567f6985e6c9cbb09e4c0',
  'resources-refine2.css':'208fbe0f7ceb7bedec9ed91b34ee433500d0f955',
