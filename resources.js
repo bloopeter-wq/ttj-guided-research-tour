@@ -129,7 +129,7 @@ showStep();
   if (!document.getElementById('what-we-learned-traditional-js')) {
     const pageJs = document.createElement('script');
     pageJs.id = 'what-we-learned-traditional-js';
-    pageJs.src = 'what-we-learned-traditional.js?v=9';
+    pageJs.src = 'what-we-learned-traditional.js?v=10';
     document.body.appendChild(pageJs);
   }
 
@@ -144,7 +144,7 @@ showStep();
   if (!document.getElementById('headline-banner-v2-js')) {
     const bannerJs = document.createElement('script');
     bannerJs.id = 'headline-banner-v2-js';
-    bannerJs.src = 'headline-banner-v2.js?v=5';
+    bannerJs.src = 'headline-banner-v2.js?v=6';
     document.body.appendChild(bannerJs);
   }
 })();

@@ -1,0 +1,34 @@
+name: Jane homepage acceptance
+on:
+  push:
+    branches: [fix/jane-home-static-hero-collapsed-2026-10-28]
+  pull_request:
+    branches: [main]
+jobs:
+  homepage:
+    runs-on: ubuntu-latest
+    timeout-minutes: 20
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '24'
+      - name: Verify syntax and source generation
+        run: |
+          node --check headline-banner-v2.js
+          node --check what-we-learned-traditional.js
+          node scripts/build-legacy-js.mjs
+          node scripts/build-ux-css.mjs
+      - name: Install Chromium
+        run: |
+          npm install --no-save playwright
+          npx playwright install --with-deps chromium
+      - name: Serve site
+        run: |
+          python3 -m http.server 4172 > /tmp/ttj-home.log 2>&1 &
+          sleep 3
+          curl --fail http://localhost:4172/ >/dev/null
+      - name: Check both Jane homepage changes at four widths
+        env:
+          TEST_URL: http://localhost:4172/
+        run: node scripts/test-jane-home.mjs
