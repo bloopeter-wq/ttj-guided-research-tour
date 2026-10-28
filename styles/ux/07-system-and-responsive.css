@@ -676,3 +676,29 @@
  .learn-traditional-page .lt-fight-examples>div{padding:20px}
  .learn-traditional-page .lt-fight-examples p{font-size:16px!important}
 }
+
+/* Jane's typography audit: give ascenders, descenders and capitals clear separation. */
+#hb2-hero .hb2-main h1{line-height:1.21!important}
+.learn-traditional-page .lt-section-top h2,
+.learn-traditional-page .lt-findings-head h2,
+.learn-traditional-page .lt-next h2,
+.learn-traditional-page .lt-core h2,
+.learn-traditional-page .lt-meaning h2,
+.ttj-explore-v2 .xv-hero h1,
+.ttj-resources-v2 .rv-hero h1{line-height:1.19!important}
+.learn-traditional-page .lt-finding-toggle>strong,
+.learn-traditional-page .lt-route-grid h3,
+.learn-traditional-page .lt-fight-heading h3{line-height:1.26!important}
+@media(max-width:760px){
+ #hb2-hero .hb2-main h1{line-height:1.23!important}
+ .learn-traditional-page .lt-section-top h2,
+ .learn-traditional-page .lt-findings-head h2,
+ .learn-traditional-page .lt-next h2,
+ .ttj-explore-v2 .xv-hero h1,
+ .ttj-resources-v2 .rv-hero h1{line-height:1.20!important}
+}
+
+/* Override legacy compact finding heading with the approved readable leading. */
+body #tour.learn-stage .learn-traditional-page .lt-findings .lt-findings-head h2{
+  line-height:1.21!important;
+}

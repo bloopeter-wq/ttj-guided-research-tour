@@ -1,0 +1,69 @@
+name: Jane full-site screenshot verification
+on:
+  push:
+    branches:
+      - audit/jane-full-site-screenshot-2026-10-28
+      - main
+  workflow_dispatch:
+jobs:
+  screenshots-and-checks:
+    runs-on: ubuntu-latest
+    timeout-minutes: 25
+    permissions:
+      contents: write
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '24'
+      - name: Validate maintained source and syntax
+        run: |
+          node --check scripts/audit-jane-screenshots.mjs
+          node --check what-we-learned-traditional.js
+          node --check ux-refine.js
+          node --check resources-v2.js
+          node scripts/build-legacy-js.mjs
+          node scripts/build-ux-css.mjs
+      - name: Install Chromium and Playwright
+        run: |
+          npm install --no-save playwright
+          npx playwright install --with-deps chromium
+      - name: Start local candidate server
+        if: github.ref != 'refs/heads/main'
+        run: |
+          python3 -m http.server 4172 > /tmp/ttj-audit.log 2>&1 &
+          sleep 3
+          curl --fail http://localhost:4172/ >/dev/null
+      - name: Screenshot and audit candidate
+        if: github.ref != 'refs/heads/main'
+        env:
+          TEST_URL: http://localhost:4172/
+        run: node scripts/audit-jane-screenshots.mjs
+      - name: Screenshot and audit LIVE production
+        if: github.ref == 'refs/heads/main'
+        env:
+          TEST_URL: https://ttjdata.online/
+        run: node scripts/audit-jane-screenshots.mjs
+      - name: Publish annotated screenshot evidence
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: jane-ttj-screenshot-proof-${{ github.run_id }}
+          path: jane-visual-evidence/
+          if-no-files-found: warn
+          retention-days: 30
+      - name: Publish viewable screenshot gallery on isolated evidence branch
+        if: success() && github.ref != 'refs/heads/main'
+        run: |
+          mkdir -p /tmp/jane-evidence
+          cp -R jane-visual-evidence/. /tmp/jane-evidence/
+          git config user.name "TTJ Screenshot Audit"
+          git config user.email "actions@users.noreply.github.com"
+          git fetch origin evidence/jane-screenshots-2026-10-28
+          git switch -C evidence-jane FETCH_HEAD
+          mkdir -p docs/screenshots/2026-10-28
+          cp /tmp/jane-evidence/*.png docs/screenshots/2026-10-28/
+          cp /tmp/jane-evidence/audit-results.json docs/screenshots/2026-10-28/
+          git add docs/screenshots/2026-10-28
+          git commit -m "Capture Jane visual acceptance screenshots [skip ci]"
+          git push origin HEAD:refs/heads/evidence/jane-screenshots-2026-10-28
