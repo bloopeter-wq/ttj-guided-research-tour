@@ -186,7 +186,7 @@
       id: 4,
       date: 'Jul 2–5, 2026',
       n: '1,164',
-      metric: 'Extremely / very concerned · %',
+      metric: 'Extremely, very, or somewhat concerned · %',
       question: 'How concerned are voters about specific high-stakes uses of AI in health care, benefits, housing and work?',
       title: 'Which specific uses of AI cross the line?',
       context: "We wanted to understand how concerned people already were about AI before we showed them specific AI harms and we also wanted to know how concerned people are about harms that affect their basic needs like health care, housing, employment, public benefits, education, food assistance, and transportation.",
@@ -194,7 +194,7 @@
       suggestion: 'Specific uses reveal a broad boundary.',
       more: 'This round exposes the gap between what people immediately associate with AI and what becomes most concerning once they see what AI can actually be used to do. Without examples, privacy, surveillance, job loss and misinformation came readily to mind. But when people saw specific scenarios, concern was extremely high across health care, disability and Social Security, benefits, workplace monitoring, pricing, housing and being forced to deal with an AI instead of a person. The communications implication is significant: do not assume the most familiar AI issue is the strongest one. Give people concrete examples of automated power in everyday life.',
       detail: '897 people supplied open-ended responses before seeing the scenarios. The most common spontaneous themes were privacy/data/surveillance (20%), job loss/economic harm (16%), and misinformation/deepfakes (10%).',
-      method: 'Results show the percentage extremely or very concerned about each specific use. The separate forced-choice priority measure is not shown here.',
+      method: 'Results show the percentage extremely, very, or somewhat concerned about each specific use. The separate forced-choice priority measure is not shown here.',
       bars: [
         ['Doctor-recommended treatment denied', 73, '73%'],
         ['Social Security / disability cut off', 72, '72%'],
