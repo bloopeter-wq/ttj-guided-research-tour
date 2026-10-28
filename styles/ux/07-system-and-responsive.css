@@ -697,3 +697,8 @@
  .ttj-explore-v2 .xv-hero h1,
  .ttj-resources-v2 .rv-hero h1{line-height:1.20!important}
 }
+
+/* Override legacy compact finding heading with the approved readable leading. */
+body #tour.learn-stage .learn-traditional-page .lt-findings .lt-findings-head h2{
+  line-height:1.21!important;
+}
