@@ -11,7 +11,9 @@ The current site is a static HTML, CSS and JavaScript application deployed from 
 - `explore-v2.js`: research exploration and data presentation
 - `resources-v2.js`: tools and resources
 - `resources.js`: resource controls and module loading
-- `ux-refine.js`, `ux-refine.css`: shared navigation, search and presentation rules
+- `ux-refine.js`: shared navigation and search behavior
+- `styles/ux/`: seven maintained, ordered CSS source modules
+- `ux-refine.css`: byte-identical generated browser stylesheet
 
 The codebase includes incremental page refinements and multiple CSS layers.
 Read [the maintenance and refactoring guide](docs/REFACTORING.md) before consolidating them.
@@ -31,3 +33,7 @@ required comparisons, and release procedure.
 Keep poll-tested results separate from illustrative messaging examples.
 Do not change questionnaire wording, measures, percentages, sample sizes, source
 attribution, downloadable research material, or audience guidance during code refactoring.
+
+## Working with the stylesheet
+
+The modular source in `styles/ux/` reconstructs the approved `ux-refine.css` file without transforms. Run `node scripts/build-ux-css.mjs` to check exact parity; run it with `--write` only when intentionally editing CSS. Current maintenance work deliberately changes no served assets. Do not substitute minification, formatting, bundling, or other output transformations without a new complete regression baseline.
