@@ -1,0 +1,21 @@
+
+
+/* 1. Let the next section visually announce itself on common laptop screens. */
+.hb2-hero{min-height:clamp(420px,54vh,590px)!important}
+.hb2-shell{padding-top:42px!important;padding-bottom:32px!important}
+.hb2-main{min-height:190px!important;padding:22px 0!important}
+#tour.headline-banner-mode .lt-snapshot{padding-top:56px!important}
+
+/* 2. Reduce perceived length without removing research content. */
+.learn-traditional-page .lt-findings{padding-top:86px;padding-bottom:96px}
+.learn-traditional-page .lt-finding{padding-top:50px;padding-bottom:50px}
+.learn-traditional-page .lt-threads{padding-top:86px;padding-bottom:94px}
+
+.learn-traditional-page .ux-evidence-link{
+  appearance:none;border:0;border-bottom:2px solid #047E72;background:transparent;color:#111426;
+  margin-top:24px;padding:0 0 5px;font:800 12px/1.2 "Noto Sans",Arial,sans-serif;cursor:pointer
+}
+.learn-traditional-page .lt-dark .ux-evidence-link{color:#fff;border-bottom-color:#79d2c5}
+.learn-traditional-page .ux-evidence-link:hover{color:#047E72}
+.learn-traditional-page .lt-dark .ux-evidence-link:hover{color:#79d2c5}
+
