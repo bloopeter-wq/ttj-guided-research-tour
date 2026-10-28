@@ -38,7 +38,7 @@
       const displayed = round.id === 4 ? String(value).split(' · ')[0] : value;
       return `<div class="xv-full-row ${round.rankOnly ? 'xv-full-rank' : ''}">
         <span>${round.rankOnly ? `<i>${String(index + 1).padStart(2,'0')}</i>` : ''}${label}</span>
-        <b>${displayed}</b>
+        ${round.rankOnly ? '' : `<b>${displayed}</b>`}
       </div>`;
     }).join('');
     const pairedInstitutions = round.id === 3 ? `
