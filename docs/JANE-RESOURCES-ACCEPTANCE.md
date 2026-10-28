@@ -16,7 +16,7 @@ This checklist is the controlling brief for this release. No item may be silentl
 - [x] Cheat Sheet for Movement Orgs: existing movement one-page DOCX.
 - [x] Say This, Not That and other Messaging Hints: created a standalone printable/downloadable HTML guide, with source language and clearly marked illustrative examples.
 - [x] The right-hand preview is a professionally formatted illustrative cheat-sheet cover, explicitly labelled a preview illustration, and links to the existing research PDF. Do not claim this illustration is a literal screenshot.
-- [ ] Verify that all four download responses return HTTP 200 in the deployed build.
+- [x] Verify that all four download responses return HTTP 200 in the local candidate build. Production verification after merge is separate.
 
 ## Concrete Language Examples
 - [x] Healthcare, **Not that**: “AI is affecting access to health care.”
@@ -25,12 +25,18 @@ This checklist is the controlling brief for this release. No item may be silentl
 - [x] Other examples preserved.
 
 ## Independent verification
-- [ ] Source reconstruction checks for all existing JS and CSS.
-- [ ] Browser checks at 1440px, 1024px, 820px, and 390px.
-- [ ] Confirm no Tools by Task menu and no Decision First section appear after all enhancement scripts finish.
-- [ ] Confirm only four downloads appear and each resolves.
-- [ ] Confirm exact three example strings in interactive UI.
-- [ ] Confirm two-column drafting layout and small-screen single-column fallback.
+- [x] Source reconstruction checks for all existing JS and CSS.
+- [x] Browser checks at 1440px, 1024px, 820px, and 390px.
+- [x] Confirm no Tools by Task menu and no Decision First section appear after all enhancement scripts finish.
+- [x] Confirm only four downloads appear and each resolves.
+- [x] Confirm exact three example strings in interactive UI.
+- [x] Confirm two-column drafting layout and small-screen single-column fallback.
 - [ ] Production deployment READY with expected GitHub commit.
 
 The Explore and Home pages are outside this Resources-only change set.
+
+## Verified CI before release
+
+- Source integrity: PASS, run 40733015745.
+- Jane Resources browser acceptance: PASS, run 40733015737.
+- Explore regression suite: PASS, run 40733015885.
