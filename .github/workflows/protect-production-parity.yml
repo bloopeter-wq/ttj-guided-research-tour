@@ -1,0 +1,18 @@
+name: Protect TTJ production behavior
+on:
+  push:
+    branches: [refactor/zero-change-maintenance-2026-10-28]
+  pull_request:
+    branches: [main]
+jobs:
+  source-parity:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '24'
+      - name: Refuse unverified changes to production assets
+        run: node scripts/verify-production-parity.mjs 1395b9a3f791d9b7a6b27a887bd933ca6833e2a4
