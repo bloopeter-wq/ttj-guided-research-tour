@@ -1,0 +1,34 @@
+name: Jane Explore acceptance
+on:
+  push:
+    branches: [feature/jane-explore-rounds-2026-10-28]
+  pull_request:
+    branches: [main]
+jobs:
+  acceptance:
+    runs-on: ubuntu-latest
+    timeout-minutes: 20
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '24'
+      - name: Validate script syntax and maintained source
+        run: |
+          node --check explore-v2.js
+          node --check resources.js
+          node scripts/build-legacy-js.mjs
+          node scripts/build-ux-css.mjs
+      - name: Install Chromium test dependencies
+        run: |
+          npm install --no-save playwright
+          npx playwright install --with-deps chromium
+      - name: Start site
+        run: |
+          python3 -m http.server 4172 > /tmp/ttj.log 2>&1 &
+          sleep 3
+          curl --fail http://localhost:4172/ >/dev/null
+      - name: Verify all five Jane round requirements at three screen widths
+        env:
+          TEST_URL: http://localhost:4172/
+        run: node scripts/test-jane-explore.mjs

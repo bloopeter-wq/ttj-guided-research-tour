@@ -8,15 +8,16 @@
       id: 1,
       date: 'Mar 6–9, 2026',
       n: '1,242',
-      metric: 'Ranked comparison',
+      metric: 'MaxDiff comparative score',
       rankOnly: true,
       question: 'Which concerns about government use of AI stand out most when compared directly?',
       title: 'Main concerns about government use of AI',
-      explainer: 'Twelve concerns were compared directly. Results are shown in ranked order; comparative score values are intentionally not displayed.',
+      context: "We wanted to understand which types of harmful AI use concerned people the most when used by the government. So we asked: Some government agencies are using AI systems in their work. Here are some concerns people have raised about this. For each, please pick which you find most concerning and which you find least concerning.",
+      explainer: 'Twelve concerns were compared directly using MaxDiff.',
       suggestion: 'Make the abstract concrete and make the invisible harm visible.',
       more: 'When people compared different concerns about government use of AI, the strongest worries were not technical. People were most concerned that public services would become harder to use, that a single mistake could affect millions, and that AI could be used to mislead the public. The messaging lesson is straightforward: start with what changes for the person using the service. An abstract warning about opacity or bias is less immediate than showing someone unable to get help, wrongly losing support, or facing an error nobody will take responsibility for.',
       detail: 'The strongest message was simple: technology gets between people and the public help they need. Scale also matters — one automated error can affect millions.',
-      method: 'This round used a comparative ranking method. Items are shown in ranked order; the underlying comparative score values are not displayed.',
+      method: 'MaxDiff results are comparative scores, not percentages. Higher values indicate statements chosen as more concerning relative to the other statements tested.',
       bars: [
         ['Public services become harder to use', 6.3, '+6.3'],
         ['One mistake can harm millions', 5.3, '+5.3'],
@@ -25,33 +26,70 @@
         ['Wrongful fraud flags / benefit cuts', 2.1, '+2.1']
       ],
       all: [
-        ['Public services become harder to use', '+6.3'],
-        ['One mistake can harm millions', '+5.3'],
-        ['Misleading the public with fake media', '+3.8'],
-        ['No one takes responsibility for harm', '+2.6'],
-        ['Real wrongful fraud flags / benefit cuts', '+2.1'],
-        ['Predicting what people may do', '−0.9'],
-        ['Treating mistakes as fraud', '−1.7'],
-        ['AI looks objective when it is not', '−2.5'],
-        ['Cuts presented as efficiency', '−2.9'],
-        ['Selective or unequal enforcement', '−3.5'],
-        ['People cannot see how decisions were made', '−3.9'],
-        ['Sweeping claim that AI degrades services', '−4.7']
+              [
+                      "When the government uses AI to run public services like Medicaid and Social Security, those services get harder to use. People who need help the most end up with less of it.",
+                      "+6.3"
+              ],
+              [
+                      "When the government uses AI to make decisions, one mistake can hurt millions of people at once. A human worker might affect a few hundred people, but AI spreads errors to everyone.",
+                      "+5.3"
+              ],
+              [
+                      "AI makes it possible for the government to create fake videos and photos that look real. When officials can fabricate events that never happened, people have no way to know what is true.",
+                      "+3.8"
+              ],
+              [
+                      "When government AI makes mistakes that hurt people, no one is held responsible. The people who are harmed are left to deal with the damage on their own.",
+                      "+2.6"
+              ],
+              [
+                      "Government AI has a terrible track record. In state after state, AI systems have wrongly accused people of fraud, cut off their benefits, and left them to fight charges that turned out to be wrong.",
+                      "+2.1"
+              ],
+              [
+                      "Governments use AI to make decisions based on guesses about how people will act in the future. People can be denied benefits or flagged as risks based on what AI predicts, not what they actually did.",
+                      "−0.9"
+              ],
+              [
+                      "When the government uses AI to detect fraud, the system can flag anyone and call it \"fraud,\" even when no one lied. People who made honest mistakes get treated the same as people who cheated.",
+                      "−1.7"
+              ],
+              [
+                      "When the government uses AI to decide who gets help, the results look fair and scientific even when they are not. People lose benefits based on formulas they cannot see or challenge.",
+                      "−2.5"
+              ],
+              [
+                      "When the government uses AI to make services \"more efficient,\" people end up losing the benefits they depend on. Efficiency often just means fewer people getting help.",
+                      "−2.9"
+              ],
+              [
+                      "When the government uses AI to enforce laws, it can choose to go after some people while leaving others alone. AI makes that kind of selective enforcement faster and harder to detect.",
+                      "−3.5"
+              ],
+              [
+                      "The government often doesn't have to tell people when AI is making decisions about their lives. People can't fight back against something they don't know is there",
+                      "−3.9"
+              ],
+              [
+                      "Every time the government has used AI to run services, those services have gotten worse. People face longer waits, get wrong answers, and have a harder time getting help.",
+                      "−4.7"
+              ]
       ]
     },
     {
       id: 2,
       date: 'Mar 20–23, 2026',
       n: '1,193',
-      metric: 'Ranked comparison',
+      metric: 'MaxDiff comparative score',
       rankOnly: true,
       question: 'Which broader harms associated with AI feel most serious when compared directly?',
       title: 'Which broader AI harms feel most serious?',
-      explainer: 'Twelve harms were compared directly. Results are shown in ranked order; comparative score values are intentionally not displayed.',
+      context: "We wanted to understand which types of AI harms that were not necessarily just governmental concerned people the most. So we asked: Below are some concerns people have raised about artificial intelligence (AI). For each, please pick which you find most concerning and which you find least concerning.",
+      explainer: 'Twelve harms were compared directly using MaxDiff.',
       suggestion: 'The doctor-versus-algorithm conflict is the standout.',
       more: 'One result towers over everything else: an insurer using AI to deny doctor-recommended care. The example combines several features that recur throughout the research: something essential is at stake, a recognizable institution is responsible, a human judgment is being displaced, and the person experiencing the harm has something concrete taken away. It is also notable that data-center pressure on water and electricity came second, showing that the physical and community consequences of AI infrastructure can resonate when described concretely.',
       detail: 'People react most strongly when AI becomes a gatekeeper between a person and something essential. Concrete institutional action is more powerful than abstract warnings about corporate power.',
-      method: 'This round used a comparative ranking method. Items are shown in ranked order; the underlying comparative score values are not displayed.',
+      method: 'MaxDiff results are comparative scores, not percentages. Higher values indicate statements chosen as more concerning relative to the other statements tested.',
       bars: [
         ['Insurer AI denies doctor-recommended care', 15.7, '+15.7'],
         ['Data centers strain water and power', 5.2, '+5.2'],
@@ -60,18 +98,54 @@
         ['Tracking data without meaningful consent', 0.5, '+0.5']
       ],
       all: [
-        ['Insurer AI denies doctor-recommended care', '+15.7'],
-        ['Data centers strain water and power', '+5.2'],
-        ['Government outsources programs to tech firms', '+3.7'],
-        ['Benefits / housing / jobs cut, no accountability', '+1.3'],
-        ['Tracking data without meaningful consent', '+0.5'],
-        ['Major decisions cannot be explained', '+0.3'],
-        ['Big Tech concentration of power', '+0.2'],
-        ['Worker monitoring / scheduling / wage control', '−1.0'],
-        ['AI economy leaves struggling people behind', '−1.5'],
-        ['Wrongful decisions reduce civic participation', '−2.8'],
-        ['Bias and discrimination', '−7.7'],
-        ['Creative work used without permission/payment', '−13.8']
+              [
+                      "Health insurance companies are using AI to deny care that doctors say their patients need. Families lose access to treatment not because of medicine but because a company's algorithm said no.",
+                      "+15.7"
+              ],
+              [
+                      "Tech companies are building massive data centers that use huge amounts of water and power. These centers drive up electric bills and take drinking water away from the families and farmers who live nearby.",
+                      "+5.2"
+              ],
+              [
+                      "Government agencies are handing control of programs like Medicaid and Social Security to tech companies. People who need help end up dealing with corporate chatbots instead of workers who can actually solve their problems.",
+                      "+3.7"
+              ],
+              [
+                      "Companies are choosing to deploy AI that cuts people's benefits, housing, and jobs. Current laws were not written for AI, so the people harmed have no clear way to hold anyone accountable.",
+                      "+1.3"
+              ],
+              [
+                      "Tech companies and government agencies are using our phones, cars, and home devices to track what we do and collect our personal data. Most of the time, they do this without telling us or asking.",
+                      "+0.5"
+              ],
+              [
+                      "Companies are using AI to make major decisions about people's benefits, housing, and jobs. No one in charge can explain how these systems reach their decisions, making them nearly impossible to challenge.",
+                      "+0.3"
+              ],
+              [
+                      "A handful of big tech companies control AI and are fighting to avoid oversight. If left unchecked, they will have free rein to shape the decisions that affect our benefits, housing, and jobs.",
+                      "+0.2"
+              ],
+              [
+                      "Companies are using AI to monitor workers, control their schedules, and keep wages as low as possible. Workers can be punished or fired based on an algorithm's judgment, with little chance to push back.",
+                      "−1.0"
+              ],
+              [
+                      "Tech companies and politicians are building an AI economy designed for people who are already doing well. People who are already struggling will fall further behind as AI reshapes access to benefits, housing, and jobs.",
+                      "−1.5"
+              ],
+              [
+                      "When companies use AI to wrongly cut someone's benefits, housing, or job, that person has to spend all their time fighting to get it back. That leaves less time and energy to have a say in their community.",
+                      "−2.8"
+              ],
+              [
+                      "Companies are deploying AI trained on biased data, making discrimination against women, people of color, and disabled people worse. They bury the bias in code, making it harder to see and fight.",
+                      "−7.7"
+              ],
+              [
+                      "Tech companies take the creative work that people post online and feed it into their AI systems without consent. The people who created those photos, songs, and stories are not asked for permission or offered payment.",
+                      "−13.8"
+              ]
       ]
     },
     {
@@ -80,12 +154,13 @@
       n: '1,167',
       metric: 'At least somewhat upset · %',
       question: 'How upset would voters be if each institution controlled AI used to make consequential decisions?',
-      title: 'Who controls consequential AI decisions?',
+      title: 'Who is choosing to use AI?',
+      context: "We wanted to understand how concerned people are about powerful people and institutions using AI to make decisions that affect their lives in critical ways. But we also wanted to determine if the primary driver of their concern came from how they felt about the institution overall or if it was driven by the use of AI and the potential harm it could cause. So first we asked people how favorably they viewed an institution and then we asked how concerned they were about that same institution using AI to make consequential decisions about their lives.",
       explainer: 'Share at least somewhat upset if each actor were in charge of AI used to make consequential decisions.',
       suggestion: 'The issue is consequential decision power.',
       more: 'People are uneasy about giving almost any powerful institution permission to put AI in charge of consequential decisions. Health insurers generated the strongest concern, but landlords, government contractors, state officials, Big Tech companies and others were close behind. Even employers, who were viewed comparatively more favorably, still produced substantial unease. This tells us something important about the “villain” in AI messaging: the institution does not need to be universally hated. A person can trust or even like an organization and still believe it should not have certain automated powers over them.',
       detail: 'Named political figures can produce very intense reactions but also polarise. Everyday gatekeepers create broader shared unease. Employers were generally viewed more favorably, yet 53% were still at least somewhat upset about employer-controlled AI.',
-      method: 'Percentages show the share at least somewhat upset under this question wording. Named political actors are available in the expanded results; they are not used in the main institutional comparison below.',
+      method: 'The paired chart shows favorability and the share at least somewhat upset about AI decision-making among six institutions. These percentages come from separate questions and must not be subtracted. The list also includes the four public figures and institutions without a paired favorability comparison.',
       bars: [
         ['Health insurance companies', 68, '68%'],
         ['Landlords', 67, '67%'],
@@ -114,11 +189,12 @@
       metric: 'Extremely / very concerned · %',
       question: 'How concerned are voters about specific high-stakes uses of AI in health care, benefits, housing and work?',
       title: 'Which specific uses of AI cross the line?',
+      context: "We wanted to understand how concerned people already were about AI before we showed them specific AI harms and we also wanted to know how concerned people are about harms that affect their basic needs like health care, housing, employment, public benefits, education, food assistance, and transportation.",
       explainer: 'People rated fifteen concrete scenarios, then selected the one they most wanted addressed first.',
       suggestion: 'Specific uses reveal a broad boundary.',
       more: 'This round exposes the gap between what people immediately associate with AI and what becomes most concerning once they see what AI can actually be used to do. Without examples, privacy, surveillance, job loss and misinformation came readily to mind. But when people saw specific scenarios, concern was extremely high across health care, disability and Social Security, benefits, workplace monitoring, pricing, housing and being forced to deal with an AI instead of a person. The communications implication is significant: do not assume the most familiar AI issue is the strongest one. Give people concrete examples of automated power in everyday life.',
       detail: '897 people supplied open-ended responses before seeing the scenarios. The most common spontaneous themes were privacy/data/surveillance (20%), job loss/economic harm (16%), and misinformation/deepfakes (10%).',
-      method: 'The chart shows extreme/very concern. The expanded table also includes forced-choice “#1 priority”; these are different measures and should not be read as interchangeable.',
+      method: 'Results show the percentage extremely or very concerned about each specific use. The separate forced-choice priority measure is not shown here.',
       bars: [
         ['Doctor-recommended treatment denied', 73, '73%'],
         ['Social Security / disability cut off', 72, '72%'],
@@ -128,21 +204,21 @@
         ['Forced to deal with AI instead of a person', 69, '69%']
       ],
       all: [
-        ['Doctor-recommended treatment denied', '73% · 11% #1'],
-        ['Social Security / disability cut off', '72% · 27% #1'],
-        ['Falsely accused of benefits fraud', '71% · 7% #1'],
-        ['Charged more for groceries', '71% · 3% #1'],
-        ['Job rejection with no human involved', '70% · 5% #1'],
-        ['Everything at work monitored', '70% · 7% #1'],
-        ['Forced to deal with AI instead of a person', '69% · 6% #1'],
-        ['Medicaid cut off', '68% · 6% #1'],
-        ['Spied on at home to build eviction case', '68% · 6% #1'],
-        ['Transplant / pain medicine decision', '68% · 3% #1'],
-        ['Rent raised using automated pricing', '67% · 5% #1'],
-        ['Benefits repayment demand', '65% · 2% #1'],
-        ['Apartment rejected by faulty background check', '65% · 1% #1'],
-        ['Child falsely flagged as school threat', '64% · 5% #1'],
-        ['Home or car loan denied', '62% · 2% #1']
+        ['Doctor-recommended treatment denied', '73%'],
+        ['Social Security / disability cut off', '72%'],
+        ['Falsely accused of benefits fraud', '71%'],
+        ['Charged more for groceries', '71%'],
+        ['Job rejection with no human involved', '70%'],
+        ['Everything at work monitored', '70%'],
+        ['Forced to deal with AI instead of a person', '69%'],
+        ['Medicaid cut off', '68%'],
+        ['Spied on at home to build eviction case', '68%'],
+        ['Transplant / pain medicine decision', '68%'],
+        ['Rent raised using automated pricing', '67%'],
+        ['Benefits repayment demand', '65%'],
+        ['Apartment rejected by faulty background check', '65%'],
+        ['Child falsely flagged as school threat', '64%'],
+        ['Home or car loan denied', '62%']
       ]
     },
     {
@@ -151,12 +227,13 @@
       n: '1,058',
       metric: 'Support · % / reported range',
       question: 'Which concrete protections against harmful uses of AI do voters support?',
-      title: 'What rules are people willing to support?',
-      explainer: 'Support for strong protections against high-stakes AI harms. Every major proposal tested at 70% or higher.',
+      title: 'Support for strong protections against AI harms',
+      context: "We wanted to understand what types of interventions and protections against AI harms voters would support. We showed respondents a full policy package of bold protections.",
+      explainer: 'Support for strong protections against AI harms. Every major proposal tested at 70% or higher.',
       suggestion: 'Concern has become permission for meaningful intervention.',
       more: 'The final round answers one of the biggest questions raised by the previous research: does concern actually translate into support for action? Every bold protection tested received support of 70 percent or more, including safety proof, off switches, meaningful penalties, community authority and bans on some high-stakes uses. More people worried that regulation would not go far enough than worried about excessive intervention.',
       detail: '72% supported the full package; 32% worried rules would not go far enough; 48% said the maker and user should be equally responsible. Only 4% said neither the vendor nor the organization using the system should be responsible after a harmful hiring error.',
-      method: 'Ranges preserve split-sample or version differences. They should not be treated as single-point estimates.',
+      method: 'Every major bold protection tested received support of 70 percent or more. Ranges preserve split-sample or version differences and should not be treated as single-point estimates.',
       bars: [
         ['Meaningful penalties', 79, '77–81%'],
         ['Off switches', 79.5, '79–80%'],
@@ -464,20 +541,25 @@
       btn.setAttribute('aria-selected', String(active));
     });
 
-    const bars = round.rankOnly
-      ? `<div class="xv-ranked-list">${round.bars.map(([label], index) => `<div class="xv-ranked-row"><span>${String(index + 1).padStart(2,'0')}</span><strong>${label}</strong></div>`).join('')}</div>`
-      : round.bars.map(([label, value, display]) => {
-          const negative = typeof value === 'number' && value < 0;
-          return `<div class="xv-evidence-row ${negative?'negative':''}">
-            <div class="xv-evidence-line"><span>${label}</span><b>${display}</b></div>
-            <div class="xv-evidence-track"><span style="--w:${barWidth(round, value)}%"></span></div>
-          </div>`;
-        }).join('');
-
-    const fullRows = round.rankOnly
-      ? round.all.map(([label], index) => `<div class="xv-full-row xv-full-rank"><span><i>${String(index + 1).padStart(2,'0')}</i>${label}</span></div>`).join('')
-      : round.all.map(([label, value]) => `<div class="xv-full-row"><span>${label}</span><b>${value}</b></div>`).join('');
-
+    const fullRows = round.all.map(([label, value], index) => {
+      const displayed = round.id === 4 ? String(value).split(' · ')[0] : value;
+      return `<div class="xv-full-row ${round.rankOnly ? 'xv-full-rank' : ''}">
+        <span>${round.rankOnly ? `<i>${String(index + 1).padStart(2,'0')}</i>` : ''}${label}</span>
+        <b>${displayed}</b>
+      </div>`;
+    }).join('');
+    const pairedInstitutions = round.id === 3 ? `
+      <div class="xv-paired-key"><span>Favorable toward institution</span><span>Upset about its use of AI</span></div>
+      <div class="xv-paired-results">
+        ${institutions.map(item => `<div class="xv-paired-row">
+          <strong>${item.name}</strong>
+          <div class="xv-paired-bars">
+            <div><span style="width:${item.fav}%"></span><b>${item.fav}%</b></div>
+            <div><span style="width:${item.upset}%"></span><b>${item.upset}%</b></div>
+          </div>
+        </div>`).join('')}
+      </div>
+      <p class="xv-paired-note">These are separate survey questions, so the percentages are not complementary. Favorability toward employers was measured among employed respondents.</p>` : '';
     const panel=document.getElementById('xv-round-panel');
     panel.innerHTML = `
       <article class="xv-round-card" data-round="${round.id}">
@@ -490,34 +572,28 @@
         </div>
         <div class="xv-round-titleblock">
           <h3 id="xv-round-${round.id}-title">${round.title}</h3>
-          <p class="xv-round-question"><span>Question</span>${round.question}</p>
-          <p class="xv-round-explainer">${round.explainer}</p>
+          <p class="xv-round-context">${round.context}</p>
+          ${round.id === 5 ? '<p class="xv-round-standout">Every major proposal tested received at least 70% support.</p>' : ''}
           <dl class="xv-research-details" aria-label="Research details">
             <div><dt>Date</dt><dd>${round.date}</dd></div>
             <div><dt>Sample</dt><dd>${round.n} likely voters</dd></div>
             <div><dt>Measure</dt><dd>${round.metric}</dd></div>
           </dl>
         </div>
-        <div class="xv-suggest">
-          <span>Key finding</span>
-          <strong>${round.suggestion}</strong>
-        </div>
-        <div class="xv-evidence">${bars}</div>
-        <details class="xv-more">
-          <summary><span>Method and full results</span><i aria-hidden="true">+</i></summary>
-          <div class="xv-more-inner">
-            <div class="xv-more-copy">
-              <span class="xv-mini-label">What this round tells us</span>
-              <p>${round.more}</p>
-              <p class="xv-more-detail">${round.detail}</p>
-              <div class="xv-method-box"><b>How to read it</b><span>${round.method}</span></div>
-            </div>
-            <div class="xv-full-results">
-              <span class="xv-mini-label">Full result set</span>
-              ${fullRows}
-            </div>
+        <div class="xv-more-inner xv-round-expanded">
+          <div class="xv-more-copy">
+            <span class="xv-mini-label">What this round tells us</span>
+            <p>${round.more}</p>
+            <p class="xv-more-detail">${round.detail}</p>
+            <div class="xv-method-box"><b>How to read it</b><span>${round.method}</span></div>
           </div>
-        </details>
+          <div class="xv-full-results">
+            <span class="xv-mini-label">Results (full set)</span>
+            ${pairedInstitutions}
+            ${round.id === 3 ? '<p class="xv-paired-subhead">All institutions and public figures tested · upset about AI decision-making</p>' : ''}
+            ${fullRows}
+          </div>
+        </div>
         <div class="xv-round-footer">
           <div class="xv-round-nav xv-round-nav-bottom">
             <button type="button" data-round-nav="${round.id-1}" ${round.id===1?'disabled':''}>← Previous round</button>

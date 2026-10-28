@@ -34,20 +34,25 @@
       btn.setAttribute('aria-selected', String(active));
     });
 
-    const bars = round.rankOnly
-      ? `<div class="xv-ranked-list">${round.bars.map(([label], index) => `<div class="xv-ranked-row"><span>${String(index + 1).padStart(2,'0')}</span><strong>${label}</strong></div>`).join('')}</div>`
-      : round.bars.map(([label, value, display]) => {
-          const negative = typeof value === 'number' && value < 0;
-          return `<div class="xv-evidence-row ${negative?'negative':''}">
-            <div class="xv-evidence-line"><span>${label}</span><b>${display}</b></div>
-            <div class="xv-evidence-track"><span style="--w:${barWidth(round, value)}%"></span></div>
-          </div>`;
-        }).join('');
-
-    const fullRows = round.rankOnly
-      ? round.all.map(([label], index) => `<div class="xv-full-row xv-full-rank"><span><i>${String(index + 1).padStart(2,'0')}</i>${label}</span></div>`).join('')
-      : round.all.map(([label, value]) => `<div class="xv-full-row"><span>${label}</span><b>${value}</b></div>`).join('');
-
+    const fullRows = round.all.map(([label, value], index) => {
+      const displayed = round.id === 4 ? String(value).split(' · ')[0] : value;
+      return `<div class="xv-full-row ${round.rankOnly ? 'xv-full-rank' : ''}">
+        <span>${round.rankOnly ? `<i>${String(index + 1).padStart(2,'0')}</i>` : ''}${label}</span>
+        <b>${displayed}</b>
+      </div>`;
+    }).join('');
+    const pairedInstitutions = round.id === 3 ? `
+      <div class="xv-paired-key"><span>Favorable toward institution</span><span>Upset about its use of AI</span></div>
+      <div class="xv-paired-results">
+        ${institutions.map(item => `<div class="xv-paired-row">
+          <strong>${item.name}</strong>
+          <div class="xv-paired-bars">
+            <div><span style="width:${item.fav}%"></span><b>${item.fav}%</b></div>
+            <div><span style="width:${item.upset}%"></span><b>${item.upset}%</b></div>
+          </div>
+        </div>`).join('')}
+      </div>
+      <p class="xv-paired-note">These are separate survey questions, so the percentages are not complementary. Favorability toward employers was measured among employed respondents.</p>` : '';
     const panel=document.getElementById('xv-round-panel');
     panel.innerHTML = `
       <article class="xv-round-card" data-round="${round.id}">
@@ -60,34 +65,28 @@
         </div>
         <div class="xv-round-titleblock">
           <h3 id="xv-round-${round.id}-title">${round.title}</h3>
-          <p class="xv-round-question"><span>Question</span>${round.question}</p>
-          <p class="xv-round-explainer">${round.explainer}</p>
+          <p class="xv-round-context">${round.context}</p>
+          ${round.id === 5 ? '<p class="xv-round-standout">Every major proposal tested received at least 70% support.</p>' : ''}
           <dl class="xv-research-details" aria-label="Research details">
             <div><dt>Date</dt><dd>${round.date}</dd></div>
             <div><dt>Sample</dt><dd>${round.n} likely voters</dd></div>
             <div><dt>Measure</dt><dd>${round.metric}</dd></div>
           </dl>
         </div>
-        <div class="xv-suggest">
-          <span>Key finding</span>
-          <strong>${round.suggestion}</strong>
-        </div>
-        <div class="xv-evidence">${bars}</div>
-        <details class="xv-more">
-          <summary><span>Method and full results</span><i aria-hidden="true">+</i></summary>
-          <div class="xv-more-inner">
-            <div class="xv-more-copy">
-              <span class="xv-mini-label">What this round tells us</span>
-              <p>${round.more}</p>
-              <p class="xv-more-detail">${round.detail}</p>
-              <div class="xv-method-box"><b>How to read it</b><span>${round.method}</span></div>
-            </div>
-            <div class="xv-full-results">
-              <span class="xv-mini-label">Full result set</span>
-              ${fullRows}
-            </div>
+        <div class="xv-more-inner xv-round-expanded">
+          <div class="xv-more-copy">
+            <span class="xv-mini-label">What this round tells us</span>
+            <p>${round.more}</p>
+            <p class="xv-more-detail">${round.detail}</p>
+            <div class="xv-method-box"><b>How to read it</b><span>${round.method}</span></div>
           </div>
-        </details>
+          <div class="xv-full-results">
+            <span class="xv-mini-label">Results (full set)</span>
+            ${pairedInstitutions}
+            ${round.id === 3 ? '<p class="xv-paired-subhead">All institutions and public figures tested · upset about AI decision-making</p>' : ''}
+            ${fullRows}
+          </div>
+        </div>
         <div class="xv-round-footer">
           <div class="xv-round-nav xv-round-nav-bottom">
             <button type="button" data-round-nav="${round.id-1}" ${round.id===1?'disabled':''}>← Previous round</button>
