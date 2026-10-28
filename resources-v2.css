@@ -257,3 +257,31 @@
  .ttj-resources-v2 .rv-download-grid a{min-height:76px}
 }
 @media(prefers-reduced-motion:reduce){.ttj-resources-v2 *{scroll-behavior:auto!important;transition:none!important;animation:none!important}}
+
+/* Jane's resource-page layout: four downloads / one document preview. */
+.ttj-resources-v2 .rv-download-layout{display:grid;grid-template-columns:minmax(0,1.04fr) minmax(0,.96fr);gap:clamp(28px,5vw,80px);align-items:stretch}
+.ttj-resources-v2 .rv-download-layout .rv-download-grid{display:grid;grid-template-columns:1fr;border-top:1px solid #bdc2bf;border-left:1px solid #bdc2bf;align-content:start}
+.ttj-resources-v2 .rv-download-layout .rv-download-grid a{min-height:96px;grid-template-columns:35px minmax(0,1fr) 25px;gap:15px}
+.ttj-resources-v2 .rv-download-layout .rv-download-grid a small{display:block;line-height:1.5;margin-top:4px;overflow-wrap:anywhere}
+.ttj-resources-v2 .rv-cheatsheet-preview{display:flex;align-items:center;justify-content:center;text-decoration:none;padding:30px;background:#dde8e3;border:1px solid #bed0c8;min-width:0}
+.ttj-resources-v2 .rv-preview-sheet{position:relative;width:min(100%,370px);min-height:440px;padding:37px 35px;display:flex;flex-direction:column;background:#f9f9f5;border:1px solid #d1d5d0;box-shadow:14px 16px 0 rgba(4,75,70,.12),0 14px 34px rgba(8,35,33,.12);color:#10272c}
+.ttj-resources-v2 .rv-preview-mark{font:800 12px/1.2 "Noto Sans",Arial,sans-serif;letter-spacing:.12em;text-transform:uppercase;color:#067970}
+.ttj-resources-v2 .rv-preview-eyebrow{font:750 11px/1.5 "Noto Sans",Arial,sans-serif;letter-spacing:.12em;text-transform:uppercase;margin-top:75px}
+.ttj-resources-v2 .rv-preview-sheet strong{font:700 clamp(27px,3vw,37px)/1.1 Georgia,serif;letter-spacing:-.035em;margin:13px 0 22px}
+.ttj-resources-v2 .rv-preview-rule{height:8px;width:65%;background:#e86658}
+.ttj-resources-v2 .rv-preview-caption{font:700 13px/1.4 "Noto Sans",Arial,sans-serif;margin-top:22px}
+.ttj-resources-v2 .rv-preview-foot{font:700 11px/1.5 "Noto Sans",Arial,sans-serif;margin-top:auto;padding-top:28px;color:#076f68}
+.ttj-resources-v2 .rv-cheatsheet-preview:hover .rv-preview-sheet,.ttj-resources-v2 .rv-cheatsheet-preview:focus-visible .rv-preview-sheet{outline:2px solid #076f68;outline-offset:5px}
+.ttj-resources-v2 .rv-draft-check-layout{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1fr);gap:20px;max-width:100%}
+.ttj-resources-v2 .rv-draft-check-layout .rv-textarea-wrap textarea{min-height:180px}
+@media(max-width:850px){
+ .ttj-resources-v2 .rv-download-layout{grid-template-columns:1fr;gap:25px}
+ .ttj-resources-v2 .rv-cheatsheet-preview{padding:28px}
+ .ttj-resources-v2 .rv-preview-sheet{min-height:360px}
+}
+@media(max-width:640px){
+ .ttj-resources-v2 .rv-draft-check-layout{grid-template-columns:1fr;gap:16px}
+ .ttj-resources-v2 .rv-download-layout .rv-download-grid a{grid-template-columns:25px minmax(0,1fr) 18px;padding:17px 15px;min-height:82px}
+ .ttj-resources-v2 .rv-preview-sheet{min-height:345px;padding:29px}
+ .ttj-resources-v2 .rv-preview-eyebrow{margin-top:45px}
+}
