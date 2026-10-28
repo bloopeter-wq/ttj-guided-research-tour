@@ -193,7 +193,7 @@ showStep();
     const refine2Css = document.createElement('link');
     refine2Css.id = 'resources-refine2-css';
     refine2Css.rel = 'stylesheet';
-    refine2Css.href = 'resources-refine2.css?v=1';
+    refine2Css.href = 'resources-refine2.css?v=2';
     document.head.appendChild(refine2Css);
   }
   if (!document.getElementById('resources-v2-js')) {
