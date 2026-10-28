@@ -45,7 +45,7 @@ for(const viewport of [{width:1440,height:900},{width:820,height:1180},{width:39
     const text=await card.innerText();
     if(/guardrails/i.test(text)||!text.includes('strong protections against AI harms'))throw Error('Round 5 weak protection language');
     const values=(await card.locator('.xv-full-row b').allTextContents()).map(x=>x.trim());
-    if(JSON.stringify(values)!==JSON.stringify(['81%','80%','80%','80%','75%']))throw Error('Round 5 must show TTJ's exact five percentages; found '+values.join(', '));
+    if(JSON.stringify(values)!==JSON.stringify(['81%','80%','80%','80%','75%']))throw Error('Round 5 must show the exact five TTJ percentages; found '+values.join(', '));
     if(!text.includes('two differently worded proposal versions'))throw Error('Round 5 methodology must acknowledge split wording');
     if(/\d+\s*[–-]\s*\d+%/.test(text))throw Error('Round 5 contains a forbidden percentage range');
     const labels=(await card.locator('.xv-full-row>span').allTextContents()).map(x=>x.trim());
