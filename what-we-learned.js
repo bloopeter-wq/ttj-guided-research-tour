@@ -68,7 +68,7 @@
     }
   ];
 
-  /* Exact copy from Jane's original microsite. */
+  
   var threads = [
     { id: 'power', label: 'Power & control', detail: "It's not really about AI. It's about who has power over people's lives, and whether they have any say in decisions that affect them." },
     { id: 'harm', label: 'Concrete harm', detail: 'Specific, tangible harms move people more than abstract warnings about AI in general. "Your insurer used AI to deny the treatment your doctor says you need" beats "AI can produce bias in health care" every time it was tested.' },
@@ -209,7 +209,7 @@
     window.scrollTo(0,0);
   }
 
-  /* Replace the old section router so nav/hash links continue to work. */
+  
   try { navigate = setSection; } catch (e) { window.navigate = setSection; }
   document.querySelectorAll('.nav a').forEach(function (a) {
     if (a.dataset.learnHook) return;
