@@ -19,11 +19,11 @@ const runtime=changed.filter(p=>!nonRuntime(p));
 const approvedExplore={
  'explore-v2.js':'6d02c8d0d90cc50059635bc6feefe66e54b3e535',
  'explore-v2.css':'a05533cf5e20e9c1f2c568497d82309139258dda',
- 'resources.js':'429b2073754cd5f9402670fe25fb75aff8652884',
- 'resources-v2.js':'a0494ac1fc2b1ef0de53f6e577a14191504097fc',
+ 'resources.js':'d18dd267e6586053e32a09c3c1f6c6c6afe1c934',
+ 'resources-v2.js':'40b2cf4e57cd6a40cf5b6e20989d9f14be83dbdb',
  'resources-v2.css':'2a4da1025e177bd47c7567f6985e6c9cbb09e4c0',
- 'resources-refine2.css':'80a651397e0d39502d9d36f7ba5142d540ca308d',
- 'resources/TTJ_Say_This_Not_That_Messaging_Hints.html':'e62872962df18ae5a1a0f34dc437b31f67843df6'
+ 'resources-refine2.css':'208fbe0f7ceb7bedec9ed91b34ee433500d0f955',
+ 'resources/TTJ_Say_This_Not_That_Messaging_Hints.html':'8513b342530edf1bb6a4e7a280488e0a9a248ae8'
 };
 for(const file of runtime){
  const sha=git('rev-parse','HEAD:'+file);
