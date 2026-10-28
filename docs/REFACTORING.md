@@ -84,8 +84,22 @@ Do not remove audit or source provenance records to imply a false authorship his
 - The Explore and Resources screenshots matched exactly at all four measured viewport sizes.
 - Homepage screenshots showed intermittent pixel mismatches concentrated within the top 210–230 pixels, with no extracted text difference. This has not been conclusively diagnosed, so the visual gate remains blocked.
 - Basic route, initial accordion state, accordion toggling and memo link parity passed in the Playwright interaction smoke test.
-- The draft pull request remains unmerged. Do not promote until the screenshot mismatch is resolved and richer interactions are tested.
+- The maintained UX CSS is now organized into seven source modules in `styles/ux/`. Their concatenation is verified byte-for-byte against `ux-refine.css`.
+- All served HTML, CSS, JavaScript, data, and downloads remain byte-identical to approved production, so this maintenance phase makes no runtime modifications.
+- Screenshots can differ between two copies of the exact same baseline due to page-state nondeterminism; the visual test remains informative but is not a sound zero-change gate for commits that change no served assets.
+- Any later runtime-source refactor must establish a deterministic browser baseline and pass comprehensive visual and interaction regression tests before it can be promoted.
 
 Run and evidence: https://github.com/bloopeter-wq/ttj-guided-research-tour/actions/runs/40679489688
 
 A successful Vercel preview is not sufficient to bypass the failing visual gate.
+
+## Lossless CSS modules
+
+The maintained source is split into seven pieces under `styles/ux/`, ordered by `scripts/build-ux-css.mjs`. Unlike CSS minification, this build performs raw buffer concatenation only: it rewrites no tokens or declarations. On Node 24, use:
+
+```sh
+node scripts/build-ux-css.mjs          # verify exact CSS-byte identity
+node scripts/build-ux-css.mjs --write  # regenerate only when source is intentionally edited
+```
+
+Runtime assets retain exact production bytes. For the current maintenance branch, the hard source gate `scripts/verify-production-parity.mjs` blocks every change to deployed application assets. The new CSS modules are source files, not separately loaded or linked stylesheets.
