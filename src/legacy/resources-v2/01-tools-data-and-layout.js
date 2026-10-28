@@ -174,7 +174,7 @@
     ['Mitigate', 'more abstract than prevent, protect or repair'],
     ['Algorithmic', 'technical language can hide the actual decision'],
     ['Governance', 'useful in policy detail, but abstract as a public-facing lead'],
-    ['Optimise', 'describes a process rather than a consequence for a person'],
+    ['Optimize', 'describes a process rather than a consequence for a person'],
     ['Transparency', 'important, but does not itself say who can change the outcome'],
     ['Risk', 'often needs a concrete example before people can picture what is at stake']
   ];
