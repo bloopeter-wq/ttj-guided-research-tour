@@ -35,6 +35,8 @@ jobs:
           curl --fail http://127.0.0.1:4171/ > /dev/null
           curl --fail http://127.0.0.1:4172/ > /dev/null
       - name: Compare all primary pages at four screen sizes
+        id: visual
+        continue-on-error: true
         working-directory: candidate
         env:
           BASELINE_URL: http://127.0.0.1:4171/
@@ -46,6 +48,13 @@ jobs:
           BASELINE_URL: http://127.0.0.1:4171/
           CANDIDATE_URL: http://127.0.0.1:4172/
         run: node scripts/compare-interactions.mjs
+      - name: Enforce visual parity gate
+        if: always()
+        run: |
+          if [ "${{ steps.visual.outcome }}" != 'success' ]; then
+            echo 'Visual comparison failed; release blocked.'
+            exit 1
+          fi
       - name: Save comparison screenshots
         if: always()
         uses: actions/upload-artifact@v4
