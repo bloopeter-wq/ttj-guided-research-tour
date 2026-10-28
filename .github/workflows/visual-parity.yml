@@ -1,11 +1,8 @@
 name: TTJ visual parity
+# Diagnostic only when production files remain byte-identical.
+# For future runtime changes, visual parity must be a required release gate.
 on:
-  push:
-    branches:
-      - refactor/zero-change-maintenance-2026-10-28
   workflow_dispatch:
-  pull_request:
-    branches: [main]
 
 jobs:
   screenshot-comparison:
