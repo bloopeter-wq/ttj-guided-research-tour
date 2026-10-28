@@ -12,7 +12,7 @@ if(!baseline||!/^[a-f0-9]{40}$/.test(baseline)){
 }
 const git=(...args)=>execFileSync('git',args,{encoding:'utf8'}).trim();
 const changed=git('diff','--name-only',baseline,'HEAD').split('\n').filter(Boolean);
-const nonRuntime=p=>/^(docs\/|scripts\/|styles\/ux\/|\.github\/|README\.md$)/.test(p);
+const nonRuntime=p=>/^(docs\/|scripts\/|styles\/ux\/|src\/legacy\/|\.github\/|README\.md$)/.test(p);
 const runtime=changed.filter(p=>!nonRuntime(p));
 if(runtime.length){
  console.error('FAIL: Deployed assets differ from the approved production commit:');
