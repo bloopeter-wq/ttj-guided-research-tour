@@ -44,6 +44,10 @@ for(const viewport of [{width:1440,height:900},{width:820,height:1180},{width:39
   if(id===5){
     const text=await card.innerText();
     if(/guardrails/i.test(text)||!text.includes('strong protections against AI harms'))throw Error('Round 5 weak protection language');
+    const values=(await card.locator('.xv-full-row b').allTextContents()).map(x=>x.trim());
+    if(JSON.stringify(values)!==JSON.stringify(['77%','80%','80%','80%','77%','74%']))throw Error('Round 5 must show the exact six Split A percentages; found '+values.join(', '));
+    if(!text.includes('Split A')||!text.includes('n=515'))throw Error('Round 5 must disclose split sample size');
+    if(/\d+\s*[–-]\s*\d+%/.test(text))throw Error('Round 5 contains a forbidden percentage range');
   }
  }
  const bodyWidth=await page.evaluate(()=>document.documentElement.scrollWidth);
