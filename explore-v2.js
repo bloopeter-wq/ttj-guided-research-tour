@@ -580,11 +580,6 @@
         </div>
         ${round.id === 4 ? `
           <div class="xv-round5-layout xv-round4-layout">
-            <section class="xv-round5-results" aria-label="Round 4 full concern results">
-              <h4>Results (full set)</h4>
-              <p class="xv-round5-result-intro">Concern about 15 specific uses of AI</p>
-              <div class="xv-round5-result-list">${fullRows}</div>
-            </section>
             <section class="xv-round5-takeaways" aria-label="What this round tells us">
               <h4>What this round tells us</h4>
               <p class="xv-round5-takeaway-intro">${round.more}</p>
@@ -595,15 +590,15 @@
                 <div class="xv-round5-takeaway"><strong>10%</strong><span>misinformation and deepfakes</span></div>
               </div>
             </section>
+            <section class="xv-round5-results" aria-label="Round 4 full concern results">
+              <h4>Results (full set)</h4>
+              <p class="xv-round5-result-intro">Concern about 15 specific uses of AI</p>
+              <div class="xv-round5-result-list">${fullRows}</div>
+            </section>
             <div class="xv-round5-method"><b>How to read these results</b><p>${round.method}</p></div>
           </div>
         ` : round.id === 5 ? `
           <div class="xv-round5-layout">
-            <section class="xv-round5-results" aria-label="Full policy support results">
-              <h4>Results (full set)</h4>
-              <p class="xv-round5-result-intro">Support for five strong protections against AI harms</p>
-              <div class="xv-round5-result-list">${fullRows}</div>
-            </section>
             <section class="xv-round5-takeaways" aria-label="What this round tells us">
               <h4>What this round tells us</h4>
               <p class="xv-round5-takeaway-intro">Voters support concrete action to prevent harm and hold decision-makers accountable.</p>
@@ -612,6 +607,11 @@
                 <div class="xv-round5-takeaway"><strong>32%</strong><span>worried the proposed rules would not go far enough</span></div>
                 <div class="xv-round5-takeaway"><strong>48%</strong><span>said the AI maker and user should be equally responsible for harm in the hiring scenario</span></div>
               </div>
+            </section>
+            <section class="xv-round5-results" aria-label="Full policy support results">
+              <h4>Results (full set)</h4>
+              <p class="xv-round5-result-intro">Support for five strong protections against AI harms</p>
+              <div class="xv-round5-result-list">${fullRows}</div>
             </section>
             <div class="xv-round5-method"><b>How to read these results</b><p>${round.method}</p></div>
           </div>

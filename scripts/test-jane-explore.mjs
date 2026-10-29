@@ -41,7 +41,7 @@ for(const viewport of [{width:1440,height:900},{width:820,height:1180},{width:39
     if(await card.locator('.xv-round4-layout').count()!==1)throw Error('Round 4 is missing results-first layout');
     if(await card.locator('.xv-more-inner').count()!==0)throw Error('Round 4 still has old two-column layout');
     const positions=await Promise.all(['.xv-round4-layout .xv-round5-results','.xv-round4-layout .xv-round5-takeaways','.xv-round4-layout .xv-round5-method'].map(sel=>card.locator(sel).evaluate(el=>el.getBoundingClientRect().top)));
-    if(!(positions[0]<positions[1]&&positions[1]<positions[2]))throw Error('Round 4 results/takeaways/methodology displayed out of order');
+    if(!(positions[1]<positions[0]&&positions[0]<positions[2]))throw Error('Round 4 must display takeaways, results, then methodology');
     if(await card.locator('.xv-round4-layout .xv-round5-takeaway').count()!==3)throw Error('Round 4 must have three takeaway cards');
     const listed=await card.locator('.xv-round4-layout .xv-full-row b').allTextContents();
     if(listed.length!==15||listed.some(x=>!/^[0-9]+%$/.test(x.trim())))throw Error('Round 4 must preserve all 15 individual percentages');
@@ -58,7 +58,7 @@ for(const viewport of [{width:1440,height:900},{width:820,height:1180},{width:39
     const resultY=await card.locator('.xv-round5-results').evaluate(el=>el.getBoundingClientRect().top);
     const takeY=await card.locator('.xv-round5-takeaways').evaluate(el=>el.getBoundingClientRect().top);
     const methodY=await card.locator('.xv-round5-method').evaluate(el=>el.getBoundingClientRect().top);
-    if(!(resultY<takeY && takeY<methodY))throw Error('Round 5 order wrong: results, takeaways, method required');
+    if(!(takeY<resultY && resultY<methodY))throw Error('Round 5 order wrong: takeaways, results, method required');
     if(await card.locator('.xv-round5-takeaway').count()!==3)throw Error('Round 5 takeaways should be three cards');
     if(await card.locator('.xv-more-inner').count())throw Error('Round 5 retained old two-column text structure');
     const white=await card.locator('.xv-round5-layout').evaluate(el=>getComputedStyle(el).backgroundColor);
