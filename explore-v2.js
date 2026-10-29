@@ -410,7 +410,7 @@
       <section class="xv-institutions" aria-labelledby="xv-institutions-title">
         <div class="xv-shell">
           <div class="xv-kicker-line"><span></span><b>Round 3 / Trust and permission</b></div>
-          <h2 id="xv-institutions-title">Liking an institution does not necessarily mean trusting its use of AI.</h2>
+          <h2 id="xv-institutions-title">Liking an institution does not necessarily mean trusting its use of AI</h2>
           <p class="xv-institutions-dek">Choose an institution. General favorability does not necessarily reduce concern about AI use. Naming the institution responsible does not require attacking it: the focus can stay on the choice to use automated decision-making in a particular context.</p>
           <p class="xv-section-meta">Round 3 · Apr 24–27, 2026 · N=1,167 likely voters · Measure: at least somewhat upset (%)</p>
           <div class="xv-institution-grid" id="xv-institution-grid">
@@ -829,7 +829,6 @@
     document.getElementById('xv-institution-detail').innerHTML = `
       <div class="xv-inst-drawer">
         <div class="xv-inst-drawer-title">
-          <span>Trust is not permission</span>
           <h3>${item.name}</h3>
           <p>${item.note}</p>
         </div>
