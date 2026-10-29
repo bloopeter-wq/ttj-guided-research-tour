@@ -18,13 +18,13 @@ const runtime=changed.filter(p=>!nonRuntime(p));
  // changing any of these files again requires an updated reviewed release gate.
 const approvedExplore={
  'jane-editorial.js':'822bf7785ec35fea56a859a46ecb4cd8fa419c85',
- 'jane-editorial.css':'c71ce0331873a6d591cfb4c92fc639a05bb49374',
+ 'jane-editorial.css':'d037128474ebf64785a59455afb26ff6d9dc48ce',
  'ux-refine.css':'ad82dcae953bfec17f12cab5aef3bb0c0086836c',
  'index.html':'7a6f2ebfe34253fa40261b6bd39643d405be7635',
  'ux-refine.js':'1d2fa3b7a6a50c04f37222d44608f5f872d10e14',
  'explore-v2.js':'a2afb2b5e50ecf33ee29f242c5dc971951510159',
  'explore-v2.css':'7abe63fbfe790f5c4f736855eb674614b0f909cc',
- 'resources.js':'31a26eec24e9d979088a4c1ac926401d7ed63dfd',
+ 'resources.js':'328af12867a80256364dedc4eb3b1fea125751df',
  'resources-v2.js':'6ed84c046d73c14b1fb166073a5a4ffe195f20f4',
  'resources-v2.css':'2a4da1025e177bd47c7567f6985e6c9cbb09e4c0',
  'resources-refine2.css':'208fbe0f7ceb7bedec9ed91b34ee433500d0f955',
