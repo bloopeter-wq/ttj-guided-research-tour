@@ -540,11 +540,14 @@
     });
 
     const fullRows = round.all.map(([label, value], index) => {
+      if (round.rankOnly) {
+        return `<li class="xv-full-row xv-rank-ladder-row ${index === 0 ? 'xv-rank-lead' : ''}">
+          <span class="xv-rank-number" aria-label="Rank ${index + 1}">${String(index + 1).padStart(2, '0')}</span>
+          <span class="xv-rank-statement">${label}</span>
+        </li>`;
+      }
       const displayed = round.id === 4 ? String(value).split(' · ')[0] : value;
-      return `<div class="xv-full-row ${round.rankOnly ? 'xv-full-rank' : ''}">
-        <span>${round.rankOnly ? `<i>${String(index + 1).padStart(2,'0')}</i>` : ''}${label}</span>
-        ${round.rankOnly ? '' : `<b>${displayed}</b>`}
-      </div>`;
+      return `<div class="xv-full-row"><span>${label}</span><b>${displayed}</b></div>`;
     }).join('');
     const pairedInstitutions = round.id === 3 ? `
       <div class="xv-paired-key"><span>Favorable toward institution</span><span>Upset about its use of AI</span></div>
@@ -627,7 +630,11 @@
             <span class="xv-mini-label">Results (full set)</span>
             ${pairedInstitutions}
             ${round.id === 3 ? '<p class="xv-paired-subhead">All institutions and public figures tested · upset about AI decision-making</p>' : ''}
-            ${fullRows}
+            ${round.rankOnly ? `
+              <div class="xv-rank-heading"><strong>Concern ranking</strong><span>Most concerning</span></div>
+              <ol class="xv-rank-ladder" aria-label="All 12 survey statements ranked from most to least concerning">${fullRows}</ol>
+              <div class="xv-rank-end">Least concerning</div>
+            ` : fullRows}
           </div>
         </div>
         `}
