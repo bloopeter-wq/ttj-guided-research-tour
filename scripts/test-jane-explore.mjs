@@ -33,7 +33,19 @@ for(const viewport of [{width:1440,height:900},{width:820,height:1180},{width:39
     if(!await card.getByRole('heading',{name:'Who is choosing to use AI?'}).count())throw Error('Round 3 title wrong');
     if(await card.locator('.xv-paired-row').count()!==6)throw Error('Round 3 favorability/concern comparisons missing');
   }
+  const whiteBackground=await card.evaluate(el=>getComputedStyle(el).backgroundColor);
+  if(whiteBackground!=='rgb(255, 255, 255)')throw Error('Round '+id+' background is not white: '+whiteBackground);
+  const sectionBackground=await page.locator('.xv-rounds').evaluate(el=>getComputedStyle(el).backgroundColor);
+  if(sectionBackground!=='rgb(255, 255, 255)')throw Error('Round '+id+' research section background is not white');
   if(id===4){
+    if(await card.locator('.xv-round4-layout').count()!==1)throw Error('Round 4 is missing results-first layout');
+    if(await card.locator('.xv-more-inner').count()!==0)throw Error('Round 4 still has old two-column layout');
+    const positions=await Promise.all(['.xv-round4-layout .xv-round5-results','.xv-round4-layout .xv-round5-takeaways','.xv-round4-layout .xv-round5-method'].map(sel=>card.locator(sel).evaluate(el=>el.getBoundingClientRect().top)));
+    if(!(positions[0]<positions[1]&&positions[1]<positions[2]))throw Error('Round 4 results/takeaways/methodology displayed out of order');
+    if(await card.locator('.xv-round4-layout .xv-round5-takeaway').count()!==3)throw Error('Round 4 must have three takeaway cards');
+    const listed=await card.locator('.xv-round4-layout .xv-full-row b').allTextContents();
+    if(listed.length!==15||listed.some(x=>!/^[0-9]+%$/.test(x.trim())))throw Error('Round 4 must preserve all 15 individual percentages');
+
     const measure=await card.locator('.xv-research-details').innerText();
     if(!measure.includes('Extremely, very, or somewhat concerned')) throw Error('Round 4 measure wording incorrect');
     const method=await card.locator('.xv-method-box').innerText();
