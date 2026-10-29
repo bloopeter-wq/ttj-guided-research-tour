@@ -13,7 +13,7 @@ for(const width of [1440,1024,820,390]){
  await page.waitForSelector('#jane-editorial-js',{timeout:12000});
  const homeCopy=await page.evaluate(()=>{
   const h=[...document.querySelectorAll('#learn-traditional-page h1,#learn-traditional-page h2,#learn-traditional-page h3')];
-  return {periods:h.filter(e=>/[^.]\\.$/.test(e.textContent.trim())).map(e=>e.textContent.trim()),eyebrows:[...document.querySelectorAll('#learn-traditional-page .lt-section-top .lt-kicker,#learn-traditional-page .lt-fight-heading .lt-fight-eyebrow')].filter(e=>getComputedStyle(e).display!=='none').map(e=>e.textContent.trim())};
+  return {periods:h.filter(e=>/[^.]\.$/.test(e.textContent.trim())).map(e=>e.textContent.trim()),eyebrows:[...document.querySelectorAll('#learn-traditional-page .lt-section-top .lt-kicker,#learn-traditional-page .lt-fight-heading .lt-fight-eyebrow')].filter(e=>getComputedStyle(e).display!=='none').map(e=>e.textContent.trim())};
  });
  if(homeCopy.periods.length||homeCopy.eyebrows.length)errors.push(width+' Jane editorial text cleanup failed: '+JSON.stringify(homeCopy));
 
