@@ -155,7 +155,7 @@ showStep();
     const css = document.createElement('link');
     css.id = 'explore-v2-css';
     css.rel = 'stylesheet';
-    css.href = 'explore-v2.css?v=9';
+    css.href = 'explore-v2.css?v=10';
     document.head.appendChild(css);
   }
   if (!document.getElementById('explore-polish-css')) {
