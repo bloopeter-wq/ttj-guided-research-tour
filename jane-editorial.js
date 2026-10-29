@@ -28,14 +28,14 @@
     for(let i=nodes.length-1;i>=0;i--){
       const node=nodes[i],value=node.nodeValue||'';
       if(!value.trim())continue;
-      if(/[^.]\\.\\s*$/.test(value)&&!/\\.\\.\\.\\s*$/.test(value)){
-        const clean=value.replace(/\\.\\s*$/,'');
+      if(/[^.]\.\s*$/.test(value)&&!/\.\.\.\s*$/.test(value)){
+        const clean=value.replace(/\.\s*$/,'');
         if(clean!==value)node.nodeValue=clean;
       }
       break;
     }
     const tokens=[];
-    const wordPattern=/[\\p{L}\\p{N}]+(?:[’'-][\\p{L}\\p{N}]+)*/gu;
+    const wordPattern=/[\p{L}\p{N}]+(?:[’'-][\p{L}\p{N}]+)*/gu;
     nodes.forEach(node=>{
       const value=node.nodeValue||'';
       for(const match of value.matchAll(wordPattern)){
@@ -47,7 +47,7 @@
     tokens.forEach((token,i)=>{
       const text=token.node.nodeValue||'';
       const before=text.slice(0,token.start);
-      const afterColon=i>0 && /:\\s*$/.test((tokens[i-1].node===token.node
+      const afterColon=i>0 && /:\s*$/.test((tokens[i-1].node===token.node
         ? text.slice(tokens[i-1].start+tokens[i-1].word.length,token.start)
         : (tokens[i-1].node.nodeValue||'').slice(tokens[i-1].start+tokens[i-1].word.length)+before));
       const parts=token.word.split(/([-])/);
