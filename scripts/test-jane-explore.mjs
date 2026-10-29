@@ -42,6 +42,17 @@ for(const viewport of [{width:1440,height:900},{width:820,height:1180},{width:39
     if(scores.some(s=>s.includes('#1')||s.includes('·')))throw Error('Round 4 includes second measure');
   }
   if(id===5){
+    if(await card.locator('.xv-round5-layout').count()!==1)throw Error('Round 5 new layout missing');
+    const resultY=await card.locator('.xv-round5-results').evaluate(el=>el.getBoundingClientRect().top);
+    const takeY=await card.locator('.xv-round5-takeaways').evaluate(el=>el.getBoundingClientRect().top);
+    const methodY=await card.locator('.xv-round5-method').evaluate(el=>el.getBoundingClientRect().top);
+    if(!(resultY<takeY && takeY<methodY))throw Error('Round 5 order wrong: results, takeaways, method required');
+    if(await card.locator('.xv-round5-takeaway').count()!==3)throw Error('Round 5 takeaways should be three cards');
+    if(await card.locator('.xv-more-inner').count())throw Error('Round 5 retained old two-column text structure');
+    const white=await card.locator('.xv-round5-layout').evaluate(el=>getComputedStyle(el).backgroundColor);
+    if(white!=='rgb(255, 255, 255)')throw Error('Round 5 layout background must be white');
+    const sectionWhite=await page.locator('.xv-rounds').evaluate(el=>getComputedStyle(el).backgroundColor);
+    if(sectionWhite!=='rgb(255, 255, 255)')throw Error('Round 5 surrounding section must be white');
     const text=await card.innerText();
     if(/guardrails/i.test(text)||!text.includes('strong protections against AI harms'))throw Error('Round 5 weak protection language');
     const values=(await card.locator('.xv-full-row b').allTextContents()).map(x=>x.trim());

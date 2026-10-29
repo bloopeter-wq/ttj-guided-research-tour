@@ -572,3 +572,61 @@
   .ttj-explore-v2 .xv-round-expanded .xv-full-row>b{font-size:14px;min-width:48px}
   .ttj-explore-v2 .xv-paired-key{font-size:10px;gap:9px}
 }
+
+/* Round 5: white research panel, results first, clear takeaway cards and quiet source note. */
+.ttj-explore-v2 .xv-round-card[data-round="5"]{
+  background:#fff!important;
+  color:#17262b;
+}
+.ttj-explore-v2 .xv-round-card[data-round="5"] .xv-round-titleblock,
+.ttj-explore-v2 .xv-round-card[data-round="5"] .xv-round-topline,
+.ttj-explore-v2 .xv-round-card[data-round="5"] .xv-round-footer{
+  background:#fff!important;
+}
+.ttj-explore-v2 .xv-round5-layout{background:#fff;padding:30px 0 48px;display:grid;gap:36px}
+.ttj-explore-v2 .xv-round5-layout h4{
+  font:700 clamp(23px,2.3vw,31px)/1.22 Georgia,serif;
+  margin:0 0 10px;color:#14252d;letter-spacing:-.02em;
+}
+.ttj-explore-v2 .xv-round5-result-intro{margin:0 0 25px;color:#53616a;font-size:15px;line-height:1.5}
+.ttj-explore-v2 .xv-round5-result-list{background:#fff;border-top:2px solid #087b71}
+.ttj-explore-v2 .xv-round5-result-list .xv-full-row{
+  display:grid;grid-template-columns:minmax(0,1fr) auto;align-items:center;
+  gap:24px;padding:21px 6px;margin:0;background:#fff;
+  border-bottom:1px solid #dce5e1;font-size:clamp(15px,1.3vw,18px);line-height:1.48;
+}
+.ttj-explore-v2 .xv-round5-result-list .xv-full-row>span{max-width:850px}
+.ttj-explore-v2 .xv-round5-result-list .xv-full-row>b{
+  font:800 clamp(26px,3.4vw,42px)/1 "Noto Sans",Arial,sans-serif;color:#087b71;white-space:nowrap;
+}
+.ttj-explore-v2 .xv-round5-takeaways{padding:35px 0 0;border-top:1px solid #dce5e1;background:#fff}
+.ttj-explore-v2 .xv-round5-takeaway-intro{font-size:16px;line-height:1.55;margin:0 0 22px;max-width:760px}
+.ttj-explore-v2 .xv-round5-takeaway-grid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:14px}
+.ttj-explore-v2 .xv-round5-takeaway{
+  display:flex;flex-direction:column;align-items:flex-start;gap:12px;
+  background:#fff;border:1px solid #ccd9d5;border-top:4px solid #087b71;
+  padding:22px;min-height:166px;
+}
+.ttj-explore-v2 .xv-round5-takeaway strong{font:800 37px/1 "Noto Sans",Arial,sans-serif;color:#087b71}
+.ttj-explore-v2 .xv-round5-takeaway span{font-size:15px;line-height:1.5}
+.ttj-explore-v2 .xv-round5-method{
+  background:#fff;border-top:1px solid #dce5e1;padding:20px 0 0;
+  display:grid;grid-template-columns:minmax(130px,180px) minmax(0,1fr);gap:22px;
+}
+.ttj-explore-v2 .xv-round5-method>b{
+  font:800 12px/1.5 "Noto Sans",Arial,sans-serif;
+  text-transform:uppercase;letter-spacing:.08em;color:#44585b;
+}
+.ttj-explore-v2 .xv-round5-method p{margin:0;font-size:13px;line-height:1.65;color:#526369}
+@media(max-width:720px){
+ .ttj-explore-v2 .xv-round5-takeaway-grid{grid-template-columns:1fr;gap:10px}
+ .ttj-explore-v2 .xv-round5-takeaway{min-height:0;gap:7px;padding:17px}
+ .ttj-explore-v2 .xv-round5-result-list .xv-full-row{gap:12px;padding:18px 0}
+ .ttj-explore-v2 .xv-round5-result-list .xv-full-row>b{font-size:26px}
+ .ttj-explore-v2 .xv-round5-method{grid-template-columns:1fr;gap:8px}
+}
+
+/* White canvas for Round 5, including the surrounding research section. */
+.ttj-explore-v2 .xv-rounds:has(.xv-round-card[data-round="5"]){background:#fff!important}
+.ttj-explore-v2 .xv-rounds:has(.xv-round-card[data-round="5"]) .xv-round-tabs{background:#fff!important}
+.ttj-explore-v2 .xv-rounds:has(.xv-round-card[data-round="5"]) .xv-round-tabs button.active{background:var(--xv-jade)!important}

@@ -578,6 +578,25 @@
             <div><dt>Measure</dt><dd>${round.metric}</dd></div>
           </dl>
         </div>
+        ${round.id === 5 ? `
+          <div class="xv-round5-layout">
+            <section class="xv-round5-results" aria-label="Full policy support results">
+              <h4>Results (full set)</h4>
+              <p class="xv-round5-result-intro">Support for five strong protections against AI harms</p>
+              <div class="xv-round5-result-list">${fullRows}</div>
+            </section>
+            <section class="xv-round5-takeaways" aria-label="What this round tells us">
+              <h4>What this round tells us</h4>
+              <p class="xv-round5-takeaway-intro">Voters support concrete action to prevent harm and hold decision-makers accountable.</p>
+              <div class="xv-round5-takeaway-grid">
+                <div class="xv-round5-takeaway"><strong>72%</strong><span>supported the full package of protections</span></div>
+                <div class="xv-round5-takeaway"><strong>32%</strong><span>worried the proposed rules would not go far enough</span></div>
+                <div class="xv-round5-takeaway"><strong>48%</strong><span>said the AI maker and user should be equally responsible for harm in the hiring scenario</span></div>
+              </div>
+            </section>
+            <div class="xv-round5-method"><b>How to read these results</b><p>${round.method}</p></div>
+          </div>
+        ` : `
         <div class="xv-more-inner xv-round-expanded">
           <div class="xv-more-copy">
             <span class="xv-mini-label">What this round tells us</span>
@@ -592,6 +611,7 @@
             ${fullRows}
           </div>
         </div>
+        `}
         <div class="xv-round-footer">
           <div class="xv-round-nav xv-round-nav-bottom">
             <button type="button" data-round-nav="${round.id-1}" ${round.id===1?'disabled':''}>← Previous round</button>
