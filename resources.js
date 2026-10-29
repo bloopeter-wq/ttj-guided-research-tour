@@ -229,7 +229,7 @@ showStep();
   if (!document.getElementById('ux-refine-js')) {
     const script = document.createElement('script');
     script.id = 'ux-refine-js';
-    script.src = 'ux-refine.js?v=25';
+    script.src = 'ux-refine.js?v=26';
     document.body.appendChild(script);
   }
 })();
