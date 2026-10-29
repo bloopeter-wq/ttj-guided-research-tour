@@ -69,7 +69,7 @@ for(const width of [1440,390]){
   const card=page.locator('#xv-round-panel .xv-round-card');
   record(width,'explore.round'+n+'.full-results',await card.locator('.xv-full-row').count()===(n<=2?12:n===3?10:n===4?15:6));
   record(width,'explore.round'+n+'.context', (await card.locator('.xv-round-context').innerText()).startsWith('We wanted to understand'));
-  record(width,'explore.round'+n+'.columns',await card.locator('.xv-round-expanded').count()===1&&await card.locator('.xv-more-copy,.xv-full-results').count()===2);
+  record(width,'explore.round'+n+'.columns',n===4 ? await card.locator('.xv-round4-layout .xv-round5-results,.xv-round4-layout .xv-round5-takeaways').count()===2 : n===5 ? await card.locator('.xv-round5-layout .xv-round5-results,.xv-round5-layout .xv-round5-takeaways').count()===2 : await card.locator('.xv-round-expanded').count()===1&&await card.locator('.xv-more-copy,.xv-full-results').count()===2);
   record(width,'explore.round'+n+'.no-accordion',await card.locator('details.xv-more').count()===0);
   if(n<=2)record(width,'explore.round'+n+'.no-comparative-scores',await card.locator('.xv-full-row b').count()===0);
   if(n===3)record(width,'explore.round3.paired-institutions',await card.locator('.xv-paired-row').count()===6);
