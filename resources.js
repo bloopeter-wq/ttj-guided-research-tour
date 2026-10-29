@@ -233,3 +233,20 @@ showStep();
     document.body.appendChild(script);
   }
 })();
+
+/* Jane's copy edits for all three public pages. Loaded last; watches dynamically rendered headings. */
+(function loadJaneEditorialCleanup(){
+  if(!document.getElementById('jane-editorial-css')){
+    const style=document.createElement('link');
+    style.id='jane-editorial-css';
+    style.rel='stylesheet';
+    style.href='jane-editorial.css?v=1';
+    document.head.appendChild(style);
+  }
+  if(!document.getElementById('jane-editorial-js')){
+    const script=document.createElement('script');
+    script.id='jane-editorial-js';
+    script.src='jane-editorial.js?v=1';
+    document.body.appendChild(script);
+  }
+})();
