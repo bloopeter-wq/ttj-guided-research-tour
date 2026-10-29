@@ -16,6 +16,6 @@
 #resources-view > .use-heading > .eyebrow,
 .xv-institutions .xv-kicker-line {display:none!important}
 
-/* Keep the original jade headline with the gold emphasis. */
-#tour #hb2-hero #hb2-text{color:#64C9BB!important}
+/* Match the Explore 'data' text (#047E72), preserving the gold emphasis. */
+#tour #hb2-hero #hb2-text{color:#047E72!important}
 #tour #hb2-hero #hb2-text .hb2-emphasis{color:#E4B82F!important}
