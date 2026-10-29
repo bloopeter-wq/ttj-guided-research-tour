@@ -655,3 +655,15 @@
 #data-view.ttj-explore-v2 .xv-round4-layout .xv-round5-result-list .xv-full-row{
   background:#fff!important;
 }
+
+/* Remove the redundant rule and large blank gap between Measure and
+   "What this round tells us" after the sections were reordered. */
+.ttj-explore-v2 .xv-round-card[data-round="4"] .xv-round5-layout,
+.ttj-explore-v2 .xv-round-card[data-round="5"] .xv-round5-layout{
+  padding-top:12px;
+}
+.ttj-explore-v2 .xv-round-card[data-round="4"] .xv-round5-takeaways:first-child,
+.ttj-explore-v2 .xv-round-card[data-round="5"] .xv-round5-takeaways:first-child{
+  border-top:0;
+  padding-top:0;
+}
