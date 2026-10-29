@@ -684,3 +684,49 @@
   padding-top:0!important;
   margin-top:0!important;
 }
+
+/* Rounds 1 and 2: complete ranked concern ladder. No percentages or implied score gaps. */
+#data-view.ttj-explore-v2 .xv-rank-heading{
+  display:flex;align-items:baseline;justify-content:space-between;gap:20px;
+  padding:0 0 14px;border-bottom:2px solid #087b71;
+}
+#data-view.ttj-explore-v2 .xv-rank-heading strong{
+  font:800 12px/1.45 "Noto Sans",Arial,sans-serif;
+  text-transform:uppercase;letter-spacing:.11em;color:#10292c;
+}
+#data-view.ttj-explore-v2 .xv-rank-heading span,
+#data-view.ttj-explore-v2 .xv-rank-end{
+  font:700 11px/1.4 "Noto Sans",Arial,sans-serif;
+  text-transform:uppercase;letter-spacing:.08em;color:#087b71;
+}
+#data-view.ttj-explore-v2 .xv-rank-ladder{
+  margin:0;padding:0;list-style:none;display:flex;flex-direction:column;
+}
+#data-view.ttj-explore-v2 .xv-rank-ladder .xv-rank-ladder-row{
+  display:grid;grid-template-columns:48px minmax(0,1fr);align-items:start;
+  gap:17px;min-width:0;padding:18px 12px;
+  border-bottom:1px solid #d7e0dd;background:#fff;
+}
+#data-view.ttj-explore-v2 .xv-rank-ladder .xv-rank-ladder-row.xv-rank-lead{
+  background:#e9f5f1;border-left:4px solid #087b71;padding-left:8px;
+}
+#data-view.ttj-explore-v2 .xv-rank-number{
+  width:44px;min-height:42px;display:flex;justify-content:center;align-items:center;
+  font:800 19px/1 "Noto Sans",Arial,sans-serif;letter-spacing:-.02em;
+  color:#087b71;background:#e3f0ec;border-radius:4px;
+}
+#data-view.ttj-explore-v2 .xv-rank-lead .xv-rank-number{color:#fff;background:#087b71}
+#data-view.ttj-explore-v2 .xv-rank-statement{
+  font:500 clamp(14px,1.12vw,16px)/1.57 "Noto Sans",Arial,sans-serif;
+  color:#1e3135;overflow-wrap:anywhere;
+}
+#data-view.ttj-explore-v2 .xv-rank-lead .xv-rank-statement{font-weight:650}
+#data-view.ttj-explore-v2 .xv-rank-end{text-align:right;padding:14px 4px 0}
+@media(max-width:700px){
+  #data-view.ttj-explore-v2 .xv-rank-ladder .xv-rank-ladder-row{
+    grid-template-columns:40px minmax(0,1fr);gap:12px;padding:15px 6px;
+  }
+  #data-view.ttj-explore-v2 .xv-rank-ladder .xv-rank-ladder-row.xv-rank-lead{padding-left:5px}
+  #data-view.ttj-explore-v2 .xv-rank-number{width:38px;min-height:38px;font-size:17px}
+  #data-view.ttj-explore-v2 .xv-rank-statement{font-size:14px;line-height:1.56}
+}
