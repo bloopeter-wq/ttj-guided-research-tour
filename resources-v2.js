@@ -263,8 +263,7 @@
       <section class="rv-tool rv-points" id="tool-3">
         <div class="rv-shell">
           <div class="rv-tool-head">
-            <div><span class="rv-number">03</span><div class="rv-eyebrow">Cross-partisan talking points</div><h2>Start from the shared question.</h2></div>
-            <p>These formulations describe the research without requiring agreement on a broader political worldview. Open any card to expand it.</p>
+            <div><span class="rv-number">03</span><h2>Cross-Partisan Talking Points</h2></div>
           </div>
           <div class="rv-point-grid" id="rv-point-grid"></div>
         </div>
