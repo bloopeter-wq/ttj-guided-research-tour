@@ -155,7 +155,7 @@ showStep();
     const css = document.createElement('link');
     css.id = 'explore-v2-css';
     css.rel = 'stylesheet';
-    css.href = 'explore-v2.css?v=6';
+    css.href = 'explore-v2.css?v=7';
     document.head.appendChild(css);
   }
   if (!document.getElementById('explore-polish-css')) {
@@ -168,7 +168,7 @@ showStep();
   if (!document.getElementById('explore-v2-js')) {
     const script = document.createElement('script');
     script.id = 'explore-v2-js';
-    script.src = 'explore-v2.js?v=14';
+    script.src = 'explore-v2.js?v=15';
     document.body.appendChild(script);
   }
 })();
