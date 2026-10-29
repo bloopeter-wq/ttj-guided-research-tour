@@ -294,8 +294,7 @@
       <section class="rv-tool rv-words" id="tool-6">
         <div class="rv-shell">
           <div class="rv-tool-head rv-tool-head-light">
-            <div><span class="rv-number">06</span><div class="rv-eyebrow">Strong words / weak words</div><h2>Prefer language people can picture.</h2></div>
-            <p>The three-word frames were directly tested; the other examples are writing guidance drawn from the same research pattern, not standalone survey tests.</p>
+            <div><span class="rv-number">06</span><h2>Strong Words/Weak Words</h2></div>
           </div>
           <div class="rv-word-columns">
             <div class="rv-word-col strong"><div class="rv-word-col-head"><span>Stronger</span><b>Concrete + accountable</b></div><div id="rv-strong-words"></div></div>
