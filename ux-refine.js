@@ -708,7 +708,6 @@
       anchor.insertAdjacentElement('afterend',section);
       q('button',section).addEventListener('click',function(){routeAndScroll(target,selector);});
     }
-    if(home) add(home,q('.lt-method',home),'Next','Explore the evidence','explore','#data-view','Move from the headline findings into the five research rounds and detailed results.');
     if(explore) add(explore,q('.xv-source',explore),'Next','Put the research to work','resources','#resources-view','Use the message builder, language examples, sector questions and drafting tools.');
     if(resources) add(resources,q('.rv-tool:last-of-type',resources),'Complete the loop','Return to what we learned','tour','#tour','Go back to the main findings and the story the research tells.');
   }
