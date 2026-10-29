@@ -20,6 +20,12 @@ for(const viewport of [{width:1440,height:900},{width:820,height:1180},{width:39
   if(await card.locator('.xv-suggest, .xv-evidence').count())throw Error('Round '+id+' still has a key finding or shortlist');
   if(!(await card.locator('.xv-round-context').innerText()).startsWith('We wanted to understand'))throw Error('Round '+id+' missing survey context');
   if(await card.locator('.xv-research-details dd').count()!==3)throw Error('Round '+id+' lacks complete metadata');
+  const firstContent=card.locator(id<=3?'.xv-more-inner.xv-round-expanded':'.xv-round5-layout');
+  const layout=await firstContent.evaluate(el=>{const st=getComputedStyle(el);return {border:st.borderTopWidth,pad:parseFloat(st.paddingTop),top:el.getBoundingClientRect().top}});
+  const metadataBottom=await card.locator('.xv-research-details').evaluate(el=>el.getBoundingClientRect().bottom);
+  if(layout.border!=='0px')throw Error('Round '+id+' extra divider line remains: '+layout.border);
+  if(layout.pad>14)throw Error('Round '+id+' excessive content top padding: '+layout.pad);
+  if(layout.top-metadataBottom>35)throw Error('Round '+id+' excessive gap below metadata: '+Math.round(layout.top-metadataBottom));
   const expected=id===1||id===2?12:id===3?10:id===4?15:5;
   if(await card.locator('.xv-full-row').count()!==expected)throw Error('Round '+id+' full set has wrong count');
   if(id===1||id===2){
