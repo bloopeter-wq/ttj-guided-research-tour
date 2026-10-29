@@ -162,8 +162,7 @@
       <section class="lt-next">
         <div class="lt-geo" aria-hidden="true"></div>
         <div class="lt-shell">
-          <div class="lt-kicker">Go deeper</div>
-          <h2>Read the evidence.<br>Then put it to work.</h2>
+          <h2>Go Deeper</h2>
           <div class="lt-route-grid">
             <a href="#explore" data-lt-section="explore"><span>01 / Evidence</span><h3>Explore the Data</h3><p>Move through all five rounds, compare age and party groups, inspect institutions, and search the open-ended evidence.</p><b>Explore the full data →</b></a>
             <a href="#resources" data-lt-section="resources"><span>02 / Practical use</span><h3>Use the Resources</h3><p>Build messages, compare stronger and weaker formulations, use sector aids, and work through the drafting checklist.</p><b>Open the toolkit →</b></a>
