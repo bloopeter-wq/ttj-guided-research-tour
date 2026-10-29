@@ -131,6 +131,7 @@
 
 /* tool 6 */
 .ttj-resources-v2 .rv-words{background:#07090d;color:#fff;position:relative}
+.ttj-resources-v2 .rv-words .rv-tool-head{grid-template-columns:minmax(0,1fr);gap:0;align-items:start}
 .ttj-resources-v2 .rv-word-columns{display:grid;grid-template-columns:1fr 1fr;gap:18px}
 .ttj-resources-v2 .rv-word-col{border:1px solid #343941;background:#0e1218}
 .ttj-resources-v2 .rv-word-col-head{display:flex;justify-content:space-between;gap:20px;align-items:end;padding:25px 27px;border-bottom:1px solid #343941}
