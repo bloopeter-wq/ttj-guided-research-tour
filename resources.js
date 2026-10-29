@@ -246,7 +246,7 @@ showStep();
   if(!document.getElementById('jane-editorial-js')){
     const script=document.createElement('script');
     script.id='jane-editorial-js';
-    script.src='jane-editorial.js?v=2';
+    script.src='jane-editorial.js?v=3';
     document.body.appendChild(script);
   }
 })();
