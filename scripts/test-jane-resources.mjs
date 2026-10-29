@@ -9,7 +9,7 @@ for(const width of [1440,1024,820,390]){
  await page.goto(base+'#resources',{waitUntil:'networkidle'});
  await page.waitForSelector('#resources-view.ttj-resources-v2',{timeout:16000});
 
- await page.waitForSelector('#jane-editorial-js',{timeout:12000});
+ await page.waitForSelector('#jane-editorial-js',{state:'attached',timeout:12000});
  const resourcesCopy=await page.evaluate(()=>{
   const h=[...document.querySelectorAll('#resources-view.ttj-resources-v2 h1,#resources-view.ttj-resources-v2 h2')];
   return {periods:h.filter(e=>/[^.]\.$/.test(e.textContent.trim())).map(e=>e.textContent.trim()),eyebrows:[...document.querySelectorAll('#resources-view .rv-download-head .rv-eyebrow,#resources-view .rv-tool-head .rv-eyebrow')].filter(e=>getComputedStyle(e).display!=='none').map(e=>e.textContent.trim())};
