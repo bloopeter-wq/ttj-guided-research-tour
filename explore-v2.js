@@ -542,8 +542,10 @@
     const fullRows = round.all.map(([label, value], index) => {
       if (round.rankOnly) {
         return `<li class="xv-full-row xv-rank-ladder-row ${index === 0 ? 'xv-rank-lead' : ''}">
-          <span class="xv-rank-number" aria-label="Rank ${index + 1}">${String(index + 1).padStart(2, '0')}</span>
-          <span class="xv-rank-statement">${label}</span>
+          <button type="button" class="xv-rank-select" aria-pressed="false">
+            <span class="xv-rank-number" aria-label="Rank ${index + 1}">${String(index + 1).padStart(2, '0')}</span>
+            <span class="xv-rank-statement">${label}</span>
+          </button>
         </li>`;
       }
       const displayed = round.id === 4 ? String(value).split(' · ')[0] : value;
@@ -648,6 +650,19 @@
       </article>`;
     panel.setAttribute('aria-labelledby','xv-round-'+round.id+'-title');
 
+    panel.querySelectorAll('.xv-rank-select').forEach(button => {
+      button.addEventListener('click', () => {
+        const wasSelected = button.getAttribute('aria-pressed') === 'true';
+        panel.querySelectorAll('.xv-rank-select').forEach(other => {
+          other.setAttribute('aria-pressed', 'false');
+          other.closest('.xv-rank-ladder-row').classList.remove('xv-rank-selected');
+        });
+        if (!wasSelected) {
+          button.setAttribute('aria-pressed', 'true');
+          button.closest('.xv-rank-ladder-row').classList.add('xv-rank-selected');
+        }
+      });
+    });
     document.querySelectorAll('[data-round-nav]').forEach(btn => {
       btn.addEventListener('click', () => {
         const target = Number(btn.dataset.roundNav);
