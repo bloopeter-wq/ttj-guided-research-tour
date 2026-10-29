@@ -144,7 +144,7 @@ showStep();
   if (!document.getElementById('headline-banner-v2-js')) {
     const bannerJs = document.createElement('script');
     bannerJs.id = 'headline-banner-v2-js';
-    bannerJs.src = 'headline-banner-v2.js?v=6';
+    bannerJs.src = 'headline-banner-v2.js?v=7';
     document.body.appendChild(bannerJs);
   }
 })();
