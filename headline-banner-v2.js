@@ -2,7 +2,7 @@
   'use strict';
 
   /* Jane's approved single headline, formerly the first slide. */
-  var headline = 'Don’t Stop At Weak Guardrails: Voters Across Parties Want <span class="hb2-emphasis">Strong AI Protections</span>';;
+  var headline = 'Don’t Stop At Weak Guardrails: Voters Across Parties Want <span class="hb2-emphasis">Strong AI Protections</span>';
 
   /* Preserve the original headline palette: jade → gold → coral → lime. */
   var colour = '#047E72';
