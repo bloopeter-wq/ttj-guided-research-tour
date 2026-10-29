@@ -94,6 +94,7 @@
 
 /* tool 4 */
 .ttj-resources-v2 .rv-sector{background:#111724;color:#fff;position:relative}
+.ttj-resources-v2 .rv-sector .rv-tool-head{grid-template-columns:minmax(0,1fr);gap:0;align-items:start}
 .ttj-resources-v2 .rv-sector-tabs button.active,.ttj-resources-v2 .rv-sector-tabs button:hover{background:var(--rv-jade);border-color:var(--rv-jade);color:#fff}
 .ttj-resources-v2 .rv-sector-panel{display:grid;grid-template-columns:1.12fr .88fr;gap:1px;background:#3a4149;border:1px solid #3a4149;min-height:500px}
 .ttj-resources-v2 .rv-sector-left,.ttj-resources-v2 .rv-sector-evidence{background:#0b1019;padding:38px 40px}
