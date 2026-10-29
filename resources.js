@@ -179,7 +179,7 @@ showStep();
     const css = document.createElement('link');
     css.id = 'resources-v2-css';
     css.rel = 'stylesheet';
-    css.href = 'resources-v2.css?v=7';
+    css.href = 'resources-v2.css?v=8';
     document.head.appendChild(css);
   }
   if (!document.getElementById('resources-refine-css')) {
@@ -199,13 +199,13 @@ showStep();
   if (!document.getElementById('resources-v2-js')) {
     const script = document.createElement('script');
     script.id = 'resources-v2-js';
-    script.src = 'resources-v2.js?v=18';
+    script.src = 'resources-v2.js?v=19';
     document.body.appendChild(script);
   }
   if (!document.getElementById('resources-refine-js')) {
     const refineJs = document.createElement('script');
     refineJs.id = 'resources-refine-js';
-    refineJs.src = 'resources-refine.js?v=4';
+    refineJs.src = 'resources-refine.js?v=5';
     document.body.appendChild(refineJs);
   }
   if (!document.getElementById('resources-refine2-js')) {
