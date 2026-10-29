@@ -29,6 +29,18 @@ for(const viewport of [{width:1440,height:900},{width:820,height:1180},{width:39
   const expected=id===1||id===2?12:id===3?10:id===4?15:5;
   if(await card.locator('.xv-full-row').count()!==expected)throw Error('Round '+id+' full set has wrong count');
   if(id===1||id===2){
+    const ladder=card.locator('ol.xv-rank-ladder');
+    if(await ladder.count()!==1)throw Error('Round '+id+' missing numbered ladder');
+    if(await ladder.locator('li.xv-rank-ladder-row').count()!==12)throw Error('Round '+id+' requires 12 full ranked statements');
+    const numbers=await ladder.locator('.xv-rank-number').allTextContents();
+    if(numbers.map(n=>n.trim()).join(',')!=='01,02,03,04,05,06,07,08,09,10,11,12')throw Error('Round '+id+' rank labels incorrect');
+    const originals=await ladder.locator('.xv-rank-statement').allTextContents();
+    if(originals.some(t=>t.trim().length<45))throw Error('Round '+id+' has abbreviated survey statements');
+    if(await ladder.locator('.xv-rank-lead').count()!==1)throw Error('Round '+id+' should emphasize only the first ranked item');
+    if((await ladder.innerText()).match(/\\b\\d+(?:\\.\\d+)?%/))throw Error('Round '+id+' must not imply percentages');
+    const computed=await ladder.locator('.xv-rank-ladder-row').first().evaluate(el=>getComputedStyle(el).gridTemplateColumns);
+    if(computed.split(' ').length!==2)throw Error('Round '+id+' rank layout is not two-column at '+viewport.width);
+
     const first=await card.locator('.xv-full-row').first().innerText();
     if(!first.includes(id===1?'When the government uses AI to run public services':'Health insurance companies are using AI to deny care'))throw Error('Round '+id+' not using original statements');
     if(await card.locator('.xv-full-row b').count()) throw Error('Round '+id+' displays forbidden comparative scores');
