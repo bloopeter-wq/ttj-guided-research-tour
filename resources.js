@@ -179,7 +179,7 @@ showStep();
     const css = document.createElement('link');
     css.id = 'resources-v2-css';
     css.rel = 'stylesheet';
-    css.href = 'resources-v2.css?v=2';
+    css.href = 'resources-v2.css?v=3';
     document.head.appendChild(css);
   }
   if (!document.getElementById('resources-refine-css')) {
@@ -199,7 +199,7 @@ showStep();
   if (!document.getElementById('resources-v2-js')) {
     const script = document.createElement('script');
     script.id = 'resources-v2-js';
-    script.src = 'resources-v2.js?v=13';
+    script.src = 'resources-v2.js?v=14';
     document.body.appendChild(script);
   }
   if (!document.getElementById('resources-refine-js')) {
