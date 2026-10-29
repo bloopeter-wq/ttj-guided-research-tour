@@ -11,7 +11,7 @@
     const toolHeadings = {
       'tool-1': 'Message builder',
       'tool-2': 'Concrete language examples',
-      'tool-4': 'Sector questions',
+      'tool-4': 'Discussion Questions',
       'tool-6': 'Stronger and weaker language',
       'tool-7': 'Drafting checklist',
       'tool-8': 'Decision-first framing'
