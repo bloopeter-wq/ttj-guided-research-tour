@@ -49,17 +49,16 @@
         <div class="lt-shell">
           <div class="lt-meaning-grid">
             <div>
-              <div class="lt-kicker">What This Means / The Opportunity</div>
-              <h2 id="lt-invisible-title">Invisible Harm.<br><em>Real Opportunity.</em></h2>
+              <h2 id="lt-invisible-title">Invisible Harm<br><em>Real Opportunity</em></h2>
               <div class="lt-meaning-rule" aria-hidden="true"></div>
             </div>
             <div class="lt-meaning-statement">
-              <p class="lt-meaning-lede">Voters are deeply concerned by ongoing AI uses that hurt health care, work, housing and benefits, and they support bold policy proposals to stop those harms. Raising awareness should therefore be a priority.</p>
+              <p class="lt-meaning-lede">Our Opportunity: Voters are deeply concerned by ongoing AI uses that hurt health care, work, housing and benefits, and they support bold policy proposals to stop those harms. Raising awareness should therefore be a priority.</p>
               <p>That can mean talking with the communities you belong to or serve, sharing stories of injustice, amplifying similar stories from elsewhere, and directly taking on fights to resist harmful uses of AI where you have the capacity to do so.</p>
             </div>
           </div>
           <div class="lt-fight" aria-labelledby="lt-fight-heading">
-            <div class="lt-fight-heading"><div><span class="lt-fight-eyebrow">Put the findings to work</span><h3 id="lt-fight-heading">Key Takeaways for Your Fight</h3></div><p>Find the argument that fits your work.</p></div>
+            <div class="lt-fight-heading"><div><h3 id="lt-fight-heading">Key Takeaways for Your Fight</h3></div></div>
             <div class="lt-fight-list">
               <details>
                 <summary><span class="lt-fight-no">01</span><span>Advocates in health care, housing, benefits, employment &amp; education</span><span class="lt-fight-toggle" aria-hidden="true"></span></summary>
