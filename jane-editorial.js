@@ -20,6 +20,8 @@
   }
   function tidy(heading){
     if(heading.closest('[contenteditable="true"]'))return;
+    /* Jane-approved recommendation is a sentence with deliberate final punctuation. */
+    if(heading.matches('.lt-recommendation h3'))return;
     const walker=document.createTreeWalker(heading,NodeFilter.SHOW_TEXT);
     const nodes=[];
     while(walker.nextNode())nodes.push(walker.currentNode);
