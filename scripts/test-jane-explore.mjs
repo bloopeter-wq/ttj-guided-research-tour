@@ -53,6 +53,17 @@ for(const viewport of [{width:1440,height:900},{width:820,height:1180},{width:39
     const scores=await card.locator('.xv-full-row b').allTextContents();
     if(scores.some(s=>s.includes('#1')||s.includes('·')))throw Error('Round 4 includes second measure');
   }
+  if(id===4 || id===5){
+    const firstTakeaway=card.locator('.xv-round5-layout>.xv-round5-takeaways:first-child');
+    const styles=await firstTakeaway.evaluate(el=>{const cs=getComputedStyle(el);return {borderTop:cs.borderTopWidth,paddingTop:parseFloat(cs.paddingTop)}});
+    if(styles.borderTop!=='0px'||styles.paddingTop!==0)throw Error('Round '+id+' extra divider or top padding persists: '+JSON.stringify(styles));
+    const gap=await card.evaluate(el=>{
+      const details=el.querySelector('.xv-research-details').getBoundingClientRect();
+      const takeaway=el.querySelector('.xv-round5-layout>.xv-round5-takeaways').getBoundingClientRect();
+      return Math.round(takeaway.top-details.bottom);
+    });
+    if(gap>50)throw Error('Round '+id+' excessive gap between measure and takeaway: '+gap+'px');
+  }
   if(id===5){
     if(await card.locator('.xv-round5-layout').count()!==1)throw Error('Round 5 new layout missing');
     const resultY=await card.locator('.xv-round5-results').evaluate(el=>el.getBoundingClientRect().top);
