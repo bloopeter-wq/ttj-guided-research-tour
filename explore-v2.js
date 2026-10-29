@@ -372,13 +372,12 @@
         <div class="xv-shell">
           <div class="xv-section-head">
             <div>
-              <div class="xv-eyebrow">The five rounds</div>
               <h2 id="xv-rounds-title">Round by Round</h2>
             </div>
 
           </div>
           <div class="xv-round-tabs" role="tablist" aria-label="Research rounds">
-            ${rounds.map(r => `<button type="button" role="tab" data-round-select="${r.id}" aria-selected="${r.id===1}"><span>0${r.id}</span><small>${r.date.split(',')[0]}</small></button>`).join('')}
+            ${rounds.map(r => `<button type="button" role="tab" data-round-select="${r.id}" aria-selected="${r.id===1}"><span>Round ${r.id}</span></button>`).join('')}
           </div>
           <div id="xv-round-panel" class="xv-round-panel" role="tabpanel" tabindex="0" aria-live="polite" aria-label="Selected research round"></div>
         </div>
@@ -566,7 +565,6 @@
     panel.innerHTML = `
       <article class="xv-round-card" data-round="${round.id}">
         <div class="xv-round-topline">
-          <div><span>ROUND 0${round.id}</span><b>${round.date}</b></div>
           <div class="xv-round-nav">
             <button type="button" data-round-nav="${round.id-1}" ${round.id===1?'disabled':''}>← Previous</button>
             <button type="button" data-round-nav="${round.id+1}" ${round.id===5?'disabled':''}>Next →</button>
@@ -595,7 +593,7 @@
               </div>
             </section>
             <section class="xv-round5-results" aria-label="Round 4 full concern results">
-              <h4>Results (full set)</h4>
+              <h4>Results</h4>
               <p class="xv-round5-result-intro">Concern about 15 specific uses of AI</p>
               <div class="xv-round5-result-list">${fullRows}</div>
             </section>
@@ -613,7 +611,7 @@
               </div>
             </section>
             <section class="xv-round5-results" aria-label="Full policy support results">
-              <h4>Results (full set)</h4>
+              <h4>Results</h4>
               <p class="xv-round5-result-intro">Support for five strong protections against AI harms</p>
               <div class="xv-round5-result-list">${fullRows}</div>
             </section>
@@ -628,7 +626,7 @@
             <div class="xv-method-box"><b>How to read it</b><span>${round.method}</span></div>
           </div>
           <div class="xv-full-results">
-            <span class="xv-mini-label">Results (full set)</span>
+            <span class="xv-mini-label">Results</span>
             ${pairedInstitutions}
             ${round.id === 3 ? '<p class="xv-paired-subhead">All institutions and public figures tested · upset about AI decision-making</p>' : ''}
             ${round.rankOnly ? `
