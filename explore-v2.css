@@ -218,6 +218,8 @@
 }
 .ttj-explore-v2 .xv-demographics .xv-shell,
 .ttj-explore-v2 .xv-quotes .xv-shell{position:relative;z-index:2}
+.ttj-explore-v2 .xv-demographics .xv-section-head{grid-template-columns:minmax(0,1fr);gap:0;align-items:start}
+.ttj-explore-v2 .xv-demographics .xv-demographics-intro{max-width:860px;margin:26px 0 0;font-size:18px;line-height:1.62;color:#b8bbc1}
 .ttj-explore-v2 .xv-section-head-dark>p{color:#b8bbc1}
 .ttj-explore-v2 .xv-lens-card{border-top:1px solid #393d44;padding-top:28px}
 .ttj-explore-v2 .xv-lens-top{display:flex;justify-content:space-between;gap:30px;align-items:center}
