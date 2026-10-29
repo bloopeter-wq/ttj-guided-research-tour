@@ -205,13 +205,13 @@ showStep();
   if (!document.getElementById('resources-refine-js')) {
     const refineJs = document.createElement('script');
     refineJs.id = 'resources-refine-js';
-    refineJs.src = 'resources-refine.js?v=2';
+    refineJs.src = 'resources-refine.js?v=3';
     document.body.appendChild(refineJs);
   }
   if (!document.getElementById('resources-refine2-js')) {
     const refine2Js = document.createElement('script');
     refine2Js.id = 'resources-refine2-js';
-    refine2Js.src = 'resources-refine2.js?v=2';
+    refine2Js.src = 'resources-refine2.js?v=3';
     document.body.appendChild(refine2Js);
   }
 })();
