@@ -55,6 +55,15 @@
     });
     if (!valid.length) return null;
 
+    /* Always render secondary links in the same top-to-bottom order as their live sections. */
+    valid.sort(function(a,b){
+      if(a[1]===b[1]) return 0;
+      var relationship=a[1].compareDocumentPosition(b[1]);
+      if(relationship & Node.DOCUMENT_POSITION_FOLLOWING) return -1;
+      if(relationship & Node.DOCUMENT_POSITION_PRECEDING) return 1;
+      return 0;
+    });
+
     var nav=document.createElement('nav');
     nav.className='ux-section-nav';
     nav.dataset.uxNav=opts.key;
