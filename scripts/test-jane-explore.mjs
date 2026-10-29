@@ -13,7 +13,7 @@ for(const viewport of [{width:1440,height:900},{width:820,height:1180},{width:39
  await page.goto(url+'#explore',{waitUntil:'networkidle'});
  await page.waitForSelector('#xv-round-panel .xv-round-card',{timeout:15000});
 
- await page.waitForSelector('#jane-editorial-js',{timeout:12000});
+ await page.waitForSelector('#jane-editorial-js',{state:'attached',timeout:12000});
  const exploreCopy=await page.evaluate(()=>{
   const h=[...document.querySelectorAll('#data-view.ttj-explore-v2 h1,#data-view.ttj-explore-v2 h2')];
   return {periods:h.filter(e=>/[^.]\.$/.test(e.textContent.trim())).map(e=>e.textContent.trim()),eyebrows:[...document.querySelectorAll('#data-view .xv-section-head .xv-eyebrow,#data-view .xv-hero-inner>.xv-eyebrow')].filter(e=>getComputedStyle(e).display!=='none').map(e=>e.textContent.trim())};
