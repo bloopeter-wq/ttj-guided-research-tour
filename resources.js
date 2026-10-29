@@ -129,7 +129,7 @@ showStep();
   if (!document.getElementById('what-we-learned-traditional-js')) {
     const pageJs = document.createElement('script');
     pageJs.id = 'what-we-learned-traditional-js';
-    pageJs.src = 'what-we-learned-traditional.js?v=16';
+    pageJs.src = 'what-we-learned-traditional.js?v=17';
     document.body.appendChild(pageJs);
   }
 
