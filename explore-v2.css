@@ -667,3 +667,20 @@
   border-top:0;
   padding-top:0;
 }
+
+/* All five rounds: metadata flows directly into the first content section.
+   Remove the duplicate line and unused top gap, including legacy round layouts. */
+#data-view.ttj-explore-v2 .xv-round-card .xv-more-inner.xv-round-expanded{
+  border-top:0!important;
+  padding-top:12px!important;
+}
+#data-view.ttj-explore-v2 .xv-round-card .xv-round5-layout{
+  border-top:0!important;
+  padding-top:12px!important;
+}
+#data-view.ttj-explore-v2 .xv-round-card .xv-round-expanded>.xv-more-copy:first-child,
+#data-view.ttj-explore-v2 .xv-round-card .xv-round5-layout>.xv-round5-takeaways:first-child{
+  border-top:0!important;
+  padding-top:0!important;
+  margin-top:0!important;
+}
