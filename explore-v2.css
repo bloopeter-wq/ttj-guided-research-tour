@@ -124,7 +124,7 @@
 .ttj-explore-v2 .xv-round-panel{scroll-margin-top:175px}
 .ttj-explore-v2 .xv-round-card{padding-top:45px}
 .ttj-explore-v2 .xv-round-topline{
-  display:flex;justify-content:space-between;align-items:center;
+  display:flex;justify-content:flex-end;align-items:center;
   border-bottom:1px solid var(--xv-line);padding-bottom:16px;
 }
 .ttj-explore-v2 .xv-round-topline>div:first-child{display:flex;gap:22px;align-items:center}
