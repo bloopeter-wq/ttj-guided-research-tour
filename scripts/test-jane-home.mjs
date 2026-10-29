@@ -19,6 +19,11 @@ for(const width of [1440,1024,820,390]){
 
  const title=await page.locator('#hb2-text').innerText();
  if(!title.includes('Don’t Stop At Weak Guardrails: Voters Across Parties Want')||!title.includes('Strong AI Protections'))errors.push(width+' Wrong hero first-slide text');
+ const heroColors=await page.locator('#hb2-text').evaluate(h=>{
+   return {base:getComputedStyle(h).color,emphasis:getComputedStyle(h.querySelector('.hb2-emphasis')).color};
+ });
+ if(heroColors.base!=='rgb(100, 201, 187)'||heroColors.emphasis!=='rgb(100, 201, 187)')
+   errors.push(width+' Original jade headline palette was not restored: '+JSON.stringify(heroColors));
  const hero=page.locator('#hb2-hero');
  if(await hero.locator('#hb2-prev,#hb2-next,#hb2-track,.hb2-arrows').count())errors.push(width+' Slider controls still present');
  const firstResearch=page.locator('#learn-traditional-page .lt-findings .lt-finding').first();
