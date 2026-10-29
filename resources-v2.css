@@ -150,6 +150,9 @@
 
 /* tool 7 */
 .ttj-resources-v2 .rv-draft-check{background:#f1f0e9}
+.ttj-resources-v2 .rv-draft-check .rv-tool-head{grid-template-columns:minmax(0,1fr);gap:0;align-items:start}
+.ttj-resources-v2 .rv-draft-check .rv-drafting-intro{max-width:860px;margin:26px 0 0;font-size:18px;line-height:1.62;color:#4c5057}
+
 .ttj-resources-v2 .rv-draft-check-layout{display:grid;grid-template-columns:1fr .9fr;gap:16px;align-items:stretch}
 .ttj-resources-v2 .rv-textarea-wrap{background:#fff;border:1px solid #d1d6d3;padding:28px;display:flex;flex-direction:column}
 .ttj-resources-v2 .rv-textarea-wrap label{font:800 11px/1 "Noto Sans",Arial,sans-serif;text-transform:uppercase;letter-spacing:.13em;color:var(--rv-jade);margin-bottom:12px}
