@@ -31,16 +31,15 @@
 
       <section class="lt-core">
         <div class="lt-shell lt-core-grid">
-          <div class="lt-kicker">The Core Finding and Recommendation</div>
           <div>
-            <h2>Make the invisible harms of AI impossible to ignore.</h2>
+            <h2>Make the invisible harms of AI impossible to ignore</h2>
             <p>People may not recognize AI as the source of the problems they experience every day. When voters are presented with concrete examples of insurers using AI to deny health care, employers using it to make hiring decisions, or government agencies using it to determine benefits, the stakes become much clearer. Our research suggests that exposing these harms and the institutions responsible offers a powerful opportunity to build public support for stronger protections.</p>
           </div>
         </div>
         <div class="lt-shell lt-recommendation">
           <span>Recommendation</span>
           <div>
-            <h3>Show the harm. Name who’s responsible. Make the case for change.</h3>
+            <h3>Show the harm, name who’s responsible, and make the case for change.</h3>
             <p>Start with the real decisions affecting people’s lives. Show how AI is being used to deny health care, threaten housing, cut benefits, or determine someone’s future at work. Name the institution choosing to use it and explain what people stand to lose. Make the consequences impossible to ignore, then connect them to the bold protections needed to prevent harm and hold decision-makers accountable.</p>
           </div>
         </div>
