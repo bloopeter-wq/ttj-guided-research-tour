@@ -34,9 +34,11 @@ for(const viewport of [{width:1440,height:900},{width:820,height:1180},{width:39
     if(await ladder.locator('li.xv-rank-ladder-row').count()!==12)throw Error('Round '+id+' requires 12 full ranked statements');
     const selectors=ladder.locator('button.xv-rank-select');
     if(await selectors.count()!==12)throw Error('Round '+id+' requires twelve selectable ranks');
-    if(await ladder.locator('.xv-rank-lead,.xv-rank-selected').count()!==0)throw Error('Round '+id+' begins with a shaded row');
-    const initialColors=await ladder.locator('li.xv-rank-ladder-row').evaluateAll(rows=>rows.map(el=>getComputedStyle(el).backgroundColor));
-    if(initialColors.some(color=>color!=='rgb(255, 255, 255)'))throw Error('Round '+id+' has a highlighted row on load: '+initialColors.join(', '));
+    if(await ladder.locator('li.xv-rank-selected').count()!==1)throw Error('Round '+id+' must initially select one row');
+    if(!await ladder.locator('li').first().evaluate(el=>el.classList.contains('xv-rank-selected')))throw Error('Round '+id+' must initially select rank 01');
+    if(await selectors.first().getAttribute('aria-pressed')!=='true')throw Error('Round '+id+' rank 01 must start aria-pressed');
+    const initial=await ladder.locator('li').first().evaluate(el=>{const st=getComputedStyle(el);return {background:st.backgroundColor,transform:st.transform,shadow:st.boxShadow};});
+    if(initial.background!=='rgb(216, 238, 231)'||initial.transform==='none'||initial.shadow==='none')throw Error('Round '+id+' first row must start shaded and raised: '+JSON.stringify(initial));
     const second=selectors.nth(1);
     await second.click();
     if(await second.getAttribute('aria-pressed')!=='true')throw Error('Round '+id+' clicked item is not selected');
