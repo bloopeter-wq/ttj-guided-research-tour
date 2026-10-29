@@ -1,0 +1,17 @@
+/* Jane's heading cleanup: suppress decorative eyebrows above page and section titles. */
+:is(.lt-kicker,.lt-fight-eyebrow,.xv-eyebrow,.rv-eyebrow,.eyebrow,.ux-search-kicker):has(+ :is(h1,h2,h3,h4)),
+:is(.lt-kicker,.xv-eyebrow,.rv-eyebrow,.eyebrow):has(+ div > :is(h1,h2,h3,h4)),
+.lt-core-grid > .lt-kicker,
+.lt-fight-heading .lt-fight-eyebrow,
+.lt-section-top .lt-kicker,
+.xv-section-head .xv-eyebrow,
+.xv-limits-head .xv-eyebrow,
+.xv-hero-inner > .xv-eyebrow,
+.rv-hero-inner > .rv-eyebrow,
+.rv-download-head .rv-eyebrow,
+.rv-tool-head .rv-eyebrow,
+#tour #eyebrow,
+#completion .eyebrow,
+#data-view > .section-heading > .eyebrow,
+#resources-view > .use-heading > .eyebrow,
+.xv-institutions .xv-kicker-line {display:none!important}
