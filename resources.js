@@ -205,13 +205,13 @@ showStep();
   if (!document.getElementById('resources-refine-js')) {
     const refineJs = document.createElement('script');
     refineJs.id = 'resources-refine-js';
-    refineJs.src = 'resources-refine.js?v=5';
+    refineJs.src = 'resources-refine.js?v=6';
     document.body.appendChild(refineJs);
   }
   if (!document.getElementById('resources-refine2-js')) {
     const refine2Js = document.createElement('script');
     refine2Js.id = 'resources-refine2-js';
-    refine2Js.src = 'resources-refine2.js?v=4';
+    refine2Js.src = 'resources-refine2.js?v=5';
     document.body.appendChild(refine2Js);
   }
 })();
@@ -229,7 +229,7 @@ showStep();
   if (!document.getElementById('ux-refine-js')) {
     const script = document.createElement('script');
     script.id = 'ux-refine-js';
-    script.src = 'ux-refine.js?v=26';
+    script.src = 'ux-refine.js?v=27';
     document.body.appendChild(script);
   }
 })();
