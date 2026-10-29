@@ -371,7 +371,8 @@
 .ttj-explore-v2 .xv-no-results span{color:#969ba4}
 
 .ttj-explore-v2 .xv-limits{padding:120px 0;background:#fff}
-.ttj-explore-v2 .xv-limits-head{display:grid;grid-template-columns:1fr .36fr;column-gap:70px;align-items:end;margin-bottom:55px}
+.ttj-explore-v2 .xv-limits-head{display:grid;grid-template-columns:minmax(0,1fr);gap:0;align-items:start;margin-bottom:55px}
+.ttj-explore-v2 .xv-limits-head>p{max-width:860px;margin:26px 0 0}
 .ttj-explore-v2 .xv-limits-head .xv-eyebrow{grid-column:1/-1}
 .ttj-explore-v2 .xv-limits-head h2{max-width:980px}
 .ttj-explore-v2 .xv-limits-head h2 span{color:var(--xv-coral)}
