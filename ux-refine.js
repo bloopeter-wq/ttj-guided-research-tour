@@ -183,10 +183,11 @@
       aria:'What We Learned sections',
       sections:[
         ['About the polling','.lt-polling-intro','ux-home-polling'],
-        ['Central finding','.lt-core','ux-home-core'],
-        ['Key findings','.lt-findings','ux-home-findings'],
-        ['Themes','.lt-threads','ux-home-themes'],
-        ['Next steps','.lt-next','ux-home-next'],
+        ['Core Finding','.lt-core','ux-home-core'],
+        ['The Opportunity','.lt-meaning','ux-home-meaning'],
+        ['What the Research Found','.lt-findings','ux-home-findings'],
+        ['Five Threads','.lt-threads','ux-home-themes'],
+        ['Go Deeper','.lt-next','ux-home-next'],
         ['About','.lt-method','ux-home-method']
       ]
     });
@@ -289,11 +290,11 @@
       position:'before',
       aria:'Explore the Data sections',
       sections:[
-        ['Rounds','.xv-rounds','ux-explore-rounds'],
-        ['Audiences','.xv-demographics','ux-explore-audiences'],
-        ['Institutions','.xv-institutions','ux-explore-institutions'],
-        ['What people said','.xv-quotes','ux-explore-voices'],
-        ['Protections','.xv-limits','ux-explore-protections']
+        ['Round by Round','.xv-rounds','ux-explore-rounds'],
+        ['Explore by Demographic','.xv-demographics','ux-explore-audiences'],
+        ['Liking an Institution','.xv-institutions','ux-explore-institutions'],
+        ['In Their Own Words','.xv-quotes','ux-explore-voices'],
+        ['Voters Support Bans and More','.xv-limits','ux-explore-protections']
       ]
     });
     return true;
@@ -314,14 +315,14 @@
         position:'before',
         aria:'Use the Research sections',
         sections:[
-          ['Message formula','#tool-1','ux-resource-formula'],
-          ['Say this / not that','#tool-2','ux-resource-language'],
-          ['Talking points','#tool-3','ux-resource-points'],
-          ['Sector','#tool-4','ux-resource-sector'],
-          ['Strong / weak words','#tool-6','ux-resource-words'],
-          ['Checklist','#tool-7','ux-resource-checklist'],
-          ['Lead with decision','#tool-8','ux-resource-decision'],
-          ['Downloads','.rv-downloads','ux-resource-downloads']
+          ['Downloads and Kits','.rv-downloads','ux-resource-downloads'],
+          ['Message Builder','#tool-1','ux-resource-formula'],
+          ['Say This, Not That','#tool-2','ux-resource-language'],
+          ['Cross-Partisan Talking Points','#tool-3','ux-resource-points'],
+          ['Discussion Questions','#tool-4','ux-resource-sector'],
+          ['Strong Words/Weak Words','#tool-6','ux-resource-words'],
+          ['Drafting Checklist','#tool-7','ux-resource-checklist'],
+          ['Decision-First Framing','#tool-8','ux-resource-decision']
         ]
       });
     }
