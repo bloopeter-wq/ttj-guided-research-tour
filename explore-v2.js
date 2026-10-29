@@ -432,9 +432,9 @@
           <div class="xv-section-head xv-section-head-dark">
             <div>
               <div class="xv-eyebrow">In their own words</div>
-              <h2 id="xv-quotes-title">Voters may not be aware of the harms that <span>concern them most.</span></h2>
+              <h2 id="xv-quotes-title">Voters may not be aware of the harms that <span>concern them most</span></h2>
+              <p class="xv-quotes-intro">Before respondents saw concrete scenarios, many defaulted to concerns they already had names for, including privacy and surveillance, job loss, and misinformation or deepfakes. Search the verbatim responses below.</p>
             </div>
-            <p>Before respondents saw concrete scenarios, many defaulted to concerns they already had names for, including privacy and surveillance, job loss, and misinformation or deepfakes. Search the verbatim responses below.</p>
           </div>
           <div class="xv-featured-quotes" aria-label="Selected respondent quotes">
             <article><span>Jobs & economy</span><blockquote>“AI is untrustworthy and is used to cut jobs while maximize profits for big corporations.”</blockquote></article>
