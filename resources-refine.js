@@ -145,14 +145,7 @@
     
     const tool7 = document.getElementById('tool-7');
     const tool7Head = tool7.querySelector('.rv-tool-head');
-    if (tool7Head) {
-      const eyebrow = tool7Head.querySelector('.rv-eyebrow');
-      const heading = tool7Head.querySelector('h2');
-      const dek = tool7Head.querySelector(':scope > p');
-      if (eyebrow) eyebrow.textContent = 'The drafting checklist';
-      if (heading) heading.textContent = 'The drafting checklist.';
-      if (dek) dek.textContent = "Before publishing a statement, email, social post, or testimony about an AI harm, answer these. If a reader can't answer them after reading your draft, there's still too much technology in it and not enough human story.";
-    }
+    // The title and instructions are now authored together in the section markup.
 
     const checklist = [
       'Who is the person affected?',
