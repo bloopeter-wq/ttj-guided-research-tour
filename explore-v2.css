@@ -625,3 +625,8 @@
  .ttj-explore-v2 .xv-round5-result-list .xv-full-row>b{font-size:26px}
  .ttj-explore-v2 .xv-round5-method{grid-template-columns:1fr;gap:8px}
 }
+
+/* White canvas for Round 5, including the surrounding research section. */
+.ttj-explore-v2 .xv-rounds:has(.xv-round-card[data-round="5"]){background:#fff!important}
+.ttj-explore-v2 .xv-rounds:has(.xv-round-card[data-round="5"]) .xv-round-tabs{background:#fff!important}
+.ttj-explore-v2 .xv-rounds:has(.xv-round-card[data-round="5"]) .xv-round-tabs button.active{background:var(--xv-jade)!important}
