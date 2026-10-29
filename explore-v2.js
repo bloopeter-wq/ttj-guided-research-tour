@@ -578,7 +578,26 @@
             <div><dt>Measure</dt><dd>${round.metric}</dd></div>
           </dl>
         </div>
-        ${round.id === 5 ? `
+        ${round.id === 4 ? `
+          <div class="xv-round5-layout xv-round4-layout">
+            <section class="xv-round5-results" aria-label="Round 4 full concern results">
+              <h4>Results (full set)</h4>
+              <p class="xv-round5-result-intro">Concern about 15 specific uses of AI</p>
+              <div class="xv-round5-result-list">${fullRows}</div>
+            </section>
+            <section class="xv-round5-takeaways" aria-label="What this round tells us">
+              <h4>What this round tells us</h4>
+              <p class="xv-round5-takeaway-intro">${round.more}</p>
+              <p class="xv-round4-detail-intro">Before seeing the scenarios, 897 people described their concerns in their own words. The leading themes were:</p>
+              <div class="xv-round5-takeaway-grid">
+                <div class="xv-round5-takeaway"><strong>20%</strong><span>privacy, personal data, and surveillance</span></div>
+                <div class="xv-round5-takeaway"><strong>16%</strong><span>job loss and economic harm</span></div>
+                <div class="xv-round5-takeaway"><strong>10%</strong><span>misinformation and deepfakes</span></div>
+              </div>
+            </section>
+            <div class="xv-round5-method"><b>How to read these results</b><p>${round.method}</p></div>
+          </div>
+        ` : round.id === 5 ? `
           <div class="xv-round5-layout">
             <section class="xv-round5-results" aria-label="Full policy support results">
               <h4>Results (full set)</h4>
