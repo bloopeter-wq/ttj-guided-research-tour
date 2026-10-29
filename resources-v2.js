@@ -186,6 +186,13 @@
     work: ['Algorithmic management is expanding at work.', 'An employer uses software to rank, monitor, schedule or reject workers without meaningful human review.']
   };
 
+  const downloads = [
+    {label:'Memo', format:'HTML', audience:'Research memo'},
+    {label:'Cheat Sheet for Policymakers', format:'DOCX', audience:'Policymakers'},
+    {label:'Cheat Sheet for Movement Orgs', format:'DOCX', audience:'Movement organizations'},
+    {label:'Say This, Not That and other Messaging Hints', format:'HTML', audience:'Messaging guidance'}
+  ];
+
   root.classList.add('ttj-resources-v2');
   root.innerHTML = `
     <div class="rv-page">
@@ -201,8 +208,22 @@
 
       <section class="rv-downloads rv-downloads-top">
         <div class="rv-shell">
-          <div class="rv-download-head"><div><h2>Downloads and kits</h2></div><p>New research and policy materials will be added here.</p></div>
-          <p class="rv-downloads-placeholder" role="status">Downloads will be available here soon.</p>
+          <div class="rv-download-head"><div><div class="rv-eyebrow">Downloadable materials</div><h2>Downloads and kits</h2></div><p>Download the current TTJ research and policy materials. Additional kits are in progress.</p></div>
+          <div class="rv-download-layout">
+            <div class="rv-download-grid">
+              ${downloads.map((item,i)=>`<a aria-disabled="true" aria-label="${item.label}, ${item.format}, for ${item.audience}"><span>0${i+1}</span><div><b>${item.label}</b><small>${item.audience} · ${item.format}</small></div><i aria-hidden="true">↓</i></a>`).join('')}
+            </div>
+            <a class="rv-cheatsheet-preview" aria-disabled="true" aria-label="Message-testing cheat sheet preview">
+              <div class="rv-preview-sheet">
+                <span class="rv-preview-mark">TechTonic Justice</span>
+                <span class="rv-preview-eyebrow">Research companion</span>
+                <strong>What people actually told us about AI harms.</strong>
+                <span class="rv-preview-rule"></span>
+                <span class="rv-preview-caption">Message Testing Cheat Sheet</span>
+                <span class="rv-preview-foot">Preview illustration · View the PDF ↗</span>
+              </div>
+            </a>
+          </div>
           <p class="rv-source-note">Source: TechTonic Justice + Data for Progress message testing, five national surveys of likely voters, March–July 2026. Question wording, measures and samples vary by round.</p>
         </div>
       </section>
