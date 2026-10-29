@@ -249,8 +249,7 @@
       <section class="rv-tool rv-language" id="tool-2">
         <div class="rv-shell">
           <div class="rv-tool-head rv-tool-head-light">
-            <div><span class="rv-number">02</span><div class="rv-eyebrow">Say this, not that</div><h2>Make the consequence visible.</h2></div>
-            <p>Compare an abstract formulation with a concrete one. Switch examples to see how the same principle works across settings.</p>
+            <div><span class="rv-number">02</span><h2>Say This, Not That</h2><p class="rv-language-intro">Compare an abstract formulation with a concrete one. Switch examples to see how the same principle works across settings.</p></div>
           </div>
           <div class="rv-language-tabs" id="rv-language-tabs"></div>
           <div class="rv-language-stage">
