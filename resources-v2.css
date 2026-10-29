@@ -38,6 +38,9 @@
 
 /* tool 1 */
 .ttj-resources-v2 .rv-message{background:#fff}
+.ttj-resources-v2 .rv-message .rv-tool-head{grid-template-columns:minmax(0,1fr);gap:0;align-items:start}
+.ttj-resources-v2 .rv-message .rv-message-intro{max-width:860px;margin:26px 0 0;font-size:18px;line-height:1.62;color:#4c5057}
+
 .ttj-resources-v2 .rv-scenario-chips,.ttj-resources-v2 .rv-language-tabs,.ttj-resources-v2 .rv-sector-tabs,.ttj-resources-v2 .rv-decision-tabs{display:flex;gap:8px;flex-wrap:wrap;margin-bottom:26px}
 .ttj-resources-v2 .rv-scenario-chips button,.ttj-resources-v2 .rv-language-tabs button,.ttj-resources-v2 .rv-sector-tabs button,.ttj-resources-v2 .rv-decision-tabs button{border:1px solid #aeb5b2;background:transparent;color:var(--rv-ink);padding:10px 15px;font:800 12px/1 "Noto Sans",Arial,sans-serif}
 .ttj-resources-v2 .rv-scenario-chips button.active,.ttj-resources-v2 .rv-scenario-chips button:hover,.ttj-resources-v2 .rv-sector-tabs button.active,.ttj-resources-v2 .rv-decision-tabs button.active{background:var(--rv-ink);border-color:var(--rv-ink);color:#fff}
