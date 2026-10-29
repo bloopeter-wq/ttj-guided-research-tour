@@ -541,8 +541,8 @@
 
     const fullRows = round.all.map(([label, value], index) => {
       if (round.rankOnly) {
-        return `<li class="xv-full-row xv-rank-ladder-row">
-          <button type="button" class="xv-rank-select" aria-pressed="false">
+        return `<li class="xv-full-row xv-rank-ladder-row ${index === 0 ? 'xv-rank-selected' : ''}">
+          <button type="button" class="xv-rank-select" aria-pressed="${index === 0 ? 'true' : 'false'}">
             <span class="xv-rank-number" aria-label="Rank ${index + 1}">${String(index + 1).padStart(2, '0')}</span>
             <span class="xv-rank-statement">${label}</span>
           </button>
