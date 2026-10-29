@@ -168,7 +168,7 @@ showStep();
   if (!document.getElementById('explore-v2-js')) {
     const script = document.createElement('script');
     script.id = 'explore-v2-js';
-    script.src = 'explore-v2.js?v=21';
+    script.src = 'explore-v2.js?v=22';
     document.body.appendChild(script);
   }
 })();
