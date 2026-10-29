@@ -17,7 +17,6 @@
       <section class="lt-polling-intro">
         <div class="lt-shell lt-polling-intro-grid">
           <div class="lt-polling-intro-title">
-            <div class="lt-kicker">What this is</div>
             <h1>A wholly different kind of AI polling</h1>
           </div>
           <div class="lt-polling-intro-copy">
