@@ -229,8 +229,7 @@
       <section class="rv-tool rv-message" id="tool-1">
         <div class="rv-shell">
           <div class="rv-tool-head">
-            <div><span class="rv-number">01</span><div class="rv-eyebrow">Message formula</div><h2>Build from the person out.</h2></div>
-            <p>Start with who is affected, who made the decision, what happened, and what the consequence is. The technology comes after the human stakes are clear.</p>
+            <div><span class="rv-number">01</span><h2>Build from the person out.</h2><p class="rv-message-intro">Start with who is affected, who made the decision, what happened, and what the consequence is. The technology comes after the human stakes are clear.</p></div>
           </div>
           <div class="rv-scenario-chips" id="rv-scenario-chips"></div>
           <div class="rv-formula-grid">
