@@ -15,3 +15,10 @@
 #data-view > .section-heading > .eyebrow,
 #resources-view > .use-heading > .eyebrow,
 .xv-institutions .xv-kicker-line {display:none!important}
+
+/* Restore the approved first-slide single-color jade headline.
+   The inherited gold emphasis had carried over from the previous multislide treatment. */
+#tour #hb2-hero #hb2-text,
+#tour #hb2-hero #hb2-text .hb2-emphasis{
+  color:#64C9BB!important;
+}
