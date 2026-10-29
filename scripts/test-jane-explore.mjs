@@ -51,7 +51,7 @@ for(const viewport of [{width:1440,height:900},{width:820,height:1180},{width:39
     if(originals.some(t=>t.trim().length<45))throw Error('Round '+id+' has abbreviated survey statements');
     if(await ladder.locator('.xv-rank-lead').count()!==1)throw Error('Round '+id+' should emphasize only the first ranked item');
     if((await ladder.innerText()).match(/\\b\\d+(?:\\.\\d+)?%/))throw Error('Round '+id+' must not imply percentages');
-    const computed=await ladder.locator('.xv-rank-ladder-row').first().evaluate(el=>getComputedStyle(el).gridTemplateColumns);
+    const computed=await ladder.locator('.xv-rank-select').first().evaluate(el=>getComputedStyle(el).gridTemplateColumns);
     if(computed.split(' ').length!==2)throw Error('Round '+id+' rank layout is not two-column at '+viewport.width);
 
     const first=await card.locator('.xv-full-row').first().innerText();
