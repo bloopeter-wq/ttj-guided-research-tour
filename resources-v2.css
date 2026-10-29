@@ -58,6 +58,9 @@
 
 /* tool 2 */
 .ttj-resources-v2 .rv-language{background:#07090d;color:#fff;position:relative}
+.ttj-resources-v2 .rv-language .rv-tool-head{grid-template-columns:minmax(0,1fr);gap:0;align-items:start}
+.ttj-resources-v2 .rv-language .rv-language-intro{max-width:860px;margin:26px 0 0;font-size:18px;line-height:1.62;color:#bcc3c5}
+
 .ttj-resources-v2 .rv-language::before,.ttj-resources-v2 .rv-sector::before,.ttj-resources-v2 .rv-words::before,.ttj-resources-v2 .rv-decision::before{content:"";position:absolute;inset:0;pointer-events:none;opacity:.045;background-image:linear-gradient(120deg,transparent 0 43%,#fff 43.2% 43.4%,transparent 43.6%),linear-gradient(34deg,transparent 0 70%,#fff 70.2% 70.4%,transparent 70.6%)}
 .ttj-resources-v2 .rv-language>.rv-shell,.ttj-resources-v2 .rv-sector>.rv-shell,.ttj-resources-v2 .rv-words>.rv-shell,.ttj-resources-v2 .rv-decision>.rv-shell{position:relative;z-index:1}
 .ttj-resources-v2 .rv-language-tabs button,.ttj-resources-v2 .rv-sector-tabs button,.ttj-resources-v2 .rv-decision-tabs button{border-color:#454a52;color:#d8dcdf}
