@@ -16,13 +16,13 @@
     
     const index = root.querySelector('.rv-tool-index');
     const indexItems = [
-      ['tool-1','Message formula'],
-      ['tool-2','Say this, not that'],
-      ['tool-3','Cross-partisan talking points'],
+      ['tool-1','Message Builder'],
+      ['tool-2','Say This, Not That'],
+      ['tool-3','Cross-Partisan Talking Points'],
       ['tool-4','Discussion Questions'],
       ['tool-6','Strong Words/Weak Words'],
-      ['tool-7','Drafting checklist'],
-      ['tool-8','Lead with the decision']
+      ['tool-7','Drafting Checklist'],
+      ['tool-8','Lead With the Decision']
     ];
     if (index) {
       index.innerHTML = indexItems.map(([target,label], i) => `<button type="button" data-tool-jump="${target}"><b>0${i+1}</b><span>${label}</span></button>`).join('');
@@ -45,14 +45,7 @@
     
     const tool1 = document.getElementById('tool-1');
     const tool1Head = tool1.querySelector('.rv-tool-head');
-    if (tool1Head) {
-      const eyebrow = tool1Head.querySelector('.rv-eyebrow');
-      const heading = tool1Head.querySelector('h2');
-      const dek = tool1Head.querySelector(':scope > p');
-      if (eyebrow) eyebrow.textContent = 'The message formula';
-      if (heading) heading.textContent = 'Person + decision-maker + action + consequence.';
-      if (dek) dek.textContent = 'Show where AI is being used, who chose to use it, and what someone may lose due to it. Mix and match the four parts to build a specific, human sentence.';
-    }
+    // Keep the approved Message Builder heading and instructions authored in resources-v2.js.
 
     const formulaOptions = {
       person: ['A transplant patient', 'A tenant', 'A worker', 'A grandmother'],
@@ -127,13 +120,8 @@
       });
     }
 
-    /* TOOL 3 — remove the extra headline and start with The basic issue expanded. */
+    /* Keep Cross-Partisan Talking Points as a full-sized heading. */
     const tool3 = document.getElementById('tool-3');
-    const tool3Head = tool3?.querySelector('.rv-tool-head');
-    if (tool3Head) {
-      const heading = tool3Head.querySelector('h2');
-      if (heading) heading.remove();
-    }
     const pointCards = [...(tool3?.querySelectorAll('.rv-point-card') || [])];
     pointCards.forEach((card, i) => {
       const toggle = card.querySelector('.rv-point-toggle');
