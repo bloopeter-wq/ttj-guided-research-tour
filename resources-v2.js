@@ -207,10 +207,10 @@
 
       <section class="rv-downloads rv-downloads-top">
         <div class="rv-shell">
-          <div class="rv-download-head"><div><div class="rv-eyebrow">Downloadable materials</div><h2>Downloads and kits</h2></div><p>Download the current TTJ research and policy materials. Additional kits are in progress.</p></div>
+          <div class="rv-download-head"><div><h2>Downloads and kits</h2></div></div>
           <div class="rv-download-layout">
             <div class="rv-download-grid">
-              ${downloads.map((item,i)=>`<a aria-disabled="true" aria-label="${item.label}, ${item.format}, for ${item.audience}"><span>0${i+1}</span><div><b>${item.label}</b><small>${item.audience} · ${item.format}</small></div><i aria-hidden="true">↓</i></a>`).join('')}
+              ${downloads.map((item,i)=>`<a aria-disabled="true" aria-label="${item.label}"><span>0${i+1}</span><div><b>${item.label}</b></div><i aria-hidden="true">↓</i></a>`).join('')}
             </div>
             <a class="rv-cheatsheet-preview" aria-disabled="true" aria-label="Message-testing cheat sheet preview">
               <div class="rv-preview-sheet">
@@ -219,11 +219,10 @@
                 <strong>What people actually told us about AI harms.</strong>
                 <span class="rv-preview-rule"></span>
                 <span class="rv-preview-caption">Message Testing Cheat Sheet</span>
-                <span class="rv-preview-foot">Preview illustration · View the PDF ↗</span>
+                <span class="rv-preview-foot">Preview illustration</span>
               </div>
             </a>
           </div>
-          <p class="rv-source-note">Source: TechTonic Justice + Data for Progress message testing, five national surveys of likely voters, March–July 2026. Question wording, measures and samples vary by round.</p>
         </div>
       </section>
 
