@@ -88,7 +88,7 @@
 
       <section class="lt-findings">
         <div class="lt-shell">
-          <div class="lt-section-top lt-findings-head"><div><h2>What the research found.</h2></div></div>
+          <div class="lt-section-top lt-findings-head"><div><h2>What the research found</h2></div></div>
 
           <article class="lt-finding">
             <div class="lt-finding-copy"><span>01 / Cross-partisan agreement</span><h3>This Is One of the Only Places that Parties Agree</h3><p>A full package of strong policy protections, including bans, off switches, proof of safety before use, penalties for harm and community oversight boards with legal authority, drew 72% support across all voters. Protecting people from AI harms does not require picking a partisan side to be effective.</p></div>
