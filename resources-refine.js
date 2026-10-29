@@ -19,7 +19,7 @@
       ['tool-1','Message formula'],
       ['tool-2','Say this, not that'],
       ['tool-3','Cross-partisan talking points'],
-      ['tool-4','Sector snapshot'],
+      ['tool-4','Discussion Questions'],
       ['tool-6','Strong / weak words'],
       ['tool-7','Drafting checklist'],
       ['tool-8','Lead with the decision']
