@@ -240,7 +240,7 @@ showStep();
     const style=document.createElement('link');
     style.id='jane-editorial-css';
     style.rel='stylesheet';
-    style.href='jane-editorial.css?v=3';
+    style.href='jane-editorial.css?v=4';
     document.head.appendChild(style);
   }
   if(!document.getElementById('jane-editorial-js')){
