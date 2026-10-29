@@ -20,7 +20,7 @@
       ['tool-2','Say this, not that'],
       ['tool-3','Cross-partisan talking points'],
       ['tool-4','Discussion Questions'],
-      ['tool-6','Strong / weak words'],
+      ['tool-6','Strong Words/Weak Words'],
       ['tool-7','Drafting checklist'],
       ['tool-8','Lead with the decision']
     ];
