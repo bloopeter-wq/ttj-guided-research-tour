@@ -272,8 +272,7 @@
       <section class="rv-tool rv-sector" id="tool-4">
         <div class="rv-shell">
           <div class="rv-tool-head rv-tool-head-light">
-            <div><span class="rv-number">04</span><div class="rv-eyebrow">Sector snapshot / committee-assignment aid</div><h2>Ask the right questions by sector.</h2></div>
-            <p>Choose a sector to reveal a concise oversight checklist and the most relevant evidence from the message-testing program.</p>
+            <div><span class="rv-number">04</span><h2>Discussion Questions</h2></div>
           </div>
           <div class="rv-sector-tabs" id="rv-sector-tabs"></div>
           <div class="rv-sector-panel" id="rv-sector-panel"></div>
