@@ -8,6 +8,14 @@ for(const width of [1440,1024,820,390]){
  page.on('pageerror',e=>failures.push(width+': JS '+e.message));
  await page.goto(base+'#resources',{waitUntil:'networkidle'});
  await page.waitForSelector('#resources-view.ttj-resources-v2',{timeout:16000});
+
+ await page.waitForSelector('#jane-editorial-js',{timeout:12000});
+ const resourcesCopy=await page.evaluate(()=>{
+  const h=[...document.querySelectorAll('#resources-view.ttj-resources-v2 h1,#resources-view.ttj-resources-v2 h2')];
+  return {periods:h.filter(e=>/[^.]\\.$/.test(e.textContent.trim())).map(e=>e.textContent.trim()),eyebrows:[...document.querySelectorAll('#resources-view .rv-download-head .rv-eyebrow,#resources-view .rv-tool-head .rv-eyebrow')].filter(e=>getComputedStyle(e).display!=='none').map(e=>e.textContent.trim())};
+ });
+ if(resourcesCopy.periods.length||resourcesCopy.eyebrows.length)failures.push(width+' Jane Resources copy cleanup failed: '+JSON.stringify(resourcesCopy));
+
  await page.waitForFunction(()=>document.querySelector('#resources-view')?.dataset.resourcesRefined2==='1',{timeout:15000});
  const assert=async(c,message)=>{if(!c)failures.push(width+': '+message)};
  await assert(await page.locator('.rv-tool-index,.ux-resource-guide,[aria-label="Tools by task"]').count()===0,'Tools by Task menu exists');
