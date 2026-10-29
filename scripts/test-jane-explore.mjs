@@ -58,7 +58,7 @@ for(const viewport of [{width:1440,height:900},{width:820,height:1180},{width:39
     if(numbers.map(n=>n.trim()).join(',')!=='01,02,03,04,05,06,07,08,09,10,11,12')throw Error('Round '+id+' rank labels incorrect');
     const originals=await ladder.locator('.xv-rank-statement').allTextContents();
     if(originals.some(t=>t.trim().length<45))throw Error('Round '+id+' has abbreviated survey statements');
-    if(await ladder.locator('.xv-rank-lead').count()!==1)throw Error('Round '+id+' should emphasize only the first ranked item');
+    if(await ladder.locator('.xv-rank-lead').count()!==0)throw Error('Round '+id+' must not emphasize the first item');
     if((await ladder.innerText()).match(/\\b\\d+(?:\\.\\d+)?%/))throw Error('Round '+id+' must not imply percentages');
     const computed=await ladder.locator('.xv-rank-select').first().evaluate(el=>getComputedStyle(el).gridTemplateColumns);
     if(computed.split(' ').length!==2)throw Error('Round '+id+' rank layout is not two-column at '+viewport.width);
