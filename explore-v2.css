@@ -630,3 +630,28 @@
 .ttj-explore-v2 .xv-rounds:has(.xv-round-card[data-round="5"]){background:#fff!important}
 .ttj-explore-v2 .xv-rounds:has(.xv-round-card[data-round="5"]) .xv-round-tabs{background:#fff!important}
 .ttj-explore-v2 .xv-rounds:has(.xv-round-card[data-round="5"]) .xv-round-tabs button.active{background:var(--xv-jade)!important}
+
+/* Jane: white background on every research round, while preserving other page sections. */
+#data-view.ttj-explore-v2 .xv-rounds,
+#data-view.ttj-explore-v2 .xv-rounds .xv-shell,
+#data-view.ttj-explore-v2 .xv-round-panel,
+#data-view.ttj-explore-v2 .xv-round-card,
+#data-view.ttj-explore-v2 .xv-round-card .xv-round-titleblock,
+#data-view.ttj-explore-v2 .xv-round-card .xv-round-topline,
+#data-view.ttj-explore-v2 .xv-round-card .xv-round-footer,
+#data-view.ttj-explore-v2 .xv-round-card .xv-round-expanded,
+#data-view.ttj-explore-v2 .xv-round-card .xv-more-copy,
+#data-view.ttj-explore-v2 .xv-round-card .xv-full-results{
+  background:#fff!important;
+}
+#data-view.ttj-explore-v2 .xv-round-tabs{background:#fff!important}
+#data-view.ttj-explore-v2 .xv-round-tabs button.active{background:var(--xv-jade)!important}
+#data-view.ttj-explore-v2 .xv-round4-layout .xv-round5-takeaway-intro{
+  max-width:980px;line-height:1.68;margin-bottom:22px;
+}
+#data-view.ttj-explore-v2 .xv-round4-detail-intro{
+  font-size:16px;line-height:1.55;margin:0 0 18px;
+}
+#data-view.ttj-explore-v2 .xv-round4-layout .xv-round5-result-list .xv-full-row{
+  background:#fff!important;
+}
