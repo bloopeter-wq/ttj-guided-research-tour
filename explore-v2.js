@@ -321,10 +321,10 @@
   ];
 
   const safeguards = [
-    { name:'Immediate off switches for AI', value:'80%', min:80, copy:'Immediate off switches for AI' },
-    { name:'Proof of model harmlessness before release', value:'80%', min:80, copy:'Proof of model harmlessness before release' },
-    { name:'Bans on high-stakes uses of AI that hurt health, housing, or work', value:'80%', min:80, copy:'Bans on high-stakes uses of AI that hurt health, housing, or work' },
-    { name:'Community oversight boards with legal authority to investigate and act on AI problems', value:'75%', min:75, copy:'Community oversight boards with legal authority to investigate and act on AI problems' }
+    { name:'Immediate off switches for AI', value:'80%', min:80, copy:'The ability to stop a system when it is causing harm.' },
+    { name:'Proof of model harmlessness before release', value:'80%', min:80, copy:'Requiring evidence of safety before a system reaches the public.' },
+    { name:'Bans on high-stakes uses of AI that hurt health, housing, or work', value:'80%', min:80, copy:'Restrictions on AI decisions involving health care, housing or work.' },
+    { name:'Community oversight boards with legal authority to investigate and act on AI problems', value:'75%', min:75, copy:'Community boards with legal authority over high-stakes uses.' }
   ];
 
   function iconSvg(type) {
