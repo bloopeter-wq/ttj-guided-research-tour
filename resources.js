@@ -179,7 +179,7 @@ showStep();
     const css = document.createElement('link');
     css.id = 'resources-v2-css';
     css.rel = 'stylesheet';
-    css.href = 'resources-v2.css?v=6';
+    css.href = 'resources-v2.css?v=7';
     document.head.appendChild(css);
   }
   if (!document.getElementById('resources-refine-css')) {
@@ -199,19 +199,19 @@ showStep();
   if (!document.getElementById('resources-v2-js')) {
     const script = document.createElement('script');
     script.id = 'resources-v2-js';
-    script.src = 'resources-v2.js?v=17';
+    script.src = 'resources-v2.js?v=18';
     document.body.appendChild(script);
   }
   if (!document.getElementById('resources-refine-js')) {
     const refineJs = document.createElement('script');
     refineJs.id = 'resources-refine-js';
-    refineJs.src = 'resources-refine.js?v=3';
+    refineJs.src = 'resources-refine.js?v=4';
     document.body.appendChild(refineJs);
   }
   if (!document.getElementById('resources-refine2-js')) {
     const refine2Js = document.createElement('script');
     refine2Js.id = 'resources-refine2-js';
-    refine2Js.src = 'resources-refine2.js?v=3';
+    refine2Js.src = 'resources-refine2.js?v=4';
     document.body.appendChild(refine2Js);
   }
 })();
