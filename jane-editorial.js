@@ -20,8 +20,24 @@
     if(root.querySelectorAll)root.querySelectorAll(selector).forEach(tidy);
   }
   scan(document);
+  /* The homepage hero headline is dynamically rendered inside a non-heading node. */
+  function tidyHero(){
+    const hero=document.querySelector('#tour #hb2-hero #hb2-text');
+    if(!hero)return;
+    const walker=document.createTreeWalker(hero,NodeFilter.SHOW_TEXT);
+    const nodes=[];
+    while(walker.nextNode())nodes.push(walker.currentNode);
+    for(let i=nodes.length-1;i>=0;i--){
+      const node=nodes[i],value=node.nodeValue||'';
+      if(!value.trim())continue;
+      if(/[^.]\.\s*$/.test(value))node.nodeValue=value.replace(/\.\s*$/,'');
+      break;
+    }
+  }
+  tidyHero();
   new MutationObserver(records=>{
     for(const rec of records){
+      tidyHero();
       if(rec.type==='characterData'){
         const h=rec.target.parentElement?.closest(selector);
         if(h)tidy(h);
