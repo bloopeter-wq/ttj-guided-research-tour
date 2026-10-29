@@ -348,8 +348,7 @@
       <section class="xv-hero" aria-labelledby="xv-title">
         <div class="xv-network" aria-hidden="true"></div>
         <div class="xv-shell xv-hero-inner">
-          <div class="xv-eyebrow">02 / Explore the evidence</div>
-          <h1 id="xv-title">Explore the <span>data.</span></h1>
+          <h1 id="xv-title">Explore the <span>data</span></h1>
           <p class="xv-hero-dek">Most polling on AI asks people how they feel about AI as a whole and whether they want it regulated. Our polling is more specific: we tested real-world uses of AI, the ground-level harms those systems cause, and specific policies to address those harms.</p>
           <div class="xv-snapshot" aria-label="Research scale">
             <div class="xv-stat">
