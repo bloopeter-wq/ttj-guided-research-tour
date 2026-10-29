@@ -240,13 +240,13 @@ showStep();
     const style=document.createElement('link');
     style.id='jane-editorial-css';
     style.rel='stylesheet';
-    style.href='jane-editorial.css?v=2';
+    style.href='jane-editorial.css?v=3';
     document.head.appendChild(style);
   }
   if(!document.getElementById('jane-editorial-js')){
     const script=document.createElement('script');
     script.id='jane-editorial-js';
-    script.src='jane-editorial.js?v=1';
+    script.src='jane-editorial.js?v=2';
     document.body.appendChild(script);
   }
 })();
