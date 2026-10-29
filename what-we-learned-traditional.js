@@ -148,7 +148,7 @@
 
       <section class="lt-threads">
         <div class="lt-shell">
-          <div class="lt-section-top"><div><div class="lt-kicker">Explore the themes</div><h2>Five threads running through five rounds.</h2></div><p>These are the recurring ideas that connect the individual findings.</p></div>
+          <div class="lt-section-top"><div><div class="lt-kicker">Explore the themes</div><h2>Five threads running through five rounds</h2></div></div>
           <div class="lt-thread-list">
             <details><summary><span>01</span>Power & control</summary><p>It's not really about AI. It's about who has power over people's lives, and whether they have any say in decisions that affect them.</p></details>
             <details><summary><span>02</span>Concrete harm</summary><p>Specific, tangible harms move people more than abstract warnings about AI in general. “Your insurer used AI to deny the treatment your doctor says you need” beats “AI can produce bias in health care” every time it was tested.</p></details>
