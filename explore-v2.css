@@ -318,6 +318,9 @@
 .ttj-explore-v2 .xv-method{font-size:12px;line-height:1.6;color:#6b6f74;max-width:930px;margin:22px 0 0}
 
 .ttj-explore-v2 .xv-quotes{position:relative;background:#080a0e;color:#fff;padding:115px 0 120px}
+.ttj-explore-v2 .xv-quotes .xv-section-head{grid-template-columns:minmax(0,1fr);gap:0;align-items:start}
+.ttj-explore-v2 .xv-quotes .xv-quotes-intro{max-width:860px;margin:26px 0 0;font-size:18px;line-height:1.62;color:#b8bbc1}
+
 .ttj-explore-v2 .xv-quote-toolbar{display:grid;grid-template-columns:1fr auto;gap:12px;margin:10px 0 18px}
 .ttj-explore-v2 .xv-search{position:relative;display:block}
 .ttj-explore-v2 .xv-search-icon{position:absolute;left:18px;top:50%;transform:translateY(-50%);font:400 28px/1 "Noto Sans",Arial,sans-serif;color:var(--xv-gold)}
