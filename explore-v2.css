@@ -730,3 +730,30 @@
   #data-view.ttj-explore-v2 .xv-rank-number{width:38px;min-height:38px;font-size:17px}
   #data-view.ttj-explore-v2 .xv-rank-statement{font-size:14px;line-height:1.56}
 }
+
+/* Interactive rank ladder: selecting a statement shades its entire row. */
+#data-view.ttj-explore-v2 .xv-rank-ladder .xv-rank-ladder-row{display:block;padding:0}
+#data-view.ttj-explore-v2 .xv-rank-ladder .xv-rank-ladder-row.xv-rank-lead{padding:0;border-left:4px solid #087b71}
+#data-view.ttj-explore-v2 .xv-rank-ladder .xv-rank-select{
+  display:grid;grid-template-columns:48px minmax(0,1fr);align-items:start;
+  gap:17px;width:100%;min-width:0;padding:18px 12px;
+  background:transparent;border:0;text-align:left;cursor:pointer;color:inherit;
+}
+#data-view.ttj-explore-v2 .xv-rank-ladder .xv-rank-select:focus-visible{
+  outline:3px solid #087b71;outline-offset:-3px;
+}
+#data-view.ttj-explore-v2 .xv-rank-ladder .xv-rank-ladder-row.xv-rank-selected{
+  background:#d8eee7!important;border-left:4px solid #087b71;
+}
+#data-view.ttj-explore-v2 .xv-rank-ladder .xv-rank-ladder-row.xv-rank-selected .xv-rank-select{
+  padding-left:8px;
+}
+#data-view.ttj-explore-v2 .xv-rank-ladder .xv-rank-ladder-row.xv-rank-selected .xv-rank-number{
+  color:#fff;background:#087b71;
+}
+@media(max-width:700px){
+  #data-view.ttj-explore-v2 .xv-rank-ladder .xv-rank-select{
+    grid-template-columns:40px minmax(0,1fr);gap:12px;padding:15px 6px;
+  }
+  #data-view.ttj-explore-v2 .xv-rank-ladder .xv-rank-ladder-row.xv-rank-selected .xv-rank-select{padding-left:5px}
+}
