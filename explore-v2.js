@@ -321,12 +321,10 @@
   ];
 
   const safeguards = [
-    { name:'Meaningful penalties', value:'77–81%', min:77, copy:'Consequences for companies or institutions when harmful systems break the rules.' },
-    { name:'Off switches', value:'79–80%', min:79, copy:'The ability to stop a system when it is causing harm.' },
-    { name:'Safety proof before release', value:'79–80%', min:79, copy:'Requiring evidence of safety before a system reaches the public.' },
-    { name:'High-stakes bans', value:'70–80%', min:70, copy:'Restrictions on some AI decisions involving health care, housing or work.' },
-    { name:'Safety proof before use', value:'77%', min:77, copy:'Requiring organizations to demonstrate safety before deployment.' },
-    { name:'Community authority', value:'74–75%', min:74, copy:'Community boards with real or legal authority over high-stakes uses.' }
+    { name:'Immediate off switches for AI', value:'80%', min:80, copy:'Immediate off switches for AI' },
+    { name:'Proof of model harmlessness before release', value:'80%', min:80, copy:'Proof of model harmlessness before release' },
+    { name:'Bans on high-stakes uses of AI that hurt health, housing, or work', value:'80%', min:80, copy:'Bans on high-stakes uses of AI that hurt health, housing, or work' },
+    { name:'Community oversight boards with legal authority to investigate and act on AI problems', value:'75%', min:75, copy:'Community oversight boards with legal authority to investigate and act on AI problems' }
   ];
 
   function iconSvg(type) {
@@ -466,9 +464,9 @@
         <div class="xv-shell">
           <div class="xv-limits-head">
             <div class="xv-eyebrow">Round 5 / What people supported</div>
-            <h2 id="xv-limits-title">Voters support <span>bans and more.</span></h2>
+            <h2 id="xv-limits-title">Voters support <span>bans and more</span></h2>
             <p>Every major protection tested received at least 70% support. We should not assume only voluntary or incremental measures will be publicly acceptable.</p>
-            <div class="xv-section-meta">Round 5 · Jul 24–27, 2026 · N=1,058 likely voters · Measure: support (%) / reported range</div>
+            <div class="xv-section-meta">Round 5 · Jul 24–27, 2026 · N=1,058 likely voters · Measure: support (%)</div>
           </div>
           <div class="xv-rails" id="xv-rails">
             ${safeguards.map((s, i) => `
