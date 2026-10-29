@@ -34,12 +34,21 @@ for(const viewport of [{width:1440,height:900},{width:820,height:1180},{width:39
     if(await ladder.locator('li.xv-rank-ladder-row').count()!==12)throw Error('Round '+id+' requires 12 full ranked statements');
     const selectors=ladder.locator('button.xv-rank-select');
     if(await selectors.count()!==12)throw Error('Round '+id+' requires twelve selectable ranks');
+    if(await ladder.locator('.xv-rank-lead,.xv-rank-selected').count()!==0)throw Error('Round '+id+' begins with a shaded row');
+    const initialColors=await ladder.locator('li.xv-rank-ladder-row').evaluateAll(rows=>rows.map(el=>getComputedStyle(el).backgroundColor));
+    if(initialColors.some(color=>color!=='rgb(255, 255, 255)'))throw Error('Round '+id+' has a highlighted row on load: '+initialColors.join(', '));
     const second=selectors.nth(1);
     await second.click();
     if(await second.getAttribute('aria-pressed')!=='true')throw Error('Round '+id+' clicked item is not selected');
     if(!await ladder.locator('li').nth(1).evaluate(el=>el.classList.contains('xv-rank-selected')))throw Error('Round '+id+' clicked item did not become shaded');
     const shaded=await ladder.locator('li').nth(1).evaluate(el=>getComputedStyle(el).backgroundColor);
     if(shaded!=='rgb(216, 238, 231)')throw Error('Round '+id+' selected color incorrect: '+shaded);
+    const lift=await ladder.locator('li').nth(1).evaluate(el=>{
+      const st=getComputedStyle(el);
+      return {transform:st.transform,shadow:st.boxShadow};
+    });
+    if(lift.transform==='none'||lift.shadow==='none')throw Error('Round '+id+' selected row must be raised with a shadow');
+
     await selectors.nth(2).click();
     if(await second.getAttribute('aria-pressed')!=='false')throw Error('Round '+id+' previous selection was not cleared');
     if(await ladder.locator('li.xv-rank-selected').count()!==1)throw Error('Round '+id+' should shade only one selected statement');
@@ -49,7 +58,7 @@ for(const viewport of [{width:1440,height:900},{width:820,height:1180},{width:39
     if(numbers.map(n=>n.trim()).join(',')!=='01,02,03,04,05,06,07,08,09,10,11,12')throw Error('Round '+id+' rank labels incorrect');
     const originals=await ladder.locator('.xv-rank-statement').allTextContents();
     if(originals.some(t=>t.trim().length<45))throw Error('Round '+id+' has abbreviated survey statements');
-    if(await ladder.locator('.xv-rank-lead').count()!==1)throw Error('Round '+id+' should emphasize only the first ranked item');
+    if(await ladder.locator('.xv-rank-lead').count()!==0)throw Error('Round '+id+' must not emphasize the first item');
     if((await ladder.innerText()).match(/\\b\\d+(?:\\.\\d+)?%/))throw Error('Round '+id+' must not imply percentages');
     const computed=await ladder.locator('.xv-rank-select').first().evaluate(el=>getComputedStyle(el).gridTemplateColumns);
     if(computed.split(' ').length!==2)throw Error('Round '+id+' rank layout is not two-column at '+viewport.width);
