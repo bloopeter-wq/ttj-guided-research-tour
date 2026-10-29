@@ -306,8 +306,7 @@
       <section class="rv-tool rv-draft-check" id="tool-7">
         <div class="rv-shell">
           <div class="rv-tool-head">
-            <div><span class="rv-number">07</span><div class="rv-eyebrow">The draft checklist</div><h2>Pressure-test a draft.</h2></div>
-            <p>Paste a draft below for a quick structural check. This is a simple heuristic, not a score of whether a message is “good” or persuasive.</p>
+            <div><span class="rv-number">07</span><h2>Drafting checklist</h2><p class="rv-drafting-intro">Before publishing a statement, email, social post, or testimony about an AI harm, answer these. If a reader can't answer them after reading your draft, there's still too much technology in it and not enough human story.</p></div>
           </div>
           <div class="rv-draft-check-layout">
             <div class="rv-textarea-wrap"><label for="rv-draft-text">Paste a draft</label><textarea id="rv-draft-text" rows="8" placeholder="Paste a paragraph, talking point or social post…"></textarea><button type="button" id="rv-analyse">Check structure</button></div>
