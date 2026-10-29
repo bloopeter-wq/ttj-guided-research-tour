@@ -387,10 +387,10 @@
         <div class="xv-shell">
           <div class="xv-section-head xv-section-head-dark">
             <div>
-              <div class="xv-eyebrow">Who thinks what?</div>
+              <div class="xv-eyebrow">Round 4 / Concerns About AI</div>
               <h2 id="xv-who-title">Explore by Demographic</h2>
+              <p class="xv-demographics-intro">Round 4 asked voters about fifteen concrete uses of AI in health care, benefits, housing and work. Compare how those concerns differed by age and party affiliation. Age shows the issue respondents chose as their highest priority; party shows the share extremely or very concerned.</p>
             </div>
-            <p>Round 4 asked voters about fifteen concrete uses of AI in health care, benefits, housing and work. Compare how those concerns differed by age and party affiliation. Age shows the issue respondents chose as their highest priority; party shows the share extremely or very concerned.</p>
           </div>
           <div class="xv-lens-card">
             <div class="xv-lens-top">
