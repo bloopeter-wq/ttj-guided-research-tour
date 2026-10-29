@@ -48,7 +48,7 @@ for(const viewport of [{width:1440,height:900},{width:820,height:1180},{width:39
 
     const measure=await card.locator('.xv-research-details').innerText();
     if(!measure.includes('Extremely, very, or somewhat concerned')) throw Error('Round 4 measure wording incorrect');
-    const method=await card.locator('.xv-method-box').innerText();
+    const method=await card.locator('.xv-round4-layout .xv-round5-method').innerText();
     if(!method.includes('extremely, very, or somewhat concerned')) throw Error('Round 4 methodology contradicts the measure');
     const scores=await card.locator('.xv-full-row b').allTextContents();
     if(scores.some(s=>s.includes('#1')||s.includes('·')))throw Error('Round 4 includes second measure');
