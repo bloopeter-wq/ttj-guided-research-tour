@@ -199,7 +199,7 @@ showStep();
   if (!document.getElementById('resources-v2-js')) {
     const script = document.createElement('script');
     script.id = 'resources-v2-js';
-    script.src = 'resources-v2.js?v=12';
+    script.src = 'resources-v2.js?v=13';
     document.body.appendChild(script);
   }
   if (!document.getElementById('resources-refine-js')) {
