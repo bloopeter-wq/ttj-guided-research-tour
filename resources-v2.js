@@ -199,8 +199,7 @@
       <section class="rv-hero">
         <div class="rv-hero-shape" aria-hidden="true"></div>
         <div class="rv-shell rv-hero-inner">
-          <div class="rv-eyebrow">03 / Practical use</div>
-          <h1>Use the <span>research.</span></h1>
+          <h1>Use the <span>research</span></h1>
           <p>Practical tools for turning the findings into clearer explanations, questions and drafts — without losing the evidence underneath them.</p>
 
         </div>
