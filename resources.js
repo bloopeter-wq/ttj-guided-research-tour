@@ -223,7 +223,7 @@ showStep();
     const css = document.createElement('link');
     css.id = 'ux-refine-css';
     css.rel = 'stylesheet';
-    css.href = 'ux-refine.css?v=31';
+    css.href = 'ux-refine.css?v=32';
     document.head.appendChild(css);
   }
   if (!document.getElementById('ux-refine-js')) {
