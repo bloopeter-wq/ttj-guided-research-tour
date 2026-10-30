@@ -2645,3 +2645,30 @@ body.ux-search-open{overflow:hidden!important}
 body #tour.learn-stage .learn-traditional-page .lt-findings .lt-findings-head h2{
   line-height:1.21!important;
 }
+
+
+/* Findings accordion without numbered eyebrow: consistent title, evidence line and icon. */
+.learn-traditional-page .lt-finding .lt-finding-toggle{
+  grid-template-columns:minmax(0,1fr) 38px!important;
+  grid-template-rows:auto auto!important;
+  column-gap:24px!important;
+  row-gap:5px!important;
+}
+.learn-traditional-page .lt-finding .lt-finding-toggle>strong{
+  grid-column:1!important;
+  grid-row:1!important;
+}
+.learn-traditional-page .lt-finding .lt-finding-toggle>em{
+  grid-column:1!important;
+  grid-row:2!important;
+}
+.learn-traditional-page .lt-finding .lt-finding-toggle>i{
+  grid-column:2!important;
+  grid-row:1 / span 2!important;
+}
+@media(max-width:640px){
+  .learn-traditional-page .lt-finding .lt-finding-toggle{
+    grid-template-columns:minmax(0,1fr) 30px!important;
+    column-gap:14px!important;
+  }
+}
