@@ -236,7 +236,7 @@
       toggle.className='lt-finding-toggle';
       toggle.setAttribute('aria-controls',body.id);
       toggle.setAttribute('aria-expanded','false');
-      toggle.innerHTML='<span>'+label.textContent+'</span><strong>'+title.textContent+'</strong><em>'+(evidenceCues[i]||'')+'</em><i aria-hidden="true">+</i>';
+      toggle.innerHTML='<strong>'+title.textContent+'</strong><em>'+(evidenceCues[i]||'')+'</em><i aria-hidden="true">+</i>';
 
       card.appendChild(toggle);
       card.appendChild(body);
