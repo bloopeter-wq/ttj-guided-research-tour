@@ -1,0 +1,4 @@
+# Search engines may crawl solely to discover the noindex directives.
+# Indexing is prohibited by both the HTML robots meta tag and X-Robots-Tag header.
+User-agent: *
+Allow: /
