@@ -2672,3 +2672,18 @@ body #tour.learn-stage .learn-traditional-page .lt-findings .lt-findings-head h2
     column-gap:14px!important;
   }
 }
+
+
+/* Round 5: close the gap left by the removed reading-method caveat. */
+#data-view.ttj-explore-v2 .xv-round-card[data-round="5"] .xv-round5-layout{
+  padding-bottom:0!important;
+  margin-bottom:0!important;
+}
+#data-view.ttj-explore-v2 .xv-round-card[data-round="5"] .xv-round5-result-list .xv-full-row:last-child{
+  border-bottom:0!important;
+}
+#data-view.ttj-explore-v2 .xv-round-card[data-round="5"] .xv-round-footer{
+  border-top:0!important;
+  margin-top:0!important;
+  padding-top:0!important;
+}
