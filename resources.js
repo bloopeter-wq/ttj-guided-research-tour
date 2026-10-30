@@ -122,14 +122,14 @@ showStep();
     const pageCss = document.createElement('link');
     pageCss.id = 'what-we-learned-traditional-css';
     pageCss.rel = 'stylesheet';
-    pageCss.href = 'what-we-learned-traditional.css?v=2';
+    pageCss.href = 'what-we-learned-traditional.css?v=3';
     document.head.appendChild(pageCss);
   }
 
   if (!document.getElementById('what-we-learned-traditional-js')) {
     const pageJs = document.createElement('script');
     pageJs.id = 'what-we-learned-traditional-js';
-    pageJs.src = 'what-we-learned-traditional.js?v=19';
+    pageJs.src = 'what-we-learned-traditional.js?v=20';
     document.body.appendChild(pageJs);
   }
 
@@ -168,7 +168,7 @@ showStep();
   if (!document.getElementById('explore-v2-js')) {
     const script = document.createElement('script');
     script.id = 'explore-v2-js';
-    script.src = 'explore-v2.js?v=24';
+    script.src = 'explore-v2.js?v=25';
     document.body.appendChild(script);
   }
 })();
