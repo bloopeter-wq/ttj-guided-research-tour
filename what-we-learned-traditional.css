@@ -224,3 +224,6 @@ body.learn-traditional-open{overflow:auto;background:#f5f4ee}
     min-height:48px;
   }
 }
+
+/* Final editorial pass: hide findings eyebrow labels, retaining their internal DOM hooks. */
+#learn-traditional-page .lt-finding-copy > .lt-finding-eyebrow-removed{display:none!important}
