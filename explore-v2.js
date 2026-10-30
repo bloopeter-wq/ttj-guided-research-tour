@@ -613,7 +613,7 @@
               <p class="xv-round5-result-intro">Support for five strong protections against AI harms</p>
               <div class="xv-round5-result-list">${fullRows}</div>
             </section>
-            <div class="xv-round5-method"><b>How to read these results</b><p>${round.method}</p></div>
+
           </div>
         ` : `
         <div class="xv-more-inner xv-round-expanded">
